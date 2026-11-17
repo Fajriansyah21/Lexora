@@ -3,7 +3,7 @@
 - **Status:** Approved for System Design (Delegated Project Lead Review, 2026-11-17)
 - **Terakhir diperbarui:** 2026-11-17
 - **Cakupan:** MVP AI Text Detector dan AI Humanizer beserta modul pendukung
-- **Sumber:** Keputusan pemilik proyek dalam sesi elisitasi 2026-11-12 sampai 2026-11-14 dan delegated project decisions DEC-145 sampai DEC-176 pada 2026-11-17
+- **Sumber:** Keputusan pemilik proyek dalam sesi elisitasi 2026-11-12 sampai 2026-11-14 dan delegated project decisions DEC-145 sampai DEC-189 pada 2026-11-17
 - **Dokumen terkait:** [Product Overview](PRODUCT-OVERVIEW.md), [Decision Log](DECISION-LOG.md), [Active Roadmap](ACTIVE-ROADMAP.md), [AI Text Detector Plan](AI-TEXT-DETECTOR-PLAN.md), [AI Humanizer Plan](AI-HUMANIZER-PLAN.md), [SRS Review Record](../docs/SRS-REVIEW-AND-APPROVAL-2026-11-17.md), [Privacy and Legal Readiness](../docs/PRIVACY-AND-LEGAL-READINESS.md)
 
 **Peran dokumen:** SRS adalah sumber utama kebutuhan fungsional dan nonfungsional. [Decision Log](DECISION-LOG.md) menyimpan riwayat keputusan dan alasan; [Requirements Elicitation Status](REQUIREMENTS-ELICITATION-STATUS.md) hanya merangkum cakupan serta kemajuan dan tidak menggantikan requirement di SRS. Dokumen rencana fitur menjelaskan alur dan pertimbangan tingkat fitur tanpa menyalin ulang seluruh requirement normatif.
