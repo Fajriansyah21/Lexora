@@ -14,7 +14,7 @@ DOCX Metadata Cleaner ditunda ke fase setelah MVP. Arsitektur produk tetap modul
 
 SRS tetap berstatus **Draft** dan elisitasi kebutuhan masih berlangsung. Rekap terperinci berada di [Requirements Elicitation Status](REQUIREMENTS-ELICITATION-STATUS.md).
 
-Posisi dokumentasi pada 2026-11-14:
+Posisi dokumentasi pada 2026-11-17:
 - 144 catatan keputusan: 142 Accepted dan 2 Superseded (DEC-018 dan DEC-019).
 - 195 baris kebutuhan fungsional dalam SRS, termasuk 124 requirement Humanizer dan 11 requirement Detector.
 - Humanizer telah dibahas mendalam, tetapi masih memiliki isu terbuka dan belum memiliki acceptance criteria lengkap.
@@ -45,7 +45,7 @@ Jalur riset dataset tetap berjalan terpisah dari analisis sistem produk. Pengemb
 
 | Urutan | Pengujian | Bukti yang harus dihasilkan | Status |
 |---:|---|---|---|
-| 1 | JSON Schema | Draft 2020-12 schema check; fixture valid dan 5 mutasi invalid | Verified (4 test methods) |
+| 1 | JSON Schema | Draft 2020-12 schema check; fixture valid dan 5 mutasi invalid | Verified (6 test methods) |
 | 2 | Sentence offset | Substring, batas, overlap, Unicode combining mark, emoji, CRLF, tab, dan teks kosong | Verified (5 tests) |
 | 3 | Editing history & lineage | Parent-child, parent hilang, ID duplikat, siklus, urutan, timestamp, dan riwayat kosong | Verified (8 tests) |
 | 4 | Deduplikasi | Exact, normalized exact, near-duplicate candidate, Unicode normalization, dan false-merge guard | Verified (4 tests) |
