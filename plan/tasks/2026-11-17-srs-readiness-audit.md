@@ -42,6 +42,14 @@
 7. Setelah disetujui, susun user flow, arsitektur modular, data flow, evaluasi teknologi, dan rencana UI/UX.
 8. Mulai implementasi website setelah gerbang System Design dan acceptance criteria dipenuhi.
 
+## Progress per 2026-11-17
+
+- [x] Tahap 1: audit struktur dan konsistensi Humanizer FR-HUM-01 sampai FR-HUM-124.
+- [x] Perbaiki konflik/ketertinggalan FR-HUM-06, FR-HUM-14, FR-HUM-38, FR-HUM-71, FR-HUM-75, FR-HUM-117, serta pemetaan FR-HUM-118 sampai FR-HUM-124.
+- [x] Catat DEC-145 sampai DEC-149 di bawah delegasi project lead.
+- [x] Publikasikan laporan audit Humanizer.
+- [ ] Tahap 2: elisitasi dan audit kebutuhan AI Text Detector.
+
 ## Kriteria selesai
 
 - [ ] Seluruh 195 requirement telah diperiksa terhadap Decision Log terbaru.
