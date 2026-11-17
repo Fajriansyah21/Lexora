@@ -98,7 +98,7 @@ stateDiagram-v2
 - Each lot records source, grant amount, remaining amount, creation time, expiry, and transaction reference.
 - Purchased credit lots do not expire.
 - Registered bonus/reward lots expire after seven days.
-- Guest reward lots expire 24 hours after grant and are bound to a guest session.
+- Guest trial-credit lots expire 24 hours after grant and are bound to a guest session. Guest rewarded ads are disabled in MVP.
 - Spend the eligible lot with the nearest expiry first; purchased credits are used after expiring promotional lots according to the SRS.
 
 ### Reservations
