@@ -2,7 +2,7 @@
 
 Status: **Rencana riset; beberapa keputusan metodologis telah disepakati**  
 Modul terkait: AI Text Detector  
-Terakhir ditinjau: 2026-11-12
+Terakhir ditinjau: 2026-11-17
 
 ## 1. Prinsip sumber data
 
@@ -21,7 +21,7 @@ Kelas utama:
 
 `UNCERTAIN` dikelola di luar kelas training utama sampai ada keputusan metodologis lebih lanjut.
 
-Setiap record perlu memiliki provenance yang cukup untuk menelusuri sumber, proses pengumpulan, transformasi, dan anotasinya. Detail schema final belum diarsipkan sebagai keputusan dalam dokumen ini.
+Setiap record perlu memiliki provenance yang cukup untuk menelusuri sumber, proses pengumpulan, transformasi, dan anotasinya. Dataset Record JSON Schema v1.0 dan logical database schema tersedia sebagai rancangan untuk menguji prosedur; keduanya belum disahkan sebagai schema produksi final.
 
 ## 3. Target dan urutan pengumpulan
 
@@ -65,6 +65,11 @@ Batas interpretasi:
 - Split hash-bucket deterministik mendekati 70/15/15 berdasarkan jumlah grup, bukan jumlah dokumen atau distribusi kelas. Desain stratifikasi dan challenge holdout nyata tetap memerlukan keputusan riset.
 - Workflow GitHub Actions run #2 berhasil pada commit `500b11be6c34588fd72d1e9f6fff27e95533b468`: 27/27 test lulus pada Python 3.12.16 dan jsonschema 4.26.0. [Log CI](https://github.com/Fajriansyah21/Website-AI-Ditector/actions/runs/44026691695).
 - Hasil ini tidak mengesahkan pilot, penggunaan dataset publik, consent, maupun training.
+
+
+### 4.2 Konsistensi editing history
+
+Template intake dan bentuk ekspor awalnya memiliki struktur berbeda. Mapping eksplisit kini didokumentasikan di [Editing History Mapping v1](../docs/EDITING-HISTORY-MAPPING-v1.md): versions[] dipetakan ke editing_history[], metadata review ke source/provenance, dan bukti per versi dipertahankan. JSON Schema telah diperluas untuk provenance_evidence dan reviewer_note. Uji integrasi template-ke-ekspor menjadi bagian dari suite sintetis. Mapping ini memvalidasi struktur, bukan kebenaran evidence.
 
 ## 5. Pencegahan data leakage
 
