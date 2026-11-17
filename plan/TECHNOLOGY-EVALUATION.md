@@ -109,7 +109,7 @@ Use a provider adapter with a common contract:
 - `getUsage(requestId)`
 - `healthCheck()`
 
-OpenAI API is the first provider candidate because API inputs/outputs are not used for model training by default. This is not a zero-retention guarantee: abuse-monitoring/application-state retention and endpoint-specific storage controls must be checked. Use non-stored request modes where supported; Zero Data Retention requires eligibility/approval. Cross-border processing remains blocked until DEC-170 review.
+OpenAI API is the first provider candidate because API inputs/outputs are not used for model training by default. This is not a zero-retention guarantee: abuse-monitoring/application-state retention and endpoint-specific storage controls must be checked. Use non-stored request modes where supported; Zero Data Retention requires eligibility/approval and may not cover every endpoint. Cross-border processing remains blocked until DEC-170 review. See the current [OpenAI API data controls](https://platform.openai.com/docs/guides/your-data) before onboarding.
 
 Evaluate OpenAI and Gemini candidates on:
 - Preservation of facts, names, numbers, citations, and meaning.
