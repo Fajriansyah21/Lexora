@@ -38,6 +38,7 @@ Folder ini menyimpan rencana produk, kebutuhan sistem, keputusan, status elisita
 | [Observation Log](OBSERVATION-LOG.md) | Pembelajaran workflow yang dapat digeneralisasi | Log observasi |
 | [Tooling and Skills](../docs/TOOLING-AND-SKILLS.md) | Peran tool dan evaluasi skill | Panduan tooling |
 | [Task plans](tasks/) | Brief dan rencana task multi-langkah | Catatan task |
+| [Privacy and Legal Readiness](../docs/PRIVACY-AND-LEGAL-READINESS.md) | Checklist UU PDP, PP TUNAS, consent, transfer, incident, dan DPIA | Launch gate |
 | [SRS Readiness Audit](tasks/2026-11-17-srs-readiness-audit.md) | Gerbang kelengkapan requirement sebelum website | Task aktif |
 
 ## Aturan agar tidak duplikatif
