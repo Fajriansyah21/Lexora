@@ -15,8 +15,8 @@ DOCX Metadata Cleaner ditunda ke fase setelah MVP. Arsitektur produk tetap modul
 SRS berstatus **Approved for System Design** melalui delegated project lead review pada 2026-11-17. Lihat [SRS Review Record](../docs/SRS-REVIEW-AND-APPROVAL-2026-11-17.md) dan [Requirements Elicitation Status](REQUIREMENTS-ELICITATION-STATUS.md).
 
 Posisi dokumentasi pada 2026-11-17:
-- 174 catatan keputusan: 172 Accepted dan 2 Superseded (DEC-018 dan DEC-019).
-- 275 baris kebutuhan fungsional/nonfungsional terstruktur dalam SRS, termasuk 124 requirement Humanizer, 17 requirement Detector, dan modul pendukung.
+- 176 catatan keputusan: 174 Accepted dan 2 Superseded (DEC-018 dan DEC-019).
+- 276 baris kebutuhan fungsional/nonfungsional terstruktur dalam SRS, termasuk 124 requirement Humanizer, 17 requirement Detector, dan modul pendukung.
 - Audit konsistensi requirement Humanizer telah diselesaikan pada 2026-11-17; gap desain teknis dan acceptance criteria tetap menjadi pekerjaan tahap berikutnya.
 - Audit requirement awal Detector selesai; metodologi model, threshold, dan acceptance criteria masih perlu divalidasi.
 - Audit requirement inti akun, dashboard, kredit, pembayaran, dukungan, notifikasi, Admin, dan operasional telah diperluas; nilai komersial, provider, permission matrix rinci, dan target operasional tetap terbuka.
