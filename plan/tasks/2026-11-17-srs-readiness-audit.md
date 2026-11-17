@@ -10,7 +10,7 @@
 
 - SRS berstatus Draft dan berisi 276 requirement fungsional/nonfungsional unik tanpa ID duplikat.
 - Distribusi FR: GEN 9, FILE 9, DET 17, HUM 124, ACC 21, CRED 25, PAY 9, SUP 8, NOT 8, OPS 12, ADM 13; ditambah 21 NFR.
-- Decision Log memuat DEC-001 sampai DEC-176: 174 Accepted dan 2 Superseded.
+- Decision Log memuat DEC-001 sampai DEC-189: 187 Accepted dan 2 Superseded.
 - Humanizer telah dielisitasi mendalam tetapi masih memiliki gap produk/teknis dan acceptance criteria.
 - Audit requirement Detector telah memperluas dan mengklarifikasi kebutuhan menjadi 17 requirement; metode model dan target kualitas masih memerlukan benchmark.
 - Akun, kredit, pembayaran, dukungan, Admin, dan operasional memiliki fondasi, tetapi aturan rinci belum lengkap.
