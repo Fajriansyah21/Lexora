@@ -21,6 +21,7 @@ Folder ini menyimpan rencana produk, kebutuhan sistem, keputusan, status elisita
 | [AI Humanizer Plan](AI-HUMANIZER-PLAN.md) | Alur konseptual, prinsip kualitas, risiko, dan isu terbuka Humanizer | Rencana fitur, merujuk ke SRS |
 | [AI Text Detector Plan](AI-TEXT-DETECTOR-PLAN.md) | Rencana produk dan riset model Detector | Rencana fitur/riset, merujuk ke SRS |
 | [Dataset and Model Research Plan](DATASET-AND-MODEL-RESEARCH-PLAN.md) | Prosedur dataset, sumber data, split, dan evaluasi model | Rencana riset |
+| [Humanizer Requirements Audit](../docs/HUMANIZER-REQUIREMENTS-AUDIT-2026-11-17.md) | Hasil audit 124 requirement Humanizer, koreksi konflik, dan gap desain | Audit tahap 1 selesai |
 | [Dataset Specification & Benchmark Protocol](../docs/DATASET-SPECIFICATION-BENCHMARK-v1.md) | Rancangan dataset dan protokol benchmark | Spesifikasi riset v1 |
 | [Annotation Guidelines](../docs/ANNOTATION-GUIDELINES-v1.md) | Definisi label dan prosedur anotasi | Pedoman pilot v1 |
 | [Database Schema](../docs/DATABASE-SCHEMA-v1.md) | Model logis data, provenance, dan lineage | Usulan skema logis |
