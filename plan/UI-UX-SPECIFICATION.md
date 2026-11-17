@@ -365,6 +365,8 @@ Target WCAG 2.2 AA:
 | Profile evaluation | “Sampel sudah terkumpul. Kami sedang memeriksa konsistensi gaya.” |
 | Sensitive Admin access | “Akses ini dibatasi pada dokumen dan tiket yang disetujui, lalu berakhir otomatis.” |
 
+W3C reference: [Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/).
+
 ## 17. Design skill usage
 
 Reviewed project-provided skill sources:
