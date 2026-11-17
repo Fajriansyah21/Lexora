@@ -30,7 +30,7 @@ Review mencakup:
 | Keputusan Accepted | 165 |
 | Keputusan Superseded | 2 |
 | Referensi requirement dari Decision Log yang diperiksa | 31, tidak ada yang hilang |
-| Skenario Gherkin rinci | 53 |
+| Skenario Gherkin rinci | 55 |
 | Tautan internal pada 14 dokumen utama yang diperiksa | Tidak ada tautan rusak |
 | ID requirement duplikat | 0 |
 | ID keputusan hilang/duplikat | 0 |
