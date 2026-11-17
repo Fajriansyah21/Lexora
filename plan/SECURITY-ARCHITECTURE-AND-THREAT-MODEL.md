@@ -40,7 +40,7 @@ All cross-boundary communication must authenticate the caller, validate the payl
 | Detector result | Overconfident or misleading classification | User harm/reputational harm | UNCERTAIN state, no uncalibrated percentage, limitations, benchmark gates |
 | Credit ledger | Race/double-spend/duplicate settlement | Financial loss | DB transaction, row locking, unique idempotency keys, append-only ledger, reconciliation |
 | Payment webhook | Forged/replayed/out-of-order callback | Fraudulent credit grant | Signature verification, amount/currency/order validation, replay protection, monotonic state transitions |
-| Rewarded ad | Forged/replayed reward callback | Fraudulent credit grant | Provider SSV, server nonce/session binding, login-only reward, idempotent grant |
+| Rewarded ad | Forged/replayed reward callback | Fraudulent credit grant | Provider web SSV signature/key verification, unique transaction ID, proven account correlation, login-only reward, idempotent grant |
 | Job queue | Duplicate job/retry race | Duplicate processing or charge | Job idempotency key, atomic state transition, retry classification, outbox |
 | Admin Panel | Privilege escalation or insider misuse | Data exposure/financial abuse | RBAC, Admin 2FA, reasoned actions, least privilege, audit, sensitive access grant |
 | Logs/telemetry | Raw text or secret leakage | Privacy breach | Structured metadata-only logs, redaction, secret scanning, access controls |
