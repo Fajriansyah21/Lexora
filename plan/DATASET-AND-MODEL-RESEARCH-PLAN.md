@@ -48,6 +48,24 @@ Urutan:
 
 Setiap pengujian harus mencakup kasus valid, invalid, boundary, dan adversarial. Hasil harus dapat diulang dan dicatat.
 
+### 4.1 Hasil uji prosedur sintetis (2026-11-17)
+
+Harness dan fixture telah ditambahkan:
+- `scripts/synthetic_dataset_checks.py`
+- `tests/synthetic_dataset/fixtures/valid_document.json`
+- `tests/synthetic_dataset/fixtures/invalid_documents.json`
+- `tests/synthetic_dataset/test_synthetic_pipeline.py`
+- `requirements-test.txt`
+
+Hasil pengujian lokal: **27/27 test cases lulus** menggunakan Python 3.13.5 dan jsonschema 4.26.0. Cakupan: JSON Schema (4), sentence offsets (5), editing history/lineage (8), deduplikasi (4), dan group-based split (6). Perintah reproduksi tersedia pada `tests/synthetic_dataset/README.md`.
+
+Batas interpretasi:
+- Pengujian ini memverifikasi prosedur dan perilaku fixture sintetis, bukan kualitas atau kebenaran label data nyata.
+- Near-duplicate threshold 0.88 hanya parameter pengujian, belum menjadi threshold produksi.
+- Split hash-bucket deterministik mendekati 70/15/15 berdasarkan jumlah grup, bukan jumlah dokumen atau distribusi kelas. Desain stratifikasi dan challenge holdout nyata tetap memerlukan keputusan riset.
+- Workflow GitHub Actions tersedia, tetapi belum ada hasil run CI yang dapat diverifikasi pada tanggal laporan.
+- Hasil ini tidak mengesahkan pilot, penggunaan dataset publik, consent, maupun training.
+
 ## 5. Pencegahan data leakage
 
 - Pasangan prompt-output, parafrasa, revisi, dan turunan dari sumber yang sama perlu dikelompokkan.
