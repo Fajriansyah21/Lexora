@@ -8,6 +8,7 @@ Status: executable harness for synthetic fixtures only.
 3. Immutable editing-version lineage, parent links, cycles, and timestamp order.
 4. Exact, normalized-exact, and near-duplicate candidate detection.
 5. Group-based split integrity for group IDs and paired records, including explicit challenge holdouts.
+6. Editing History Template to dataset export mapping, including per-version provenance evidence.
 
 ## Run from repository root
 
