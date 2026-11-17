@@ -15,10 +15,10 @@ DOCX Metadata Cleaner ditunda ke fase setelah MVP. Arsitektur produk tetap modul
 SRS tetap berstatus **Draft** dan elisitasi kebutuhan masih berlangsung. Rekap terperinci berada di [Requirements Elicitation Status](REQUIREMENTS-ELICITATION-STATUS.md).
 
 Posisi dokumentasi pada 2026-11-17:
-- 149 catatan keputusan: 147 Accepted dan 2 Superseded (DEC-018 dan DEC-019).
-- 195 baris kebutuhan fungsional dalam SRS, termasuk 124 requirement Humanizer dan 11 requirement Detector.
+- 155 catatan keputusan: 153 Accepted dan 2 Superseded (DEC-018 dan DEC-019).
+- 201 baris kebutuhan fungsional dalam SRS, termasuk 124 requirement Humanizer dan 17 requirement Detector.
 - Audit konsistensi requirement Humanizer telah diselesaikan pada 2026-11-17; gap desain teknis dan acceptance criteria tetap menjadi pekerjaan tahap berikutnya.
-- Detector baru memiliki fondasi kebutuhan; elisitasi belum menyeluruh.
+- Audit requirement awal Detector selesai; metodologi model, threshold, dan acceptance criteria masih perlu divalidasi.
 - Akun, dashboard, kredit, pembayaran, dukungan, Admin, dan operasional sudah memiliki fondasi, tetapi detail kebutuhan belum lengkap.
 
 SRS belum siap menjadi dasar System Design. Elisitasi seluruh modul, audit konflik/dependensi, dan acceptance criteria harus diselesaikan terlebih dahulu. Ringkasan status bukan pengganti SRS atau Decision Log.
@@ -81,7 +81,7 @@ Bukti dan keterbatasan: `tests/synthetic_dataset/README.md`, `docs/EDITING-HISTO
 Task aktif: [SRS Readiness Audit](tasks/2026-11-17-srs-readiness-audit.md). Gerbang dataset sintetis telah lulus; tahap website menunggu penutupan dan review kebutuhan produk.
 
 1. Lanjutkan ke elisitasi AI Text Detector; gap Humanizer yang tersisa dipindahkan ke System Design dan acceptance criteria sesuai audit.
-2. Lengkapi elisitasi AI Text Detector.
+2. Verifikasi laporan audit AI Text Detector dan lanjutkan ke modul pendukung.
 3. Lengkapi akun, dashboard, kredit, transaksi, pembayaran, Admin, dukungan, dan operasional.
 4. Audit konflik/dependensi dan susun acceptance criteria sebelum review akhir SRS.
 5. Setelah gerbang kebutuhan terpenuhi dan pemilik proyek meninjau SRS, susun user flow Detector dan Humanizer.
