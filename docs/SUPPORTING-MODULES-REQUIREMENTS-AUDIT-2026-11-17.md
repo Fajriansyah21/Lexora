@@ -25,7 +25,7 @@ SRS kini memiliki **255 requirement fungsional dan 21 requirement nonfungsional*
 | NFR | 13 |
 | **Total** | **265** |
 
-Decision Log memuat DEC-001 sampai DEC-176: 174 Accepted dan 2 Superseded.
+Decision Log memuat DEC-001 sampai DEC-189: 187 Accepted dan 2 Superseded.
 
 ## 2. Temuan dan perbaikan per modul
 
