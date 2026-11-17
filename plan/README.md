@@ -26,6 +26,7 @@ Folder ini menyimpan rencana produk, kebutuhan sistem, keputusan, status elisita
 | [User Flows](USER-FLOWS.md) | Alur Guest, Detector, Humanizer, pembayaran, dukungan, Admin, dan privasi | Baseline desain |
 | [System Design](SYSTEM-DESIGN.md) | Modular architecture, workers, services, boundaries, security | Baseline desain |
 | [Data Flow and Lifecycle](DATA-FLOW-AND-DATA-LIFECYCLE.md) | Klasifikasi, alur, retensi, deletion propagation | Baseline desain |
+| [Security Architecture and Threat Model](SECURITY-ARCHITECTURE-AND-THREAT-MODEL.md) | STRIDE threats, controls, and release gates | Baseline desain |
 | [API Contracts](API-CONTRACTS.md) | Endpoint, event, error, dan idempotency contracts | Konseptual |
 | [Technology Evaluation](TECHNOLOGY-EVALUATION.md) | Rekomendasi stack, trade-offs, provider gates | Evaluasi tahap 6 |
 | [UI/UX Specification](UI-UX-SPECIFICATION.md) | Design tokens, screen inventory, wireframes, accessibility | Handoff desain |
