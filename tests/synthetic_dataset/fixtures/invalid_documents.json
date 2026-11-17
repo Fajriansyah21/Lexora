@@ -1,0 +1,7 @@
+[
+  {"case_id":"missing_group_id","mutation":"remove_required_group_id"},
+  {"case_id":"unknown_top_level_property","mutation":"add_unrecognized_top_level_property"},
+  {"case_id":"invalid_document_label","mutation":"set_document_label_to_STYLE_GUESS"},
+  {"case_id":"empty_raw_text","mutation":"set_raw_text_to_empty_string"},
+  {"case_id":"malformed_sha256","mutation":"set_raw_text_sha256_to_not-a-hash"}
+]
