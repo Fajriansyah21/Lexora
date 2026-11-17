@@ -92,7 +92,7 @@ Requirements before activation:
 - The page must satisfy Google’s web rewarded-ad requirements and be mobile optimized.
 - Reward is opt-in and clearly described before the ad begins.
 - Reward must be non-cash, non-transferable, and usable only within Lexora.
-- Use server-side verification where supported; bind reward callback to a unique server-generated session/nonce and make grants idempotent.
+- Use web server-side verification; validate the callback signature/key ID and unique transaction ID. Do not assume user_id/custom_data fields are available on web callbacks. Test sandbox callback fields and obtain provider confirmation for account correlation; if secure user binding is unavailable, keep ads disabled.
 - MVP rewarded-ad credit is login-only. Guest uses a configurable non-ad trial grant tied to the Guest session. Reconsider Guest rewarded ads only after written/provider-level confirmation that web SSV can bind a Guest session securely and policy permits it.
 - Do not activate ads until account eligibility, policy, consent, inventory, and server-side verification have been reviewed.
 
