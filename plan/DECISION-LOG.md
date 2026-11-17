@@ -6,8 +6,8 @@ Dokumen ini mencatat keputusan produk dan teknis yang disahkan. Usulan dan hipot
 
 Dokumen ini adalah satu-satunya sumber riwayat keputusan yang disahkan. Rincian kebutuhan normatif berada di [System Requirements Analysis](SYSTEM-REQUIREMENTS-ANALYSIS.md); ringkasan kemajuan elisitasi berada di [Requirements Elicitation Status](REQUIREMENTS-ELICITATION-STATUS.md).
 
-- **Jumlah catatan:** 137 keputusan, DEC-001 sampai DEC-137.
-- **Status:** 142 `Accepted`, 2 `Superseded`.
+- **Jumlah catatan:** 149 keputusan, DEC-001 sampai DEC-149.
+- **Status:** 147 `Accepted`, 2 `Superseded`.
 - **Keputusan superseded:** DEC-018 dan DEC-019. Keduanya dipertahankan untuk jejak historis, tetapi bukan aturan aktif. Klarifikasi pada DEC-020 menetapkan bahwa batas minimum karakter tidak berlaku untuk input AI Text Detector; batas minimum berlaku pada sampel profil gaya Humanizer.
 
 ### Indeks tematik
@@ -310,7 +310,7 @@ Rentang tematik ini hanya alat navigasi. Setiap keputusan tetap dicatat satu kal
 - **Aturan penghitungan:** Seluruh karakter yang dimasukkan dihitung, termasuk spasi dan baris baru.
 - **Alasan:** Kecukupan panjang dibutuhkan untuk menilai dan membentuk representasi gaya penulisan personal. Detector tidak memerlukan batas minimum karakter yang ditetapkan sebagai aturan produk pada tahap ini.
 - **Dampak:** Persyaratan batas minimum dan pesan validasi dipindahkan dari AI Text Detector ke sampel profil gaya AI Humanizer. Penghitungan karakter sampel harus konsisten antara antarmuka dan backend.
-- **Belum diputuskan:** angka minimum sampel, perlakuan karakter khusus/Unicode, dan apakah kecukupan profil juga mempertimbangkan faktor selain jumlah karakter seperti keragaman dan konsistensi tulisan.
+- **Klarifikasi historis:** angka minimum per sampel ditetapkan kemudian menjadi 500 karakter pada DEC-089. Aturan penghitungan Unicode diselaraskan pada DEC-146. Kecukupan kumpulan sampel tetap mempertimbangkan keragaman dan konsistensi, dengan minimum tiga sampel pada DEC-149.
 - **Sumber:** Klarifikasi eksplisit pemilik proyek saat membahas validasi panjang input dan sampel gaya pada 2026-11-12.
 
 
@@ -1150,7 +1150,7 @@ Rentang tematik ini hanya alat navigasi. Setiap keputusan tetap dicatat satu kal
 - **Dampak:**
   - Pengguna tidak dapat membuat profil tambahan jika total profil telah mencapai enam.
   - Untuk membuat profil baru ketika batas tercapai, pengguna harus menghapus salah satu profil tambahan terlebih dahulu.
-  - Profil utama tidak dapat dihapus sebelum pengguna menetapkan profil utama pengganti.
+  - Profil utama tidak dapat dihapus sebelum pengguna menetapkan profil utama pengganti, kecuali jika profil utama merupakan satu-satunya profil pada akun sebagaimana diklarifikasi dalam DEC-139 dan DEC-140.
   - Aturan jumlah profil berlaku terpisah dari batas maksimal versi historis pada setiap profil.
 - **Sumber/bukti:** Persetujuan eksplisit pemilik proyek dalam sesi elisitasi kebutuhan 2026-11-13.
 ## DEC-091: Privasi dan penggunaan profil gaya personal
@@ -1918,3 +1918,53 @@ Rentang tematik ini hanya alat navigasi. Setiap keputusan tetap dicatat satu kal
   - Batas tahap eksekusi dan mekanisme pembatalan harus didefinisikan pada desain teknis.
 - **Sumber/bukti:** Persetujuan eksplisit pemilik proyek dalam sesi brainstorming audit Humanizer 2026-11-14.
 
+
+## DEC-145: Titik awal jeda rate limiting penghapusan seluruh riwayat ekspor
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Jeda minimal 30 detik pada FR-HUM-117 dimulai ketika transaksi penghapusan mencapai status akhir `Failed` dan rollback/penutupan transaksi telah selesai, menggunakan timestamp server. Jeda berlaku per akun lintas perangkat. Setiap kegagalan transaksi berikutnya memulai ulang jeda 30 detik. Penolakan validasi sebelum transaksi dimulai, pembatalan sebelum konfirmasi akhir, dan percobaan yang berhasil tidak memulai cooldown. Server menjadi sumber waktu otoritatif; antarmuka hanya menampilkan hitung mundur berdasarkan waktu server.
+- **Alasan:** Pengguna harus dapat mencoba kembali setelah sistem benar-benar menyelesaikan kegagalan, bukan berdasarkan waktu klik atau jam perangkat yang dapat berbeda. Penolakan sebelum operasi dimulai tidak menunjukkan kegagalan transaksi dan tidak perlu memblokir pengguna.
+- **Alternatif yang dipertimbangkan:** Memulai jeda sejak tombol konfirmasi ditekan; memakai jam perangkat; menghitung jeda dari awal permintaan.
+- **Dampak:** Backend harus menyimpan waktu kegagalan final per akun dan menegakkan cooldown secara atomik lintas perangkat. FR-HUM-117 diperjelas.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek kepada project lead untuk menyelesaikan tahap 1–6 secara mandiri pada 2026-11-17.
+
+## DEC-146: Konvensi penghitungan karakter Humanizer berbasis extended grapheme cluster
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Batas karakter Humanizer yang dinyatakan untuk teks dan nama sampel menggunakan extended grapheme clusters sesuai Unicode Standard Annex #29, Unicode 18.0.0. Penghitungan mencakup spasi dan baris baru. CRLF diperlakukan sebagai satu grapheme cluster. Teks sumber tidak dinormalisasi atau diubah hanya untuk keperluan penghitungan. Penghitung antarmuka dan validasi backend harus menggunakan versi aturan yang sama; backend menjadi sumber keputusan akhir.
+- **Alasan:** Satu karakter yang dilihat pengguna dapat terdiri dari beberapa Unicode code points, misalnya huruf dengan combining mark atau rangkaian emoji. Penghitungan code point dapat membuat penghitung UI berbeda dari persepsi pengguna.
+- **Alternatif yang dipertimbangkan:** Menghitung byte UTF-8 atau Unicode code points; menggunakan aturan penghitung yang berbeda pada browser dan server.
+- **Dampak:** FR-HUM-68, FR-HUM-69, FR-HUM-70, dan FR-HUM-85 mengikuti satu konvensi. Pengujian perlu mencakup combining marks, emoji ZWJ, flag sequences, spasi, LF, dan CRLF. Implementasi harus mem-pin versi segmentation data.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17; Unicode Standard Annex #29, Unicode 18.0.0: https://www.unicode.org/reports/tr29/tr29-49.html.
+
+## DEC-147: Penggantian dokumen Humanizer hanya setelah ekstraksi dokumen baru berhasil
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Ketika pengguna mengonfirmasi penggantian dokumen sebelum pemrosesan, sistem mengekstrak dokumen baru ke area sementara. Sistem baru mengganti konten editor setelah ekstraksi dan validasi berhasil. Jika ekstraksi gagal atau file tidak valid, konten editor lama, hasil ekstraksi lama, dan seluruh tambahan/editan manual tetap dipertahankan. Sistem menampilkan pesan kegagalan yang aman dan memungkinkan pengguna memilih file lain.
+- **Alasan:** Konfirmasi mengganti dokumen tidak boleh menyebabkan kehilangan teks lama ketika dokumen pengganti tidak dapat diproses.
+- **Alternatif yang dipertimbangkan:** Menghapus konten editor lama segera setelah konfirmasi, lalu menampilkan editor kosong jika ekstraksi gagal.
+- **Dampak:** Proses ekstraksi pengganti memerlukan staging sementara dan operasi swap yang atomik pada state editor. FR-HUM-38 diperjelas.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17.
+
+## DEC-148: Daftar gaya bawaan AI Humanizer untuk MVP
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** MVP menyediakan enam gaya bawaan: **Akademik, Formal, Profesional, Santai, Informatif, dan Kreatif**. Pengguna memilih satu gaya per pekerjaan. Pengguna tidak memilih intensitas perubahan pada MVP. Definisi gaya harus membatasi perubahan pada aspek register, diksi, struktur, dan ritme; gaya tidak boleh menjadi alasan untuk mengubah fakta, angka, nama, kutipan, atau maksud.
+- **Alasan:** Enam gaya ini mempertahankan arah yang telah dibahas sebelumnya dan memberi cakupan penggunaan akademik, pekerjaan, serta umum tanpa menambah kompleksitas pilihan intensitas.
+- **Alternatif yang dipertimbangkan:** Menyediakan satu gaya saja; menambahkan banyak gaya yang tumpang tindih; menyediakan slider intensitas sejak MVP.
+- **Dampak:** FR-HUM-01 menjadi spesifik. AI Humanizer Plan perlu mendefinisikan perilaku dan contoh hasil tiap gaya agar label tidak sekadar kosmetik.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17.
+
+## DEC-149: Minimum tiga sampel layak untuk membentuk profil gaya personal
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision; pilot-calibration required)
+- **Keputusan:** Profil gaya personal memerlukan minimal **tiga entri sampel yang memenuhi batas 500 extended grapheme clusters per entri** sebelum profil dapat dinyatakan siap digunakan. Maksimal sampel tetap 20 per profil. Tiga sampel adalah hard gate minimum, bukan jaminan kecukupan: sistem tetap mengevaluasi konsistensi dan keberagaman keseluruhan kumpulan secara adaptif dan dapat meminta sampel tambahan. Konten sampel yang identik setelah normalisasi perbandingan tidak dihitung sebagai sampel independen kedua. Near-duplicate tidak otomatis dikeluarkan; kandidat kemiripan hanya menjadi sinyal evaluasi.
+- **Alasan:** Satu sampel panjang tidak cukup untuk menunjukkan rentang gaya penulis. Tiga sampel memberi titik awal yang lebih baik untuk membandingkan pola lintas teks, sementara evaluasi adaptif mencegah angka minimum dianggap sebagai bukti kecukupan.
+- **Alternatif yang dipertimbangkan:** Mengizinkan satu sampel; mewajibkan jumlah yang lebih besar; menggunakan jumlah karakter total tanpa batas per entri.
+- **Dampak:** FR-HUM-04 dan FR-HUM-15 diperjelas. Status profil hanya menjadi usable setelah hard gate dan evaluasi adaptif lulus. Ambang evaluasi kualitas, false rejection, dan kebutuhan tambahan sampel harus dikalibrasi menggunakan pilot yang ditinjau sebelum dipakai untuk keputusan produksi.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17. Keputusan jumlah minimum adalah baseline produk dan belum merupakan hasil validasi empiris.
