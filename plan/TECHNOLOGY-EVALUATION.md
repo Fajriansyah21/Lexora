@@ -74,12 +74,15 @@ FastAPI is recommended for the Detector because scikit-learn, PyTorch, Transform
 - Hosted checkout can be shown as a popup or redirect.
 - One integration supports the payment methods enabled for the merchant.
 - Snap documentation states there is no monthly Snap fee.
+- Public standard pricing snapshot checked 2026-11-17: bank transfer IDR 4,000; QRIS 0.7%; GoPay 2%; ShopeePay 2%; DANA 1.5%; OVO 1.5%; cards 2.9% + IDR 2,000.
+- Midtrans explicitly notes that gaming and digital-product companies are subject to different rates. Lexora sells digital credits, so these public standard rates must not be used as the final unit-economics assumption.
 - Payment status must still be verified server-side; browser redirect is not proof of payment.
-- Standard public pricing is not necessarily the final merchant rate for digital products. Obtain a written quote and verify supported methods, settlement, refund, and webhook behavior before activation.
+- Obtain a written merchant quote and verify supported methods, settlement, refund, and webhook behavior before activation.
 
 ### Xendit — alternative
 - Strong API/webhook model and broad Indonesian payment coverage.
-- Public pricing lists QRIS and Virtual Account fees, but exact effective cost depends on merchant category and terms.
+- Public pricing snapshot checked 2026-11-17: QRIS 0.70% plus IDR 4,000 processing fee; Indonesian Virtual Account methods commonly show IDR 9,000 plus IDR 4,000 processing fee.
+- Confirm the applicable merchant category, VAT, and final commercial terms; do not compare public list prices as a substitute for a merchant quote.
 - Keep the payment adapter provider-neutral so switching does not change credit-ledger logic.
 
 **Decision:** Implement the payment domain against an internal provider interface. Midtrans Snap is the first integration candidate, subject to merchant onboarding and fee confirmation. Do not hardcode provider-specific status or fee assumptions in credit logic.
