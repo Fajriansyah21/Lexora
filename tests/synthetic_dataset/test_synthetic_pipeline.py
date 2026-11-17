@@ -27,6 +27,33 @@ class SchemaTests(unittest.TestCase):
                 elif m == "set_raw_text_to_empty_string": r["raw_text"] = ""
                 elif m == "set_raw_text_sha256_to_not-a-hash": r["raw_text_sha256"] = "not-a-hash"
                 self.assertTrue(validate_record_schema(r, self.schema))
+    def test_nonempty_editing_history_schema(self):
+        r = record()
+        r["editing_history"] = [{
+            "version_id": "v1", "parent_version_id": None, "actor_type": "AI",
+            "action": "GENERATE", "text_sha256": sha("draft"),
+            "provenance_evidence": [{
+                "evidence_type": "generation_log", "reference": "synthetic-log",
+                "review_status": "PENDING_REVIEW"
+            }],
+            "reviewer_note": None
+        }]
+        self.assertEqual(validate_record_schema(r, self.schema), [])
+
+    def test_editing_template_maps_to_export_record(self):
+        template = json.loads((ROOT / "templates" / "editing-history.template.json").read_text(encoding="utf-8"))
+        r = record()
+        r["document_id"], r["group_id"], r["pair_id"] = template["document_id"], template["group_id"], template["pair_id"]
+        r["editing_history"] = copy.deepcopy(template["versions"])
+        r["editing_history"][0]["created_at_utc"] = "2026-01-01T00:00:00Z"
+        r["editing_history"][0]["prompt_sha256"] = sha("synthetic-prompt")
+        r["editing_history"][0]["text_sha256"] = sha("synthetic-version")
+        r["source"]["usage_review_id"] = template["consent_or_license_review_id"]
+        r["provenance"]["history_completeness"] = template["history_completeness"]
+        r["provenance"]["history_notes"] = template["history_notes"]
+        self.assertEqual(validate_record_schema(r, self.schema), [])
+        self.assertEqual(validate_editing_history(r["editing_history"]), [])
+
     def test_nested_unknown_property(self):
         r = record(); r["source"]["unapproved_field"] = "nope"
         self.assertTrue(validate_record_schema(r, self.schema))
