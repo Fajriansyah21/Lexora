@@ -10,8 +10,8 @@
 
 Berdasarkan pemeriksaan dokumen GitHub pada 2026-11-17:
 
-- **144** catatan keputusan, DEC-001 sampai DEC-144.
-- **142** keputusan berstatus `Accepted`.
+- **149** catatan keputusan, DEC-001 sampai DEC-149.
+- **147** keputusan berstatus `Accepted`.
 - **2** keputusan berstatus `Superseded`, yaitu DEC-018 dan DEC-019. Keduanya dipertahankan sebagai jejak historis, bukan aturan aktif.
 - **195** baris kebutuhan fungsional pada SRS.
 - **124** requirement Humanizer, FR-HUM-01 sampai FR-HUM-124.
@@ -68,6 +68,8 @@ Pokok pembahasan:
 **Status:** Fondasi kebutuhan sudah ada, tetapi elisitasi Detector belum menyeluruh. Kebutuhan tentang penjelasan, tingkat keyakinan, batasan bahasa/domain, hasil laporan, perilaku kasus sulit, serta kondisi gagal masih perlu diaudit dan dilengkapi.
 
 ### 2.3 Profil gaya personal Humanizer
+
+Keputusan terbaru untuk gaya bawaan, minimum tiga sampel, dan konvensi hitung karakter tercatat pada DEC-146, DEC-148, dan DEC-149. Audit konsistensi Humanizer selesai pada 2026-11-17; rincian koreksi dan gap desain berada di [Humanizer Requirements Audit](../docs/HUMANIZER-REQUIREMENTS-AUDIT-2026-11-17.md).
 
 **Keputusan terkait:** DEC-020 sampai DEC-051.
 
