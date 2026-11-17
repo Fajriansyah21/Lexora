@@ -11,6 +11,7 @@ Platform untuk membantu pengguna menganalisis dan mengolah tulisan melalui **AI 
 - [API contracts](plan/API-CONTRACTS.md)
 - [Technology evaluation](plan/TECHNOLOGY-EVALUATION.md)
 - [UI/UX specification](plan/UI-UX-SPECIFICATION.md)
+- [Google Stitch design prompts](plan/STITCH-DESIGN-PROMPTS.md)
 - [Antigravity skill setup](docs/ANTIGRAVITY-SKILL-SETUP.md)
 
 - [Acceptance criteria baseline](plan/ACCEPTANCE-CRITERIA.md)
