@@ -22,12 +22,12 @@ Review mencakup:
 | Pemeriksaan | Hasil |
 |---|---:|
 | Requirement fungsional/nonfungsional | 276 ID unik |
-| Requirement fungsional | 252 |
-| Requirement nonfungsional | 13 |
+| Requirement fungsional | 255 |
+| Requirement nonfungsional | 21 |
 | Requirement aktif dengan acceptance criteria | 275 |
 | Requirement superseded yang dikecualikan dari AC aktif | 1 (FR-HUM-14, digabung ke FR-HUM-70) |
-| Decision Log | 176 ID berurutan, DEC-001 sampai DEC-167 |
-| Keputusan Accepted | 165 |
+| Decision Log | 189 ID berurutan, DEC-001 sampai DEC-189 |
+| Keputusan Accepted | 187 |
 | Keputusan Superseded | 2 |
 | Referensi requirement dari Decision Log yang diperiksa | 22, tidak ada yang hilang |
 | Skenario Gherkin rinci | 55 |
