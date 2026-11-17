@@ -145,3 +145,8 @@ Jalankan perintah tersebut dari root workspace Lexora hanya saat tahapnya releva
 - Jangan izinkan skill membaca atau mengirim data sensitif ke layanan eksternal tanpa kebutuhan dan persetujuan.
 - Pin versi/commit untuk dependency yang memengaruhi hasil kerja bila stabilitas reproduksibilitas dibutuhkan.
 - Setelah instalasi, periksa file tree, diff, dan cara menonaktifkan/menghapus integrasi.
+
+
+## Antigravity Skill Setup
+
+The project-reviewed UI/UX and workflow skills, installation commands, suitability decisions, and local verification checklist are documented in [Antigravity Skill Setup](ANTIGRAVITY-SKILL-SETUP.md). UI UX Pro Max is recommended for design-system exploration; Impeccable is recommended for critique/audit once UI code exists; Huashu Design is not part of the core SaaS UI workflow.
