@@ -26,6 +26,8 @@ MVP berfokus pada AI Text Detector dan AI Humanizer. DOCX Metadata Cleaner ditun
 
 ## Riset dataset
 
+- [Privacy and legal readiness checklist](docs/PRIVACY-AND-LEGAL-READINESS.md)
+
 - [Supporting modules requirements audit](docs/SUPPORTING-MODULES-REQUIREMENTS-AUDIT-2026-11-17.md)
 
 - [AI Text Detector requirements audit](docs/AI-TEXT-DETECTOR-REQUIREMENTS-AUDIT-2026-11-17.md)
