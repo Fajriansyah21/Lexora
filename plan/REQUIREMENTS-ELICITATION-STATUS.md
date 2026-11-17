@@ -2,7 +2,7 @@
 
 - **Produk:** Lexora
 - **Tanggal rekap:** 2026-11-17
-- **Status keseluruhan:** Elisitasi kebutuhan masih berlangsung
+- **Status keseluruhan:** Requirement baseline selesai; tahap 6 System Design dan UI/UX sedang difinalisasi
 - **Cakupan MVP:** AI Text Detector dan AI Humanizer
 - **Sumber utama:** [Decision Log](DECISION-LOG.md) dan [System Requirements Analysis](SYSTEM-REQUIREMENTS-ANALYSIS.md)
 
@@ -10,10 +10,10 @@
 
 Berdasarkan pemeriksaan dokumen GitHub pada 2026-11-17:
 
-- **149** catatan keputusan, DEC-001 sampai DEC-149.
-- **147** keputusan berstatus `Accepted`.
+- **189** catatan keputusan, DEC-001 sampai DEC-189.
+- **187** keputusan berstatus `Accepted`.
 - **2** keputusan berstatus `Superseded`, yaitu DEC-018 dan DEC-019. Keduanya dipertahankan sebagai jejak historis, bukan aturan aktif.
-- **265** baris kebutuhan fungsional dan nonfungsional terstruktur pada SRS.
+- **276** baris kebutuhan fungsional dan nonfungsional terstruktur pada SRS (255 FR + 21 NFR).
 - **124** requirement Humanizer, FR-HUM-01 sampai FR-HUM-124.
 - **17** requirement Detector, FR-DET-01 sampai FR-DET-17.
 
@@ -23,16 +23,17 @@ Rincian jumlah requirement lain dalam SRS:
 |---|---:|
 | Umum (FR-GEN) | 9 |
 | File dan ekstraksi (FR-FILE) | 9 |
-| AI Text Detector (FR-DET) | 11 |
+| AI Text Detector (FR-DET) | 17 |
 | AI Humanizer (FR-HUM) | 124 |
-| Akun (FR-ACC) | 15 |
-| Kredit (FR-CRED) | 16 |
-| Dukungan (FR-SUP) | 3 |
-| Notifikasi (FR-NOT) | 3 |
-| Operasional (FR-OPS) | 5 |
-| **Total** | **195** |
+| Akun (FR-ACC) | 21 |
+| Kredit (FR-CRED) | 25 |
+| Dukungan (FR-SUP) | 8 |
+| Notifikasi (FR-NOT) | 8 |
+| Operasional (FR-OPS) | 12 |
+| Admin (FR-ADM) | 13 |
+| **Total FR** | **255** |
 
-Jumlah baris requirement bukan ukuran kelengkapan produk. Requirement masih perlu ditinjau, diuji konsistensinya, dan diberi acceptance criteria.
+Jumlah requirement bukan ukuran kesiapan implementasi. Semua requirement telah dipetakan ke 275 acceptance criteria aktif; benchmark, target performa/availability, provider, harga, dan legal/privacy checks tetap menjadi gerbang desain/produksi.
 
 ## 2. Materi yang sudah dibahas
 
@@ -53,7 +54,7 @@ Pokok pembahasan:
 
 ### 2.2 AI Text Detector
 
-**Keputusan terkait:** DEC-003 dan DEC-015 sampai DEC-019.
+**Keputusan terkait:** DEC-003, DEC-015 sampai DEC-020, dan DEC-150 sampai DEC-155.
 
 Pokok pembahasan:
 - Ringkasan analisis keseluruhan, analisis per kalimat, dan penjelasan.
@@ -65,7 +66,7 @@ Pokok pembahasan:
 
 **Klarifikasi penting:** DEC-018 dan DEC-019 berstatus Superseded. DEC-020 mengklarifikasi bahwa batas minimum karakter berlaku untuk setiap sampel profil gaya Humanizer, bukan untuk input Detector.
 
-**Status:** Audit requirement Detector tahap 2 selesai pada 2026-11-17. Laporan audit: [AI Text Detector Requirements Audit](../docs/AI-TEXT-DETECTOR-REQUIREMENTS-AUDIT-2026-11-17.md). Hasilnya mencakup batas input 20.000 extended grapheme clusters, tidak ada hard minimum, perilaku UNCERTAIN, definisi MIXED, tidak ada skor numerik pada MVP, penjelasan yang dapat ditelusuri, dan ekspor laporan. Metode model, threshold, agregasi, target false-positive, serta acceptance criteria masih memerlukan benchmark dan desain.
+**Status:** Audit requirement Detector tahap 2 selesai pada 2026-11-17. Laporan audit: [AI Text Detector Requirements Audit](../docs/AI-TEXT-DETECTOR-REQUIREMENTS-AUDIT-2026-11-17.md). Hasilnya mencakup batas input 20.000 extended grapheme clusters, tidak ada hard minimum, perilaku UNCERTAIN, definisi MIXED, tidak ada skor numerik pada MVP, penjelasan yang dapat ditelusuri, dan ekspor laporan. Metode model, threshold, agregasi, target false-positive, dan benchmark tetap memerlukan desain/eksperimen; acceptance criteria baseline sudah dipetakan.
 
 ### 2.3 Profil gaya personal Humanizer
 
@@ -175,14 +176,14 @@ Audit modul pendukung selesai pada 2026-11-17. Lihat [Supporting Modules Require
 | Area | Status saat ini | Catatan |
 |---|---|---|
 | Fondasi produk | Sudah dibahas | Cakupan MVP dan aturan dasar sudah tercatat |
-| Humanizer | Elisitasi mendalam, belum ditutup | 124 FR; masih ada isu produk/teknis dan acceptance criteria |
-| Detector | Audit requirement awal selesai | 17 FR; definisi label, panjang input, abstention, penjelasan, ekspor, dan batas bahasa telah diperjelas; metodologi model dan acceptance criteria masih terbuka |
-| Akun dan dashboard | Requirement inti dilengkapi | 19 FR; account linking, session revocation, email change, dan security notification telah ditetapkan; UI dan detail token masih perlu desain |
-| Kredit dan pembayaran | Requirement inti dilengkapi | 24 FR-CRED dan 9 FR-PAY; ledger, reserve/settlement, expiry, webhook, idempotency, dan rekonsiliasi ditetapkan; tarif/provider tetap terbuka |
+| Humanizer | Audit requirement selesai | 124 FR; gap yang tersisa berupa provider/model, token/chunking, benchmark kualitas, retensi teknis, dan validasi operasional |
+| Detector | Audit requirement selesai | 17 FR; definisi label, input 20k, abstention, bahasa, penjelasan, ekspor, dan batas klaim telah ditetapkan; metodologi model, threshold, dan benchmark masih terbuka |
+| Akun dan dashboard | Requirement inti dilengkapi | 21 FR; account linking, session revocation, email change, dan security notification telah ditetapkan; UI dan detail token masih perlu desain |
+| Kredit dan pembayaran | Requirement inti dilengkapi | 25 FR-CRED dan 9 FR-PAY; ledger, reserve/settlement, expiry, webhook, idempotency, dan rekonsiliasi ditetapkan; tarif/provider tetap terbuka |
 | Dukungan dan notifikasi | Requirement inti dilengkapi | 8 FR-SUP dan 8 FR-NOT; status tiket, target respons, preferensi, opt-in promosi, dan retry telah ditetapkan |
 | Admin dan operasional | Requirement inti dilengkapi | 13 FR-ADM dan 12 FR-OPS; RBAC, akses teks terbatas, job cancellation, retry, dan recovery telah ditetapkan; detail implementasi tetap perlu System Design |
-| Audit konsistensi | Selesai 2026-11-17 | 265 ID unik, 22 referensi requirement dari Decision Log tervalidasi, tidak ada tautan internal rusak pada dokumen utama; lihat SRS Review Record |
-| Acceptance criteria | Baseline tersusun | 275 requirement aktif telah dipetakan ke acceptance statement dan edge/negative test; 55 skenario Gherkin rinci tersedia. Target numerik performa/availability dan test execution masih pending |
+| Audit konsistensi | Selesai 2026-11-17 | 276 ID unik, 22 referensi requirement dari Decision Log tervalidasi, tidak ada tautan internal rusak pada dokumen utama; lihat SRS Review Record |
+| Acceptance criteria | Baseline tersusun | 275 requirement aktif dipetakan ke acceptance statement dan edge/negative test; 55 skenario Gherkin rinci tersedia. Test execution menunggu implementasi; target numerik performa/availability menunggu benchmark |
 | User Flow/System Design/UI-UX | Tahap 6 aktif | SRS telah disahkan sebagai baseline desain; implementasi website tetap di luar cakupan |
 
 ## 4. Hal yang masih terbuka
@@ -255,22 +256,23 @@ Daftar lengkap dan statusnya mengacu pada bagian 8 SRS.
 
 ## 7. Urutan pekerjaan berikutnya
 
-1. Selesaikan audit konsistensi lintas modul, requirement, keputusan, dan status dokumentasi.
-2. Finalisasi acceptance criteria, terutama target terukur yang bergantung pada benchmark/infrastruktur.
-3. Review dan sahkan SRS untuk System Design melalui mandat delegasi project lead.
-4. Susun user flow lengkap untuk Guest, akun, Detector, Humanizer, kredit, pembayaran, dukungan, dan Admin.
-5. Susun modular architecture, system flow, data flow, data lifecycle, API/event contracts, dan threat model.
-6. Evaluasi teknologi, provider AI, payment gateway, iklan, storage, queue, email, dan deployment berdasarkan sumber resmi serta trade-off.
-7. Susun UI/UX flow, wireframe, design system, dan spesifikasi interaksi untuk MVP.
-8. Lakukan review akhir tahap 1–6 dan serahkan paket spesifikasi; implementasi website tetap di luar cakupan.
+Tahap 1–5 selesai dan SRS telah disahkan untuk System Design. Tahap 6 memiliki baseline dokumen berikut:
+1. [User Flows](USER-FLOWS.md)
+2. [System Design](SYSTEM-DESIGN.md)
+3. [Data Flow and Data Lifecycle](DATA-FLOW-AND-DATA-LIFECYCLE.md)
+4. [API Contracts](API-CONTRACTS.md)
+5. [Technology Evaluation](TECHNOLOGY-EVALUATION.md)
+6. [Security Architecture and Threat Model](SECURITY-ARCHITECTURE-AND-THREAT-MODEL.md)
+7. [UI/UX Specification](UI-UX-SPECIFICATION.md) dan [Stitch Design Prompts](STITCH-DESIGN-PROMPTS.md)
+
+Sisa pekerjaan tahap 6 adalah final handoff review, penetapan nilai operasional yang bergantung pada benchmark, dan visual exploration di Google Stitch/Antigravity. Tahap 7 (pembangunan website) berada di luar mandat.
 
 ## 8. Batas tahap
 
-Rekap ini tidak mengesahkan:
-- Pemilihan framework, database, provider AI, payment gateway, atau deployment.
-- Wireframe atau desain visual.
-- System Design final.
-- Implementasi aplikasi.
-- Klaim bahwa fitur sudah dibangun atau diuji.
+Dokumen desain tahap 6 tidak mengesahkan:
+- Aktivasi provider AI, payment gateway, rewarded ads, email, atau storage sebelum kontrak, policy, dan privacy review.
+- Harga final, unit economics, model Detector, threshold, atau target performa sebelum benchmark.
+- Pilot dataset nyata atau training sebelum gerbang riset dataset dan legal/privacy terpenuhi.
+- Implementasi aplikasi/website (tahap 7), yang berada di luar mandat saat ini.
 
-Roadmap dan prioritas riset dataset tetap mengikuti [Active Roadmap](ACTIVE-ROADMAP.md) serta instruksi proyek di `AGENTS.md`.
+Status implementasi seluruh fitur tetap **belum dimulai dan belum diverifikasi**. Lihat [Active Roadmap](ACTIVE-ROADMAP.md), [SRS Review Record](../docs/SRS-REVIEW-AND-APPROVAL-2026-11-17.md), dan [Privacy and Legal Readiness](../docs/PRIVACY-AND-LEGAL-READINESS.md).
