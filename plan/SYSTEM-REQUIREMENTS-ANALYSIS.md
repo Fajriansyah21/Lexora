@@ -290,6 +290,8 @@ Gaya bawaan MVP ditetapkan menjadi enam pilihan: Akademik, Formal, Profesional, 
 | FR-ACC-17 | Jika alamat email yang sama digunakan oleh metode email/password dan Google Sign-In, sistem tidak menggabungkan akun otomatis. Pengaitan memerlukan autentikasi dan bukti kendali atas akun yang sudah ada serta konfirmasi metode kedua. | Disepakati; DEC-165 |
 | FR-ACC-18 | Perubahan alamat email memerlukan autentikasi ulang, verifikasi alamat email baru, dan notifikasi keamanan ke alamat lama. Email baru tidak aktif sebagai identitas akun sebelum verifikasi berhasil. | Disepakati sebagai kontrol keamanan |
 | FR-ACC-19 | Sistem mengirim notifikasi keamanan untuk peristiwa penting seperti login baru, perubahan password, perubahan email, dan pencabutan sesi. Notifikasi keamanan tidak dapat dimatikan sepenuhnya oleh preferensi promosi. | Disepakati; DEC-162 |
+| FR-ACC-20 | Pengguna dapat mengajukan permintaan privasi untuk akses/salinan data, koreksi, penghapusan, atau keberatan/penarikan consent yang berlaku. Sistem memberikan nomor permintaan, status, langkah verifikasi yang proporsional, dan riwayat penyelesaian. | Disepakati; DEC-172 |
+| FR-ACC-21 | Pengguna dapat melihat dan mengubah consent opsional secara terpisah, termasuk promosi dan penggunaan data untuk riset/training. Penarikan consent menghentikan penggunaan berikutnya dan memicu penanganan data turunan sesuai kebijakan yang dijelaskan. | Disepakati; DEC-168 dan DEC-169 |
 
 ### 4.6 Kredit, iklan, dan pembayaran
 
@@ -490,6 +492,14 @@ Target uptime/SLA belum ditentukan. MVP harus memiliki deteksi gangguan, pencata
 | NFR-PERF-01 | Target latency, throughput, concurrency, dan batas antrean ditetapkan melalui benchmark sebelum peluncuran; tidak boleh diklaim sebelum diukur. | Wajib; angka target menunggu benchmark |
 | NFR-AVL-01 | Target availability/SLO dan prosedur maintenance diumumkan sebelum peluncuran; tidak boleh menjanjikan uptime sebelum infrastruktur dan provider dipilih. | Wajib; angka target menunggu desain operasional |
 | NFR-I18N-01 | Antarmuka mendukung Bahasa Indonesia dan Bahasa Inggris; format angka, tanggal, dan pesan validasi konsisten dengan bahasa yang dipilih. | Wajib |
+| NFR-SEC-06 | Sistem memiliki incident response plan untuk identifikasi, pembatasan, investigasi, pemulihan, dokumentasi, dan pemberitahuan insiden. Kegagalan pelindungan data pribadi yang memenuhi kriteria pemberitahuan ditangani sesuai tenggat hukum, termasuk batas 3 x 24 jam yang berlaku. | Wajib; DEC-171; validasi legal sebelum produksi |
+| NFR-PRIV-03 | Privacy Notice menjelaskan tujuan, dasar pemrosesan, kategori data, penerima/provider, lokasi pemrosesan yang diketahui, retensi, hak pengguna, dan kontak pengendali. Versi notice dan consent yang relevan dicatat dengan waktu dan konteks. | Wajib; DEC-169 |
+| NFR-PRIV-04 | Teks pengguna, dokumen unggahan, sampel profil, dan hasil tidak digunakan untuk training/fine-tuning/evaluasi model secara default. Penggunaan tambahan memerlukan opt-in terpisah, spesifik, dapat ditarik, dan tidak menjadi syarat layanan. | Wajib; DEC-168 |
+| NFR-PRIV-05 | Sistem memelihara inventaris processor/subprocessor, tujuan, kategori data, lokasi pemrosesan, retensi, kontrol keamanan, dan perjanjian pemrosesan yang relevan. | Wajib; DEC-170 |
+| NFR-PRIV-06 | Transfer data pribadi ke luar Indonesia hanya dilakukan setelah dasar transfer, perlindungan, kontrak, dan kewajiban pemberitahuan yang berlaku diverifikasi dan didokumentasikan. | Wajib; DEC-170; legal review sebelum produksi |
+| NFR-PRIV-07 | Sistem menyediakan proses operasional untuk hak subjek data yang berlaku, termasuk akses, koreksi, penghapusan, penarikan consent, dan keberatan atas pemrosesan/keputusan otomatis. Permintaan memiliki ID, status, verifikasi, tenggat, dan audit trail. | Wajib; DEC-172 |
+| NFR-PRIV-08 | Sebelum peluncuran di Indonesia, dilakukan self-assessment risiko produk/layanan/fitur terhadap anak dan penetapan klasifikasi usia serta mitigasi sesuai ketentuan yang berlaku. | Wajib; DEC-173; legal classification pending |
+| NFR-PRIV-09 | DPIA dilakukan sebelum produksi jika pemrosesan memenuhi kriteria risiko tinggi atau diwajibkan hukum, dan diperbarui ketika perubahan fitur/model/provider meningkatkan risiko. | Wajib; DEC-174 |
 
 ## 6. Aturan bisnis utama
 
