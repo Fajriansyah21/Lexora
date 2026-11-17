@@ -170,6 +170,8 @@ Pokok pembahasan:
 
 ## 3. Status per area
 
+Audit modul pendukung selesai pada 2026-11-17. Lihat [Supporting Modules Requirements Audit](../docs/SUPPORTING-MODULES-REQUIREMENTS-AUDIT-2026-11-17.md) untuk koreksi dan keputusan akun, kredit, pembayaran, dukungan, notifikasi, Admin, dan operasional.
+
 | Area | Status saat ini | Catatan |
 |---|---|---|
 | Fondasi produk | Sudah dibahas | Cakupan MVP dan aturan dasar sudah tercatat |
