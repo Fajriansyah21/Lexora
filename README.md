@@ -27,5 +27,6 @@ MVP berfokus pada AI Text Detector dan AI Humanizer. DOCX Metadata Cleaner ditun
 - [Annotation guidelines](docs/ANNOTATION-GUIDELINES-v1.md)
 - [Dataset JSON Schema](schemas/dataset-records-v1.schema.json)
 - [Editing history template](templates/editing-history.template.json)
+- [Editing history export mapping](docs/EDITING-HISTORY-MAPPING-v1.md)
 - [Synthetic dataset test harness](tests/synthetic_dataset/README.md)
 - [Latest synthetic test report](results/synthetic-dataset-test-2026-11-17.md)
