@@ -13,9 +13,9 @@ Berdasarkan pemeriksaan dokumen GitHub pada 2026-11-17:
 - **149** catatan keputusan, DEC-001 sampai DEC-149.
 - **147** keputusan berstatus `Accepted`.
 - **2** keputusan berstatus `Superseded`, yaitu DEC-018 dan DEC-019. Keduanya dipertahankan sebagai jejak historis, bukan aturan aktif.
-- **195** baris kebutuhan fungsional pada SRS.
+- **201** baris kebutuhan fungsional pada SRS.
 - **124** requirement Humanizer, FR-HUM-01 sampai FR-HUM-124.
-- **11** requirement Detector, FR-DET-01 sampai FR-DET-11.
+- **17** requirement Detector, FR-DET-01 sampai FR-DET-17.
 
 Rincian jumlah requirement lain dalam SRS:
 
@@ -65,7 +65,7 @@ Pokok pembahasan:
 
 **Klarifikasi penting:** DEC-018 dan DEC-019 berstatus Superseded. DEC-020 mengklarifikasi bahwa batas minimum karakter berlaku untuk setiap sampel profil gaya Humanizer, bukan untuk input Detector.
 
-**Status:** Fondasi kebutuhan sudah ada, tetapi elisitasi Detector belum menyeluruh. Kebutuhan tentang penjelasan, tingkat keyakinan, batasan bahasa/domain, hasil laporan, perilaku kasus sulit, serta kondisi gagal masih perlu diaudit dan dilengkapi.
+**Status:** Audit requirement Detector tahap 2 selesai pada 2026-11-17. Hasilnya mencakup batas input 20.000 extended grapheme clusters, tidak ada hard minimum, perilaku UNCERTAIN, definisi MIXED, tidak ada skor numerik pada MVP, penjelasan yang dapat ditelusuri, dan ekspor laporan. Metode model, threshold, agregasi, target false-positive, serta acceptance criteria masih memerlukan benchmark dan desain.
 
 ### 2.3 Profil gaya personal Humanizer
 
@@ -174,7 +174,7 @@ Pokok pembahasan:
 |---|---|---|
 | Fondasi produk | Sudah dibahas | Cakupan MVP dan aturan dasar sudah tercatat |
 | Humanizer | Elisitasi mendalam, belum ditutup | 124 FR; masih ada isu produk/teknis dan acceptance criteria |
-| Detector | Baru sebagian | 11 FR; perlu sesi elisitasi lanjutan |
+| Detector | Audit requirement awal selesai | 17 FR; definisi label, panjang input, abstention, penjelasan, ekspor, dan batas bahasa telah diperjelas; metodologi model dan acceptance criteria masih terbuka |
 | Akun dan dashboard | Fondasi tercatat | 15 FR; detail alur dan kondisi tepi perlu dilengkapi |
 | Kredit dan pembayaran | Fondasi tercatat | 16 FR; aturan ekonomi dan operasional belum final |
 | Dukungan dan notifikasi | Fondasi tercatat | Detail SLA, alur tiket, dan kondisi gagal perlu dilengkapi |
