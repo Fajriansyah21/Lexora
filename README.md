@@ -4,6 +4,14 @@ Platform untuk membantu pengguna menganalisis dan mengolah tulisan melalui **AI 
 
 ## Dokumentasi
 
+- [User flows](plan/USER-FLOWS.md)
+- [System design](plan/SYSTEM-DESIGN.md)
+- [Data flow and lifecycle](plan/DATA-FLOW-AND-DATA-LIFECYCLE.md)
+- [API contracts](plan/API-CONTRACTS.md)
+- [Technology evaluation](plan/TECHNOLOGY-EVALUATION.md)
+- [UI/UX specification](plan/UI-UX-SPECIFICATION.md)
+- [Antigravity skill setup](docs/ANTIGRAVITY-SKILL-SETUP.md)
+
 - [Acceptance criteria baseline](plan/ACCEPTANCE-CRITERIA.md)
 - [Critical acceptance test scenarios](plan/ACCEPTANCE-TEST-SCENARIOS.md)
 
