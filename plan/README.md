@@ -23,6 +23,12 @@ Folder ini menyimpan rencana produk, kebutuhan sistem, keputusan, status elisita
 | [Dataset and Model Research Plan](DATASET-AND-MODEL-RESEARCH-PLAN.md) | Prosedur dataset, sumber data, split, dan evaluasi model | Rencana riset |
 | [Supporting Modules Requirements Audit](../docs/SUPPORTING-MODULES-REQUIREMENTS-AUDIT-2026-11-17.md) | Audit akun, kredit, pembayaran, dukungan, notifikasi, Admin, operasional, dan NFR | Audit tahap 3 selesai |
 | [AI Text Detector Requirements Audit](../docs/AI-TEXT-DETECTOR-REQUIREMENTS-AUDIT-2026-11-17.md) | Audit 17 requirement Detector dan riset reliabilitas | Audit tahap 2 selesai |
+| [User Flows](USER-FLOWS.md) | Alur Guest, Detector, Humanizer, pembayaran, dukungan, Admin, dan privasi | Baseline desain |
+| [System Design](SYSTEM-DESIGN.md) | Modular architecture, workers, services, boundaries, security | Baseline desain |
+| [Data Flow and Lifecycle](DATA-FLOW-AND-DATA-LIFECYCLE.md) | Klasifikasi, alur, retensi, deletion propagation | Baseline desain |
+| [API Contracts](API-CONTRACTS.md) | Endpoint, event, error, dan idempotency contracts | Konseptual |
+| [Technology Evaluation](TECHNOLOGY-EVALUATION.md) | Rekomendasi stack, trade-offs, provider gates | Evaluasi tahap 6 |
+| [UI/UX Specification](UI-UX-SPECIFICATION.md) | Design tokens, screen inventory, wireframes, accessibility | Handoff desain |
 | [Acceptance Criteria](ACCEPTANCE-CRITERIA.md) | 264 active requirements mapped to acceptance statements and edge tests | Baseline drafted |
 | [Acceptance Test Scenarios](ACCEPTANCE-TEST-SCENARIOS.md) | 45 detailed Gherkin scenarios for high-risk workflows | Designed, not executed |
 | [Humanizer Requirements Audit](../docs/HUMANIZER-REQUIREMENTS-AUDIT-2026-11-17.md) | Hasil audit 124 requirement Humanizer, koreksi konflik, dan gap desain | Audit tahap 1 selesai |
