@@ -181,9 +181,9 @@ Audit modul pendukung selesai pada 2026-11-17. Lihat [Supporting Modules Require
 | Kredit dan pembayaran | Requirement inti dilengkapi | 24 FR-CRED dan 9 FR-PAY; ledger, reserve/settlement, expiry, webhook, idempotency, dan rekonsiliasi ditetapkan; tarif/provider tetap terbuka |
 | Dukungan dan notifikasi | Requirement inti dilengkapi | 8 FR-SUP dan 8 FR-NOT; status tiket, target respons, preferensi, opt-in promosi, dan retry telah ditetapkan |
 | Admin dan operasional | Requirement inti dilengkapi | 13 FR-ADM dan 12 FR-OPS; RBAC, akses teks terbatas, job cancellation, retry, dan recovery telah ditetapkan; detail implementasi tetap perlu System Design |
-| Audit konsistensi | Belum diselesaikan | Perlu pemeriksaan lintas requirement dan keputusan |
+| Audit konsistensi | Selesai 2026-11-17 | 265 ID unik, 22 referensi requirement dari Decision Log tervalidasi, tidak ada tautan internal rusak pada dokumen utama; lihat SRS Review Record |
 | Acceptance criteria | Baseline tersusun | 264 requirement aktif telah dipetakan ke acceptance statement dan edge/negative test; 45 skenario Gherkin rinci tersedia. Target numerik performa/availability dan test execution masih pending |
-| Wireframe/System Design/implementasi | Belum dimulai | Tidak boleh dimulai sebelum gerbang kebutuhan dipenuhi |
+| User Flow/System Design/UI-UX | Tahap 6 aktif | SRS telah disahkan sebagai baseline desain; implementasi website tetap di luar cakupan |
 
 ## 4. Hal yang masih terbuka
 
