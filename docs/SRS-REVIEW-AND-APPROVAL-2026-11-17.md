@@ -21,16 +21,16 @@ Review mencakup:
 
 | Pemeriksaan | Hasil |
 |---|---:|
-| Requirement fungsional/nonfungsional | 265 ID unik |
+| Requirement fungsional/nonfungsional | 275 ID unik |
 | Requirement fungsional | 252 |
 | Requirement nonfungsional | 13 |
-| Requirement aktif dengan acceptance criteria | 264 |
+| Requirement aktif dengan acceptance criteria | 274 |
 | Requirement superseded yang dikecualikan dari AC aktif | 1 (FR-HUM-14, digabung ke FR-HUM-70) |
-| Decision Log | 167 ID berurutan, DEC-001 sampai DEC-167 |
+| Decision Log | 174 ID berurutan, DEC-001 sampai DEC-167 |
 | Keputusan Accepted | 165 |
 | Keputusan Superseded | 2 |
-| Referensi requirement dari Decision Log yang diperiksa | 22, tidak ada yang hilang |
-| Skenario Gherkin rinci | 45 |
+| Referensi requirement dari Decision Log yang diperiksa | 29, tidak ada yang hilang |
+| Skenario Gherkin rinci | 53 |
 | Tautan internal pada 14 dokumen utama yang diperiksa | Tidak ada tautan rusak |
 | ID requirement duplikat | 0 |
 | ID keputusan hilang/duplikat | 0 |
@@ -80,3 +80,8 @@ Hal-hal tersebut tidak menghalangi System Design, tetapi menghalangi klaim bahwa
 SRS tidak boleh diubah secara diam-diam. Setiap perubahan requirement harus memperbarui ID/teks terkait, Decision Log jika mengubah keputusan, Acceptance Criteria, Feature Plan, dan status roadmap.
 
 Tahap 7 (pembangunan website) tetap di luar mandat saat ini.
+
+
+## 6. Addendum privasi dan regulasi (2026-11-17)
+
+SRS diperluas dengan FR-ACC-20/21 dan NFR-SEC-06 serta NFR-PRIV-03 sampai NFR-PRIV-09. DEC-168 sampai DEC-174 menetapkan no-training-by-default, consent terpisah, kontrol transfer lintas negara, incident response, data-subject request, self-assessment perlindungan anak, dan DPIA jika diwajibkan. Lihat [Privacy and Legal Readiness](PRIVACY-AND-LEGAL-READINESS.md). Persetujuan SRS tetap hanya untuk System Design; peluncuran tetap diblokir sampai checklist legal/privacy dipenuhi.
