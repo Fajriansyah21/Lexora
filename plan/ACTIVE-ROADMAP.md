@@ -16,26 +16,26 @@ SRS berstatus **Approved for System Design** melalui delegated project lead revi
 
 Posisi dokumentasi pada 2026-11-17:
 - 189 catatan keputusan: 187 Accepted dan 2 Superseded (DEC-018 dan DEC-019).
-- 276 baris kebutuhan fungsional/nonfungsional terstruktur dalam SRS, termasuk 124 requirement Humanizer, 17 requirement Detector, dan modul pendukung.
-- Audit konsistensi requirement Humanizer telah diselesaikan pada 2026-11-17; gap desain teknis dan acceptance criteria tetap menjadi pekerjaan tahap berikutnya.
-- Audit requirement awal Detector selesai; metodologi model, threshold, dan acceptance criteria masih perlu divalidasi.
-- Audit requirement inti akun, dashboard, kredit, pembayaran, dukungan, notifikasi, Admin, dan operasional telah diperluas; nilai komersial, provider, permission matrix rinci, dan target operasional tetap terbuka.
+- 276 requirement unik dalam SRS: 255 FR dan 21 NFR. Distribusi: GEN 9, FILE 9, DET 17, HUM 124, ACC 21, CRED 25, PAY 9, SUP 8, NOT 8, OPS 12, ADM 13.
+- Audit requirement Humanizer selesai; gap teknis provider/model, token/chunking, benchmark kualitas, dan retensi teknis tercatat sebagai pekerjaan desain/pre-production.
+- Audit requirement Detector selesai dengan 17 FR; model, threshold, kalibrasi, dan target kualitas memerlukan benchmark.
+- Audit modul pendukung selesai; harga/unit economics, merchant terms, provider, permission matrix rinci, dan target operasional tetap conditional.
 
 SRS siap menjadi dasar System Design. Detail provider, harga, retensi legal, token limits, dan target operasional tetap harus ditentukan/diuji pada tahap desain sebelum implementasi atau produksi. Ringkasan status bukan pengganti SRS atau Decision Log.
 
 ## Tahap perencanaan sistem MVP
 
-| Urutan | Pekerjaan | Status | Kriteria keluaran |
+| Tahap | Pekerjaan | Status | Bukti |
 |---:|---|---|---|
-| 1 | Elisitasi kebutuhan, audit konsistensi, dan acceptance criteria | In progress; Humanizer mendalam, Detector dan modul pendukung belum lengkap | Seluruh area kebutuhan ditinjau, konflik/ketidakjelasan ditutup, setiap requirement memiliki acceptance criteria |
-| 2 | User flow Detector dan Humanizer | Planned | Alur normal, validasi, persetujuan handoff, pembatalan, dan kegagalan |
-| 3 | Modular architecture | Planned | Batas modul, tanggung jawab, dependensi, dan kontrak komunikasi |
-| 4 | System flowchart | Planned | Diagram jalur sukses, gagal, retry, refund, dan antrean |
-| 5 | Data flow dan data lifecycle | Planned | Klasifikasi data, alur penyimpanan, consent, retensi, penghapusan |
-| 6 | Evaluasi opsi teknologi | Planned | Perbandingan trade-off framework, backend, database, AI, payment, storage, queue, dan deployment |
-| 7 | Spesifikasi MVP dan acceptance criteria | Planned | Spesifikasi yang dapat diuji dan menjadi dasar implementasi |
+| 1 | Audit requirement Humanizer | Complete | Humanizer Requirements Audit |
+| 2 | Elisitasi/audit AI Text Detector | Complete | Detector Requirements Audit |
+| 3 | Audit modul pendukung dan NFR | Complete | Supporting Modules Requirements Audit |
+| 4 | Acceptance criteria | Complete baseline | 275 AC aktif + 55 skenario Gherkin |
+| 5 | Review dan pengesahan SRS | Approved for System Design | SRS Review Record |
+| 6 | User flow, System Design, teknologi, keamanan, UI/UX | Design baseline complete; local visual handoff remains | System Design and UI/UX Handoff task |
+| 7 | Pembangunan website | **Out of scope** | Memerlukan mandat baru |
 
-Jangan mulai implementasi aplikasi hanya karena SRS telah dibuat. Kebutuhan perlu ditinjau dan diterjemahkan menjadi alur, desain, serta kriteria penerimaan yang dapat diverifikasi.
+Tahap 1–5 selesai. Tahap 6 memiliki baseline dokumentasi lengkap. Visual exploration di Google Stitch dan instalasi skill lokal Antigravity memerlukan lingkungan lokal; prompt dan perintah sudah disiapkan. Tidak ada frontend/backend website yang dibangun.
 
 ## Fokus riset aktif: uji prosedur sintetis dataset
 
@@ -70,23 +70,26 @@ Bukti dan keterbatasan: `tests/synthetic_dataset/README.md`, `docs/EDITING-HISTO
 
 - Implementasi DOCX Metadata Cleaner dalam MVP.
 - Implementasi referral atau fitur pembanding teks mandiri.
-- Membuat UI website di Stitch sebelum user flow dan spesifikasi cukup jelas.
+- Membangun UI/frontend/backend di Stitch atau Antigravity sebagai implementasi sebelum tahap 7.
 - Implementasi frontend/backend di Antigravity sebelum acceptance criteria tersedia.
-- Memilih framework, database, provider AI, payment gateway, produk iklan, atau deployment tanpa analisis kebutuhan dan validasi sumber.
+- Memilih provider AI/model final, merchant contract, rewarded-ad activation, storage region, email provider, atau hosting region sebelum benchmark/legal/merchant verification.
 - Mengumpulkan pilot dataset nyata sebelum prosedur dan sumber data siap.
 - Training model sebelum gerbang dataset dipenuhi.
 
 ## Langkah berikutnya
 
-Tahap 1–5 selesai. Tahap 6 aktif: user flow, modular architecture, system flow/data lifecycle, evaluasi teknologi, dan UI/UX. Tahap 7 (pembangunan website) belum dimulai dan berada di luar mandat.
+Tahap 1–5 telah selesai dan SRS disahkan untuk System Design. Baseline tahap 6 tersedia:
+- [User Flows](USER-FLOWS.md)
+- [System Design](SYSTEM-DESIGN.md)
+- [Data Flow and Data Lifecycle](DATA-FLOW-AND-DATA-LIFECYCLE.md)
+- [API Contracts](API-CONTRACTS.md)
+- [Technology Evaluation](TECHNOLOGY-EVALUATION.md)
+- [Security Architecture and Threat Model](SECURITY-ARCHITECTURE-AND-THREAT-MODEL.md)
+- [UI/UX Specification](UI-UX-SPECIFICATION.md)
+- [Google Stitch Design Prompts](STITCH-DESIGN-PROMPTS.md)
 
-Acceptance criteria baseline tersedia di `plan/ACCEPTANCE-CRITERIA.md` dengan 264 requirement aktif dan 45 skenario rinci di `plan/ACCEPTANCE-TEST-SCENARIOS.md`. Test execution belum dimulai; target performa/availability menunggu desain teknis.
+Acceptance Criteria baseline memetakan 275 requirement aktif dan 55 skenario Gherkin. Test execution produk belum dimulai. Synthetic Dataset Test tetap Verified 29/29 dan tidak mengesahkan pilot/training.
 
-Task aktif: [SRS Readiness Audit](tasks/2026-11-17-srs-readiness-audit.md). Gerbang dataset sintetis telah lulus; tahap website menunggu penutupan dan review kebutuhan produk.
+Task tahap 6: [System Design and UI/UX Handoff](tasks/2026-11-17-system-design-and-ui-ux.md). Task audit requirement: [SRS Readiness Audit](tasks/2026-11-17-srs-readiness-audit.md) — Complete.
 
-1. Lanjutkan ke elisitasi AI Text Detector; gap Humanizer yang tersisa dipindahkan ke System Design dan acceptance criteria sesuai audit.
-2. Verifikasi laporan audit AI Text Detector dan lanjutkan ke modul pendukung.
-3. Verifikasi audit modul pendukung; lanjutkan audit lintas modul, keamanan, privasi, dan data lifecycle.
-4. Audit konflik/dependensi dan susun acceptance criteria sebelum review akhir SRS.
-5. Setelah gerbang kebutuhan terpenuhi dan pemilik proyek meninjau SRS, susun user flow Detector dan Humanizer.
-6. Pertahankan jalur uji prosedur sintetis dataset sesuai urutan dan gerbang yang sudah ditetapkan.
+Sisa handoff eksternal: jalankan UI UX Pro Max/Google Stitch di Antigravity lokal, konfirmasi merchant/provider/policy, legal/privacy review, dan tetapkan target operasional setelah benchmark. Pekerjaan tersebut tidak mengubah batas mandat: **tahap 7, pembangunan website, belum dimulai dan tidak dikerjakan dalam sesi ini.**
