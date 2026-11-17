@@ -6,8 +6,8 @@ Dokumen ini mencatat keputusan produk dan teknis yang disahkan. Usulan dan hipot
 
 Dokumen ini adalah satu-satunya sumber riwayat keputusan yang disahkan. Rincian kebutuhan normatif berada di [System Requirements Analysis](SYSTEM-REQUIREMENTS-ANALYSIS.md); ringkasan kemajuan elisitasi berada di [Requirements Elicitation Status](REQUIREMENTS-ELICITATION-STATUS.md).
 
-- **Jumlah catatan:** 167 keputusan, DEC-001 sampai DEC-167.
-- **Status:** 165 `Accepted`, 2 `Superseded`.
+- **Jumlah catatan:** 174 keputusan, DEC-001 sampai DEC-174.
+- **Status:** 172 `Accepted`, 2 `Superseded`.
 - **Keputusan superseded:** DEC-018 dan DEC-019. Keduanya dipertahankan untuk jejak historis, tetapi bukan aturan aktif. Klarifikasi pada DEC-020 menetapkan bahwa batas minimum karakter tidak berlaku untuk input AI Text Detector; batas minimum berlaku pada sampel profil gaya Humanizer.
 
 ### Indeks tematik
@@ -2148,3 +2148,73 @@ Rentang tematik ini hanya alat navigasi. Setiap keputusan tetap dicatat satu kal
 - **Alternatif yang dipertimbangkan:** Menanam harga/kuota dalam kode; mengubah nilai konfigurasi tanpa riwayat.
 - **Dampak:** Sistem memerlukan konfigurasi berversi dan effective date. Nilai numerik awal tetap menjadi prasyarat keputusan komersial sebelum peluncuran.
 - **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17.
+
+## DEC-168: Teks pengguna tidak digunakan untuk training tanpa opt-in terpisah
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Teks input Detector/Humanizer, dokumen unggahan, sampel profil, dan hasil pengguna tidak digunakan untuk melatih, fine-tune, atau mengevaluasi model internal maupun model pihak ketiga secara default. Penggunaan untuk riset/training hanya boleh dilakukan melalui persetujuan terpisah yang spesifik, dapat ditarik kembali, dan tidak menjadi syarat penggunaan layanan. Dataset riset harus melalui minimisasi, pseudonimisasi, provenance, dan review lisensi/consent.
+- **Alasan:** Konten tulisan dapat memuat data pribadi, rahasia, atau materi yang tidak boleh digunakan ulang. Persetujuan layanan tidak otomatis berarti persetujuan training.
+- **Alternatif yang dipertimbangkan:** Menggunakan semua input untuk training; menganggap persetujuan Terms of Service sebagai izin training.
+- **Dampak:** Dibutuhkan consent ledger terpisah, data lineage, mekanisme withdrawal, dan pemisahan storage produksi dari dataset riset.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17; prinsip transparansi dan dasar pemrosesan UU 27/2022 tentang Pelindungan Data Pribadi.
+
+## DEC-169: Transparansi pemrosesan dan pencatatan consent
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Sebelum pengguna mengirim teks/dokumen untuk diproses, Privacy Notice harus menjelaskan tujuan, kategori data, dasar pemrosesan, penerima/provider, lokasi pemrosesan yang diketahui, retensi, hak pengguna, dan kontak pengendali. Consent opsional untuk promosi, riset, training, atau pemrosesan tambahan dipisahkan dari persetujuan yang diperlukan untuk menyediakan layanan. Sistem mencatat versi notice, pilihan, waktu, dan konteks consent.
+- **Alasan:** Persetujuan yang digabung dan tidak spesifik membuat pengguna tidak memahami penggunaan datanya.
+- **Alternatif yang dipertimbangkan:** Satu checkbox untuk seluruh tujuan; hanya menyertakan kebijakan privasi panjang tanpa pencatatan pilihan.
+- **Dampak:** Diperlukan consent ledger, versioned privacy notice, preference center, dan event audit.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17; UU 27/2022 Pasal 20–22 dan kewajiban informasi pemrosesan.
+
+## DEC-170: Transfer lintas negara dan pemroses pihak ketiga
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Setiap provider AI, email, analytics, storage, payment, dan hosting dicatat sebagai processor/subprocessor beserta lokasi pemrosesan dan kategori data yang diterima. Data produksi tidak boleh dikirim ke provider lintas negara sebelum dasar transfer, kontrak, perlindungan, dan kewajiban pemberitahuan diverifikasi oleh penanggung jawab legal/privacy. Provider tanpa kontrol retensi dan penggunaan data yang dapat diterima tidak boleh menerima teks pengguna.
+- **Alasan:** Arsitektur layanan cloud dapat memindahkan data ke luar Indonesia walaupun pengguna dan perusahaan berada di Indonesia.
+- **Alternatif yang dipertimbangkan:** Menganggap seluruh API cloud sebagai pemrosesan lokal; memilih provider hanya berdasarkan harga.
+- **Dampak:** Technology evaluation wajib mencatat region, subprocessor, DPA, retensi, dan opsi penghapusan. Pilihan provider tetap conditional sampai review legal/privacy.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17; UU 27/2022 Pasal 56 tentang transfer data pribadi ke luar wilayah hukum Indonesia.
+
+## DEC-171: Penanganan insiden dan notifikasi kebocoran data
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Lexora memiliki incident response plan yang mengidentifikasi, membatasi, menyelidiki, memulihkan, dan mendokumentasikan insiden keamanan/data. Jika terjadi kegagalan pelindungan data pribadi yang memenuhi kriteria pemberitahuan, pengendali menyiapkan pemberitahuan tertulis paling lambat 3 x 24 jam sesuai UU PDP, dengan isi dan penerima mengikuti ketentuan yang berlaku. Insiden dicatat tanpa menyalin isi teks pengguna ke log umum.
+- **Alasan:** Notifikasi dan respons insiden merupakan kewajiban hukum dan kontrol kepercayaan pengguna.
+- **Alternatif yang dipertimbangkan:** Menangani insiden hanya secara internal tanpa prosedur pemberitahuan; mengirim notifikasi tanpa investigasi dampak.
+- **Dampak:** Dibutuhkan playbook, incident owner, severity classification, bukti forensik, jalur komunikasi, dan audit trail.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17; UU 27/2022 Pasal 46.
+
+## DEC-172: Hak subjek data dan permintaan privasi
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Pengguna memiliki jalur untuk meminta akses/salinan data, koreksi, penghapusan, penarikan consent opsional, serta menyampaikan keberatan atas pemrosesan/keputusan otomatis sejauh hak tersebut berlaku. Permintaan memiliki ID, status, verifikasi identitas yang proporsional, batas waktu, dan audit trail. Proses harus membedakan data yang dapat dihapus segera, data yang harus ditahan karena kewajiban hukum, dan data yang berada pada provider/backup.
+- **Alasan:** Hak pengguna tidak cukup hanya dicantumkan di Privacy Notice; harus ada proses operasional yang dapat ditelusuri.
+- **Alternatif yang dipertimbangkan:** Hanya menyediakan alamat email umum tanpa status permintaan; menjanjikan penghapusan seluruh backup/provider secara instan.
+- **Dampak:** Diperlukan privacy request workflow, status, verification, exception handling, dan koordinasi subprocessor.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17; UU 27/2022 tentang hak subjek data pribadi.
+
+## DEC-173: Penilaian perlindungan anak untuk layanan Lexora
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision; legal classification pending)
+- **Keputusan:** Sebelum peluncuran di Indonesia, Lexora melakukan self-assessment tingkat risiko produk/layanan/fitur terhadap anak, menetapkan klasifikasi usia dan langkah perlindungan yang sesuai, serta mendokumentasikan hasil dan mitigasinya. Jangan mengasumsikan bahwa label usia 18+ saja menghapus seluruh kewajiban PSE. Fitur yang dapat diakses anak harus mengikuti hasil penilaian dan ketentuan PP 17/2025 serta Permenkomdigi 9/2026.
+- **Alasan:** Layanan digital dapat diakses anak meskipun target pemasaran utamanya orang dewasa. Regulasi Indonesia mewajibkan penilaian risiko dan langkah pelindungan yang sesuai.
+- **Alternatif yang dipertimbangkan:** Mengabaikan anak karena target pasar dewasa; menetapkan age gate tanpa penilaian risiko.
+- **Dampak:** System Design harus mencakup age/risk assessment, reporting mechanism, privacy by design, dan age-appropriate controls sesuai klasifikasi final.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17; PP 17/2025 dan Permenkomdigi 9/2026.
+
+## DEC-174: Penilaian dampak pelindungan data sebelum produksi
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Sebelum pemrosesan produksi dimulai, Lexora melakukan penilaian dampak pelindungan data (DPIA) untuk menentukan apakah pemrosesan termasuk berisiko tinggi, termasuk penggunaan teknologi baru, evaluasi sistematis, pemrosesan skala besar, atau data sensitif. Jika kriteria risiko tinggi berlaku, mitigasi harus diselesaikan dan disetujui penanggung jawab sebelum go-live.
+- **Alasan:** Detector, profiling gaya, dan pemrosesan teks dapat melibatkan data pribadi serta evaluasi otomatis. Risiko harus dinilai sebelum skala produksi.
+- **Alternatif yang dipertimbangkan:** Menunda privacy review hingga terjadi insiden; menganggap semua teks sebagai data non-pribadi.
+- **Dampak:** DPIA menjadi deliverable launch-readiness bersama threat model, data inventory, dan vendor review.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17; UU 27/2022 Pasal 34 mengenai penilaian dampak pelindungan data pribadi.
