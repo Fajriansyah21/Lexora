@@ -6,7 +6,7 @@
 
 ## 1. Legal and regulatory references
 
-1. **UU No. 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP).** Relevant areas include lawful bases and transparency, data-subject rights, DPIA for high-risk processing, breach notification, and cross-border transfers.
+1. **UU No. 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP).** Relevant provisions include Article 9 (withdrawal of consent), Article 10 (objection to solely automated decisions with legal/significant effects), Articles 20–22 (lawful basis, notice, and recorded/separate consent), Article 34 (DPIA for high-risk processing), Article 46 (written breach notice within 3 x 24 hours when the statutory criteria apply), and Article 56 (cross-border transfer safeguards).
 2. **PP No. 17 Tahun 2025 (PP TUNAS).** Requires electronic system providers to assess product/service/feature risks to children and apply protections appropriate to the risk and age classification.
 3. **Permenkomdigi No. 9 Tahun 2026.** Implements PP TUNAS and describes risk classification, self-assessment, mitigation, verification, reporting, and child-friendly features.
 
@@ -105,6 +105,7 @@ Before production, assess whether Lexora's processing meets high-risk criteria u
 ## 11. Official references
 
 - [UU No. 27 Tahun 2022 tentang Pelindungan Data Pribadi — JDIH Komdigi](https://jdih.komdigi.go.id/produk_hukum/view/id/832).
+- [UU No. 27 Tahun 2022 — official BPK PDF](https://peraturan.bpk.go.id/Home/Download/224884/UU%20Nomor%2027%20Tahun%202022.pdf).
 - [PP No. 17 Tahun 2025 tentang Tata Kelola PSE dalam Pelindungan Anak — JDIH Komdigi](https://jdih.komdigi.go.id/produk_hukum/view/id/965).
 - [Permenkomdigi No. 9 Tahun 2026 — JDIH Komdigi](https://jdih.komdigi.go.id/produk_hukum/abstrak/547).
 - [Komdigi: Implementasi PP TUNAS dan Permenkomdigi No. 9 Tahun 2026](https://portal.komdigi.go.id/kanal-publik/berita-kini/10066).
