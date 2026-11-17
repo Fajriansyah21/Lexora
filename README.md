@@ -20,3 +20,12 @@ Baca [AGENTS.md](AGENTS.md) sebelum melakukan pekerjaan di repository. Requireme
 ## Cakupan MVP
 
 MVP berfokus pada AI Text Detector dan AI Humanizer. DOCX Metadata Cleaner ditunda ke fase setelah MVP. Lihat Product Overview dan Decision Log untuk batas cakupan yang disahkan.
+
+## Riset dataset
+
+- [Dataset specification and benchmark protocol](docs/DATASET-SPECIFICATION-BENCHMARK-v1.md)
+- [Annotation guidelines](docs/ANNOTATION-GUIDELINES-v1.md)
+- [Dataset JSON Schema](schemas/dataset-records-v1.schema.json)
+- [Editing history template](templates/editing-history.template.json)
+- [Synthetic dataset test harness](tests/synthetic_dataset/README.md)
+- [Latest synthetic test report](results/synthetic-dataset-test-2026-11-17.md)
