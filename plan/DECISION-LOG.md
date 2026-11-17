@@ -6,8 +6,8 @@ Dokumen ini mencatat keputusan produk dan teknis yang disahkan. Usulan dan hipot
 
 Dokumen ini adalah satu-satunya sumber riwayat keputusan yang disahkan. Rincian kebutuhan normatif berada di [System Requirements Analysis](SYSTEM-REQUIREMENTS-ANALYSIS.md); ringkasan kemajuan elisitasi berada di [Requirements Elicitation Status](REQUIREMENTS-ELICITATION-STATUS.md).
 
-- **Jumlah catatan:** 176 keputusan, DEC-001 sampai DEC-176.
-- **Status:** 174 `Accepted`, 2 `Superseded`.
+- **Jumlah catatan:** 189 keputusan, DEC-001 sampai DEC-189.
+- **Status:** 187 `Accepted`, 2 `Superseded`.
 - **Keputusan superseded:** DEC-018 dan DEC-019. Keduanya dipertahankan untuk jejak historis, tetapi bukan aturan aktif. Klarifikasi pada DEC-020 menetapkan bahwa batas minimum karakter tidak berlaku untuk input AI Text Detector; batas minimum berlaku pada sampel profil gaya Humanizer.
 
 ### Indeks tematik
@@ -2238,3 +2238,107 @@ Rentang tematik ini hanya alat navigasi. Setiap keputusan tetap dicatat satu kal
 - **Alternatif yang dipertimbangkan:** Memberi reward ad ke Guest berdasarkan event frontend; mengandalkan cookie/session ID tanpa konfirmasi korelasi SSV; menonaktifkan seluruh rewarded ads.
 - **Dampak:** Rewarded ads menjadi fitur login-only dan feature-flagged. Guest flow harus menawarkan trial credit non-iklan atau login, bukan iklan reward.
 - **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17; Google Ad Manager policies for ad units that offer rewards dan Rewarded Web SSV documentation.
+
+## DEC-177: Arsitektur MVP modular monolith
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** MVP menggunakan modular monolith untuk domain bisnis, dengan Next.js web/BFF dan Node worker yang dapat dideploy terpisah, serta Python FastAPI khusus inference Detector. Tidak membangun microservice terpisah untuk setiap modul.
+- **Alasan:** Mengurangi kompleksitas deployment dan koordinasi sambil tetap memisahkan proses panjang dan ekosistem ML.
+- **Dampak:** Batas modul ditegakkan dalam codebase; worker dan inference memiliki proses/identitas layanan terpisah.
+
+## DEC-178: Frontend dan runtime utama
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Web menggunakan Next.js 16.x App Router, React 19.x, TypeScript, Node.js 26 LTS, Tailwind CSS 4.x, shadcn/ui, dan Radix UI. Gunakan pnpm workspace untuk paket TypeScript bersama.
+- **Alasan:** Sesuai preferensi React/Next.js proyek, mendukung SSR untuk landing page, editor interaktif, serta satu bahasa utama untuk web dan worker.
+- **Dampak:** UI dan BFF berada di aplikasi Next.js; job panjang tidak boleh dijalankan di request web.
+
+## DEC-179: Authentication framework
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision; security review required)
+- **Keputusan:** Better Auth menjadi kandidat utama autentikasi untuk email/password, Google OAuth, session management, dan account linking. Konfigurasi final harus melewati review keamanan, CSRF, cookie, session revocation, dan 2FA Admin.
+- **Alasan:** Mengurangi ketergantungan pada SaaS identity vendor dan memberi kontrol terhadap model akun Guest/registered.
+- **Dampak:** Auth adapter dipisahkan dari domain account; tidak boleh mengandalkan frontend untuk account linking.
+
+## DEC-180: Database dan ORM
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** PostgreSQL 18 menjadi database utama dengan Drizzle ORM dan migration files. Semua saldo kredit, pembayaran, job state, consent, dan audit harus memiliki constraint/transaksi yang jelas.
+- **Alasan:** Transaksi, unique constraints, row locking, JSONB, dan query SQL eksplisit mendukung ledger serta job lifecycle.
+- **Dampak:** Tidak menggunakan MySQL dan PostgreSQL sekaligus. SQLite tidak menjadi database utama untuk test integrasi transaksi.
+
+## DEC-181: Queue dan worker
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Redis 8 dan BullMQ digunakan untuk antrean job, retry, delayed tasks, dan concurrency. Worker Node.js dijalankan sebagai proses/container terpisah. PostgreSQL tetap menjadi sumber kebenaran state bisnis.
+- **Alasan:** Detector/Humanizer, file extraction, notifications, privacy deletion, dan reconciliation membutuhkan proses asinkron.
+- **Dampak:** Queue payload hanya berisi job ID/metadata non-sensitif; idempotency dan state transition dikendalikan oleh database.
+
+## DEC-182: Detector inference service
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Detector inference berjalan pada Python 3.13 dan FastAPI. Model awal belum dipilih; baseline TF-IDF + Logistic Regression/Linear SVM dibandingkan dengan IndoBERT/XLM-R menggunakan group-based holdout dan metrik per bahasa/domain.
+- **Alasan:** Ekosistem training/evaluasi model Detector berpusat pada Python.
+- **Dampak:** FastAPI menerima request internal yang tervalidasi dan hanya dapat diakses worker; model/version/config dicatat per job.
+
+## DEC-183: Payment gateway utama
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision; merchant approval pending)
+- **Keputusan:** Midtrans Snap menjadi integrasi pembayaran pertama. Payment domain tetap memakai provider adapter agar Xendit dapat menjadi alternatif. Harga, metode, status, dan webhook diverifikasi server-side.
+- **Alasan:** Hosted checkout dan cakupan metode pembayaran Indonesia mengurangi pekerjaan UI checkout. Public pricing tidak otomatis berlaku untuk kategori digital product Lexora.
+- **Dampak:** Aktivasi menunggu merchant onboarding, written fee quote, settlement/refund review, dan webhook sandbox tests.
+
+## DEC-184: Rewarded advertising untuk website
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision; activation conditional)
+- **Keputusan:** Gunakan Google Ad Manager Rewarded Web sebagai kandidat; jangan gunakan AdMob mobile SDK untuk website. Reward hanya untuk akun login pada MVP, non-tunai, non-transferable, dan dapat digunakan hanya di Lexora. SSV callback dan korelasi akun harus dibuktikan di sandbox; jika tidak, ads dinonaktifkan.
+- **Alasan:** Format web dan kebijakan reward harus sesuai platform serta mencegah reward fraud.
+- **Dampak:** Rewarded ads feature-flagged; Guest hanya memiliki trial credit non-iklan yang terikat sesi.
+
+## DEC-185: Humanizer provider adapter
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision; provider selection conditional)
+- **Keputusan:** Humanizer memakai provider adapter. OpenAI API menjadi kandidat pertama untuk benchmark, Gemini API menjadi pembanding. Exact model ID tidak ditetapkan sebelum benchmark kualitas, biaya, latency, retention, DPA, dan cross-border review.
+- **Alasan:** Menghindari vendor lock-in dan mencegah pemilihan model hanya berdasarkan harga atau nama model.
+- **Dampak:** Provider/model/config version disimpan pada konfigurasi bertanggal efektif; API keys hanya di server.
+
+## DEC-186: Private object storage
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision; region/provider pending)
+- **Keputusan:** File sumber, hasil ekspor, dan artefak dokumen disimpan pada private S3-compatible object storage. Public bucket dilarang; akses menggunakan signed URL berumur pendek.
+- **Alasan:** Memisahkan binary file dari database dan memberi lifecycle/retention controls.
+- **Dampak:** Provider dan region dipilih setelah biaya, availability, deletion, encryption, dan cross-border review.
+
+## DEC-187: Containerized deployment
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Web, worker, dan Detector API dibangun sebagai container yang dapat dideploy terpisah. Docker digunakan untuk development/CI dan deployment. Arsitektur tidak bergantung pada serverless-only hosting.
+- **Alasan:** Worker dan inference memerlukan proses panjang dan kontrol concurrency.
+- **Dampak:** Hosting vendor/region tetap conditional; konfigurasi melalui environment/secret manager, bukan source code.
+
+## DEC-188: Visual design direction
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** UI Lexora menggunakan arah “Calm Editorial Intelligence”: editorial, bersih, fokus pada teks, neutral surfaces, deep teal sebagai brand, tipografi Plus Jakarta Sans + Inter, dan tanpa default purple/blue gradient atau glassmorphism. Design tokens dan screen rules berada di UI/UX Specification.
+- **Alasan:** Produk adalah writing workspace yang perlu terasa tepercaya, tenang, dan terbaca, bukan gimmick AI.
+- **Dampak:** Semua wireframe dan implementasi UI harus mengikuti token, accessibility, dan copy rules dalam UI/UX Specification.
+
+## DEC-189: Observability baseline
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Gunakan OpenTelemetry untuk traces/metrics dan Sentry untuk application errors sebagai baseline observability. Telemetry hanya menyimpan metadata operasional dan tidak boleh memuat raw text, document contents, credentials, atau prompt.
+- **Alasan:** Job lifecycle dan provider errors perlu ditelusuri tanpa memperluas paparan data pribadi.
+- **Dampak:** Instrumentation harus memiliki redaction tests dan retention/access policy.
