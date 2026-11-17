@@ -6,8 +6,8 @@ Dokumen ini mencatat keputusan produk dan teknis yang disahkan. Usulan dan hipot
 
 Dokumen ini adalah satu-satunya sumber riwayat keputusan yang disahkan. Rincian kebutuhan normatif berada di [System Requirements Analysis](SYSTEM-REQUIREMENTS-ANALYSIS.md); ringkasan kemajuan elisitasi berada di [Requirements Elicitation Status](REQUIREMENTS-ELICITATION-STATUS.md).
 
-- **Jumlah catatan:** 174 keputusan, DEC-001 sampai DEC-174.
-- **Status:** 172 `Accepted`, 2 `Superseded`.
+- **Jumlah catatan:** 175 keputusan, DEC-001 sampai DEC-175.
+- **Status:** 173 `Accepted`, 2 `Superseded`.
 - **Keputusan superseded:** DEC-018 dan DEC-019. Keduanya dipertahankan untuk jejak historis, tetapi bukan aturan aktif. Klarifikasi pada DEC-020 menetapkan bahwa batas minimum karakter tidak berlaku untuk input AI Text Detector; batas minimum berlaku pada sampel profil gaya Humanizer.
 
 ### Indeks tematik
@@ -2218,3 +2218,13 @@ Rentang tematik ini hanya alat navigasi. Setiap keputusan tetap dicatat satu kal
 - **Alternatif yang dipertimbangkan:** Menunda privacy review hingga terjadi insiden; menganggap semua teks sebagai data non-pribadi.
 - **Dampak:** DPIA menjadi deliverable launch-readiness bersama threat model, data inventory, dan vendor review.
 - **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17; UU 27/2022 Pasal 34 mengenai penilaian dampak pelindungan data pribadi.
+
+## DEC-175: Kandidat rewarded ads untuk website
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision; activation conditional)
+- **Keputusan:** Untuk website Lexora, kandidat utama rewarded ads adalah Google Ad Manager Rewarded Web, bukan AdMob mobile SDK. Reward harus bersifat non-tunai, tidak dapat dipindahtangankan, dan hanya dapat digunakan di dalam Lexora. Pengguna harus memilih untuk menonton iklan setelah mengetahui reward dan syaratnya. Implementasi harus mengikuti persyaratan halaman web yang mobile-optimized dan menggunakan server-side verification/nonce binding jika tersedia pada inventory yang disetujui. Jika eligibility, inventory, kebijakan, atau verifikasi server-side tidak dapat dipenuhi, rewarded ads dinonaktifkan.
+- **Alasan:** Produk Lexora adalah website; integrasi iklan harus menggunakan format web dan tidak boleh memberikan reward yang dapat diuangkan atau dipindahtangankan.
+- **Alternatif yang dipertimbangkan:** AdMob mobile SDK; event frontend tanpa verifikasi; menampilkan iklan tanpa opt-in.
+- **Dampak:** Rewarded ads menjadi modul opsional dengan feature flag. Guest reward hanya aktif jika sesi Guest dapat diikat secara unik dan provider menyetujui pola tersebut; jika tidak, reward hanya untuk akun login.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17; Google Ad Manager Rewarded Web and server-side verification documentation.
