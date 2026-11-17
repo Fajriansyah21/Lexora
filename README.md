@@ -4,6 +4,9 @@ Platform untuk membantu pengguna menganalisis dan mengolah tulisan melalui **AI 
 
 ## Dokumentasi
 
+- [Acceptance criteria baseline](plan/ACCEPTANCE-CRITERIA.md)
+- [Critical acceptance test scenarios](plan/ACCEPTANCE-TEST-SCENARIOS.md)
+
 Mulai dari [indeks dokumentasi proyek](plan/README.md).
 
 Dokumen utama:
