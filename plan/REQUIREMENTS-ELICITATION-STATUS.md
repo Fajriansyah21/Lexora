@@ -1,7 +1,7 @@
 # Requirements Elicitation Status
 
 - **Produk:** Lexora
-- **Tanggal rekap:** 2026-11-14
+- **Tanggal rekap:** 2026-11-17
 - **Status keseluruhan:** Elisitasi kebutuhan masih berlangsung
 - **Cakupan MVP:** AI Text Detector dan AI Humanizer
 - **Sumber utama:** [Decision Log](DECISION-LOG.md) dan [System Requirements Analysis](SYSTEM-REQUIREMENTS-ANALYSIS.md)
@@ -171,7 +171,7 @@ Pokok pembahasan:
 | Area | Status saat ini | Catatan |
 |---|---|---|
 | Fondasi produk | Sudah dibahas | Cakupan MVP dan aturan dasar sudah tercatat |
-| Humanizer | Elisitasi mendalam, belum ditutup | 121 FR; masih ada isu produk/teknis dan acceptance criteria |
+| Humanizer | Elisitasi mendalam, belum ditutup | 124 FR; masih ada isu produk/teknis dan acceptance criteria |
 | Detector | Baru sebagian | 11 FR; perlu sesi elisitasi lanjutan |
 | Akun dan dashboard | Fondasi tercatat | 15 FR; detail alur dan kondisi tepi perlu dilengkapi |
 | Kredit dan pembayaran | Fondasi tercatat | 16 FR; aturan ekonomi dan operasional belum final |
