@@ -3,7 +3,7 @@
 Status: **Draft ringkasan produk**  
 Nama produk: **Lexora**  
 Nama historis: **TextLab**  
-Terakhir ditinjau: 2026-11-14
+Terakhir ditinjau: 2026-11-17
 
 ## 1. Tujuan dokumen
 
@@ -71,7 +71,7 @@ Secara garis besar, area terbuka meliputi:
 - Provider/model AI serta biaya.
 - Payment gateway, produk iklan, harga kredit, formula biaya, dan aturan reward.
 - Batas token internal, strategi chunking, batas ukuran file dokumen, dan kapasitas sistem yang belum ditetapkan. Batas maksimum input Detector telah ditetapkan 20.000 extended grapheme clusters.
-- Daftar final gaya bawaan dan algoritma profiling.
+- Algoritma profiling dan kalibrasi kualitas gaya personal.
 - Target kualitas, performa, retensi teknis, backup, dan SLA operasional.
 
-Batas Humanizer yang sudah disepakati, termasuk karakter input, ukuran file sampel, dan kapasitas profil/sampel, tercatat di SRS dan tidak dianggap sebagai isu terbuka lagi. Jangan mengisi isu yang belum diputuskan dengan asumsi.
+Batas Humanizer yang sudah disepakati, termasuk karakter input, jumlah minimum/maksimum sampel, dan kapasitas profil/sampel, tercatat di SRS dan tidak dianggap sebagai isu terbuka lagi. Jangan mengisi isu yang belum diputuskan dengan asumsi.
