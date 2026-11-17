@@ -13,7 +13,7 @@ Berdasarkan pemeriksaan dokumen GitHub pada 2026-11-17:
 - **149** catatan keputusan, DEC-001 sampai DEC-149.
 - **147** keputusan berstatus `Accepted`.
 - **2** keputusan berstatus `Superseded`, yaitu DEC-018 dan DEC-019. Keduanya dipertahankan sebagai jejak historis, bukan aturan aktif.
-- **201** baris kebutuhan fungsional pada SRS.
+- **265** baris kebutuhan fungsional dan nonfungsional terstruktur pada SRS.
 - **124** requirement Humanizer, FR-HUM-01 sampai FR-HUM-124.
 - **17** requirement Detector, FR-DET-01 sampai FR-DET-17.
 
@@ -175,10 +175,10 @@ Pokok pembahasan:
 | Fondasi produk | Sudah dibahas | Cakupan MVP dan aturan dasar sudah tercatat |
 | Humanizer | Elisitasi mendalam, belum ditutup | 124 FR; masih ada isu produk/teknis dan acceptance criteria |
 | Detector | Audit requirement awal selesai | 17 FR; definisi label, panjang input, abstention, penjelasan, ekspor, dan batas bahasa telah diperjelas; metodologi model dan acceptance criteria masih terbuka |
-| Akun dan dashboard | Fondasi tercatat | 15 FR; detail alur dan kondisi tepi perlu dilengkapi |
-| Kredit dan pembayaran | Fondasi tercatat | 16 FR; aturan ekonomi dan operasional belum final |
-| Dukungan dan notifikasi | Fondasi tercatat | Detail SLA, alur tiket, dan kondisi gagal perlu dilengkapi |
-| Admin dan operasional | Fondasi tercatat | Matriks RBAC dan alur operasional rinci belum lengkap |
+| Akun dan dashboard | Requirement inti dilengkapi | 19 FR; account linking, session revocation, email change, dan security notification telah ditetapkan; UI dan detail token masih perlu desain |
+| Kredit dan pembayaran | Requirement inti dilengkapi | 24 FR-CRED dan 9 FR-PAY; ledger, reserve/settlement, expiry, webhook, idempotency, dan rekonsiliasi ditetapkan; tarif/provider tetap terbuka |
+| Dukungan dan notifikasi | Requirement inti dilengkapi | 8 FR-SUP dan 8 FR-NOT; status tiket, target respons, preferensi, opt-in promosi, dan retry telah ditetapkan |
+| Admin dan operasional | Requirement inti dilengkapi | 13 FR-ADM dan 12 FR-OPS; RBAC, akses teks terbatas, job cancellation, retry, dan recovery telah ditetapkan; detail implementasi tetap perlu System Design |
 | Audit konsistensi | Belum diselesaikan | Perlu pemeriksaan lintas requirement dan keputusan |
 | Acceptance criteria | Belum diselesaikan | Belum semua requirement memiliki kriteria uji terukur |
 | Wireframe/System Design/implementasi | Belum dimulai | Tidak boleh dimulai sebelum gerbang kebutuhan dipenuhi |
@@ -217,15 +217,14 @@ Rincian berada di [AI Text Detector Plan](AI-TEXT-DETECTOR-PLAN.md) dan bagian 8
 ### 4.3 Akun, kredit, pembayaran, Admin, dan operasional
 
 - Detail halaman dan pengaturan dashboard.
-- Zona waktu serta periode bonus harian.
-- Batas reward iklan Guest/login dan kredit per iklan.
+- Batas reward iklan Guest/login dan nilai kredit per iklan, menunggu unit economics dan validasi provider.
 - Formula biaya per fitur, tarif, pembulatan, dan unit economics.
-- Paket, harga, pembelian, refund, dan payment gateway.
-- Produk iklan yang sesuai kebijakan.
-- Detail guest checkout dan pemulihan transaksi.
-- Matriks RBAC rinci.
-- SLA dukungan tiket dan retensi tiket.
-- Detail notifikasi, observability, dan pemulihan operasional.
+- Paket/harga komersial awal dan payment gateway.
+- Produk iklan yang sesuai kebijakan resmi.
+- Detail teknis guest checkout dan pemulihan transaksi.
+- Permission matrix per aksi/objek, implementasi 2FA, dan approval akses sensitif.
+- Retensi tiket dan notifikasi.
+- Detail teknis observability, SLA uptime, backup/restore, dan disaster recovery.
 
 Daftar lengkap dan statusnya mengacu pada bagian 8 SRS.
 
