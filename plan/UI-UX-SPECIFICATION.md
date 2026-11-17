@@ -273,7 +273,8 @@ Error behavior:
 - Checkout clearly shows amount, currency, package, payment method, and transaction status.
 - Payment success is shown only after backend verification.
 - Pending state explains that the payment provider is still confirming.
-- Rewarded ad is optional, only displayed when enabled and eligible.
+- Rewarded ads are login-only in MVP and optional, only displayed when enabled and eligible.
+- Guest sees sign-in or a configured non-ad trial grant, not an ad reward.
 - Before a rewarded ad starts, show the reward, conditions, expiry, and non-transferability.
 - Never show an ad as a blocking step in payment checkout or an active AI job.
 
