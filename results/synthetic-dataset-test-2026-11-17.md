@@ -31,4 +31,4 @@ This is a local synthetic-procedure test record. It does not validate real-world
 
 The near-duplicate threshold 0.88 is a test parameter, not a production threshold. The deterministic hash-bucket split approximates 70/15/15 by group count; it does not guarantee document/class stratification or exact ratios. Challenge groups require explicit holdout designation.
 
-The GitHub Actions workflow was added at .github/workflows/synthetic-dataset-tests.yml. No GitHub Actions run/status was available when this report was written, so CI verification remains pending. The committed test files were read back from GitHub after publication; local execution and remote CI execution are reported separately.
+GitHub Actions workflow: .github/workflows/synthetic-dataset-tests.yml. Remote CI run #2 completed successfully on commit 500b11be6c34588fd72d1e9f6fff27e95533b468 (run ID 44026691695). The job installed jsonschema 4.26.0, ran the committed unittest suite on Python 3.12.16, and reported: Ran 27 tests; OK. Run URL: https://github.com/Fajriansyah21/Website-AI-Ditector/actions/runs/44026691695. A prior run #1 also passed on commit 0cb5a3d4d1ed9af2f72fc9053184f50e8e2954c0.
