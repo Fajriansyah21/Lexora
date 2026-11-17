@@ -7,7 +7,7 @@ Dokumen ini adalah aturan kerja permanen untuk agent yang bekerja di repositori 
 - Nama produk: **Lexora**.
 - Nama historis/internal: **TextLab**. Gunakan Lexora untuk identitas produk baru; pertahankan TextLab ketika merujuk keputusan atau dokumen historis sampai migrasi dokumentasi selesai.
 - Produk dirancang sebagai platform analisis dan pengolahan teks berbahasa Indonesia: AI Text Detector, AI Humanizer, dan DOCX Metadata Cleaner.
-- Gerbang **uji prosedur sintetis dataset telah Verified pada 2026-11-17 (29/29 test lulus di GitHub Actions)**. Tahap berikutnya adalah menutup gap elisitasi dan acceptance criteria SRS sebelum System Design dan implementasi website. Instruksi pengguna untuk mulai website tidak menghapus kebutuhan menutup gap requirement yang berdampak pada arsitektur, data, keamanan, dan biaya.
+- Gerbang **uji prosedur sintetis dataset telah Verified pada 2026-11-17 (29/29 test lulus di GitHub Actions)**. Requirement inti Humanizer, Detector, dan modul pendukung telah diaudit; 265 requirement unik dan 264 acceptance criteria aktif dipetakan. Fokus tahap berjalan adalah review final SRS, user flow, System Design, evaluasi teknologi, dan UI/UX. Implementasi website tetap di luar mandat tahap ini.
 
 ## 2. Sumber kebenaran dan dokumentasi
 
