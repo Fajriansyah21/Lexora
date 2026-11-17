@@ -250,7 +250,7 @@ Rentang tematik ini hanya alat navigasi. Setiap keputusan tetap dicatat satu kal
 - **Tanggal:** 2026-11-12
 - **Status:** Accepted
 - **Keputusan:** AI Text Detector harus menerapkan batas maksimal jumlah karakter untuk input teks.
-- **Belum diputuskan:** angka maksimal karakter, apakah batasnya berlaku sama untuk Guest dan pengguna terdaftar, serta perilaku antarmuka ketika input melewati batas.
+- **Klarifikasi historis:** angka maksimal dan perilaku penolakan ditetapkan kemudian melalui DEC-150. Batas tetap sama bagi Guest dan pengguna terdaftar sesuai DEC-016.
 - **Klarifikasi:** Batas karakter merupakan batas input/pemrosesan dan tidak sama dengan kuota kredit. Perbedaan kuota Guest dan pengguna terdaftar tetap mengacu pada jumlah kredit/reward, bukan otomatis pada batas karakter.
 - **Dampak:** Validasi panjang input harus diterapkan sebelum pemrosesan dan batasnya perlu konsisten dengan batas token internal, kemampuan model, strategi chunking, serta biaya layanan.
 - **Sumber:** Konfirmasi eksplisit pemilik proyek saat membahas UF-02 pada 2026-11-12.
@@ -263,7 +263,7 @@ Rentang tematik ini hanya alat navigasi. Setiap keputusan tetap dicatat satu kal
 - **Keputusan:** Batas maksimal karakter input AI Text Detector berlaku sama untuk Guest dan pengguna terdaftar.
 - **Klarifikasi:** Perbedaan Guest dan pengguna terdaftar terkait jumlah kredit/reward dan akses fitur, bukan batas maksimal karakter input Detector.
 - **Dampak:** Validasi panjang input Detector tidak perlu bercabang berdasarkan status autentikasi. Sistem kredit tetap menghitung hak penggunaan dan saldo sesuai jenis akun.
-- **Belum diputuskan:** angka maksimal karakter serta perilaku antarmuka ketika batas terlampaui.
+- **Klarifikasi historis:** angka maksimal 20.000 extended grapheme clusters dan perilaku antarmuka ditetapkan kemudian melalui DEC-150 dan FR-DET-09.
 - **Sumber:** Konfirmasi eksplisit pemilik proyek saat membahas UF-02 pada 2026-11-12.
 
 
