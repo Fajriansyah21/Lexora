@@ -410,6 +410,76 @@ Then numerical targets, measurement windows, and failure thresholds are document
 And no SLO claim is published before the evidence passes
 ```
 
-## H. Test execution status
+
+## I. Privacy, data rights, and legal readiness
+
+### PRIV-AC-01 — Separate consent and versioned privacy notice
+```gherkin
+Given a user opens the first text-processing flow
+When the user is shown the Privacy Notice and optional consent choices
+Then the notice version, purpose, categories, processors, retention, and rights are available
+And optional marketing/research/training consent is not preselected
+And the system records the exact version and choices
+```
+
+### PRIV-AC-02 — No training use by default
+```gherkin
+Given a user submits text or a document without opting into research/training
+When the service processes the content
+Then the content is used only to provide the requested service
+And it is not added to model training, fine-tuning, or research datasets
+```
+
+### PRIV-AC-03 — Consent withdrawal
+```gherkin
+Given a user previously opted into optional research/training use
+When the user withdraws that consent
+Then future collection/use stops
+And the request is recorded
+And derived data is handled according to the disclosed withdrawal/deletion policy
+```
+
+### PRIV-AC-04 — Cross-border provider gate
+```gherkin
+Given a provider or subprocessor may process production data outside Indonesia
+When the provider inventory lacks a verified transfer basis, contract, or safeguard
+Then production text is not sent to that provider
+And the provider remains blocked from production configuration
+```
+
+### PRIV-AC-05 — Data subject request lifecycle
+```gherkin
+Given a verified user submits an access, correction, deletion, consent withdrawal, or applicable objection request
+When the request is accepted
+Then the system assigns an ID, status, owner, deadline, and audit trail
+And exceptions for legal retention, backup, and external processors are documented
+```
+
+### PRIV-AC-06 — Child protection self-assessment
+```gherkin
+Given Lexora is preparing for launch in Indonesia
+When the product/feature risk assessment is performed
+Then the self-assessment, age classification, potential child access, and mitigations are documented
+And launch is blocked until required child-safety controls are implemented
+```
+
+### PRIV-AC-07 — DPIA gate
+```gherkin
+Given a new feature/provider/model may create high-risk personal-data processing
+When the release is prepared
+Then a DPIA is completed where required
+And unresolved high risks have mitigations and accountable owners before production
+```
+
+### PRIV-AC-08 — Personal-data breach response
+```gherkin
+Given a security incident is confirmed as a personal-data protection failure requiring notification
+When the incident response process is activated
+Then the incident owner, scope, containment, evidence, and affected data are recorded
+And required written notification is prepared within the applicable 3 x 24 hour deadline
+And raw user text is not copied into general logs
+```
+
+## J. Test execution status
 
 All scenarios above are **Not executed**. They become executable when the corresponding implementation or test harness exists. Evidence must include test ID, commit SHA, environment, test data/fixture, actual result, and timestamp.
