@@ -30,13 +30,13 @@ flowchart TD
   C -->|Invalid or too long| D[Show specific validation error]
   C -->|Valid| E[Show input count and estimated credit]
   E --> F{Guest session has usable credit?}
-  F -->|No| G[Show sign-in or eligible reward options]
+  F -->|No| G[Show sign-in or configured non-ad trial credit]
   F -->|Yes| H[Confirm analysis]
-  G --> I{User chooses sign-in?}
-  I -->|Yes| J[Authenticate and preserve draft]
-  I -->|No| K[Return to Detector]
+  G --> I{User chooses sign-in or trial?}
+  I -->|Sign in| J[Authenticate and preserve draft]
+  I -->|Trial credit| K[Grant configured session-bound trial once]
   J --> H
-  K --> F
+  K --> H
   H --> L[Reserve credit and create job]
   L --> M[Queue and worker]
   M --> N[Detector inference]
@@ -49,7 +49,7 @@ flowchart TD
 ```
 
 Rules:
-- The backend validates the 20,000 extended grapheme limit before reservation or queueing.
+- The backend validates the 20,000 extended grapheme limit before reservation or queueing. Guest rewarded ads are disabled on MVP; Guest may receive a configured non-ad trial grant.
 - No minimum input is enforced as a hard rejection. If evidence is insufficient, the result is UNCERTAIN.
 - Unsupported dominant language returns UNCERTAIN/unsupported language.
 - No numeric authorship percentage is shown in MVP.
