@@ -29,6 +29,7 @@ Folder ini menyimpan rencana produk, kebutuhan sistem, keputusan, status elisita
 | [Security Architecture and Threat Model](SECURITY-ARCHITECTURE-AND-THREAT-MODEL.md) | STRIDE threats, controls, and release gates | Baseline desain |
 | [API Contracts](API-CONTRACTS.md) | Endpoint, event, error, dan idempotency contracts | Konseptual |
 | [Technology Evaluation](TECHNOLOGY-EVALUATION.md) | Rekomendasi stack, trade-offs, provider gates | Evaluasi tahap 6 |
+| [Stitch Design Prompts](STITCH-DESIGN-PROMPTS.md) | Prompt pack untuk landing page, app, Detector, Humanizer, Credits, dan Admin | Visual design handoff |
 | [UI/UX Specification](UI-UX-SPECIFICATION.md) | Design tokens, screen inventory, wireframes, accessibility | Handoff desain |
 | [Acceptance Criteria](ACCEPTANCE-CRITERIA.md) | 264 active requirements mapped to acceptance statements and edge tests | Baseline drafted |
 | [Acceptance Test Scenarios](ACCEPTANCE-TEST-SCENARIOS.md) | 45 detailed Gherkin scenarios for high-risk workflows | Designed, not executed |
