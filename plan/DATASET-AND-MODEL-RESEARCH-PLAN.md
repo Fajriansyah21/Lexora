@@ -57,7 +57,7 @@ Harness dan fixture telah ditambahkan:
 - `tests/synthetic_dataset/test_synthetic_pipeline.py`
 - `requirements-test.txt`
 
-Hasil pengujian lokal: **27/27 test cases lulus** menggunakan Python 3.13.5 dan jsonschema 4.26.0. Cakupan: JSON Schema (4), sentence offsets (5), editing history/lineage (8), deduplikasi (4), dan group-based split (6). Perintah reproduksi tersedia pada `tests/synthetic_dataset/README.md`.
+Hasil pengujian lokal: **27/27 test cases lulus** menggunakan Python 3.13.5 dan jsonschema 4.26.0. Cakupan: JSON Schema dan template mapping (6), sentence offsets (5), editing history/lineage (8), deduplikasi (4), dan group-based split (6). Perintah reproduksi tersedia pada `tests/synthetic_dataset/README.md`.
 
 Batas interpretasi:
 - Pengujian ini memverifikasi prosedur dan perilaku fixture sintetis, bukan kualitas atau kebenaran label data nyata.
