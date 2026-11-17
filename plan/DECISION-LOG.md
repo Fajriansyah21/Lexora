@@ -6,8 +6,8 @@ Dokumen ini mencatat keputusan produk dan teknis yang disahkan. Usulan dan hipot
 
 Dokumen ini adalah satu-satunya sumber riwayat keputusan yang disahkan. Rincian kebutuhan normatif berada di [System Requirements Analysis](SYSTEM-REQUIREMENTS-ANALYSIS.md); ringkasan kemajuan elisitasi berada di [Requirements Elicitation Status](REQUIREMENTS-ELICITATION-STATUS.md).
 
-- **Jumlah catatan:** 149 keputusan, DEC-001 sampai DEC-149.
-- **Status:** 147 `Accepted`, 2 `Superseded`.
+- **Jumlah catatan:** 155 keputusan, DEC-001 sampai DEC-155.
+- **Status:** 153 `Accepted`, 2 `Superseded`.
 - **Keputusan superseded:** DEC-018 dan DEC-019. Keduanya dipertahankan untuk jejak historis, tetapi bukan aturan aktif. Klarifikasi pada DEC-020 menetapkan bahwa batas minimum karakter tidak berlaku untuk input AI Text Detector; batas minimum berlaku pada sampel profil gaya Humanizer.
 
 ### Indeks tematik
@@ -1933,10 +1933,10 @@ Rentang tematik ini hanya alat navigasi. Setiap keputusan tetap dicatat satu kal
 
 - **Tanggal:** 2026-11-17
 - **Status:** Accepted (delegated project decision)
-- **Keputusan:** Batas karakter Humanizer yang dinyatakan untuk teks dan nama sampel menggunakan extended grapheme clusters sesuai Unicode Standard Annex #29, Unicode 18.0.0. Penghitungan mencakup spasi dan baris baru. CRLF diperlakukan sebagai satu grapheme cluster. Teks sumber tidak dinormalisasi atau diubah hanya untuk keperluan penghitungan. Penghitung antarmuka dan validasi backend harus menggunakan versi aturan yang sama; backend menjadi sumber keputusan akhir.
+- **Keputusan:** Seluruh batas karakter yang ditampilkan kepada pengguna pada MVP Lexora, termasuk Detector dan Humanizer, menggunakan extended grapheme clusters sesuai Unicode Standard Annex #29, Unicode 18.0.0. Penghitungan mencakup spasi dan baris baru. CRLF diperlakukan sebagai satu grapheme cluster. Teks sumber tidak dinormalisasi atau diubah hanya untuk keperluan penghitungan. Penghitung antarmuka dan validasi backend harus menggunakan versi aturan yang sama; backend menjadi sumber keputusan akhir.
 - **Alasan:** Satu karakter yang dilihat pengguna dapat terdiri dari beberapa Unicode code points, misalnya huruf dengan combining mark atau rangkaian emoji. Penghitungan code point dapat membuat penghitung UI berbeda dari persepsi pengguna.
 - **Alternatif yang dipertimbangkan:** Menghitung byte UTF-8 atau Unicode code points; menggunakan aturan penghitung yang berbeda pada browser dan server.
-- **Dampak:** FR-HUM-68, FR-HUM-69, FR-HUM-70, dan FR-HUM-85 mengikuti satu konvensi. Pengujian perlu mencakup combining marks, emoji ZWJ, flag sequences, spasi, LF, dan CRLF. Implementasi harus mem-pin versi segmentation data.
+- **Dampak:** FR-GEN-03, FR-DET-09, FR-HUM-68, FR-HUM-69, FR-HUM-70, dan FR-HUM-85 mengikuti satu konvensi. Pengujian perlu mencakup combining marks, emoji ZWJ, flag sequences, spasi, LF, dan CRLF. Implementasi harus mem-pin versi segmentation data.
 - **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17; Unicode Standard Annex #29, Unicode 18.0.0: https://www.unicode.org/reports/tr29/tr29-49.html.
 
 ## DEC-147: Penggantian dokumen Humanizer hanya setelah ekstraksi dokumen baru berhasil
@@ -1968,3 +1968,63 @@ Rentang tematik ini hanya alat navigasi. Setiap keputusan tetap dicatat satu kal
 - **Alternatif yang dipertimbangkan:** Mengizinkan satu sampel; mewajibkan jumlah yang lebih besar; menggunakan jumlah karakter total tanpa batas per entri.
 - **Dampak:** FR-HUM-04 dan FR-HUM-15 diperjelas. Status profil hanya menjadi usable setelah hard gate dan evaluasi adaptif lulus. Ambang evaluasi kualitas, false rejection, dan kebutuhan tambahan sampel harus dikalibrasi menggunakan pilot yang ditinjau sebelum dipakai untuk keputusan produksi.
 - **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17. Keputusan jumlah minimum adalah baseline produk dan belum merupakan hasil validasi empiris.
+
+## DEC-150: Batas maksimum input AI Text Detector
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Batas maksimum input AI Text Detector untuk MVP adalah **20.000 extended grapheme clusters**. Batas berlaku sama untuk Guest dan pengguna terdaftar; perbedaan hak akses hanya memengaruhi kredit/reward, bukan batas karakter. Penghitungan mengikuti DEC-146. Backend memvalidasi batas sebelum tokenisasi, antrean, pemanggilan model, atau pemotongan kredit. Input yang melebihi batas ditolak dan pengguna diminta mengurangi teks. Batas ini merupakan batas produk MVP, bukan batas token provider.
+- **Alasan:** Batas awal yang konservatif membatasi biaya dan kompleksitas chunking, sambil tetap mendukung dokumen pendek hingga menengah. Pengujian beban dan kualitas dapat menjadi dasar perubahan versi berikutnya.
+- **Alternatif yang dipertimbangkan:** Menggunakan batas yang sama dengan Humanizer (50.000); tidak menetapkan batas; membedakan batas berdasarkan status akun.
+- **Dampak:** FR-DET-09 ditetapkan; strategi tokenisasi, chunking, dan batas provider harus tetap berada di bawah batas karakter produk.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek kepada project lead untuk menyelesaikan tahap 1–6 pada 2026-11-17.
+
+## DEC-151: Perbedaan makna label MIXED dan UNCERTAIN pada Detector
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** `MIXED` hanya digunakan ketika analisis menemukan indikasi yang memadai untuk kedua pola HUMAN dan AI pada bagian teks yang berbeda dalam satu dokumen. `UNCERTAIN` digunakan ketika bukti tidak cukup, saling bertentangan, teks terlalu pendek untuk dianalisis secara andal, bahasa/domain tidak didukung, atau kualitas input/ekstraksi tidak memadai. Campuran segmen yang tidak pasti tidak boleh otomatis dilabeli MIXED.
+- **Alasan:** Dua label tersebut harus menjelaskan keadaan yang berbeda. MIXED berarti ada indikasi kontribusi campuran; UNCERTAIN berarti sistem tidak dapat menyimpulkan dengan andal.
+- **Alternatif yang dipertimbangkan:** Menggabungkan MIXED dan UNCERTAIN; menetapkan MIXED setiap kali skor antarsegmen berbeda tanpa syarat bukti.
+- **Dampak:** Definisi kategori produk dan aturan agregasi harus konsisten pada tingkat dokumen dan kalimat. Threshold serta panjang segmen bermakna ditetapkan melalui validasi model, bukan angka arbitrer.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17.
+
+## DEC-152: Tidak menampilkan skor numerik Detector pada MVP sebelum kalibrasi
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** MVP menampilkan kategori HUMAN, AI, MIXED, atau UNCERTAIN tanpa persentase atau skor numerik yang memberi kesan probabilitas kepengarangan. Skor internal boleh digunakan untuk keputusan model, tetapi tidak ditampilkan sebagai probabilitas terkalibrasi. Tampilan numerik hanya dapat dipertimbangkan pada versi berikutnya setelah kalibrasi, validasi per bahasa/domain, dan dokumentasi metode selesai.
+- **Alasan:** Skor mentah classifier tidak otomatis merepresentasikan probabilitas yang terkalibrasi. Tampilan angka berpotensi memberi kepastian palsu pada keputusan yang memiliki risiko false positive.
+- **Alternatif yang dipertimbangkan:** Menampilkan persentase mentah; menampilkan confidence band sebelum kalibrasi; menampilkan kategori saja.
+- **Dampak:** FR-DET-07 diperketat. UI MVP menampilkan kategori, penjelasan yang dapat ditelusuri, dan peringatan batas interpretasi.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17.
+
+## DEC-153: Hasil Detector pada tingkat kalimat dan agregasi dokumen
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Setiap kalimat yang memiliki konteks memadai dapat menerima indikasi kategori dan penjelasan singkat. Kalimat yang terlalu pendek atau tidak memiliki bukti memadai diberi status UNCERTAIN/insufficient context, bukan dipaksa menjadi HUMAN atau AI. Label dokumen dihitung dari keseluruhan bukti segmen menggunakan metode agregasi yang divalidasi pada validation set; sistem tidak boleh memakai simple majority vote tanpa evaluasi. Urutan kalimat dan hubungan ke teks sumber harus dipertahankan.
+- **Alasan:** Label per kalimat membantu pengguna memahami variasi di dalam dokumen, sedangkan agregasi sederhana dapat mengabaikan panjang segmen dan kualitas bukti.
+- **Alternatif yang dipertimbangkan:** Menggunakan label dokumen untuk semua kalimat; memakai mayoritas jumlah kalimat tanpa validasi.
+- **Dampak:** FR-DET-02 dan FR-DET-03 diperjelas. Strategi segmentasi, agregasi, dan ambang minimum bukti harus divalidasi pada benchmark.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17.
+
+## DEC-154: Perilaku Detector pada bahasa yang tidak didukung
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Bahasa utama yang didukung pada MVP adalah Bahasa Indonesia dan Bahasa Inggris. Teks campuran Indonesia-Inggris dapat dianalisis dengan peringatan keterbatasan. Jika bahasa dominan berada di luar dua bahasa tersebut atau sistem tidak dapat mengidentifikasi bahasa dengan memadai, Detector tidak memberikan kesimpulan HUMAN/AI/MIXED; sistem menampilkan status UNCERTAIN atau unsupported language beserta penjelasan.
+- **Alasan:** Memproses bahasa yang tidak divalidasi dapat menghasilkan keluaran yang tampak meyakinkan tetapi tidak memiliki dasar performa.
+- **Alternatif yang dipertimbangkan:** Memproses semua bahasa menggunakan model multilingual tanpa bukti; menolak semua teks campuran.
+- **Dampak:** FR-DET-05 dan FR-DET-16 diperjelas. Dukungan bahasa tambahan memerlukan benchmark tersendiri.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17.
+
+## DEC-155: Ekspor laporan hasil AI Text Detector
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Pengguna dapat mengunduh laporan hasil AI Text Detector dalam format TXT, DOCX, atau PDF. Laporan memuat label keseluruhan, ringkasan, peringatan/keterbatasan, serta hasil analisis per kalimat yang tersedia. Pengguna tetap dapat menyalin seluruh hasil atau bagian tertentu sesuai FR-GEN-09. Laporan tidak menyatakan hasil sebagai bukti kepengarangan atau pelanggaran.
+- **Alasan:** Laporan dapat dibaca, disimpan, dan ditinjau kembali tanpa mengubah hasil menjadi klaim pembuktian.
+- **Alternatif yang dipertimbangkan:** Hasil hanya tersedia di website; hanya menyediakan TXT.
+- **Dampak:** Requirement ekspor khusus Detector ditambahkan. Generator format dan aksesibilitas dokumen ditentukan pada desain teknis.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17.
