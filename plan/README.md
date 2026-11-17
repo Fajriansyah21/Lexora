@@ -21,6 +21,12 @@ Folder ini menyimpan rencana produk, kebutuhan sistem, keputusan, status elisita
 | [AI Humanizer Plan](AI-HUMANIZER-PLAN.md) | Alur konseptual, prinsip kualitas, risiko, dan isu terbuka Humanizer | Rencana fitur, merujuk ke SRS |
 | [AI Text Detector Plan](AI-TEXT-DETECTOR-PLAN.md) | Rencana produk dan riset model Detector | Rencana fitur/riset, merujuk ke SRS |
 | [Dataset and Model Research Plan](DATASET-AND-MODEL-RESEARCH-PLAN.md) | Prosedur dataset, sumber data, split, dan evaluasi model | Rencana riset |
+| [Dataset Specification & Benchmark Protocol](../docs/DATASET-SPECIFICATION-BENCHMARK-v1.md) | Rancangan dataset dan protokol benchmark | Spesifikasi riset v1 |
+| [Annotation Guidelines](../docs/ANNOTATION-GUIDELINES-v1.md) | Definisi label dan prosedur anotasi | Pedoman pilot v1 |
+| [Database Schema](../docs/DATABASE-SCHEMA-v1.md) | Model logis data, provenance, dan lineage | Usulan skema logis |
+| [Dataset JSON Schema](../schemas/dataset-records-v1.schema.json) | Kontrak struktur record ekspor | JSON Schema Draft 2020-12 |
+| [Editing History Template](../templates/editing-history.template.json) | Format pencatatan versi dan riwayat penyuntingan | Template v1 |
+| [Synthetic Dataset Tests](../tests/synthetic_dataset/README.md) | Harness, fixture, perintah, dan batas uji sintetis | Artefak pengujian |
 | [Active Roadmap](ACTIVE-ROADMAP.md) | Prioritas kerja dan gerbang tahap proyek | Status kerja |
 | [Operating Workflow](OPERATING-WORKFLOW.md) | Siklus task, verifikasi, dan pelaporan | Aturan kerja |
 | [Observation Log](OBSERVATION-LOG.md) | Pembelajaran workflow yang dapat digeneralisasi | Log observasi |
