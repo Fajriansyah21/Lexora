@@ -1,9 +1,9 @@
 # Lexora System Requirements Analysis
 
-- **Status:** Draft hasil elisitasi kebutuhan
-- **Terakhir diperbarui:** 2026-11-14
-- **Cakupan:** MVP AI Text Detector dan AI Humanizer
-- **Sumber:** Keputusan eksplisit pemilik proyek dalam sesi elisitasi 2026-11-12 sampai 2026-11-14
+- **Status:** Under delegated project review; approval for System Design pending final cross-module review
+- **Terakhir diperbarui:** 2026-11-17
+- **Cakupan:** MVP AI Text Detector dan AI Humanizer beserta modul pendukung
+- **Sumber:** Keputusan pemilik proyek dalam sesi elisitasi 2026-11-12 sampai 2026-11-14 dan delegated project decisions DEC-145 sampai DEC-167 pada 2026-11-17
 - **Dokumen terkait:** [Product Overview](PRODUCT-OVERVIEW.md), [Decision Log](DECISION-LOG.md), [Active Roadmap](ACTIVE-ROADMAP.md), [AI Text Detector Plan](AI-TEXT-DETECTOR-PLAN.md), [AI Humanizer Plan](AI-HUMANIZER-PLAN.md)
 
 **Peran dokumen:** SRS adalah sumber utama kebutuhan fungsional dan nonfungsional. [Decision Log](DECISION-LOG.md) menyimpan riwayat keputusan dan alasan; [Requirements Elicitation Status](REQUIREMENTS-ELICITATION-STATUS.md) hanya merangkum cakupan serta kemajuan dan tidak menggantikan requirement di SRS. Dokumen rencana fitur menjelaskan alur dan pertimbangan tingkat fitur tanpa menyalin ulang seluruh requirement normatif.
@@ -13,11 +13,11 @@
 
 Dokumen ini merangkum kebutuhan produk dan kebutuhan sistem yang telah dipilih selama sesi elisitasi. Dokumen menjadi dasar untuk tahap user flow, system design, data flow, evaluasi teknologi, dan spesifikasi MVP.
 
-Dokumen ini **belum merupakan desain teknis final atau bukti kelayakan implementasi**. Pilihan yang telah disetujui pemilik proyek dicatat sebagai keputusan produk. Angka, provider, teknologi, kebijakan operasional, dan detail yang belum dibahas ditandai sebagai belum diputuskan.
+Dokumen ini **bukan desain teknis final atau bukti kelayakan implementasi**. Pilihan yang telah disetujui pemilik proyek dan keputusan yang diambil berdasarkan delegasi eksplisit kepada project lead dicatat di Decision Log. Angka, provider, teknologi, kebijakan operasional, dan detail yang belum dibahas ditandai sebagai belum diputuskan atau perlu validasi.
 
 ### 1.1 Konvensi status
 
-- **Disepakati:** pilihan produk telah dikonfirmasi pemilik proyek.
+- **Disepakati:** pilihan produk dikonfirmasi langsung oleh pemilik proyek atau ditetapkan melalui delegasi eksplisit project lead; asal keputusan ditandai pada Decision Log.
 - **Rancangan:** perilaku yang diturunkan untuk menjelaskan keputusan, tetapi masih perlu desain teknis.
 - **Belum diputuskan:** detail belum memiliki keputusan.
 - **Perlu validasi:** keputusan produk memerlukan pemeriksaan kebijakan, keamanan, biaya, atau kelayakan teknis sebelum implementasi.
@@ -306,7 +306,7 @@ Lexora menggunakan kredit internal sebagai unit konsumsi layanan. Kredit bukan t
 | FR-CRED-07 | Detector dan Humanizer memiliki tarif masing-masing. | Disepakati |
 | FR-CRED-08 | Estimasi biaya ditampilkan sebelum pemrosesan. | Disepakati |
 | FR-CRED-09 | Pemrosesan ditolak jika kredit tidak mencukupi. Saldo tidak boleh negatif. | Disepakati |
-| FR-CRED-10 | Kredit pembelian tidak kedaluwarsa. Kredit bonus dan reward iklan kedaluwarsa setelah 7 hari. | Disepakati |
+| FR-CRED-10 | Kredit pembelian tidak kedaluwarsa. Kredit bonus harian dan reward iklan untuk pengguna login kedaluwarsa setelah 7 hari; kredit reward Guest kedaluwarsa setelah 24 jam sesuai FR-CRED-20. | Disepakati; DEC-156 dan DEC-158 |
 | FR-CRED-11 | Kredit dengan waktu kedaluwarsa terdekat digunakan lebih dahulu; kredit pembelian digunakan setelah kredit promosi yang relevan. | Disepakati |
 | FR-CRED-12 | Setiap penambahan, reservasi, penyelesaian, pemotongan, kedaluwarsa, pelepasan, dan refund dicatat sebagai entri ledger append-only dengan sumber, referensi transaksi, waktu, jumlah, dan status. Saldo diturunkan dari ledger, bukan diedit langsung. | Kebutuhan integritas transaksi; DEC-157 dan DEC-163 |
 | FR-CRED-13 | Kegagalan server Lexora atau penyedia AI mengakibatkan reservasi kredit dilepas atau kredit dikembalikan sesuai biaya yang benar-benar terverifikasi. Jika tidak ada hasil yang diberikan, seluruh reservasi dilepas. | Disepakati; DEC-157 |
@@ -500,7 +500,7 @@ Target uptime/SLA belum ditentukan. MVP harus memiliki deteksi gangguan, pencata
 5. Skor Detector bukan bukti pasti kepengarangan.
 6. Kredit internal berbeda dari token model.
 7. Tidak ada pemrosesan jika saldo tidak mencukupi.
-8. Kredit pembelian tidak kedaluwarsa; bonus dan reward berlaku 7 hari.
+8. Kredit pembelian tidak kedaluwarsa; bonus dan reward pengguna login berlaku 7 hari, sedangkan reward Guest berlaku 24 jam.
 9. Kredit promosi dengan kedaluwarsa terdekat digunakan terlebih dahulu.
 10. Kredit dikembalikan hanya berdasarkan kondisi kegagalan/pembatalan yang diverifikasi.
 11. Riwayat dan profil gaya disimpan berdasarkan pilihan pengguna.
@@ -558,7 +558,7 @@ Daftar berikut sengaja dibiarkan terbuka. Gaya bawaan MVP dan baseline minimum t
 
 ## 9. Kriteria kesiapan menuju System Design
 
-Tahap berikutnya dapat dimulai setelah dokumen ini ditinjau pemilik proyek. System Design harus menghasilkan:
+Tahap berikutnya dapat dimulai setelah review lintas modul oleh delegated project lead selesai. System Design harus menghasilkan:
 1. Batas modul dan tanggung jawab masing-masing.
 2. User flow Detector, Humanizer, akun, kredit, pembayaran, dan dukungan.
 3. Diagram sistem serta jalur sukses/gagal.
