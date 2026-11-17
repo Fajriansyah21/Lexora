@@ -7,7 +7,7 @@
 
 ## 1. Cakupan SRS setelah audit
 
-SRS kini memiliki **252 requirement fungsional dan 13 requirement nonfungsional**, total 265 baris requirement unik tanpa ID duplikat.
+SRS kini memiliki **254 requirement fungsional dan 21 requirement nonfungsional**, total 275 baris requirement unik tanpa ID duplikat.
 
 | Kelompok | Jumlah |
 |---|---:|
@@ -25,7 +25,7 @@ SRS kini memiliki **252 requirement fungsional dan 13 requirement nonfungsional*
 | NFR | 13 |
 | **Total** | **265** |
 
-Decision Log memuat DEC-001 sampai DEC-167: 165 Accepted dan 2 Superseded.
+Decision Log memuat DEC-001 sampai DEC-174: 172 Accepted dan 2 Superseded.
 
 ## 2. Temuan dan perbaikan per modul
 
@@ -129,3 +129,7 @@ Berikut tetap menjadi pekerjaan tahap 6 atau prasyarat validasi eksternal, bukan
 - [Decision Log](../plan/DECISION-LOG.md)
 - [Requirements Elicitation Status](../plan/REQUIREMENTS-ELICITATION-STATUS.md)
 - [Active Roadmap](../plan/ACTIVE-ROADMAP.md)
+
+## 7. Addendum privacy dan legal readiness
+
+SRS kemudian diperluas dengan FR-ACC-20/21 dan NFR-SEC-06 serta NFR-PRIV-03 sampai NFR-PRIV-09. DEC-168 sampai DEC-174 menetapkan no-training-by-default, consent terpisah, inventaris processor, cross-border transfer gate, incident response, data-subject requests, child-safety self-assessment, dan DPIA. Rincian checklist serta sumber resmi berada di [Privacy and Legal Readiness](PRIVACY-AND-LEGAL-READINESS.md). Ini adalah persyaratan desain dan launch gate, bukan klaim bahwa Lexora telah patuh atau terdaftar.
