@@ -6,8 +6,8 @@ Dokumen ini mencatat keputusan produk dan teknis yang disahkan. Usulan dan hipot
 
 Dokumen ini adalah satu-satunya sumber riwayat keputusan yang disahkan. Rincian kebutuhan normatif berada di [System Requirements Analysis](SYSTEM-REQUIREMENTS-ANALYSIS.md); ringkasan kemajuan elisitasi berada di [Requirements Elicitation Status](REQUIREMENTS-ELICITATION-STATUS.md).
 
-- **Jumlah catatan:** 175 keputusan, DEC-001 sampai DEC-175.
-- **Status:** 173 `Accepted`, 2 `Superseded`.
+- **Jumlah catatan:** 176 keputusan, DEC-001 sampai DEC-176.
+- **Status:** 174 `Accepted`, 2 `Superseded`.
 - **Keputusan superseded:** DEC-018 dan DEC-019. Keduanya dipertahankan untuk jejak historis, tetapi bukan aturan aktif. Klarifikasi pada DEC-020 menetapkan bahwa batas minimum karakter tidak berlaku untuk input AI Text Detector; batas minimum berlaku pada sampel profil gaya Humanizer.
 
 ### Indeks tematik
@@ -2228,3 +2228,13 @@ Rentang tematik ini hanya alat navigasi. Setiap keputusan tetap dicatat satu kal
 - **Alternatif yang dipertimbangkan:** AdMob mobile SDK; event frontend tanpa verifikasi; menampilkan iklan tanpa opt-in.
 - **Dampak:** Rewarded ads menjadi modul opsional dengan feature flag. Guest reward hanya aktif jika sesi Guest dapat diikat secara unik dan provider menyetujui pola tersebut; jika tidak, reward hanya untuk akun login.
 - **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17; Google Ad Manager Rewarded Web and server-side verification documentation.
+
+## DEC-176: Rewarded ads hanya untuk akun login pada MVP
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Pada MVP, reward dari Google Ad Manager Rewarded Web hanya diberikan kepada pengguna yang telah login. Guest tidak menerima reward dari iklan karena pengikatan reward pada identitas pengguna harus kuat dan tidak boleh dapat dipindahtangankan. Guest dapat menggunakan trial credit non-iklan yang terikat pada sesi jika nilai dan batasnya telah disahkan melalui unit economics. Guest rewarded ads hanya dapat dipertimbangkan kembali setelah ada konfirmasi tertulis/teknis bahwa SSV web dapat mengikat reward ke sesi Guest secara aman dan sesuai kebijakan provider.
+- **Alasan:** Kebijakan Google mensyaratkan reward hanya dapat digunakan oleh pengguna yang sama dan tidak dapat ditransfer. Akun login memberi identitas yang lebih kuat untuk menegakkan aturan tersebut.
+- **Alternatif yang dipertimbangkan:** Memberi reward ad ke Guest berdasarkan event frontend; mengandalkan cookie/session ID tanpa konfirmasi korelasi SSV; menonaktifkan seluruh rewarded ads.
+- **Dampak:** Rewarded ads menjadi fitur login-only dan feature-flagged. Guest flow harus menawarkan trial credit non-iklan atau login, bukan iklan reward.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17; Google Ad Manager policies for ad units that offer rewards dan Rewarded Web SSV documentation.
