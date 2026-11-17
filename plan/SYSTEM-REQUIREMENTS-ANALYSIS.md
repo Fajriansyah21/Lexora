@@ -83,7 +83,7 @@ Detail provider dan kontrak integrasi belum dipilih.
 |---|---|---|
 | FR-GEN-01 | Antarmuka dan kedua modul mendukung Bahasa Indonesia dan Bahasa Inggris. | Disepakati |
 | FR-GEN-02 | Teks campuran Indonesia-Inggris dapat dikirim untuk diproses. Sistem memberi peringatan bahwa hasil mungkin kurang akurat. | Disepakati; kemampuan aktual perlu diuji |
-| FR-GEN-03 | Batas yang terlihat oleh pengguna menggunakan jumlah karakter; batas internal sistem memperhitungkan token. | Disepakati; angka batas belum ditentukan |
+| FR-GEN-03 | Batas yang terlihat oleh pengguna menggunakan extended grapheme clusters sesuai Unicode Standard Annex #29, Unicode 18.0.0. Penghitungan mencakup spasi dan baris baru; CRLF dihitung sebagai satu cluster. Penghitung antarmuka dan validasi backend menggunakan aturan yang sama. | Disepakati; DEC-146 |
 | FR-GEN-04 | Detector dan Humanizer dapat memiliki batas input yang berbeda. | Disepakati; angka per modul belum ditentukan |
 | FR-GEN-05 | Pemrosesan teks pendek dilakukan sekaligus; teks panjang dapat diproses dengan chunking secara adaptif. | Disepakati sebagai arah; strategi konteks perlu desain |
 | FR-GEN-06 | Permintaan ringan dapat diproses langsung, sedangkan permintaan berat atau saat sistem sibuk dapat masuk antrean. | Disepakati sebagai arah |
@@ -116,19 +116,19 @@ Dukungan format file tidak berarti tata letak, gambar, header/footer, catatan ka
 
 | ID | Kebutuhan | Status/catatan |
 |---|---|---|
-| FR-DET-01 | Menampilkan ringkasan hasil analisis seluruh teks. | Disepakati |
-| FR-DET-02 | Menyediakan analisis/indikasi pada tingkat kalimat. | Disepakati; metode anotasi/klasifikasi belum ditentukan |
-| FR-DET-03 | Menyediakan penjelasan karakteristik yang mendukung hasil sejauh dapat ditelusuri ke analisis. | Disepakati |
-| FR-DET-04 | Mendukung kategori HUMAN, AI, MIXED, dan UNCERTAIN. | Disepakati sebagai kategori produk; mekanisme klasifikasi perlu divalidasi |
-| FR-DET-05 | Menampilkan keterbatasan dan peringatan saat teks terlalu pendek, campuran bahasa, ekstraksi tidak lengkap, atau hasil tidak meyakinkan. | Disepakati |
-| FR-DET-06 | Tidak menyatakan hasil sebagai bukti pasti bahwa seseorang menggunakan AI. | Prinsip wajib |
-| FR-DET-07 | Skor atau persentase tidak boleh dipresentasikan sebagai probabilitas terkalibrasi kecuali kalibrasi benar-benar diuji dan dibuktikan. | Prinsip wajib |
+| FR-DET-01 | Menampilkan ringkasan hasil analisis seluruh teks yang mencakup satu kategori keseluruhan, ringkasan indikasi, dan peringatan yang relevan. | Disepakati |
+| FR-DET-02 | Menyediakan analisis pada tingkat kalimat dengan indikasi kategori dan penjelasan singkat yang dapat ditelusuri. Kalimat yang terlalu pendek atau tidak memiliki konteks/bukti memadai ditandai UNCERTAIN atau insufficient context, bukan dipaksa menjadi HUMAN atau AI. | Disepakati; DEC-153 |
+| FR-DET-03 | Menyediakan penjelasan karakteristik yang mendukung hasil sejauh dapat ditelusuri ke sinyal analisis yang benar-benar dihitung. Sistem tidak boleh menghasilkan alasan yang tidak didukung bukti analisis atau menyimpulkan identitas/niat penulis. | Disepakati; DEC-153 |
+| FR-DET-04 | Mendukung kategori HUMAN, AI, MIXED, dan UNCERTAIN. MIXED berarti terdapat indikasi memadai untuk pola HUMAN dan AI pada bagian teks berbeda; UNCERTAIN berarti bukti tidak cukup atau tidak dapat diandalkan. | Disepakati sebagai kategori produk; definisi operasional mengikuti DEC-151 |
+| FR-DET-05 | Menampilkan keterbatasan dan peringatan saat teks terlalu pendek, campuran bahasa, bahasa/domain tidak didukung, ekstraksi tidak lengkap, atau hasil tidak meyakinkan. Jika bukti tidak memadai, sistem menggunakan UNCERTAIN dan tidak memaksakan kesimpulan. | Disepakati; DEC-151 dan DEC-154 |
+| FR-DET-06 | Tidak menyatakan hasil sebagai bukti pasti bahwa seseorang menggunakan AI, tidak mengidentifikasi siapa penulisnya, dan tidak menyajikan hasil sebagai satu-satunya dasar keputusan akademik atau tindakan disipliner. | Prinsip wajib |
+| FR-DET-07 | Skor atau persentase tidak boleh dipresentasikan sebagai probabilitas terkalibrasi kecuali kalibrasi benar-benar diuji dan dibuktikan. Pada MVP, antarmuka tidak menampilkan skor numerik atau persentase kepengarangan; hasil disajikan sebagai kategori, penjelasan, dan keterbatasan. | Prinsip wajib; DEC-152 |
 | FR-DET-08 | Setelah analisis, pengguna boleh memilih untuk mengirim teks ke Humanizer. Tidak ada pemrosesan otomatis. | Disepakati |
-| FR-DET-09 | AI Text Detector menerapkan batas maksimal jumlah karakter pada input teks yang berlaku sama bagi Guest dan pengguna terdaftar. Sistem menolak atau meminta pengguna menyesuaikan input yang melewati batas. | Disepakati; angka batas dan perilaku UX final belum ditentukan |
+| FR-DET-09 | AI Text Detector menerapkan batas maksimal 20.000 extended grapheme clusters pada input teks. Batas berlaku sama bagi Guest dan pengguna terdaftar. Backend memvalidasi sebelum tokenisasi, antrean, pemanggilan model, atau pemotongan kredit. Input yang melebihi batas ditolak dengan instruksi mengurangi teks. | Disepakati; DEC-150 dan DEC-146 |
 | FR-DET-10 | Pengguna dapat memasukkan teks Detector secara langsung melalui area teks dengan mengetik atau menempelkan teks. | Disepakati |
-| FR-DET-11 | Pengguna dapat mengunggah file TXT, DOCX, atau PDF sebagai sumber teks Detector. | Disepakati; ketentuan ekstraksi dan batas file mengikuti FR-FILE |
+| FR-DET-11 | Pengguna dapat mengunggah file TXT, DOCX, atau PDF sebagai sumber teks Detector. Ketentuan ekstraksi dan batas file mengikuti FR-FILE. Jika ekstraksi tidak lengkap, sistem memberi peringatan sebelum analisis. | Disepakati; perilaku ekstraksi mengikuti FR-FILE |
 
-Label HUMAN/AI/MIXED/UNCERTAIN pada antarmuka adalah kebutuhan produk. Definisi operasional label, ambang batas, confidence, kalibrasi, dan pelabelan per kalimat tetap memerlukan rancangan metodologis dan bukti eksperimen.
+Label HUMAN/AI/MIXED/UNCERTAIN pada antarmuka adalah kebutuhan produk. Definisi kategori MIXED dan UNCERTAIN telah diperjelas, tetapi definisi operasional label dataset, threshold, metode agregasi, confidence internal, kalibrasi, dan panjang segmen bermakna tetap memerlukan rancangan metodologis dan bukti eksperimen. MVP tidak menampilkan skor numerik.
 
 ### 4.4 AI Humanizer
 
