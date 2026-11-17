@@ -182,7 +182,7 @@ Audit modul pendukung selesai pada 2026-11-17. Lihat [Supporting Modules Require
 | Dukungan dan notifikasi | Requirement inti dilengkapi | 8 FR-SUP dan 8 FR-NOT; status tiket, target respons, preferensi, opt-in promosi, dan retry telah ditetapkan |
 | Admin dan operasional | Requirement inti dilengkapi | 13 FR-ADM dan 12 FR-OPS; RBAC, akses teks terbatas, job cancellation, retry, dan recovery telah ditetapkan; detail implementasi tetap perlu System Design |
 | Audit konsistensi | Belum diselesaikan | Perlu pemeriksaan lintas requirement dan keputusan |
-| Acceptance criteria | Belum diselesaikan | Belum semua requirement memiliki kriteria uji terukur |
+| Acceptance criteria | Baseline tersusun | 264 requirement aktif telah dipetakan ke acceptance statement dan edge/negative test; 45 skenario Gherkin rinci tersedia. Target numerik performa/availability dan test execution masih pending |
 | Wireframe/System Design/implementasi | Belum dimulai | Tidak boleh dimulai sebelum gerbang kebutuhan dipenuhi |
 
 ## 4. Hal yang masih terbuka
