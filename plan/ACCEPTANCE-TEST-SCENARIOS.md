@@ -480,6 +480,26 @@ And required written notification is prepared within the applicable 3 x 24 hour 
 And raw user text is not copied into general logs
 ```
 
+
+### CRED-AC-07 — Guest trial credit
+```gherkin
+Given a new eligible Guest session
+When the configured non-ad trial grant is issued
+Then the trial credit is limited to Detector, bound to that session, and expires after 24 hours
+And a second grant for the same Guest session is rejected
+And the balance is not transferred when the Guest registers or signs in
+```
+
+### CRED-AC-08 — Login-only rewarded ad verification
+```gherkin
+Given a logged-in user who opts in to a Google Ad Manager Rewarded Web ad
+When a valid server-side verification callback with the expected nonce arrives
+Then one non-transferable in-platform reward is written to the credit ledger
+Given a Guest session or a forged/replayed callback
+When a reward grant is requested
+Then no rewarded-ad credit is issued
+```
+
 ## J. Test execution status
 
 All scenarios above are **Not executed**. They become executable when the corresponding implementation or test harness exists. Evidence must include test ID, commit SHA, environment, test data/fixture, actual result, and timestamp.
