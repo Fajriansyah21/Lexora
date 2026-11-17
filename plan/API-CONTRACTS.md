@@ -143,17 +143,20 @@ Client cannot directly create a credit lot, edit balance, settle a reservation, 
 - `GET /api/v1/payments/transactions`
 - `GET /api/v1/payments/transactions/{transactionId}`
 - `POST /api/v1/webhooks/midtrans`
+- `GET /api/v1/webhooks/google-ad-manager/rewarded` (provider SSV callback; exact method/query contract follows current Google documentation)
 
 Payment intent creation requires package ID and idempotency key. Price and currency are resolved server-side from the effective configuration version; never accept a client-supplied amount as authoritative.
 
 Webhook processing:
-1. Verify provider signature/authenticity.
+1. Verify provider signature/authenticity. For Google Ad Manager Rewarded Web, verify SSV signature/key ID and unique transaction ID; do not trust `rewardedSlotGranted` as a server grant signal.
 2. Validate merchant, order ID, amount, currency, and status.
 3. Persist raw provider event metadata with secrets redacted.
 4. Deduplicate by provider event/transaction identity.
 5. Transition payment state monotonically.
 6. Grant a credit lot only after verified Paid.
 7. Reconcile unknown or mismatched states for Admin review.
+
+Rewarded-web SSV must be tested in a sandbox to confirm which callback fields can securely identify the authenticated recipient. If user correlation cannot be verified, the callback must not grant credit and rewarded ads remain disabled.
 
 ## 9. Support and notifications
 
