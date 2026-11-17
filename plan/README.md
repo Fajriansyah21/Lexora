@@ -25,6 +25,7 @@ Folder ini menyimpan rencana produk, kebutuhan sistem, keputusan, status elisita
 | [Annotation Guidelines](../docs/ANNOTATION-GUIDELINES-v1.md) | Definisi label dan prosedur anotasi | Pedoman pilot v1 |
 | [Database Schema](../docs/DATABASE-SCHEMA-v1.md) | Model logis data, provenance, dan lineage | Usulan skema logis |
 | [Dataset JSON Schema](../schemas/dataset-records-v1.schema.json) | Kontrak struktur record ekspor | JSON Schema Draft 2020-12 |
+| [Editing History Mapping](../docs/EDITING-HISTORY-MAPPING-v1.md) | Konversi template intake ke format ekspor dataset | Mapping v1, diuji |
 | [Editing History Template](../templates/editing-history.template.json) | Format pencatatan versi dan riwayat penyuntingan | Template v1 |
 | [Synthetic Dataset Tests](../tests/synthetic_dataset/README.md) | Harness, fixture, perintah, dan batas uji sintetis | Artefak pengujian |
 | [Active Roadmap](ACTIVE-ROADMAP.md) | Prioritas kerja dan gerbang tahap proyek | Status kerja |
