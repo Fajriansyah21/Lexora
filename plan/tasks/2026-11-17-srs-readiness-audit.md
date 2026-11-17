@@ -1,20 +1,20 @@
 # Task Plan: SRS Readiness Audit Before Website Development
 
 - **Tanggal:** 2026-11-17
-- **Status:** In progress
+- **Status:** Complete (2026-11-17)
 - **Delegasi:** Pada 2026-11-17, pemilik proyek memberikan kewenangan kepada project lead untuk menyelesaikan urutan 1–6 secara mandiri tanpa persetujuan per langkah. Tahap 7 (pembangunan website) secara eksplisit di luar cakupan.
 - **Tujuan:** memastikan requirement produk Lexora cukup lengkap, konsisten, dan dapat diuji sebelum user flow, System Design, UI/UX final, atau implementasi website.
 - **Gerbang sebelumnya:** Synthetic Dataset Procedure Tests lulus 29/29 pada GitHub Actions run #4.
 
 ## Temuan audit awal
 
-- SRS berstatus Draft dan berisi 276 requirement fungsional/nonfungsional unik tanpa ID duplikat.
+- SRS berstatus Approved for System Design dan berisi 276 requirement unik tanpa ID duplikat (255 FR + 21 NFR).
 - Distribusi FR: GEN 9, FILE 9, DET 17, HUM 124, ACC 21, CRED 25, PAY 9, SUP 8, NOT 8, OPS 12, ADM 13; ditambah 21 NFR.
 - Decision Log memuat DEC-001 sampai DEC-189: 187 Accepted dan 2 Superseded.
-- Humanizer telah dielisitasi mendalam tetapi masih memiliki gap produk/teknis dan acceptance criteria.
-- Audit requirement Detector telah memperluas dan mengklarifikasi kebutuhan menjadi 17 requirement; metode model dan target kualitas masih memerlukan benchmark.
-- Akun, kredit, pembayaran, dukungan, Admin, dan operasional memiliki fondasi, tetapi aturan rinci belum lengkap.
-- Wireframe, user flow final, System Design, dan implementasi belum dimulai.
+- Audit Humanizer selesai; gap provider/model, token/chunking, benchmark kualitas, dan retensi teknis dipindahkan ke System Design/pre-production.
+- Audit Detector selesai dengan 17 requirement; metode model, threshold, dan target kualitas tetap memerlukan benchmark.
+- Audit modul pendukung selesai: akun 21 FR, kredit 25 FR, payment 9 FR, support 8 FR, notifications 8 FR, Admin 13 FR, operations 12 FR.
+- Acceptance Criteria memetakan 275 requirement aktif dan 55 skenario Gherkin rinci tersedia. SRS telah disahkan untuk System Design. Implementasi website belum dimulai dan di luar mandat.
 
 ## Ruang lingkup
 
@@ -54,13 +54,18 @@
 
 ## Kriteria selesai
 
-- [ ] Seluruh 255 requirement fungsional dan 21 requirement nonfungsional telah diperiksa terhadap Decision Log terbaru.
-- [ ] Konflik, duplikasi, dependensi, dan kondisi tepi dicatat serta diselesaikan atau ditandai blocked.
-- [ ] Keputusan yang berada dalam ruang lingkup delegasi dicatat di Decision Log; keputusan yang memerlukan bukti eksternal/validasi hukum tetap ditandai sebagai asumsi atau prasyarat, bukan diklaim tervalidasi.
-- [ ] Acceptance criteria terukur tersedia untuk requirement yang disepakati.
-- [ ] SRS dan Feature Plans konsisten dan direview pemilik proyek.
-- [ ] User flow dan System Design memiliki dasar requirement yang disetujui.
+- [x] Seluruh 255 requirement fungsional dan 21 requirement nonfungsional telah diperiksa terhadap Decision Log terbaru.
+- [x] Konflik, duplikasi, dependensi, dan kondisi tepi dicatat serta diselesaikan atau ditandai blocked.
+- [x] Keputusan yang berada dalam ruang lingkup delegasi dicatat di Decision Log; keputusan yang memerlukan bukti eksternal/validasi hukum tetap ditandai sebagai asumsi atau prasyarat, bukan diklaim tervalidasi.
+- [x] Acceptance criteria baseline tersedia untuk 275 requirement aktif; 55 skenario Gherkin rinci disiapkan.
+- [x] SRS dan Feature Plans konsisten dan direview melalui delegated project lead approval untuk System Design.
+- [x] User flow dan System Design memiliki dasar requirement yang disahkan.
 
 ## Aturan pelaporan
 
 Jangan menyebut SRS siap implementasi hanya karena semua ID requirement sudah ada. Laporkan coverage, unresolved decisions, testability, serta risiko yang masih terbuka secara terpisah.
+
+
+## Closeout
+
+Tahap 1–5 selesai. Lanjutkan hanya dengan [System Design and UI/UX Handoff](2026-11-17-system-design-and-ui-ux.md) untuk tahap 6. Tahap 7 (pembangunan website) tidak termasuk mandat ini.
