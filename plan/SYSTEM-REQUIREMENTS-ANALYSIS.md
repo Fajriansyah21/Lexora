@@ -267,7 +267,7 @@ Gaya bawaan MVP ditetapkan menjadi enam pilihan: Akademik, Formal, Profesional, 
 |---|---|---|
 | FR-ACC-01 | Guest dapat menggunakan fitur dengan batasan. | Disepakati |
 | FR-ACC-02 | Guest hanya dapat menggunakan AI Text Detector; AI Humanizer mensyaratkan pengguna login/terdaftar. | Disepakati |
-| FR-ACC-03 | Perbedaan kuota Guest dan pengguna terdaftar mengacu pada jumlah kredit/reward yang tersedia, bukan batas maksimal karakter input. | Disepakati; besaran kredit/reward belum ditentukan, batas karakter per status pengguna belum diputuskan |
+| FR-ACC-03 | Perbedaan kuota Guest dan pengguna terdaftar mengacu pada jumlah kredit/reward yang tersedia, bukan batas maksimal karakter input. | Disepakati; besaran kredit/reward belum ditentukan. Batas karakter Detector berlaku sama untuk Guest dan pengguna terdaftar (DEC-016, DEC-150) |
 | FR-ACC-04 | Registrasi dan login mendukung email/password serta Google Sign-In. | Disepakati |
 | FR-ACC-05 | Mendukung verifikasi email dan reset password. | Disepakati |
 | FR-ACC-06 | Menangani akun email/password dan Google dengan alamat sama secara aman. | Disepakati sebagai kebutuhan |
@@ -454,10 +454,8 @@ Daftar berikut sengaja dibiarkan terbuka. Gaya bawaan MVP dan baseline minimum t
 ### Produk dan UX
 
 - Copywriting, layout, dan desain UI.
-- Angka minimum/maksimum karakter per fitur.
 - Batas minimum/maksimum ukuran file.
 - Elemen DOCX/PDF yang dipertahankan dan dukungan OCR final.
-- Batas jumlah profil gaya.
 - Detail halaman dan pengaturan dashboard.
 
 ### Kredit, iklan, dan pembayaran
@@ -473,6 +471,7 @@ Daftar berikut sengaja dibiarkan terbuka. Gaya bawaan MVP dan baseline minimum t
 ### Teknologi dan operasional
 - Framework frontend/backend, database, storage, queue, cache, hosting, dan deployment.
 - Provider/model AI untuk Detector dan Humanizer.
+- Batas token internal, strategi chunking, dan agregasi hasil Detector/Humanizer.
 - OCR dan library ekstraksi/generasi dokumen.
 - Provider email dan mekanisme notifikasi real-time.
 - Target uptime, response time, throughput, concurrency, dan kapasitas antrean.
