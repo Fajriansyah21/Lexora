@@ -90,3 +90,8 @@ SRS diperluas dengan FR-ACC-20/21 dan NFR-SEC-06 serta NFR-PRIV-03 sampai NFR-PR
 ### Addendum rewarded ads
 
 DEC-175 dan DEC-176 menetapkan Google Ad Manager Rewarded Web sebagai kandidat bersyarat dan membatasi rewarded-ad credit MVP untuk akun login. Guest hanya dapat menggunakan trial credit non-iklan yang dikonfigurasi dan terikat sesi. SRS FR-CRED-03/04/21/25 telah diperbarui. Rewarded ads tetap feature-flagged sampai policy, eligibility, SSV, dan merchant/provider review selesai.
+
+
+## 7. Addendum System Design decisions
+
+DEC-177 sampai DEC-189 menetapkan arsitektur modular monolith, stack React/Next.js, Better Auth, PostgreSQL/Drizzle, Redis/BullMQ, FastAPI, Midtrans Snap sebagai payment integration pertama, Google Ad Manager Rewarded Web bersyarat, provider adapter Humanizer, private object storage, containerized deployment, design direction, dan observability baseline. Detail trade-off dan prasyarat tetap berada di [Technology Evaluation](../plan/TECHNOLOGY-EVALUATION.md).
