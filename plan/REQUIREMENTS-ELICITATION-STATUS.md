@@ -190,7 +190,6 @@ Audit modul pendukung selesai pada 2026-11-17. Lihat [Supporting Modules Require
 ### 4.1 Humanizer
 
 - Provider/model AI dan estimasi biaya.
-- Daftar final gaya bawaan.
 - Algoritma profiling serta kriteria adaptif untuk menilai kecukupan keseluruhan kumpulan sampel.
 - Bentuk representasi profil dan retensi sampel mentah.
 - Batas token internal, strategi chunking, penjagaan konteks, dan batas provider.
@@ -204,8 +203,8 @@ Rincian berada di bagian 8 [AI Humanizer Plan](AI-HUMANIZER-PLAN.md) dan bagian 
 
 ### 4.2 AI Text Detector
 
-- Angka batas maksimum input dan batas token internal.
-- Definisi operasional label serta panduan anotasi.
+- Batas token internal, strategi chunking, dan metode agregasi final.
+- Definisi operasional label dataset, panduan anotasi, dan threshold.
 - Confidence, threshold, dan kalibrasi.
 - Penjelasan hasil yang dapat ditelusuri.
 - Perilaku untuk teks pendek, campuran bahasa, domain berbeda, dan hasil tidak pasti.
@@ -256,14 +255,14 @@ Daftar lengkap dan statusnya mengacu pada bagian 8 SRS.
 
 ## 7. Urutan pekerjaan berikutnya
 
-1. Verifikasi hasil audit Humanizer dan gunakan [Humanizer Requirements Audit](../docs/HUMANIZER-REQUIREMENTS-AUDIT-2026-11-17.md) sebagai catatan koreksi, konflik, dan gap desain.
-2. Lanjutkan elisitasi Humanizer pada gap yang benar-benar terbuka.
-3. Lakukan elisitasi AI Text Detector secara menyeluruh.
-4. Lengkapi akun, dashboard, kredit, transaksi, pembayaran, Admin, dukungan, dan operasional.
-5. Audit konflik, dependensi, duplikasi, serta keputusan superseded.
-6. Susun acceptance criteria yang dapat diuji untuk setiap requirement.
-7. Konsolidasikan SRS dan Feature Plans.
-8. Minta review pemilik proyek sebelum user flow, wireframe, Google Stitch, atau System Design.
+1. Selesaikan audit konsistensi lintas modul, requirement, keputusan, dan status dokumentasi.
+2. Finalisasi acceptance criteria, terutama target terukur yang bergantung pada benchmark/infrastruktur.
+3. Review dan sahkan SRS untuk System Design melalui mandat delegasi project lead.
+4. Susun user flow lengkap untuk Guest, akun, Detector, Humanizer, kredit, pembayaran, dukungan, dan Admin.
+5. Susun modular architecture, system flow, data flow, data lifecycle, API/event contracts, dan threat model.
+6. Evaluasi teknologi, provider AI, payment gateway, iklan, storage, queue, email, dan deployment berdasarkan sumber resmi serta trade-off.
+7. Susun UI/UX flow, wireframe, design system, dan spesifikasi interaksi untuk MVP.
+8. Lakukan review akhir tahap 1–6 dan serahkan paket spesifikasi; implementasi website tetap di luar cakupan.
 
 ## 8. Batas tahap
 
