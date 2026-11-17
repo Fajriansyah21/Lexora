@@ -64,7 +64,7 @@ Raw text must not be placed in Redis job payloads, application logs, error messa
 - Worker loads text and an immutable profile snapshot if a personal profile is selected.
 - Provider adapter sends only the required text and instructions.
 - Provider request metadata includes model/config version, provider request ID, and cost/usage metadata.
-- Provider prompts/responses are not used for provider training by default where the provider setting/contract supports that guarantee; verify exact provider retention before production.
+- Provider prompts/responses must not be used for provider training; if the provider setting/contract cannot guarantee the required restriction, that provider is blocked from production.
 - Worker stores result and usage, settles credits, and emits completion event.
 - Profile deletion does not alter an already-running document job snapshot.
 
@@ -81,17 +81,15 @@ stateDiagram-v2
   ReEvaluating --> Active: Quality passes
   ReEvaluating --> NeedsMoreSamples: Quality fails
   NeedsMoreSamples --> CollectingSamples
-  Active --> RecentlyDeleted: User confirms profile deletion
-  RecentlyDeleted --> Active: Restored within policy window
-  RecentlyDeleted --> Purged: Retention expires
-  Active --> Deleting: Confirmed permanent deletion
+  Active --> Deleting: User confirms profile deletion
   Deleting --> Purged: Atomic deletion succeeds
 ```
 
 - Sample versions are immutable.
 - Each sample stores size, hash, provenance, creation time, and consent linkage.
 - A profile is usable only after the hard gate and adaptive assessment pass.
-- Recently Deleted and permanent deletion are distinct states.
+- Profile deletion is permanent after confirmation and must follow the profile-deletion decisions in the Decision Log.
+- Sample deletion has a separate Recently Deleted state with a 30-day recovery window; restoration applies to samples, not deleted profiles.
 - Deletion failure must leave all profile data intact.
 
 ## 6. Credit and payment lifecycle
