@@ -23,6 +23,8 @@ Folder ini menyimpan rencana produk, kebutuhan sistem, keputusan, status elisita
 | [Dataset and Model Research Plan](DATASET-AND-MODEL-RESEARCH-PLAN.md) | Prosedur dataset, sumber data, split, dan evaluasi model | Rencana riset |
 | [Supporting Modules Requirements Audit](../docs/SUPPORTING-MODULES-REQUIREMENTS-AUDIT-2026-11-17.md) | Audit akun, kredit, pembayaran, dukungan, notifikasi, Admin, operasional, dan NFR | Audit tahap 3 selesai |
 | [AI Text Detector Requirements Audit](../docs/AI-TEXT-DETECTOR-REQUIREMENTS-AUDIT-2026-11-17.md) | Audit 17 requirement Detector dan riset reliabilitas | Audit tahap 2 selesai |
+| [Acceptance Criteria](ACCEPTANCE-CRITERIA.md) | 264 active requirements mapped to acceptance statements and edge tests | Baseline drafted |
+| [Acceptance Test Scenarios](ACCEPTANCE-TEST-SCENARIOS.md) | 45 detailed Gherkin scenarios for high-risk workflows | Designed, not executed |
 | [Humanizer Requirements Audit](../docs/HUMANIZER-REQUIREMENTS-AUDIT-2026-11-17.md) | Hasil audit 124 requirement Humanizer, koreksi konflik, dan gap desain | Audit tahap 1 selesai |
 | [Dataset Specification & Benchmark Protocol](../docs/DATASET-SPECIFICATION-BENCHMARK-v1.md) | Rancangan dataset dan protokol benchmark | Spesifikasi riset v1 |
 | [Annotation Guidelines](../docs/ANNOTATION-GUIDELINES-v1.md) | Definisi label dan prosedur anotasi | Pedoman pilot v1 |
