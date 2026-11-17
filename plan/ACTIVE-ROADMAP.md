@@ -78,6 +78,8 @@ Bukti dan keterbatasan: `tests/synthetic_dataset/README.md`, `docs/EDITING-HISTO
 
 ## Langkah berikutnya
 
+Task aktif: [SRS Readiness Audit](tasks/2026-11-17-srs-readiness-audit.md). Gerbang dataset sintetis telah lulus; tahap website menunggu penutupan dan review kebutuhan produk.
+
 1. Lanjutkan elisitasi pada gap Humanizer yang benar-benar belum dibahas; lihat Requirements Elicitation Status.
 2. Lengkapi elisitasi AI Text Detector.
 3. Lengkapi akun, dashboard, kredit, transaksi, pembayaran, Admin, dukungan, dan operasional.
