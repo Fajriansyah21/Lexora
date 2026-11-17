@@ -16,10 +16,10 @@ SRS tetap berstatus **Draft** dan elisitasi kebutuhan masih berlangsung. Rekap t
 
 Posisi dokumentasi pada 2026-11-17:
 - 155 catatan keputusan: 153 Accepted dan 2 Superseded (DEC-018 dan DEC-019).
-- 201 baris kebutuhan fungsional dalam SRS, termasuk 124 requirement Humanizer dan 17 requirement Detector.
+- 265 baris kebutuhan fungsional/nonfungsional terstruktur dalam SRS, termasuk 124 requirement Humanizer, 17 requirement Detector, dan modul pendukung.
 - Audit konsistensi requirement Humanizer telah diselesaikan pada 2026-11-17; gap desain teknis dan acceptance criteria tetap menjadi pekerjaan tahap berikutnya.
 - Audit requirement awal Detector selesai; metodologi model, threshold, dan acceptance criteria masih perlu divalidasi.
-- Akun, dashboard, kredit, pembayaran, dukungan, Admin, dan operasional sudah memiliki fondasi, tetapi detail kebutuhan belum lengkap.
+- Audit requirement inti akun, dashboard, kredit, pembayaran, dukungan, notifikasi, Admin, dan operasional telah diperluas; nilai komersial, provider, permission matrix rinci, dan target operasional tetap terbuka.
 
 SRS belum siap menjadi dasar System Design. Elisitasi seluruh modul, audit konflik/dependensi, dan acceptance criteria harus diselesaikan terlebih dahulu. Ringkasan status bukan pengganti SRS atau Decision Log.
 
@@ -82,7 +82,7 @@ Task aktif: [SRS Readiness Audit](tasks/2026-11-17-srs-readiness-audit.md). Gerb
 
 1. Lanjutkan ke elisitasi AI Text Detector; gap Humanizer yang tersisa dipindahkan ke System Design dan acceptance criteria sesuai audit.
 2. Verifikasi laporan audit AI Text Detector dan lanjutkan ke modul pendukung.
-3. Lengkapi akun, dashboard, kredit, transaksi, pembayaran, Admin, dukungan, dan operasional.
+3. Verifikasi audit modul pendukung; lanjutkan audit lintas modul, keamanan, privasi, dan data lifecycle.
 4. Audit konflik/dependensi dan susun acceptance criteria sebelum review akhir SRS.
 5. Setelah gerbang kebutuhan terpenuhi dan pemilik proyek meninjau SRS, susun user flow Detector dan Humanizer.
 6. Pertahankan jalur uji prosedur sintetis dataset sesuai urutan dan gerbang yang sudah ditetapkan.
