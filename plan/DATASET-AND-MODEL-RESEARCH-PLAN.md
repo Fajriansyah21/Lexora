@@ -63,7 +63,7 @@ Batas interpretasi:
 - Pengujian ini memverifikasi prosedur dan perilaku fixture sintetis, bukan kualitas atau kebenaran label data nyata.
 - Near-duplicate threshold 0.88 hanya parameter pengujian, belum menjadi threshold produksi.
 - Split hash-bucket deterministik mendekati 70/15/15 berdasarkan jumlah grup, bukan jumlah dokumen atau distribusi kelas. Desain stratifikasi dan challenge holdout nyata tetap memerlukan keputusan riset.
-- Workflow GitHub Actions tersedia, tetapi belum ada hasil run CI yang dapat diverifikasi pada tanggal laporan.
+- Workflow GitHub Actions run #2 berhasil pada commit `500b11be6c34588fd72d1e9f6fff27e95533b468`: 27/27 test lulus pada Python 3.12.16 dan jsonschema 4.26.0. [Log CI](https://github.com/Fajriansyah21/Website-AI-Ditector/actions/runs/44026691695).
 - Hasil ini tidak mengesahkan pilot, penggunaan dataset publik, consent, maupun training.
 
 ## 5. Pencegahan data leakage
