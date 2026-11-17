@@ -93,8 +93,8 @@ Requirements before activation:
 - Reward is opt-in and clearly described before the ad begins.
 - Reward must be non-cash, non-transferable, and usable only within Lexora.
 - Use server-side verification where supported; bind reward callback to a unique server-generated session/nonce and make grants idempotent.
-- Guest reward must remain tied to a specific guest session and must not be transferable. If the selected provider's policy or verification flow cannot support that, disable Guest reward and require an authenticated account.
-- Do not activate ads until account eligibility, policy, consent, and inventory have been reviewed.
+- MVP rewarded-ad credit is login-only. Guest uses a configurable non-ad trial grant tied to the Guest session. Reconsider Guest rewarded ads only after written/provider-level confirmation that web SSV can bind a Guest session securely and policy permits it.
+- Do not activate ads until account eligibility, policy, consent, inventory, and server-side verification have been reviewed.
 
 ## 6. AI provider strategy
 
@@ -105,6 +105,8 @@ Use a provider adapter with a common contract:
 - `cancel(requestId)` where provider supports cancellation
 - `getUsage(requestId)`
 - `healthCheck()`
+
+OpenAI API is the first provider candidate because API inputs/outputs are not used for model training by default. This is not a zero-retention guarantee: abuse-monitoring/application-state retention and endpoint-specific storage controls must be checked. Use non-stored request modes where supported; Zero Data Retention requires eligibility/approval. Cross-border processing remains blocked until DEC-170 review.
 
 Evaluate OpenAI and Gemini candidates on:
 - Preservation of facts, names, numbers, citations, and meaning.
