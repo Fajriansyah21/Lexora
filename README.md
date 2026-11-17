@@ -6,6 +6,7 @@ Platform untuk membantu pengguna menganalisis dan mengolah tulisan melalui **AI 
 
 - [User flows](plan/USER-FLOWS.md)
 - [System design](plan/SYSTEM-DESIGN.md)
+- [Security architecture and threat model](plan/SECURITY-ARCHITECTURE-AND-THREAT-MODEL.md)
 - [Data flow and lifecycle](plan/DATA-FLOW-AND-DATA-LIFECYCLE.md)
 - [API contracts](plan/API-CONTRACTS.md)
 - [Technology evaluation](plan/TECHNOLOGY-EVALUATION.md)
