@@ -12,7 +12,7 @@ DOCX Metadata Cleaner ditunda ke fase setelah MVP. Arsitektur produk tetap modul
 
 ## Status analisis kebutuhan sistem
 
-SRS tetap berstatus **Draft** dan elisitasi kebutuhan masih berlangsung. Rekap terperinci berada di [Requirements Elicitation Status](REQUIREMENTS-ELICITATION-STATUS.md).
+SRS berstatus **Approved for System Design** melalui delegated project lead review pada 2026-11-17. Lihat [SRS Review Record](../docs/SRS-REVIEW-AND-APPROVAL-2026-11-17.md) dan [Requirements Elicitation Status](REQUIREMENTS-ELICITATION-STATUS.md).
 
 Posisi dokumentasi pada 2026-11-17:
 - 167 catatan keputusan: 165 Accepted dan 2 Superseded (DEC-018 dan DEC-019).
@@ -21,7 +21,7 @@ Posisi dokumentasi pada 2026-11-17:
 - Audit requirement awal Detector selesai; metodologi model, threshold, dan acceptance criteria masih perlu divalidasi.
 - Audit requirement inti akun, dashboard, kredit, pembayaran, dukungan, notifikasi, Admin, dan operasional telah diperluas; nilai komersial, provider, permission matrix rinci, dan target operasional tetap terbuka.
 
-SRS belum siap menjadi dasar System Design. Elisitasi seluruh modul, audit konflik/dependensi, dan acceptance criteria harus diselesaikan terlebih dahulu. Ringkasan status bukan pengganti SRS atau Decision Log.
+SRS siap menjadi dasar System Design. Detail provider, harga, retensi legal, token limits, dan target operasional tetap harus ditentukan/diuji pada tahap desain sebelum implementasi atau produksi. Ringkasan status bukan pengganti SRS atau Decision Log.
 
 ## Tahap perencanaan sistem MVP
 
@@ -77,6 +77,8 @@ Bukti dan keterbatasan: `tests/synthetic_dataset/README.md`, `docs/EDITING-HISTO
 - Training model sebelum gerbang dataset dipenuhi.
 
 ## Langkah berikutnya
+
+Tahap 1–5 selesai. Tahap 6 aktif: user flow, modular architecture, system flow/data lifecycle, evaluasi teknologi, dan UI/UX. Tahap 7 (pembangunan website) belum dimulai dan berada di luar mandat.
 
 Acceptance criteria baseline tersedia di `plan/ACCEPTANCE-CRITERIA.md` dengan 264 requirement aktif dan 45 skenario rinci di `plan/ACCEPTANCE-TEST-SCENARIOS.md`. Test execution belum dimulai; target performa/availability menunggu desain teknis.
 
