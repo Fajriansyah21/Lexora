@@ -3,7 +3,7 @@
 - **Status:** Rencana fitur tingkat tinggi; kebutuhan fungsional dirujuk ke SRS
 - **Modul:** AI Humanizer
 - **Bahasa:** Bahasa Indonesia dan Bahasa Inggris; teks campuran diproses dengan memperhatikan keterbatasan
-- **Terakhir diperbarui:** 2026-11-14
+- **Terakhir diperbarui:** 2026-11-17
 
 ## Peran dan sumber kebenaran
 
@@ -28,14 +28,32 @@ Rincian perilaku dan batas setiap kemampuan tercatat satu kali di SRS. Peta beri
 
 | Area | Cakupan | Requirement |
 |---|---|---|
-| Gaya dan profil personal | Gaya bawaan, sampel, kecukupan, versioning, pemulihan, privasi, dan akses audit | FR-HUM-01–36 |
-| Input dan hasil | Dokumen, editor, pemrosesan, hasil revisi, dan penyimpanan riwayat | FR-HUM-37–86 |
-| Batasan dan pemulihan sampel | Batas input, validasi sampel, Recently Deleted, dan pemulihan massal | FR-HUM-14, FR-HUM-87–88 |
-| Siklus hidup data | Penghapusan sampel, aktivitas akun, penghapusan akun, ekspor data, dan riwayat ekspor | FR-HUM-89–117 |
+| Gaya bawaan dan profil personal | Enam gaya bawaan, sampel, kecukupan, versioning, pemulihan, privasi, dan akses audit | FR-HUM-01–36 |
+| Input, editor, hasil, dan navigasi | Dokumen, editor, pemrosesan, hasil revisi, penyimpanan, perlindungan hasil belum tersimpan, dan aksesibilitas | FR-HUM-37–67 |
+| Batas input dan pengelolaan profil/sampel | Batas karakter, file, profil, sampel, unduhan, Recently Deleted, dan pemulihan massal | FR-HUM-68–99 |
+| Penghapusan akun dan ekspor data | Pending Deletion, ekspor data pribadi, riwayat ekspor, autentikasi ulang, dan rate limiting | FR-HUM-100–117 |
+| Penghapusan profil dan konsistensi pekerjaan | Pembatalan, snapshot pekerjaan aktif, kegagalan atomik, dan retry penghapusan profil | FR-HUM-118–124 |
 
 Catatan: FR-HUM-14 ditempatkan sesuai urutan ID di SRS dan menetapkan batas minimum setiap sampel. Peta ini tidak mengubah isi maupun status requirement.
 
+## 2.1 Gaya bawaan MVP
+
+Daftar gaya bawaan yang dipakai pada MVP mengikuti DEC-148:
+
+| Gaya | Perilaku penyuntingan |
+|---|---|
+| **Akademik** | Mengutamakan struktur argumen, terminologi bidang, ketepatan, dan nada objektif. Tidak mengubah sitasi atau klaim sumber. |
+| **Formal** | Menggunakan bahasa baku, kalimat tertata, dan ungkapan sopan untuk komunikasi umum. |
+| **Profesional** | Mengutamakan kejelasan, keringkasan, fokus pada tujuan, dan nada kerja yang tepat. |
+| **Santai** | Menggunakan bahasa percakapan yang natural dan mudah dibaca tanpa menghilangkan informasi penting. |
+| **Informatif** | Mengutamakan penjelasan yang runtut, eksplisit, dan mudah dipahami pembaca. |
+| **Kreatif** | Memberi ruang variasi diksi, ritme, dan ekspresi dengan tetap mempertahankan fakta serta maksud sumber. |
+
+Gaya adalah preset register dan cara penyampaian, bukan tingkat intensitas. Semua gaya tunduk pada prinsip pelestarian makna, fakta, angka, nama, kutipan, dan terminologi penting.
+
 ## 3. Konsep profil gaya personal
+
+Profil memerlukan minimal tiga sampel yang memenuhi 500 extended grapheme clusters per entri sebelum dapat digunakan. Batas ini adalah hard gate awal, bukan jaminan kecukupan. Sistem tetap menilai konsistensi dan keberagaman keseluruhan kumpulan, dapat meminta sampel tambahan, dan membatasi jumlah sampel hingga 20 per profil. Exact duplicate setelah normalisasi perbandingan tidak dihitung sebagai sampel independen kedua. Baseline tiga sampel harus dievaluasi kembali menggunakan hasil pilot.
 
 Secara konseptual, siklus profil gaya terdiri dari:
 
@@ -70,7 +88,7 @@ Alur ini merupakan ringkasan. Validasi, batas, perilaku navigasi, penyimpanan, d
 
 ## 6. Siklus hidup sampel, akun, dan ekspor
 
-Siklus penghapusan sampel, pemulihan, aktivitas akun, penghapusan akun, ekspor data pribadi, serta pengelolaan riwayat ekspor telah memiliki requirement tersendiri pada FR-HUM-89 sampai FR-HUM-117. Ketentuan ini mencakup pemisahan data yang terlihat oleh pengguna dari audit log internal, retensi, sinkronisasi lintas perangkat, autentikasi ulang, dan penanganan kegagalan.
+Siklus penghapusan sampel, pemulihan, aktivitas akun, penghapusan akun, ekspor data pribadi, serta pengelolaan riwayat ekspor telah memiliki requirement tersendiri pada FR-HUM-89 sampai FR-HUM-117. Penghapusan profil dan dampaknya pada pekerjaan profil/dokumen diatur pada FR-HUM-118 sampai FR-HUM-124. Ketentuan ini mencakup pemisahan data yang terlihat oleh pengguna dari audit log internal, retensi, sinkronisasi lintas perangkat, autentikasi ulang, dan penanganan kegagalan.
 
 Dokumen ini sengaja tidak menyalin ulang aturan tersebut. Untuk perilaku yang mengikat, gunakan SRS dan telusuri keputusan terkait melalui Decision Log.
 
