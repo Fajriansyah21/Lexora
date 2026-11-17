@@ -88,7 +88,7 @@ Alur ini merupakan ringkasan. Validasi, batas, perilaku navigasi, penyimpanan, d
 
 ## 6. Siklus hidup sampel, akun, dan ekspor
 
-Siklus penghapusan sampel, pemulihan, aktivitas akun, penghapusan akun, ekspor data pribadi, serta pengelolaan riwayat ekspor telah memiliki requirement tersendiri pada FR-HUM-89 sampai FR-HUM-117. Penghapusan profil dan dampaknya pada pekerjaan profil/dokumen diatur pada FR-HUM-118 sampai FR-HUM-124. Ketentuan ini mencakup pemisahan data yang terlihat oleh pengguna dari audit log internal, retensi, sinkronisasi lintas perangkat, autentikasi ulang, dan penanganan kegagalan.
+Siklus penghapusan sampel, pemulihan, aktivitas akun, penghapusan akun, ekspor data pribadi, serta pengelolaan riwayat ekspor telah memiliki requirement tersendiri pada FR-HUM-89 sampai FR-HUM-117. Penghapusan profil dan dampaknya pada pekerjaan profil/dokumen diatur pada FR-HUM-118 sampai FR-HUM-124. FR-HUM-14 dipertahankan sebagai catatan historis dan telah dikonsolidasikan ke FR-HUM-70. Ketentuan ini mencakup pemisahan data yang terlihat oleh pengguna dari audit log internal, retensi, sinkronisasi lintas perangkat, autentikasi ulang, dan penanganan kegagalan.
 
 Dokumen ini sengaja tidak menyalin ulang aturan tersebut. Untuk perilaku yang mengikat, gunakan SRS dan telusuri keputusan terkait melalui Decision Log.
 
@@ -119,7 +119,6 @@ Pengujian kualitas perlu mencakup teks akademik, formal, informal, teknis, teks 
 Daftar berikut hanya memuat isu yang masih terbuka. Keputusan produk yang sudah disepakati tidak dicantumkan kembali sebagai pekerjaan terbuka.
 
 - Provider/model AI dan estimasi biaya operasional.
-- Daftar final gaya bawaan.
 - Algoritma profiling serta kriteria adaptif untuk menilai kecukupan keseluruhan kumpulan sampel.
 - Bentuk representasi profil dan retensi sampel mentah setelah profiling.
 - Batas token internal, strategi chunking, penjagaan konteks, dan batas provider.
