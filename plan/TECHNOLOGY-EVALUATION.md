@@ -197,7 +197,9 @@ These are not hidden assumptions. They are explicit evaluation gates for System 
 - [Better Auth sessions](https://better-auth.com/docs/concepts/session-management) and [OAuth](https://better-auth.com/docs/concepts/oauth).
 - [FastAPI documentation](https://fastapi.tiangolo.com/).
 - [Drizzle ORM documentation](https://orm.drizzle.team/docs/overview).
-- [Midtrans Snap](https://docs.midtrans.com/docs/snap).
-- [Google Ad Manager Rewarded Web](https://developers.google.com/publisher-tag/samples/display-rewarded-ad).
-- [Google Ad Manager server-side verification](https://support.google.com/admanager/answer/9116812).
+- [Midtrans Snap](https://docs.midtrans.com/docs/snap) and [Midtrans public pricing](https://midtrans.com/pricing).
+- [Xendit public pricing](https://www.xendit.co/id/biaya).
+- [Google Ad Manager Rewarded Web sample](https://developers.google.com/publisher-tag/samples/display-rewarded-ad).
+- [Google Ad Manager web rewarded traffic and SSV](https://support.google.com/admanager/answer/9116812).
+- [Google policies for ad units that offer rewards](https://support.google.com/admanager/answer/7496282).
 - [Privacy and Legal Readiness](../docs/PRIVACY-AND-LEGAL-READINESS.md).
