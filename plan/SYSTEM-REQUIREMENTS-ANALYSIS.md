@@ -1,10 +1,10 @@
 # Lexora System Requirements Analysis
 
-- **Status:** Under delegated project review; approval for System Design pending final cross-module review
+- **Status:** Approved for System Design (Delegated Project Lead Review, 2026-11-17)
 - **Terakhir diperbarui:** 2026-11-17
 - **Cakupan:** MVP AI Text Detector dan AI Humanizer beserta modul pendukung
 - **Sumber:** Keputusan pemilik proyek dalam sesi elisitasi 2026-11-12 sampai 2026-11-14 dan delegated project decisions DEC-145 sampai DEC-167 pada 2026-11-17
-- **Dokumen terkait:** [Product Overview](PRODUCT-OVERVIEW.md), [Decision Log](DECISION-LOG.md), [Active Roadmap](ACTIVE-ROADMAP.md), [AI Text Detector Plan](AI-TEXT-DETECTOR-PLAN.md), [AI Humanizer Plan](AI-HUMANIZER-PLAN.md)
+- **Dokumen terkait:** [Product Overview](PRODUCT-OVERVIEW.md), [Decision Log](DECISION-LOG.md), [Active Roadmap](ACTIVE-ROADMAP.md), [AI Text Detector Plan](AI-TEXT-DETECTOR-PLAN.md), [AI Humanizer Plan](AI-HUMANIZER-PLAN.md), [SRS Review Record](../docs/SRS-REVIEW-AND-APPROVAL-2026-11-17.md)
 
 **Peran dokumen:** SRS adalah sumber utama kebutuhan fungsional dan nonfungsional. [Decision Log](DECISION-LOG.md) menyimpan riwayat keputusan dan alasan; [Requirements Elicitation Status](REQUIREMENTS-ELICITATION-STATUS.md) hanya merangkum cakupan serta kemajuan dan tidak menggantikan requirement di SRS. Dokumen rencana fitur menjelaskan alur dan pertimbangan tingkat fitur tanpa menyalin ulang seluruh requirement normatif.
 
@@ -558,7 +558,7 @@ Daftar berikut sengaja dibiarkan terbuka. Gaya bawaan MVP dan baseline minimum t
 
 ## 9. Kriteria kesiapan menuju System Design
 
-Tahap berikutnya dapat dimulai setelah review lintas modul oleh delegated project lead selesai. System Design harus menghasilkan:
+Review lintas modul oleh delegated project lead selesai pada 2026-11-17; SRS disahkan sebagai baseline System Design, bukan sebagai izin implementasi atau produksi. System Design harus menghasilkan:
 1. Batas modul dan tanggung jawab masing-masing.
 2. User flow Detector, Humanizer, akun, kredit, pembayaran, dan dukungan.
 3. Diagram sistem serta jalur sukses/gagal.
