@@ -73,3 +73,22 @@ For every run, record:
 - Decision: pass, revise, or blocked.
 
 Do not mark a component Verified until the tests have actually run and the evidence is committed. A test plan or fixture file alone is not a passing test.
+
+
+## Existing repository artifacts
+
+Recovered v1 references are stored at:
+- `docs/DATASET-SPECIFICATION-BENCHMARK-v1.md`
+- `docs/ANNOTATION-GUIDELINES-v1.md`
+- `docs/DATABASE-SCHEMA-v1.md`
+- `schemas/dataset-records-v1.schema.json`
+- `templates/editing-history.template.json`
+
+Run the executable harness from the repository root with:
+
+```bash
+python -m pip install -r requirements-test.txt
+python -m unittest discover -s tests/synthetic_dataset -p 'test_*.py' -v
+```
+
+The current synthetic test report is in `results/synthetic-dataset-test-2026-11-17.md`. Do not promote fixture-only thresholds into production settings without validation on a reviewed validation set.
