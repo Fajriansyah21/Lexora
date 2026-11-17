@@ -51,7 +51,7 @@ Jalur riset dataset tetap berjalan terpisah dari analisis sistem produk. Pengemb
 | 4 | Deduplikasi | Exact, normalized exact, near-duplicate candidate, Unicode normalization, dan false-merge guard | Verified (4 tests) |
 | 5 | Group-based split | Group/pair integrity, missing group, deterministic assignment, dan explicit challenge holdout | Verified (6 tests) |
 
-Harness tersedia di `scripts/synthetic_dataset_checks.py` dengan fixture dan 27 test cases di `tests/synthetic_dataset/`. Pengujian ekuivalen dijalankan secara lokal pada 2026-11-17 dan menghasilkan 27/27 lulus. Workflow GitHub Actions sudah ditambahkan, tetapi belum ada run/status CI yang dapat diverifikasi pada saat pembaruan ini.
+Harness tersedia di `scripts/synthetic_dataset_checks.py` dengan fixture dan 27 test cases di `tests/synthetic_dataset/`. Pengujian ekuivalen dijalankan secara lokal pada 2026-11-17 dan menghasilkan 27/27 lulus. Workflow GitHub Actions run #2 berhasil pada commit `500b11be6c34588fd72d1e9f6fff27e95533b468`: 27/27 test lulus pada Python 3.12.16 dan jsonschema 4.26.0. [Log CI](https://github.com/Fajriansyah21/Website-AI-Ditector/actions/runs/44026691695).
 
 ## Gerbang kelulusan pengujian sintetis
 
