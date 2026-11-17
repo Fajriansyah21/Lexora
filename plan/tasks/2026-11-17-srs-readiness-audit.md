@@ -49,6 +49,8 @@
 - [x] Catat DEC-145 sampai DEC-149 di bawah delegasi project lead.
 - [x] Publikasikan laporan audit Humanizer.
 - [x] Tahap 2: audit kebutuhan produk AI Text Detector dan catat DEC-150 sampai DEC-155.
+- [x] Laporan audit Detector: `docs/AI-TEXT-DETECTOR-REQUIREMENTS-AUDIT-2026-11-17.md`.
+- [ ] Tahap 3: audit dan lengkapi modul pendukung (akun, dashboard, kredit, transaksi, pembayaran, dukungan, notifikasi, Admin, operasional).
 
 ## Kriteria selesai
 
