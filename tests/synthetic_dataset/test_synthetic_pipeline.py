@@ -80,6 +80,9 @@ class LineageTests(unittest.TestCase):
         h=copy.deepcopy(self.history); h[0]["created_at_utc"]="2026-01-01T02:00:00+02:00"
         h[1]["created_at_utc"]="2025-12-31T23:59:00Z"
         self.assertTrue(any("timestamp precedes" in e for e in validate_editing_history(h)))
+    def test_timestamp_cannot_precede_parent(self):
+        h=copy.deepcopy(self.history); h[1]["created_at_utc"]="2025-12-31T23:59:00Z"
+        self.assertTrue(any("timestamp precedes" in e for e in validate_editing_history(h)))
     def test_empty_history(self): self.assertEqual(validate_editing_history([]),[])
 
 class DedupTests(unittest.TestCase):
