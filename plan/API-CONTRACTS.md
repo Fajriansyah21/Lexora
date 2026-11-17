@@ -117,7 +117,7 @@ Rules:
 - `POST /api/v1/humanizer/profiles/{profileId}/samples`
 - `DELETE /api/v1/humanizer/profiles/{profileId}/samples/{sampleId}`
 - `POST /api/v1/humanizer/profiles/{profileId}/evaluate`
-- `POST /api/v1/humanizer/profiles/{profileId}/restore`
+- `POST /api/v1/humanizer/profiles/{profileId}/samples/{sampleId}/restore`
 - `DELETE /api/v1/humanizer/profiles/{profileId}`
 
 Rules:
