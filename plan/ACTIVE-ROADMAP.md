@@ -15,8 +15,8 @@ DOCX Metadata Cleaner ditunda ke fase setelah MVP. Arsitektur produk tetap modul
 SRS tetap berstatus **Draft** dan elisitasi kebutuhan masih berlangsung. Rekap terperinci berada di [Requirements Elicitation Status](REQUIREMENTS-ELICITATION-STATUS.md).
 
 Posisi dokumentasi pada 2026-11-14:
-- 137 catatan keputusan: 135 Accepted dan 2 Superseded (DEC-018 dan DEC-019).
-- 188 baris kebutuhan fungsional dalam SRS, termasuk 117 requirement Humanizer dan 11 requirement Detector.
+- 144 catatan keputusan: 142 Accepted dan 2 Superseded (DEC-018 dan DEC-019).
+- 195 baris kebutuhan fungsional dalam SRS, termasuk 124 requirement Humanizer dan 11 requirement Detector.
 - Humanizer telah dibahas mendalam, tetapi masih memiliki isu terbuka dan belum memiliki acceptance criteria lengkap.
 - Detector baru memiliki fondasi kebutuhan; elisitasi belum menyeluruh.
 - Akun, dashboard, kredit, pembayaran, dukungan, Admin, dan operasional sudah memiliki fondasi, tetapi detail kebutuhan belum lengkap.
@@ -51,7 +51,7 @@ Jalur riset dataset tetap berjalan terpisah dari analisis sistem produk. Pengemb
 | 4 | Deduplikasi | Exact, normalized exact, near-duplicate candidate, Unicode normalization, dan false-merge guard | Verified (4 tests) |
 | 5 | Group-based split | Group/pair integrity, missing group, deterministic assignment, dan explicit challenge holdout | Verified (6 tests) |
 
-Harness tersedia di `scripts/synthetic_dataset_checks.py` dengan fixture dan 27 test cases di `tests/synthetic_dataset/`. Pengujian ekuivalen dijalankan secara lokal pada 2026-11-17 dan menghasilkan 27/27 lulus. Workflow GitHub Actions run #2 berhasil pada commit `500b11be6c34588fd72d1e9f6fff27e95533b468`: 27/27 test lulus pada Python 3.12.16 dan jsonschema 4.26.0. [Log CI](https://github.com/Fajriansyah21/Website-AI-Ditector/actions/runs/44026691695).
+Harness tersedia di `scripts/synthetic_dataset_checks.py` dengan fixture dan 29 test cases di `tests/synthetic_dataset/`. Pengujian lokal awal menghasilkan 27/27 lulus; setelah integrasi template-to-export ditambahkan, suite diperluas dan diverifikasi di GitHub Actions. Workflow GitHub Actions run #2 berhasil pada commit `500b11be6c34588fd72d1e9f6fff27e95533b468`: 27/27 test lulus pada Python 3.12.16 dan jsonschema 4.26.0. [Log CI](https://github.com/Fajriansyah21/Website-AI-Ditector/actions/runs/44026691695).
 
 ## Gerbang kelulusan pengujian sintetis
 
@@ -64,7 +64,7 @@ Tahap ini hanya dapat ditandai **Verified** jika:
 - [x] Pengujian dapat diulang dengan command terdokumentasi dan menghasilkan output yang dapat diperiksa.
 - [x] Kegagalan dan keterbatasan dicatat, bukan disembunyikan.
 
-Bukti dan keterbatasan: `tests/synthetic_dataset/README.md` dan `results/synthetic-dataset-test-2026-11-17.md`. Near-duplicate threshold 0.88 hanya parameter fixture, bukan threshold produksi. Hash-bucket split hanya membagi grup secara deterministik dan tidak menjamin stratifikasi kelas atau rasio persis. Kelulusan ini tidak mengesahkan sumber data, consent, label, pilot, atau training.
+Bukti dan keterbatasan: `tests/synthetic_dataset/README.md`, `docs/EDITING-HISTORY-MAPPING-v1.md`, dan `results/synthetic-dataset-test-2026-11-17.md`. Near-duplicate threshold 0.88 hanya parameter fixture, bukan threshold produksi. Hash-bucket split hanya membagi grup secara deterministik dan tidak menjamin stratifikasi kelas atau rasio persis. Kelulusan ini tidak mengesahkan sumber data, consent, label, pilot, atau training.
 
 ## Bukan prioritas implementasi saat ini
 
