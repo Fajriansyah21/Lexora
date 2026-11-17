@@ -214,7 +214,7 @@ flowchart TD
 - Delivery retries do not alter the underlying transaction/job state.
 - Duplicate event IDs create at most one logical notification.
 
-## 11. Flow invariants
+## 12. Flow invariants
 
 1. Backend is authoritative for length, balance, permissions, payment, and job state.
 2. No raw text is placed in queue payloads or general logs.
@@ -224,3 +224,27 @@ flowchart TD
 6. Guest credit is not transferred during account conversion.
 7. User text is not used for model training by default.
 8. A Detector result is never presented as proof of authorship.
+
+## 11. Login-only rewarded ad
+
+```mermaid
+flowchart TD
+  A[Logged-in user opens Credits] --> B[Rewarded ad available flag + eligibility check]
+  B -->|Not eligible| C[Do not show ad option]
+  B -->|Eligible| D[Show reward amount, expiry, non-transferability, and conditions]
+  D --> E{User opts in?}
+  E -->|No| F[Continue normal platform use]
+  E -->|Yes| G[Create server-side reward session]
+  G --> H[Request Google Ad Manager Rewarded Web]
+  H --> I[User completes ad]
+  I --> J[Google SSV callback]
+  J --> K[Verify signature/key ID/transaction ID]
+  K --> L{Can callback be securely linked to account?}
+  L -->|No| M[Do not grant; keep ads disabled pending provider clarification]
+  L -->|Yes| N[Idempotently grant one credit lot]
+  N --> O[Notify user]
+```
+
+Guest rewarded ads are disabled on MVP. Guest can only use a configured non-ad trial grant tied to the Guest session. The web SSV callback fields must be tested before production; do not assume user_id/custom_data are available on the web format.
+
+## 12. Flow invariants
