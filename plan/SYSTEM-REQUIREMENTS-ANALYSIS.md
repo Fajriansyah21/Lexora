@@ -84,7 +84,7 @@ Detail provider dan kontrak integrasi belum dipilih.
 | FR-GEN-01 | Antarmuka dan kedua modul mendukung Bahasa Indonesia dan Bahasa Inggris. | Disepakati |
 | FR-GEN-02 | Teks campuran Indonesia-Inggris dapat dikirim untuk diproses. Sistem memberi peringatan bahwa hasil mungkin kurang akurat. | Disepakati; kemampuan aktual perlu diuji |
 | FR-GEN-03 | Batas yang terlihat oleh pengguna menggunakan extended grapheme clusters sesuai Unicode Standard Annex #29, Unicode 18.0.0. Penghitungan mencakup spasi dan baris baru; CRLF dihitung sebagai satu cluster. Penghitung antarmuka dan validasi backend menggunakan aturan yang sama. | Disepakati; DEC-146 |
-| FR-GEN-04 | Detector dan Humanizer dapat memiliki batas input yang berbeda. | Disepakati; angka per modul belum ditentukan |
+| FR-GEN-04 | Detector dan Humanizer dapat memiliki batas input yang berbeda. | Disepakati; Detector 20.000 extended grapheme clusters dan Humanizer 50.000 extended grapheme clusters |
 | FR-GEN-05 | Pemrosesan teks pendek dilakukan sekaligus; teks panjang dapat diproses dengan chunking secara adaptif. | Disepakati sebagai arah; strategi konteks perlu desain |
 | FR-GEN-06 | Permintaan ringan dapat diproses langsung, sedangkan permintaan berat atau saat sistem sibuk dapat masuk antrean. | Disepakati sebagai arah |
 | FR-GEN-07 | Input divalidasi secara adaptif. Sistem dapat menolak input, memberi saran, atau memproses dengan peringatan sesuai kondisi dan modul. | Disepakati |
