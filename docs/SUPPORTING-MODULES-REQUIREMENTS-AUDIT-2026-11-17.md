@@ -7,7 +7,7 @@
 
 ## 1. Cakupan SRS setelah audit
 
-SRS kini memiliki **254 requirement fungsional dan 21 requirement nonfungsional**, total 275 baris requirement unik tanpa ID duplikat.
+SRS kini memiliki **255 requirement fungsional dan 21 requirement nonfungsional**, total 276 baris requirement unik tanpa ID duplikat.
 
 | Kelompok | Jumlah |
 |---|---:|
@@ -25,7 +25,7 @@ SRS kini memiliki **254 requirement fungsional dan 21 requirement nonfungsional*
 | NFR | 13 |
 | **Total** | **265** |
 
-Decision Log memuat DEC-001 sampai DEC-174: 172 Accepted dan 2 Superseded.
+Decision Log memuat DEC-001 sampai DEC-176: 174 Accepted dan 2 Superseded.
 
 ## 2. Temuan dan perbaikan per modul
 
@@ -133,3 +133,7 @@ Berikut tetap menjadi pekerjaan tahap 6 atau prasyarat validasi eksternal, bukan
 ## 7. Addendum privacy dan legal readiness
 
 SRS kemudian diperluas dengan FR-ACC-20/21 dan NFR-SEC-06 serta NFR-PRIV-03 sampai NFR-PRIV-09. DEC-168 sampai DEC-174 menetapkan no-training-by-default, consent terpisah, inventaris processor, cross-border transfer gate, incident response, data-subject requests, child-safety self-assessment, dan DPIA. Rincian checklist serta sumber resmi berada di [Privacy and Legal Readiness](PRIVACY-AND-LEGAL-READINESS.md). Ini adalah persyaratan desain dan launch gate, bukan klaim bahwa Lexora telah patuh atau terdaftar.
+
+## 8. Addendum rewarded ads
+
+DEC-175 dan DEC-176 memilih Google Ad Manager Rewarded Web sebagai kandidat bersyarat dan membatasi reward iklan MVP untuk akun login. Guest tidak menerima reward iklan; trial credit Guest, jika dikonfigurasi, berasal dari grant non-iklan yang terikat sesi dan berumur 24 jam. SSV, eligibility, kebijakan reward non-transferable, dan merchant approval wajib diverifikasi sebelum aktivasi.
