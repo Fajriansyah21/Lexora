@@ -5,6 +5,7 @@
 - **Product:** AI Text Detector + AI Humanizer.
 - **Source of truth:** SRS, Decision Log, User Flows, and System Design.
 - **Implementation:** not started; this document is a design handoff.
+- **Visual prompt pack:** [Google Stitch Design Prompts](STITCH-DESIGN-PROMPTS.md).
 
 ## 1. Design direction
 
