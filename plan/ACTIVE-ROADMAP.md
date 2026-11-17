@@ -51,7 +51,7 @@ Jalur riset dataset tetap berjalan terpisah dari analisis sistem produk. Pengemb
 | 4 | Deduplikasi | Exact, normalized exact, near-duplicate candidate, Unicode normalization, dan false-merge guard | Verified (4 tests) |
 | 5 | Group-based split | Group/pair integrity, missing group, deterministic assignment, dan explicit challenge holdout | Verified (6 tests) |
 
-Harness tersedia di `scripts/synthetic_dataset_checks.py` dengan fixture dan 29 test cases di `tests/synthetic_dataset/`. Pengujian lokal awal menghasilkan 27/27 lulus; setelah integrasi template-to-export ditambahkan, suite diperluas dan diverifikasi di GitHub Actions. Workflow GitHub Actions run #2 berhasil pada commit `500b11be6c34588fd72d1e9f6fff27e95533b468`: 27/27 test lulus pada Python 3.12.16 dan jsonschema 4.26.0. [Log CI](https://github.com/Fajriansyah21/Website-AI-Ditector/actions/runs/44026691695).
+Harness tersedia di `scripts/synthetic_dataset_checks.py` dengan fixture dan 29 test cases di `tests/synthetic_dataset/`. Pengujian lokal awal menghasilkan 27/27 lulus; setelah integrasi template-to-export ditambahkan, suite diperluas dan diverifikasi di GitHub Actions. Workflow GitHub Actions run #4 berhasil pada commit `f7c0a620f68e41c8f72c8f966c8a903ca8e55c96`: 29/29 test lulus pada Python 3.12.16 dan jsonschema 4.26.0. Termasuk uji mapping editing-history template ke export schema. [Log CI](https://github.com/Fajriansyah21/Website-AI-Ditector/actions/runs/44026960961).
 
 ## Gerbang kelulusan pengujian sintetis
 
