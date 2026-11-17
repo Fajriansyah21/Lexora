@@ -7,7 +7,7 @@ Dokumen ini adalah aturan kerja permanen untuk agent yang bekerja di repositori 
 - Nama produk: **Lexora**.
 - Nama historis/internal: **TextLab**. Gunakan Lexora untuk identitas produk baru; pertahankan TextLab ketika merujuk keputusan atau dokumen historis sampai migrasi dokumentasi selesai.
 - Produk dirancang sebagai platform analisis dan pengolahan teks berbahasa Indonesia: AI Text Detector, AI Humanizer, dan DOCX Metadata Cleaner.
-- Fokus riset aktif saat ini adalah **uji prosedur sintetis dataset**. Jangan mengalihkan prioritas ke UI, branding, deployment, atau implementasi fitur tanpa instruksi eksplisit pengguna.
+- Gerbang **uji prosedur sintetis dataset telah Verified pada 2026-11-17 (29/29 test lulus di GitHub Actions)**. Tahap berikutnya adalah menutup gap elisitasi dan acceptance criteria SRS sebelum System Design dan implementasi website. Instruksi pengguna untuk mulai website tidak menghapus kebutuhan menutup gap requirement yang berdampak pada arsitektur, data, keamanan, dan biaya.
 
 ## 2. Sumber kebenaran dan dokumentasi
 
@@ -43,9 +43,9 @@ Untuk pekerjaan multi-langkah:
 
 Jika pekerjaan gagal pada satu gerbang, hentikan perpindahan ke tahap berikutnya sampai penyebabnya dipahami atau pengguna menyetujui pengecualian.
 
-## 5. Prioritas riset aktif: uji prosedur sintetis dataset
+## 5. Gerbang riset dataset: synthetic procedure test (Verified)
 
-Urutan pengujian yang harus dipertahankan:
+Urutan pengujian yang harus dipertahankan untuk regresi:
 
 1. Validasi JSON Schema dan struktur record.
 2. Validasi sentence offset terhadap teks sumber.
@@ -53,7 +53,7 @@ Urutan pengujian yang harus dipertahankan:
 4. Uji deduplikasi exact dan near-duplicate.
 5. Uji group-based split untuk mencegah kebocoran kelompok.
 
-Gunakan data sintetis yang sengaja mencakup kasus valid, invalid, batas, dan adversarial. Simpan fixture, skrip, hasil, dan keputusan. Jangan mulai pilot dataset nyata atau training sebelum kriteria gerbang dipenuhi dan sumber data telah diaudit.
+Gunakan data sintetis yang sengaja mencakup kasus valid, invalid, batas, dan adversarial. Fixture, skrip, hasil, dan mapping editing-history tersimpan di repository. Suite terakhir lulus 29/29 pada GitHub Actions run #4. Jalankan ulang sebagai regression test setiap kali schema, fixture, atau prosedur berubah. Kelulusan gerbang ini tidak mengizinkan pilot dataset nyata atau training: audit sumber, lisensi, consent, blueprint pengumpulan, dan protokol anotasi tetap wajib.
 
 ## 6. Prinsip metodologi dataset
 
