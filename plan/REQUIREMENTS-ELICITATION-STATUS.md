@@ -8,7 +8,7 @@
 
 ## 1. Ringkasan kuantitatif dokumentasi
 
-Berdasarkan pemeriksaan dokumen GitHub pada 2026-11-14:
+Berdasarkan pemeriksaan dokumen GitHub pada 2026-11-17:
 
 - **144** catatan keputusan, DEC-001 sampai DEC-144.
 - **142** keputusan berstatus `Accepted`.
@@ -229,11 +229,7 @@ Daftar lengkap dan statusnya mengacu pada bagian 8 SRS.
 
 ## 5. Pertanyaan terbuka dari sesi sebelumnya
 
-**Pertanyaan terbuka terkait rate limiting ekspor masih belum dijawab dan belum menjadi keputusan.**
-
-Topik: titik awal penghitungan jeda minimal 30 detik untuk rate limiting percobaan ulang penghapusan seluruh riwayat ekspor.
-
-Jangan menambahkan aturan tentang sumber waktu atau titik awal hitung mundur ke SRS/Decision Log sebelum pengguna menyetujuinya.
+**Pertanyaan terbuka terkait titik awal rate limiting ekspor telah diselesaikan melalui DEC-145.** Jeda 30 detik dimulai setelah transaksi gagal mencapai status akhir Failed berdasarkan timestamp server. Pembatasan berlaku per akun lintas perangkat.
 
 ## 6. Keputusan terbaru dari audit Humanizer
 
@@ -257,7 +253,7 @@ Jangan menambahkan aturan tentang sumber waktu atau titik awal hitung mundur ke 
 
 ## 7. Urutan pekerjaan berikutnya
 
-1. Audit kelengkapan dan konsistensi kebutuhan Humanizer; jangan memperpanjang cabang pertanyaan yang sudah cukup rinci sebelum memeriksa area yang belum dibahas.
+1. Verifikasi hasil audit Humanizer dan gunakan [Humanizer Requirements Audit](../docs/HUMANIZER-REQUIREMENTS-AUDIT-2026-11-17.md) sebagai catatan koreksi, konflik, dan gap desain.
 2. Lanjutkan elisitasi Humanizer pada gap yang benar-benar terbuka.
 3. Lakukan elisitasi AI Text Detector secara menyeluruh.
 4. Lengkapi akun, dashboard, kredit, transaksi, pembayaran, Admin, dukungan, dan operasional.
