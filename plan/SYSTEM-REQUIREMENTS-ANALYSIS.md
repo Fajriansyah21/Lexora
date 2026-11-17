@@ -270,16 +270,20 @@ Gaya bawaan MVP ditetapkan menjadi enam pilihan: Akademik, Formal, Profesional, 
 | FR-ACC-03 | Perbedaan kuota Guest dan pengguna terdaftar mengacu pada jumlah kredit/reward yang tersedia, bukan batas maksimal karakter input. | Disepakati; besaran kredit/reward belum ditentukan. Batas karakter Detector berlaku sama untuk Guest dan pengguna terdaftar (DEC-016, DEC-150) |
 | FR-ACC-04 | Registrasi dan login mendukung email/password serta Google Sign-In. | Disepakati |
 | FR-ACC-05 | Mendukung verifikasi email dan reset password. | Disepakati |
-| FR-ACC-06 | Menangani akun email/password dan Google dengan alamat sama secara aman. | Disepakati sebagai kebutuhan |
+| FR-ACC-06 | Menangani akun email/password dan Google dengan alamat sama secara aman tanpa penggabungan akun otomatis hanya berdasarkan kesamaan email. | Disepakati; aturan pengaitan rinci DEC-165 |
 | FR-ACC-07 | Menyediakan dashboard pengguna untuk profil, kredit, riwayat, profil gaya, dan pengaturan akun. | Disepakati |
 | FR-ACC-08 | Riwayat tidak disimpan otomatis. Pengguna login memilih apakah akan menyimpan riwayat. | Disepakati |
 | FR-ACC-09 | Guest tidak memiliki riwayat permanen. Teks input sementara dipertahankan selama perpindahan ke proses autentikasi. Jika autentikasi dibatalkan, teks tetap tersedia ketika pengguna kembali ke Detector selama sesi browser yang sama masih aktif. Hal ini bukan penyimpanan riwayat dan tidak menjanjikan pemulihan setelah sesi browser berakhir. | Disepakati |
 | FR-ACC-10 | Pengguna dapat menghapus riwayat yang disimpan. Untuk entri riwayat Humanizer, penghapusan dilakukan setelah pengguna mengonfirmasi dan menghapus entri secara permanen dari riwayat yang dapat diakses melalui aplikasi. | Disepakati; cakupan penghapusan pada backup, log, dan penyimpanan turunan perlu ditetapkan dalam kebijakan retensi dan desain teknis |
 | FR-ACC-11 | Profil gaya disimpan secara terpisah dari sampel dokumen sumber. | Disepakati sebagai prinsip pemisahan data |
 | FR-ACC-12 | Akses ke AI Humanizer dan pengelolaan profil gaya memerlukan autentikasi pengguna. | Disepakati |
-| FR-ACC-13 | Jika Guest memilih mendaftar/login dari alur AI Text Detector, teks input yang sedang dikerjakan dibawa ke sesi pengguna setelah autentikasi berhasil. | Disepakati; mekanisme teknis dan masa berlaku draft belum ditentukan |
+| FR-ACC-13 | Jika Guest memilih mendaftar/login dari alur AI Text Detector, teks input yang sedang dikerjakan dibawa ke sesi pengguna setelah autentikasi berhasil. Saldo kredit Guest tidak ikut dipindahkan. | Disepakati; mekanisme teknis dan masa berlaku draft ditentukan pada desain teknis; saldo mengikuti DEC-158 |
 | FR-ACC-14 | Hasil analisis Guest tidak dibawa sebagai hasil final setelah registrasi/login. Pengguna menjalankan analisis ulang sebagai permintaan baru menggunakan akun terdaftar. | Disepakati |
 | FR-ACC-15 | Jika Guest membatalkan autentikasi dan kembali ke Detector, teks input tetap tersedia selama sesi browser yang sama masih aktif. Draft tidak dijanjikan dapat dipulihkan setelah sesi browser berakhir. | Disepakati; perilaku saat reload/refresh dan batas teknis sesi belum ditentukan |
+| FR-ACC-16 | Pengguna terdaftar dapat melihat daftar sesi/perangkat aktif, waktu aktivitas terakhir, dan mencabut sesi tertentu atau seluruh sesi lain. Logout harus mencabut kredensial sesi di server. | Disepakati; DEC-166 |
+| FR-ACC-17 | Jika alamat email yang sama digunakan oleh metode email/password dan Google Sign-In, sistem tidak menggabungkan akun otomatis. Pengaitan memerlukan autentikasi dan bukti kendali atas akun yang sudah ada serta konfirmasi metode kedua. | Disepakati; DEC-165 |
+| FR-ACC-18 | Perubahan alamat email memerlukan autentikasi ulang, verifikasi alamat email baru, dan notifikasi keamanan ke alamat lama. Email baru tidak aktif sebagai identitas akun sebelum verifikasi berhasil. | Disepakati sebagai kontrol keamanan |
+| FR-ACC-19 | Sistem mengirim notifikasi keamanan untuk peristiwa penting seperti login baru, perubahan password, perubahan email, dan pencabutan sesi. Notifikasi keamanan tidak dapat dimatikan sepenuhnya oleh preferensi promosi. | Disepakati; DEC-162 |
 
 ### 4.6 Kredit, iklan, dan pembayaran
 
@@ -288,9 +292,9 @@ Lexora menggunakan kredit internal sebagai unit konsumsi layanan. Kredit bukan t
 | ID | Kebutuhan | Status/catatan |
 |---|---|---|
 | FR-CRED-01 | Kredit dapat diperoleh melalui pembelian, reward iklan, dan bonus harian. | Disepakati |
-| FR-CRED-02 | Bonus harian sebesar 20 kredit hanya diberikan kepada pengguna login pada pukul 03.00. | Disepakati; zona waktu dan definisi periode belum dikonfirmasi |
-| FR-CRED-03 | Guest dapat memperoleh reward iklan dengan batas lebih rendah daripada pengguna login, dan reward Guest hanya dapat digunakan untuk AI Text Detector. | Disepakati; angka batas belum ditentukan |
-| FR-CRED-04 | Pengguna login juga dapat memperoleh reward iklan untuk penggunaan fitur yang tersedia pada akun. | Disepakati |
+| FR-CRED-02 | Bonus harian sebesar 20 kredit hanya diberikan kepada pengguna login pada pukul 03.00 zona waktu Asia/Jakarta, satu kali per tanggal kalender. Bonus tidak menumpuk untuk hari yang terlewat. | Disepakati; DEC-156 |
+| FR-CRED-03 | Guest dapat memperoleh reward iklan dengan batas lebih rendah daripada pengguna login, dan reward Guest hanya dapat digunakan untuk AI Text Detector. Nilai dan batas reward bersifat konfigurasi dan hanya diaktifkan setelah kebijakan provider iklan diverifikasi. | Disepakati; nilai/batas menunggu unit economics dan validasi provider; DEC-159 dan DEC-167 |
+| FR-CRED-04 | Pengguna login juga dapat memperoleh reward iklan untuk penggunaan fitur yang tersedia pada akun. Nilai dan batas reward bersifat konfigurasi dan harus mengikuti kebijakan provider iklan. | Disepakati; DEC-159 dan DEC-167 |
 | FR-CRED-05 | Guest tidak memperoleh bonus harian. Saldo guest bersifat sementara dan tidak dapat ditransfer. | Disepakati |
 | FR-CRED-06 | Biaya penggunaan terdiri dari biaya dasar per fitur dan biaya variabel yang mempertimbangkan konsumsi token/estimasi biaya. | Disepakati sebagai model; rumus belum ditentukan |
 | FR-CRED-07 | Detector dan Humanizer memiliki tarif masing-masing. | Disepakati |
@@ -298,11 +302,34 @@ Lexora menggunakan kredit internal sebagai unit konsumsi layanan. Kredit bukan t
 | FR-CRED-09 | Pemrosesan ditolak jika kredit tidak mencukupi. Saldo tidak boleh negatif. | Disepakati |
 | FR-CRED-10 | Kredit pembelian tidak kedaluwarsa. Kredit bonus dan reward iklan kedaluwarsa setelah 7 hari. | Disepakati |
 | FR-CRED-11 | Kredit dengan waktu kedaluwarsa terdekat digunakan lebih dahulu; kredit pembelian digunakan setelah kredit promosi yang relevan. | Disepakati |
-| FR-CRED-12 | Setiap penambahan, pemotongan, kedaluwarsa, dan refund dicatat dalam ledger. | Kebutuhan rancangan |
-| FR-CRED-13 | Kegagalan server Lexora atau penyedia AI mengakibatkan refund sesuai status transaksi yang diverifikasi. | Disepakati |
-| FR-CRED-14 | Pembatalan saat antrean mengembalikan kredit; pembatalan saat pemrosesan memerlukan verifikasi apakah pekerjaan benar-benar berhenti. | Disepakati |
+| FR-CRED-12 | Setiap penambahan, reservasi, penyelesaian, pemotongan, kedaluwarsa, pelepasan, dan refund dicatat sebagai entri ledger append-only dengan sumber, referensi transaksi, waktu, jumlah, dan status. Saldo diturunkan dari ledger, bukan diedit langsung. | Kebutuhan integritas transaksi; DEC-157 dan DEC-163 |
+| FR-CRED-13 | Kegagalan server Lexora atau penyedia AI mengakibatkan reservasi kredit dilepas atau kredit dikembalikan sesuai biaya yang benar-benar terverifikasi. Jika tidak ada hasil yang diberikan, seluruh reservasi dilepas. | Disepakati; DEC-157 |
+| FR-CRED-14 | Pembatalan saat antrean mengembalikan seluruh reservasi kredit. Pembatalan saat pemrosesan bersifat best-effort; penyelesaian kredit hanya mengikuti biaya aktual yang dapat diverifikasi setelah status pembatalan/penyelesaian dikonfirmasi. | Disepakati; DEC-157 dan DEC-164 |
 | FR-CRED-15 | Input tidak valid yang terdeteksi sebelum pemrosesan tidak dipotong kreditnya. | Disepakati |
-| FR-CRED-16 | Refund tidak boleh terjadi lebih dari satu kali untuk satu transaksi pemrosesan. | Kebutuhan integritas transaksi |
+| FR-CRED-16 | Refund, pelepasan reservasi, dan penyesuaian saldo tidak boleh terjadi lebih dari satu kali untuk satu transaksi/job. | Kebutuhan integritas transaksi; DEC-157 dan DEC-164 |
+| FR-CRED-17 | Sistem mereservasi kredit sesuai estimasi yang telah ditampilkan dan disetujui pengguna sebelum pekerjaan masuk antrean. Jika saldo tidak mencukupi, pekerjaan ditolak tanpa reservasi. | Disepakati; DEC-157 |
+| FR-CRED-18 | Setelah pekerjaan berhasil, sistem menyelesaikan reservasi berdasarkan konsumsi yang dapat diverifikasi dan melepaskan sisa reservasi. Pengguna tidak ditagih melebihi estimasi yang disetujui; selisih biaya provider di atas reservasi menjadi risiko operasional Lexora. | Disepakati; DEC-157 |
+| FR-CRED-19 | Jika pekerjaan gagal sebelum hasil diberikan, seluruh reservasi dilepas. Jika pekerjaan dibatalkan ketika provider telah memproses, penyelesaian hanya boleh mengenakan konsumsi yang benar-benar dapat diverifikasi. | Disepakati; DEC-157 dan DEC-164 |
+| FR-CRED-20 | Kredit reward Guest kedaluwarsa 24 jam setelah diberikan, terikat pada sesi Guest, tidak dapat ditransfer, dan tidak dipindahkan saat Guest mendaftar/login. | Disepakati; DEC-158 |
+| FR-CRED-21 | Reward iklan hanya diberikan setelah server memverifikasi callback/receipt penyelesaian reward dari provider yang sah. Klik, impresi biasa, atau klaim frontend tidak menghasilkan kredit. Satu sesi reward hanya menghasilkan satu grant. | Disepakati; DEC-159 |
+| FR-CRED-22 | Penyesuaian kredit oleh Admin harus berupa entri ledger baru, mencantumkan alasan, referensi kasus, aktor, waktu, dan nilai sebelum/sesudah. Saldo tidak boleh diubah langsung. | Disepakati; DEC-163 |
+| FR-CRED-23 | Pengguna dapat melihat saldo kredit yang dapat digunakan dan riwayat perubahan kredit, termasuk sumber, jumlah, waktu, dan tanggal kedaluwarsa jika berlaku. | Disepakati sebagai kebutuhan transparansi |
+| FR-CRED-24 | Paket kredit, tarif fitur, nilai reward, dan batas reward Guest/login dikelola melalui konfigurasi bertanggal efektif dan audit log. Perubahan tidak mengubah transaksi yang sudah dibayar atau pekerjaan yang telah memiliki reservasi. | Disepakati; DEC-167 |
+
+
+#### 4.6.1 Pembayaran dan transaksi pembelian kredit
+
+| ID | Kebutuhan | Status/catatan |
+|---|---|---|
+| FR-PAY-01 | Pembelian kredit menggunakan payment gateway dan menyediakan metode QRIS, e-wallet, transfer bank, dan Virtual Account sesuai dukungan provider yang dipilih. | Disepakati; provider belum dipilih |
+| FR-PAY-02 | Guest dapat memulai pembelian, tetapi harus mendaftar/login sebelum kredit diberikan. Intent/transaksi yang telah dibuat harus dapat dipulihkan dan dikaitkan ke akun setelah autentikasi berhasil. | Disepakati |
+| FR-PAY-03 | Status transaksi minimal mencakup Created, Pending, Paid, Failed, Expired, Cancelled, Refund Pending, Partially Refunded, dan Refunded. | Disepakati; DEC-160 |
+| FR-PAY-04 | Backend memverifikasi signature/callback provider, identitas transaksi, nominal, mata uang, dan status pembayaran sebelum memberikan kredit. Redirect browser tidak menjadi bukti pembayaran. | Disepakati; DEC-160 |
+| FR-PAY-05 | Webhook/callback pembayaran harus idempotent. Callback duplikat atau terlambat tidak boleh menggandakan kredit atau menurunkan status transaksi Paid menjadi status sebelumnya. | Disepakati; DEC-160 |
+| FR-PAY-06 | Transaksi yang gagal, kedaluwarsa, atau dibatalkan tidak memberikan kredit. Pengguna harus membuat transaksi baru untuk mencoba pembayaran kembali. | Disepakati; DEC-007 dan DEC-160 |
+| FR-PAY-07 | Refund pembayaran dicatat sebagai transaksi terpisah yang merujuk transaksi asal, memiliki status, alasan, nominal, dan audit trail. Refund tidak boleh menggandakan pengembalian kredit atau saldo. | Disepakati sebagai kebutuhan integritas |
+| FR-PAY-08 | Pengguna dapat melihat riwayat pembelian, status transaksi, nominal, metode pembayaran, dan bukti/receipt yang disediakan provider. | Disepakati sebagai kebutuhan transparansi |
+| FR-PAY-09 | Sistem menyediakan rekonsiliasi transaksi antara catatan Lexora dan status provider; perbedaan status/nominal masuk ke antrean pemeriksaan Admin dan tidak boleh otomatis memberikan kredit. | Disepakati sebagai kebutuhan operasional |
 
 Pembelian kredit:
 - Menyediakan paket kredit tetap dan jumlah khusus.
@@ -327,14 +354,31 @@ Reward iklan:
 | FR-SUP-01 | Menyediakan formulir laporan/kontak yang membuat tiket bantuan. | Disepakati |
 | FR-SUP-02 | Setiap tiket memiliki ID, status, pesan, dan riwayat penanganan. | Disepakati |
 | FR-SUP-03 | Pengguna dapat memantau status tiket. | Disepakati |
+| FR-SUP-04 | Tiket memiliki kategori minimal: akun, pembayaran/kredit, Detector, Humanizer, gangguan teknis, privasi/data, dan lainnya. Formulir tidak meminta pengguna mengunggah teks dokumen sensitif sebagai lampiran pada MVP. | Disepakati; DEC-161 |
+| FR-SUP-05 | Tiket menggunakan status Open, In Progress, Waiting for User, Resolved, dan Closed. Perubahan status dan penanggung jawab dicatat dalam riwayat tiket. | Disepakati; DEC-161 |
+| FR-SUP-06 | Pengguna dapat membaca riwayat percakapan dan membalas tiket selama status belum Closed. | Disepakati; DEC-161 |
+| FR-SUP-07 | Tiket Resolved dapat dibuka kembali dalam 7 hari kalender. Setelah periode tersebut, pengguna membuat tiket baru. | Disepakati; DEC-161 |
+| FR-SUP-08 | Target respons awal dukungan maksimal 2 hari kerja. Target ini bukan jaminan waktu penyelesaian; status Waiting for User menghentikan penghitungan waktu respons tim sampai pengguna membalas. | Disepakati sebagai target layanan; DEC-161 |
 | FR-NOT-01 | Notifikasi tersedia di website dan email. | Disepakati |
 | FR-NOT-02 | Notifikasi mencakup peristiwa penting seperti pembayaran, kredit, tiket, dan keamanan akun. | Disepakati |
 | FR-NOT-03 | Notifikasi promosi dipisahkan dan memerlukan persetujuan pengguna. | Disepakati |
+| FR-NOT-04 | Pengguna dapat mengatur preferensi notifikasi non-esensial. Notifikasi keamanan dan transaksi penting tetap tersedia; notifikasi promosi memerlukan opt-in terpisah dan dapat dihentikan kapan saja. | Disepakati; DEC-162 |
+| FR-NOT-05 | Setiap notifikasi terkait pembayaran, kredit, pekerjaan, tiket, dan keamanan memiliki event ID unik dan tidak boleh dikirim sebagai duplikat akibat retry atau webhook berulang. | Disepakati; DEC-162 |
+| FR-NOT-06 | Sistem mencatat status pengiriman notifikasi dan dapat melakukan maksimal tiga retry untuk kegagalan sementara dengan jeda meningkat. Kegagalan pengiriman tidak mengubah status transaksi, pekerjaan, atau keamanan. | Disepakati; DEC-162 |
+| FR-NOT-07 | Notifikasi dalam aplikasi memiliki status read/unread dan waktu dibuat. Pengguna dapat menandai notifikasi sebagai dibaca atau menghapusnya dari daftar yang terlihat tanpa mengubah catatan audit transaksi. | Disepakati sebagai kebutuhan UX dan audit |
+| FR-NOT-08 | Email promosi hanya dikirim kepada pengguna yang memberi persetujuan eksplisit. Setiap email promosi menyediakan cara berhenti berlangganan yang berfungsi. | Disepakati; DEC-162 |
 | FR-OPS-01 | Menampilkan status gangguan layanan dan menyediakan mekanisme pemulihan/retry yang aman. | Disepakati |
 | FR-OPS-02 | Permintaan antrean memiliki status Waiting, Processing, Completed, Failed, atau Cancelled. | Disepakati |
 | FR-OPS-03 | Pengguna melihat estimasi waktu tunggu berdasarkan kondisi antrean aktual. | Disepakati |
 | FR-OPS-04 | Pengguna menerima notifikasi ketika pemrosesan selesai. | Disepakati |
 | FR-OPS-05 | Pengguna dapat membatalkan pekerjaan saat menunggu atau diproses, dengan refund sesuai hasil pembatalan yang diverifikasi. | Disepakati |
+| FR-OPS-06 | Setiap pekerjaan memiliki job ID unik, pemilik/sesi, jenis fitur, status, waktu dibuat, waktu mulai/selesai, referensi reservasi kredit, dan versi konfigurasi/model yang digunakan. | Disepakati sebagai kebutuhan audit |
+| FR-OPS-07 | Retry otomatis hanya dilakukan untuk kegagalan sementara yang aman diulang, maksimal dua kali dengan exponential backoff dan jitter. Kesalahan validasi, autentikasi, saldo, dan kesalahan permanen tidak di-retry. | Disepakati; DEC-164 |
+| FR-OPS-08 | Setiap job memakai idempotency key yang sama selama retry agar satu permintaan tidak menghasilkan pemrosesan atau pemotongan kredit ganda. | Disepakati; DEC-164 |
+| FR-OPS-09 | Pembatalan job Waiting segera menghentikan pekerjaan dan melepas reservasi kredit. Pembatalan job Processing bersifat best-effort; status Cancelled hanya ditetapkan setelah penghentian dikonfirmasi. Jika penyelesaian menang dalam race, status akhir Completed. | Disepakati; DEC-164 |
+| FR-OPS-10 | Estimasi waktu antrean diperbarui berdasarkan kedalaman antrean dan performa aktual, serta tidak boleh ditampilkan sebagai janji waktu pasti. | Disepakati |
+| FR-OPS-11 | Sistem menyediakan status layanan dan pemberitahuan gangguan/pemeliharaan yang memengaruhi Detector, Humanizer, pembayaran, atau autentikasi. | Disepakati sebagai kebutuhan operasional |
+| FR-OPS-12 | Kegagalan job yang tidak dapat dipulihkan otomatis masuk ke mekanisme pemeriksaan/manual recovery dengan alasan, status, dan audit trail. Retry manual tidak boleh menggandakan hasil atau tagihan. | Disepakati sebagai kebutuhan operasional |
 
 ### 4.8 Admin Panel dan tata kelola
 
@@ -349,19 +393,25 @@ Admin Panel termasuk dalam kebutuhan MVP. Modul yang direncanakan:
 - Audit log.
 - Pengelolaan tiket bantuan.
 
-Struktur peran:
-- **Super Admin:** hak tertinggi dan konfigurasi penuh.
-- **Admin:** operasional sesuai izin.
-- **Moderator:** moderasi/laporan sesuai izin.
+Struktur peran dan batas akses normatif berada pada tabel FR-ADM di bawah ini. RBAC dirancang sejak MVP; tidak wajib mengaktifkan banyak akun/peran sejak hari pertama.
 
-Struktur RBAC dirancang sejak MVP; tidak wajib mengaktifkan banyak akun/peran sejak hari pertama.
 
-Persyaratan keamanan:
-- Login Admin menggunakan email/password, 2FA, dan kontrol sesi/perangkat.
-- Admin dapat melihat isi teks pengguna hanya jika ada laporan relevan dan pengguna memberikan persetujuan.
-- Akses hanya mencakup data yang relevan dengan laporan, memiliki alasan, dan tercatat dalam audit log.
-- Persetujuan tidak menjadi izin permanen.
-- Moderator tidak otomatis memperoleh akses ke isi teks.
+| ID | Kebutuhan | Status/catatan |
+|---|---|---|
+| FR-ADM-01 | Admin Panel menyediakan tiga peran RBAC: Super Admin, Admin, dan Moderator dengan permission terpisah per aksi dan objek. | Disepakati; DEC-008 dan DEC-163 |
+| FR-ADM-02 | Super Admin dapat mengelola akun Admin/Moderator dan menetapkan permission. Admin tidak dapat menaikkan hak akses dirinya sendiri. | Disepakati; DEC-163 |
+| FR-ADM-03 | Admin Panel menyediakan dashboard statistik pengguna, penggunaan fitur, antrean, transaksi, kredit, pendapatan, dan gangguan layanan sesuai hak akses. | Disepakati sebagai kebutuhan produk |
+| FR-ADM-04 | Admin dapat memeriksa pengguna, status akun, tiket, transaksi, dan riwayat kredit sesuai permission. Tindakan suspend/restore akun wajib memiliki alasan dan audit log. | Disepakati; DEC-163 |
+| FR-ADM-05 | Admin yang berwenang dapat mengelola paket kredit, tarif, reward, dan konfigurasi layanan melalui konfigurasi berversi dengan waktu efektif. Perubahan memerlukan alasan dan audit log. | Disepakati; DEC-167 |
+| FR-ADM-06 | Admin yang berwenang dapat mengelola konfigurasi provider/model AI, prompt, threshold, dan rollout versi tanpa mengekspos secret provider pada antarmuka umum. Perubahan harus berversi dan dapat ditelusuri. | Disepakati sebagai kebutuhan operasional |
+| FR-ADM-07 | Admin/Moderator dapat mengelola tiket bantuan sesuai permission, termasuk assignment, perubahan status, balasan, dan catatan internal. | Disepakati |
+| FR-ADM-08 | Admin Panel menyediakan pencarian audit log berdasarkan aktor, aksi, objek, waktu, dan hasil, dengan perlindungan terhadap pengubahan/penghapusan tanpa jejak. | Disepakati; DEC-163 |
+| FR-ADM-09 | Tidak ada peran yang memiliki akses default ke isi teks pengguna. Akses isi teks hanya dapat diberikan untuk laporan/tiket relevan dengan persetujuan eksplisit pengguna, terbatas pada objek yang diperlukan, maksimal satu jam, dan seluruh akses dicatat. Moderator tidak memiliki akses default ke isi teks. | Disepakati; DEC-008 dan DEC-163 |
+| FR-ADM-10 | Login Admin wajib menggunakan email/password dan 2FA. Sistem menyediakan pengelolaan sesi/perangkat dan pencabutan sesi Admin. | Disepakati; DEC-008 |
+| FR-ADM-11 | Penyesuaian kredit oleh Admin dilakukan melalui entri ledger baru dengan alasan dan referensi kasus; Admin tidak boleh mengedit saldo langsung. | Disepakati; DEC-163 |
+| FR-ADM-12 | Perubahan konfigurasi sensitif, role, harga, reward, dan model/provider harus mencatat nilai sebelum/sesudah, aktor, alasan, waktu efektif, dan versi konfigurasi. | Disepakati; DEC-163 dan DEC-167 |
+| FR-ADM-13 | Admin dapat melihat dan mengelola status layanan, antrean gagal, dan kasus rekonsiliasi transaksi sesuai permission. Tindakan pemulihan harus idempotent dan diaudit. | Disepakati sebagai kebutuhan operasional |
+
 
 ### 4.9 Keluaran dan ekspor
 
@@ -415,6 +465,25 @@ Target uptime/SLA belum ditentukan. MVP harus memiliki deteksi gangguan, pencata
 - Penjelasan Detector tidak boleh mengarang alasan yang tidak didukung analisis.
 - Hasil kedua modul harus diuji terpisah pada Bahasa Indonesia dan Inggris.
 - Code-switching perlu skenario uji tersendiri.
+
+### 5.6 Persyaratan nonfungsional terukur
+
+| ID | Persyaratan | Status/catatan |
+|---|---|---|
+| NFR-SEC-01 | Semua validasi input, file, saldo, status transaksi, dan hak akses dilakukan di backend; validasi frontend hanya untuk pengalaman pengguna. | Wajib |
+| NFR-SEC-02 | Data sensitif dienkripsi saat transit dan saat tersimpan menggunakan mekanisme yang sesuai dengan standar keamanan yang dipilih. | Wajib; detail algoritma/managed key pada desain teknis |
+| NFR-SEC-03 | Password disimpan menggunakan password hashing yang dirancang khusus untuk password; password plaintext tidak boleh disimpan atau dicatat di log. | Wajib |
+| NFR-SEC-04 | Endpoint autentikasi, reward, pembayaran, perubahan saldo, dan aksi Admin menerapkan rate limiting serta proteksi abuse. | Wajib |
+| NFR-SEC-05 | File unggahan diperlakukan sebagai input tidak tepercaya, divalidasi tipe/ukuran, disimpan terisolasi, dan diperiksa sebelum ekstraksi. | Wajib |
+| NFR-PRIV-01 | Teks pengguna tidak dimasukkan ke log teknis, telemetry, atau analytics secara default. Log menggunakan metadata minimum yang diperlukan. | Wajib |
+| NFR-PRIV-02 | Retensi dan penghapusan harus dirancang per lapisan: database, object storage, cache, file sementara, backup, log, dan provider AI eksternal. Klaim penghapusan menyeluruh tidak boleh dibuat sebelum tiap lapisan diverifikasi. | Wajib; kebijakan rinci perlu validasi hukum/provider |
+| NFR-REL-01 | Job, pembayaran, pemotongan kredit, refund, reward, dan notifikasi harus idempotent terhadap retry, callback duplikat, dan race condition. | Wajib |
+| NFR-REL-02 | Backup dan restore harus diuji berkala; prosedur pemulihan harus mencatat waktu, cakupan, dan hasil verifikasi. | Wajib; frekuensi dan RPO/RTO ditetapkan setelah desain infrastruktur |
+| NFR-OBS-01 | Sistem menyediakan structured logs, metrics, tracing, alerting, dan audit log tanpa merekam isi teks pengguna secara default. | Wajib |
+| NFR-ACC-01 | Antarmuka mengikuti WCAG 2.2 AA sebagai target aksesibilitas MVP, termasuk keyboard, focus, label, kontras, dan screen reader. | Wajib; verifikasi pada tahap UI/UX dan acceptance criteria |
+| NFR-PERF-01 | Target latency, throughput, concurrency, dan batas antrean ditetapkan melalui benchmark sebelum peluncuran; tidak boleh diklaim sebelum diukur. | Wajib; angka target menunggu benchmark |
+| NFR-AVL-01 | Target availability/SLO dan prosedur maintenance diumumkan sebelum peluncuran; tidak boleh menjanjikan uptime sebelum infrastruktur dan provider dipilih. | Wajib; angka target menunggu desain operasional |
+| NFR-I18N-01 | Antarmuka mendukung Bahasa Indonesia dan Bahasa Inggris; format angka, tanggal, dan pesan validasi konsisten dengan bahasa yang dipilih. | Wajib |
 
 ## 6. Aturan bisnis utama
 
