@@ -6,8 +6,8 @@ Dokumen ini mencatat keputusan produk dan teknis yang disahkan. Usulan dan hipot
 
 Dokumen ini adalah satu-satunya sumber riwayat keputusan yang disahkan. Rincian kebutuhan normatif berada di [System Requirements Analysis](SYSTEM-REQUIREMENTS-ANALYSIS.md); ringkasan kemajuan elisitasi berada di [Requirements Elicitation Status](REQUIREMENTS-ELICITATION-STATUS.md).
 
-- **Jumlah catatan:** 155 keputusan, DEC-001 sampai DEC-155.
-- **Status:** 153 `Accepted`, 2 `Superseded`.
+- **Jumlah catatan:** 167 keputusan, DEC-001 sampai DEC-167.
+- **Status:** 165 `Accepted`, 2 `Superseded`.
 - **Keputusan superseded:** DEC-018 dan DEC-019. Keduanya dipertahankan untuk jejak historis, tetapi bukan aturan aktif. Klarifikasi pada DEC-020 menetapkan bahwa batas minimum karakter tidak berlaku untuk input AI Text Detector; batas minimum berlaku pada sampel profil gaya Humanizer.
 
 ### Indeks tematik
@@ -2027,4 +2027,124 @@ Rentang tematik ini hanya alat navigasi. Setiap keputusan tetap dicatat satu kal
 - **Alasan:** Laporan dapat dibaca, disimpan, dan ditinjau kembali tanpa mengubah hasil menjadi klaim pembuktian.
 - **Alternatif yang dipertimbangkan:** Hasil hanya tersedia di website; hanya menyediakan TXT.
 - **Dampak:** Requirement ekspor khusus Detector ditambahkan. Generator format dan aksesibilitas dokumen ditentukan pada desain teknis.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17.
+
+## DEC-156: Zona waktu dan siklus bonus harian
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Bonus harian 20 kredit diberikan otomatis kepada akun terdaftar yang aktif satu kali per tanggal kalender pada pukul 03.00 zona waktu `Asia/Jakarta`. Bonus tidak menumpuk untuk hari yang terlewat. Guest dan akun berstatus Pending Deletion tidak menerima bonus.
+- **Alasan:** Satu zona waktu tetap mencegah perbedaan tanggal dan eksploitasi perubahan zona waktu perangkat. Zona WIB menjadi acuan operasional awal produk Indonesia.
+- **Alternatif yang dipertimbangkan:** Mengikuti zona waktu perangkat; menyediakan zona waktu per akun; memberi bonus ketika pengguna login pertama kali setiap hari.
+- **Dampak:** Scheduler bonus memakai zona waktu server yang eksplisit dan idempotency key per akun/tanggal. Perubahan zona waktu di perangkat tidak mengubah kelayakan bonus.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17.
+
+## DEC-157: Reservasi dan penyelesaian biaya kredit pekerjaan AI
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Sebelum pekerjaan masuk antrean, sistem menampilkan estimasi dan mereservasi jumlah kredit yang sama. Setelah pekerjaan berhasil, sistem menyelesaikan reservasi berdasarkan konsumsi yang dapat diverifikasi dan melepaskan sisa reservasi. Pengguna tidak boleh ditagih melebihi estimasi yang telah disetujui; jika biaya aktual penyedia melebihi reservasi, selisih menjadi risiko operasional Lexora. Jika pekerjaan gagal sebelum hasil diberikan, reservasi dilepas penuh. Jika pekerjaan dibatalkan ketika provider sudah memproses, penyelesaian hanya boleh mengenakan konsumsi yang benar-benar dapat diverifikasi dan harus mengikuti informasi biaya yang telah ditampilkan sebelum mulai.
+- **Alasan:** Reservasi mencegah saldo negatif dan menghindari tagihan kejutan. Penyelesaian berdasarkan konsumsi aktual menjaga hubungan antara biaya layanan dan kredit.
+- **Alternatif yang dipertimbangkan:** Memotong estimasi penuh tanpa rekonsiliasi; menagih biaya aktual setelah selesai tanpa batas maksimum; mengizinkan saldo negatif.
+- **Dampak:** Dibutuhkan credit hold/reservation, settlement, release, idempotency key, dan ledger append-only. Formula estimasi dan tarif tetap perlu dihitung melalui unit economics.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17.
+
+## DEC-158: Masa berlaku kredit reward Guest
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Kredit reward yang diterima Guest berlaku 24 jam sejak diberikan dan terikat pada identitas sesi Guest. Kredit tidak dapat ditransfer ke akun lain atau dibawa saat Guest mendaftar/login. Guest tetap dapat membawa draft teks sesuai FR-ACC-13 sampai FR-ACC-15, tetapi saldo reward tidak ikut dipindahkan.
+- **Alasan:** Memisahkan draft teks dari saldo sementara mencegah penyalahgunaan multi-akun dan menjaga batas Guest.
+- **Alternatif yang dipertimbangkan:** Memindahkan saldo Guest ke akun baru; membuat saldo Guest permanen; menghapus saldo segera setelah satu pemrosesan.
+- **Dampak:** Saldo Guest memerlukan expiry timestamp dan session binding; konversi akun tidak boleh mengubah ledger Guest menjadi ledger akun.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17.
+
+## DEC-159: Verifikasi reward iklan secara server-side
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Kredit reward iklan hanya diberikan setelah server memverifikasi callback/receipt penyelesaian reward dari penyedia iklan yang sah. Klik, impresi biasa, klaim dari browser, atau callback yang tidak valid tidak menghasilkan kredit. Satu sesi reward hanya boleh menghasilkan satu grant. Batas reward Guest/login dan nilai kredit harus dapat dikonfigurasi, tetapi tidak diaktifkan sebelum produk iklan serta kebijakan resminya diverifikasi.
+- **Alasan:** Mencegah pemalsuan reward dan menghindari pelanggaran kebijakan iklan.
+- **Alternatif yang dipertimbangkan:** Memberi kredit dari event frontend; memberi kredit pada setiap impresi; menetapkan batas permanen sebelum provider dipilih.
+- **Dampak:** Dibutuhkan verifikasi server-side, idempotency key, ledger, rate limit, dan audit event. Integrasi provider menunggu evaluasi kebijakan resmi.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17.
+
+## DEC-160: Siklus hidup transaksi pembayaran
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Transaksi pembayaran memiliki status `Created`, `Pending`, `Paid`, `Failed`, `Expired`, `Cancelled`, `Refund Pending`, `Partially Refunded`, dan `Refunded`. Kredit hanya diberikan setelah backend memverifikasi status pembayaran, nominal, mata uang, identitas transaksi, dan signature/callback penyedia. Callback berulang harus idempotent. Status `Paid` tidak boleh diturunkan oleh callback lama yang datang terlambat. Transaksi yang gagal atau kedaluwarsa tidak memberi kredit.
+- **Alasan:** Status eksplisit dan verifikasi server mencegah saldo salah akibat callback palsu, duplikat, atau tidak berurutan.
+- **Alternatif yang dipertimbangkan:** Memercayai redirect browser; memberi kredit saat transaksi dibuat; menganggap setiap callback sebagai transaksi baru.
+- **Dampak:** Payment provider harus mendukung verifikasi server-side atau rekonsiliasi yang dapat dipercaya. Provider belum dipilih.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17.
+
+## DEC-161: Siklus hidup tiket dukungan
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Tiket dukungan menggunakan status `Open`, `In Progress`, `Waiting for User`, `Resolved`, dan `Closed`. Pengguna dapat membalas tiket selama status belum Closed. Tiket Resolved dapat dibuka kembali dalam 7 hari kalender; setelah itu pengguna membuat tiket baru. Target respons awal adalah maksimal 2 hari kerja, bukan jaminan waktu penyelesaian. MVP menggunakan formulir dan tiket, bukan live chat. Lampiran file tidak disediakan pada MVP.
+- **Alasan:** Alur tiket memberi jejak komunikasi dan kontrol akses yang lebih baik daripada live chat, serta mengurangi risiko file sensitif masuk tanpa pemeriksaan.
+- **Alternatif yang dipertimbangkan:** Live chat; tiket tanpa status; lampiran bebas; tidak ada target respons.
+- **Dampak:** Dibutuhkan ID tiket, kategori, prioritas, pesan, status, timestamp, assignment, dan audit perubahan. Kalender hari kerja dan hari libur harus dikonfigurasi.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17.
+
+## DEC-162: Preferensi dan ketahanan notifikasi
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Notifikasi transaksional dan keamanan yang penting tetap tersedia di dalam aplikasi; email digunakan untuk peristiwa keamanan dan transaksi yang memerlukan bukti/pemberitahuan di luar sesi. Pengguna dapat mengatur notifikasi non-esensial. Notifikasi promosi memerlukan opt-in terpisah dan dapat dihentikan kapan saja. Kegagalan pengiriman tidak mengubah status pembayaran, kredit, pekerjaan, atau izin. Pengiriman yang gagal karena gangguan sementara dapat diulang maksimal tiga kali dengan jeda meningkat; setiap event dan pengiriman harus idempotent.
+- **Alasan:** Preferensi pengguna perlu dihormati tanpa membiarkan kegagalan kanal notifikasi mengubah keadaan transaksi atau keamanan.
+- **Alternatif yang dipertimbangkan:** Mematikan seluruh email melalui satu toggle; mengirim promosi tanpa opt-in; menjadikan keberhasilan email sebagai syarat transaksi.
+- **Dampak:** Dibutuhkan notification preference, delivery state, retry policy, deduplication, dan audit. Detail provider email ditentukan pada desain teknis.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17.
+
+## DEC-163: Prinsip dan batas RBAC Admin Panel
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** RBAC MVP menggunakan tiga peran: Super Admin, Admin, dan Moderator. Super Admin mengelola peran dan konfigurasi sistem; Admin menjalankan operasi pengguna, tiket, transaksi, dan kredit sesuai permission; Moderator menangani tiket/laporan dan tidak memiliki akses ke konfigurasi finansial, secret provider, atau isi teks pengguna. Tidak ada peran yang memperoleh akses default ke isi teks pengguna. Akses isi teks hanya diberikan untuk tiket/laporan relevan dengan persetujuan eksplisit pengguna, dibatasi pada objek yang diperlukan, berlaku maksimal satu jam, dan seluruh akses dicatat. Perubahan permission dan penyesuaian kredit memerlukan alasan serta audit log.
+- **Alasan:** Prinsip least privilege dan pemisahan tugas mengurangi risiko penyalahgunaan akses internal.
+- **Alternatif yang dipertimbangkan:** Admin dapat membaca semua teks; Moderator memiliki akses operasional luas; seluruh perubahan dapat dilakukan tanpa audit.
+- **Dampak:** Matriks permission harus eksplisit per aksi dan objek. Super Admin tetap tidak mendapat akses isi teks secara otomatis; approval investigasi dan persetujuan pengguna dipisahkan.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17.
+
+## DEC-164: Pembatalan dan retry pekerjaan antrean
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Pekerjaan yang masih Waiting dapat dibatalkan segera dan seluruh reservasi kredit dilepas. Pembatalan pekerjaan Processing bersifat best-effort; status akhir menjadi Cancelled hanya setelah worker/provider mengonfirmasi penghentian. Jika penyelesaian pekerjaan menang dalam race, status akhir adalah Completed. Retry otomatis hanya untuk kegagalan sementara yang aman diulang, maksimal dua kali dengan exponential backoff dan jitter. Validasi, autentikasi, saldo tidak cukup, dan kesalahan permanen tidak di-retry. Semua retry memakai job idempotency key yang sama agar tidak menghasilkan pemrosesan atau pemotongan kredit ganda.
+- **Alasan:** Status pembatalan harus mencerminkan keadaan aktual, sementara retry terkendali mencegah biaya dan pekerjaan duplikat.
+- **Alternatif yang dipertimbangkan:** Menganggap pembatalan berhasil saat tombol ditekan; retry tanpa batas; retry semua jenis error.
+- **Dampak:** Job lifecycle memerlukan cancellation request, terminal state, idempotency, retry classification, dan settlement kredit sesuai DEC-157.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17.
+
+## DEC-165: Pengaitan akun email/password dan Google Sign-In
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Sistem tidak boleh menggabungkan akun secara otomatis hanya karena alamat email dari dua metode autentikasi tampak sama. Pengaitan dilakukan setelah pengguna membuktikan kendali atas akun yang sudah ada dan menyelesaikan autentikasi/konfirmasi pada metode kedua. Konflik akun harus menghasilkan alur pemulihan yang aman, bukan pembuatan akun duplikat atau pengambilalihan akun.
+- **Alasan:** Email yang sama tidak boleh menjadi satu-satunya bukti untuk menggabungkan identitas autentikasi.
+- **Alternatif yang dipertimbangkan:** Auto-link berdasarkan email; membuat akun terpisah tanpa mekanisme pemulihan.
+- **Dampak:** Account linking memerlukan verifikasi dua sisi, audit event, dan penanganan konflik. FR-ACC-06 diperjelas.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17.
+
+## DEC-166: Pengelolaan sesi pengguna
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Pengguna terdaftar dapat melihat sesi/perangkat aktif dan mencabut sesi tertentu atau seluruh sesi lain. Logout harus mencabut refresh/session credential pada server; penghapusan cookie di browser saja tidak cukup. Perubahan password dan peristiwa keamanan kritis dapat memaksa pencabutan sesi lain. Detail durasi token ditetapkan pada desain keamanan.
+- **Alasan:** Pengguna harus dapat mengendalikan akses akun dari perangkat lain, termasuk ketika perangkat hilang atau diduga diakses pihak lain.
+- **Alternatif yang dipertimbangkan:** Hanya menyediakan logout lokal; tidak menampilkan sesi aktif.
+- **Dampak:** Diperlukan session registry, revocation, last-used metadata, dan audit event.
+- **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17.
+
+## DEC-167: Konfigurasi paket kredit dan reward yang dapat diaudit
+
+- **Tanggal:** 2026-11-17
+- **Status:** Accepted (delegated project decision)
+- **Keputusan:** Paket kredit, harga, nilai reward, batas reward Guest/login, dan tarif fitur disimpan sebagai konfigurasi bertanggal efektif, bukan konstanta di kode. Setiap perubahan memerlukan permission yang sesuai, alasan, waktu efektif, dan audit log. Perubahan tidak mengubah transaksi yang sudah dibayar atau pekerjaan yang sudah memiliki reservasi kredit. Nilai komersial awal baru ditetapkan setelah unit economics dan kebijakan provider diverifikasi.
+- **Alasan:** Harga dan reward bergantung pada biaya model, payment gateway, dan kebijakan iklan yang belum dipilih.
+- **Alternatif yang dipertimbangkan:** Menanam harga/kuota dalam kode; mengubah nilai konfigurasi tanpa riwayat.
+- **Dampak:** Sistem memerlukan konfigurasi berversi dan effective date. Nilai numerik awal tetap menjadi prasyarat keputusan komersial sebelum peluncuran.
 - **Sumber/bukti:** Delegasi eksplisit pemilik proyek pada 2026-11-17.
