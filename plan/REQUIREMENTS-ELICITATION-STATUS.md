@@ -60,12 +60,12 @@ Pokok pembahasan:
 - Kategori produk HUMAN, AI, MIXED, dan UNCERTAIN.
 - Hasil merupakan estimasi, bukan bukti pasti kepengarangan.
 - Input teks langsung dan unggahan TXT, DOCX, atau PDF.
-- Batas maksimum input berlaku sama bagi Guest dan pengguna terdaftar, tetapi angka final belum ditetapkan.
+- Batas maksimum input 20.000 extended grapheme clusters berlaku sama bagi Guest dan pengguna terdaftar (DEC-150).
 - Tidak ada batas minimum karakter input Detector yang disepakati.
 
 **Klarifikasi penting:** DEC-018 dan DEC-019 berstatus Superseded. DEC-020 mengklarifikasi bahwa batas minimum karakter berlaku untuk setiap sampel profil gaya Humanizer, bukan untuk input Detector.
 
-**Status:** Audit requirement Detector tahap 2 selesai pada 2026-11-17. Hasilnya mencakup batas input 20.000 extended grapheme clusters, tidak ada hard minimum, perilaku UNCERTAIN, definisi MIXED, tidak ada skor numerik pada MVP, penjelasan yang dapat ditelusuri, dan ekspor laporan. Metode model, threshold, agregasi, target false-positive, serta acceptance criteria masih memerlukan benchmark dan desain.
+**Status:** Audit requirement Detector tahap 2 selesai pada 2026-11-17. Laporan audit: [AI Text Detector Requirements Audit](../docs/AI-TEXT-DETECTOR-REQUIREMENTS-AUDIT-2026-11-17.md). Hasilnya mencakup batas input 20.000 extended grapheme clusters, tidak ada hard minimum, perilaku UNCERTAIN, definisi MIXED, tidak ada skor numerik pada MVP, penjelasan yang dapat ditelusuri, dan ekspor laporan. Metode model, threshold, agregasi, target false-positive, serta acceptance criteria masih memerlukan benchmark dan desain.
 
 ### 2.3 Profil gaya personal Humanizer
 
