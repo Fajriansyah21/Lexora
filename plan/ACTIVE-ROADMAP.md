@@ -1,6 +1,6 @@
 # Lexora Active Roadmap
 
-Terakhir diperbarui: 2026-11-14
+Terakhir diperbarui: 2026-11-17
 
 ## Cakupan produk MVP
 
@@ -45,24 +45,26 @@ Jalur riset dataset tetap berjalan terpisah dari analisis sistem produk. Pengemb
 
 | Urutan | Pengujian | Bukti yang harus dihasilkan | Status |
 |---:|---|---|---|
-| 1 | JSON Schema | Validator dijalankan pada fixture valid dan invalid; hasil positif/negatif tercatat | Planned |
-| 2 | Sentence offset | Pengujian offset untuk tanda baca, whitespace, Unicode, newline, dan teks kosong | Planned |
-| 3 | Editing history & lineage | Pengujian versi, parent-child, urutan event, dan konsistensi perubahan | Planned |
-| 4 | Deduplikasi | Pengujian exact duplicate, near duplicate, dan false merge | Planned |
-| 5 | Group-based split | Pengujian tidak ada group/pair/derivative tersebar lintas split | Planned |
+| 1 | JSON Schema | Draft 2020-12 schema check; fixture valid dan 5 mutasi invalid | Verified (4 test methods) |
+| 2 | Sentence offset | Substring, batas, overlap, Unicode combining mark, emoji, CRLF, tab, dan teks kosong | Verified (5 tests) |
+| 3 | Editing history & lineage | Parent-child, parent hilang, ID duplikat, siklus, urutan, timestamp, dan riwayat kosong | Verified (8 tests) |
+| 4 | Deduplikasi | Exact, normalized exact, near-duplicate candidate, Unicode normalization, dan false-merge guard | Verified (4 tests) |
+| 5 | Group-based split | Group/pair integrity, missing group, deterministic assignment, dan explicit challenge holdout | Verified (6 tests) |
 
-Belum ada bukti pengujian prosedur sintetis yang dijalankan pada repositori saat roadmap ini dibuat.
+Harness tersedia di `scripts/synthetic_dataset_checks.py` dengan fixture dan 27 test cases di `tests/synthetic_dataset/`. Pengujian ekuivalen dijalankan secara lokal pada 2026-11-17 dan menghasilkan 27/27 lulus. Workflow GitHub Actions sudah ditambahkan, tetapi belum ada run/status CI yang dapat diverifikasi pada saat pembaruan ini.
 
 ## Gerbang kelulusan pengujian sintetis
 
 Tahap ini hanya dapat ditandai **Verified** jika:
-- Fixture valid diterima dan fixture invalid ditolak sesuai alasan yang diharapkan.
-- Offset setiap kalimat menunjuk tepat ke substring sumber, dengan konvensi indeks yang konsisten.
-- Editing history membentuk lineage yang dapat ditelusuri dan menolak referensi versi yang rusak.
-- Deduplikasi mendeteksi duplikat tanpa menggabungkan teks berbeda yang hanya mirip secara wajar.
-- Group-based split menjaga semua pasangan, turunan, dan kelompok terkait berada pada split yang sama.
-- Pengujian dapat diulang dengan command terdokumentasi dan menghasilkan output yang dapat diperiksa.
-- Kegagalan dan keterbatasan dicatat, bukan disembunyikan.
+- [x] Fixture valid diterima dan fixture invalid ditolak sesuai alasan yang diharapkan.
+- [x] Offset setiap kalimat menunjuk tepat ke substring sumber, dengan konvensi indeks yang konsisten.
+- [x] Editing history membentuk lineage yang dapat ditelusuri dan menolak referensi versi yang rusak.
+- [x] Deduplikasi mendeteksi duplikat tanpa menggabungkan teks berbeda yang hanya mirip secara wajar.
+- [x] Group-based split menjaga semua pasangan, turunan, dan kelompok terkait berada pada split yang sama.
+- [x] Pengujian dapat diulang dengan command terdokumentasi dan menghasilkan output yang dapat diperiksa.
+- [x] Kegagalan dan keterbatasan dicatat, bukan disembunyikan.
+
+Bukti dan keterbatasan: `tests/synthetic_dataset/README.md` dan `results/synthetic-dataset-test-2026-11-17.md`. Near-duplicate threshold 0.88 hanya parameter fixture, bukan threshold produksi. Hash-bucket split hanya membagi grup secara deterministik dan tidak menjamin stratifikasi kelas atau rasio persis. Kelulusan ini tidak mengesahkan sumber data, consent, label, pilot, atau training.
 
 ## Bukan prioritas implementasi saat ini
 
