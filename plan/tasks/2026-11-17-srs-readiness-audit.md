@@ -8,8 +8,8 @@
 
 ## Temuan audit awal
 
-- SRS berstatus Draft dan berisi 201 requirement unik tanpa ID duplikat.
-- Distribusi: GEN 9, FILE 9, DET 17, HUM 124, ACC 15, CRED 16, SUP 3, NOT 3, OPS 5.
+- SRS berstatus Draft dan berisi 265 requirement fungsional/nonfungsional unik tanpa ID duplikat.
+- Distribusi FR: GEN 9, FILE 9, DET 17, HUM 124, ACC 19, CRED 24, PAY 9, SUP 8, NOT 8, OPS 12, ADM 13; ditambah 13 NFR.
 - Decision Log memuat DEC-001 sampai DEC-155: 153 Accepted dan 2 Superseded.
 - Humanizer telah dielisitasi mendalam tetapi masih memiliki gap produk/teknis dan acceptance criteria.
 - Audit requirement Detector telah memperluas dan mengklarifikasi kebutuhan menjadi 17 requirement; metode model dan target kualitas masih memerlukan benchmark.
@@ -50,7 +50,7 @@
 - [x] Publikasikan laporan audit Humanizer.
 - [x] Tahap 2: audit kebutuhan produk AI Text Detector dan catat DEC-150 sampai DEC-155.
 - [x] Laporan audit Detector: `docs/AI-TEXT-DETECTOR-REQUIREMENTS-AUDIT-2026-11-17.md`.
-- [ ] Tahap 3: audit dan lengkapi modul pendukung (akun, dashboard, kredit, transaksi, pembayaran, dukungan, notifikasi, Admin, operasional).
+- [x] Tahap 3: perluas requirement modul pendukung (akun, dashboard, kredit, transaksi, pembayaran, dukungan, notifikasi, Admin, operasional) dan NFR.
 
 ## Kriteria selesai
 
