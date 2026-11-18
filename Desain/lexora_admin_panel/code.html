@@ -1,0 +1,645 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-fixed-dim":"#9ad1cb","tertiary-fixed":"#d1e7e3","primary":"#005c55","secondary-container":"#b5ede7","background":"#F7F8F7","surface-container":"#e3f1ea","surface":"#FFFFFF","on-primary":"#ffffff","surface-variant":"#d8e6df","surface-container-high":"#ddebe5","on-surface":"#121e1a","status-success":"#15803D","inverse-primary":"#80d5cb","on-tertiary-fixed-variant":"#374a48","surface-secondary":"#EEF2F0","on-primary-fixed-variant":"#00504a","on-primary-fixed":"#00201d","on-tertiary":"#ffffff","on-error-container":"#93000a","surface-container-highest":"#d8e6df","status-mixed":"#6D5BD0","outline-variant":"#bdc9c6","tertiary-container":"#596d6a","surface-dim":"#cfddd7","tertiary":"#415552","on-primary-container":"#a3faef","on-surface-variant":"#3e4947","primary-fixed":"#9cf2e8","error-container":"#ffdad6","border":"#DCE5E1","on-secondary-fixed":"#00201e","secondary":"#316763","surface-tint":"#006a63","status-info":"#2563EB","primary-fixed-dim":"#80d5cb","on-tertiary-container":"#d8eeea","status-warning":"#B45309","secondary-fixed":"#b5ede7","error":"#ba1a1a","inverse-on-surface":"#e6f4ed","on-secondary-container":"#376d69","inverse-surface":"#27332f","on-secondary":"#ffffff","on-tertiary-fixed":"#0b1f1d","surface-container-lowest":"#ffffff","surface-container-low":"#e9f7f0","primary-container":"#0f766e","on-secondary-fixed-variant":"#144f4b","text-primary":"#17231F","surface-bright":"#effdf6","outline":"#6e7977","on-error":"#ffffff","on-background":"#121e1a","tertiary-fixed-dim":"#b5cbc7","status-danger":"#B42318","text-secondary":"#66736E"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1.5rem","margin":"1rem","space-sm":"0.5rem","margin-tablet":"2rem","space-xl":"2.5rem","gutter-desktop":"2rem","margin-desktop":"3rem","space-md":"1rem","space-lg":"1.5rem","space-xs":"0.25rem"},"fontFamily":{"body-sm-medium":["Inter"],"display-hero":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Inter"],"display-hero-mobile":["Plus Jakarta Sans"],"body-sm":["Inter"],"mono-metric":["JetBrains Mono"],"headline-md":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"ui-label":["Inter"],"headline-sm":["Plus Jakarta Sans"],"mono-counter":["JetBrains Mono"],"body-medium":["Inter"],"body-default":["Inter"]},"fontSize":{"body-sm-medium":["14px",{"lineHeight":"20px","fontWeight":"500"}],"display-hero":["48px",{"lineHeight":"56px","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"display-hero-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"mono-metric":["14px",{"lineHeight":"20px","letterSpacing":"-0.01em","fontWeight":"500"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"ui-label":["13px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-sm":["18px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"600"}],"mono-counter":["12px",{"lineHeight":"16px","letterSpacing":"0","fontWeight":"400"}],"body-medium":["16px",{"lineHeight":"26px","fontWeight":"500"}],"body-default":["16px",{"lineHeight":"26px","fontWeight":"400"}]}}}};</script></head><body class="bg-background font-body-default text-text-primary antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col min-h-0"><div class="h-16 px-space-md flex items-center justify-between bg-surface"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">LEXORA</span><span class="px-space-xs py-0.5 rounded bg-surface-secondary text-secondary font-ui-label text-[11px] uppercase font-semibold tracking-wider">Ops Admin</span></div></div><div class="px-space-md py-space-sm"><div class="px-space-sm py-1.5 rounded-lg bg-surface-secondary flex items-center justify-between"><span class="font-ui-label text-[11px] text-text-secondary uppercase tracking-wider font-semibold">Otoritas</span><span class="px-2 py-0.5 rounded bg-surface border border-border font-ui-label text-[11px] text-primary font-semibold shadow-sm">Level 4 Super</span></div></div><nav class="flex-1 px-space-sm py-space-xs space-y-0.5 overflow-y-auto" data-active-classes="bg-surface-secondary text-primary font-semibold"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg transition-colors min-h-[44px] bg-surface-secondary text-primary font-semibold" data-path="ikhtisar-operasional" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span class="font-body-sm-medium text-body-sm-medium">Ikhtisar Operasional</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-secondary hover:text-text-primary transition-colors min-h-[44px]" data-path="manajemen-pengguna" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-body-sm-medium text-body-sm-medium">Manajemen Pengguna</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-secondary hover:text-text-primary transition-colors min-h-[44px]" data-path="manajemen-pekerjaan-ai" href="#"><span class="material-symbols-outlined text-[20px]">smart_toy</span><span class="font-body-sm-medium text-body-sm-medium">Manajemen Pekerjaan AI</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-secondary hover:text-text-primary transition-colors min-h-[44px]" data-path="verifikasi-pembayaran" href="#"><span class="material-symbols-outlined text-[20px]">verified</span><span class="font-body-sm-medium text-body-sm-medium">Verifikasi Pembayaran</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-secondary hover:text-text-primary transition-colors min-h-[44px]" data-path="buku-besar-kredit" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span class="font-body-sm-medium text-body-sm-medium">Buku Besar Kredit</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-secondary hover:text-text-primary transition-colors min-h-[44px]" data-path="tiket-bantuan-admin" href="#"><span class="material-symbols-outlined text-[20px]">support_agent</span><span class="font-body-sm-medium text-body-sm-medium">Tiket Bantuan Admin</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-secondary hover:text-text-primary transition-colors min-h-[44px]" data-path="konfigurasi-model-peladen" href="#"><span class="material-symbols-outlined text-[20px]">dns</span><span class="font-body-sm-medium text-body-sm-medium">Konfigurasi Model &amp; Peladen</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-secondary hover:text-text-primary transition-colors min-h-[44px]" data-path="permintaan-akses-teks-sensitif" href="#"><span class="material-symbols-outlined text-[20px]">key</span><span class="font-body-sm-medium text-body-sm-medium">Akses Teks Sensitif</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-secondary hover:text-text-primary transition-colors min-h-[44px]" data-path="catatan-audit-kriptografis" href="#"><span class="material-symbols-outlined text-[20px]">history_edu</span><span class="font-body-sm-medium text-body-sm-medium">Catatan Audit</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-secondary hover:text-text-primary transition-colors min-h-[44px]" data-path="kesehatan-server-antrean" href="#"><span class="material-symbols-outlined text-[20px]">speed</span><span class="font-body-sm-medium text-body-sm-medium">Kesehatan Server</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-secondary hover:text-text-primary transition-colors min-h-[44px]" data-path="peran-hak-akses" href="#"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span class="font-body-sm-medium text-body-sm-medium">Peran &amp; Hak Akses</span></a></nav></div><div class="p-space-md bg-surface-secondary"><div class="flex items-center gap-space-xs text-text-secondary"><span class="material-symbols-outlined text-[16px] text-primary">security</span><span class="font-mono-counter text-mono-counter text-text-secondary">Lexora Ops v2.4-enterprise</span></div><div class="mt-1 font-mono-counter text-[11px] text-text-secondary">Enkripsi Level 4 • ISO 27001</div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-md flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-text-primary font-semibold">Konsol Operasional</span><span class="px-2 py-0.5 rounded bg-surface-container-low text-primary font-ui-label text-[12px] font-semibold border border-border">Operasional &amp; Tata Kelola Sistem</span></div><div class="hidden xl:flex items-center gap-2 px-space-sm py-1 rounded bg-surface-secondary"><span class="w-2 h-2 rounded-full bg-status-success"></span><span class="font-body-sm text-body-sm text-text-primary">Klaster Produksi: Stabil</span></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-sm px-space-sm py-1 rounded bg-surface-secondary text-text-secondary font-mono-metric text-mono-metric"><span class="material-symbols-outlined text-[18px]">schedule</span><span>14:32:08 UTC</span><span class="text-outline-variant">•</span><span>21:32:08 WIB</span></div><div class="relative flex items-center justify-center w-11 h-11 rounded-lg bg-surface-secondary text-text-primary"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-status-danger px-1 text-[10px] font-mono-counter text-on-error">3</span></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="text-right hidden sm:block"><div class="font-body-sm-medium text-body-sm-medium text-text-primary">Admin Utama</div><div class="font-ui-label text-[11px] text-primary uppercase font-semibold">Super Admin</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><style>:root{--color-brand-primary:#0F766E;--color-brand-hover:#134E4A;--color-brand-accent-soft:#E9F7F0;}.bg-primary{background-color:#0F766E!important;}.text-primary{color:#0F766E!important;}.hover\:bg-primary-container:hover{background-color:#134E4A!important;}.border-primary{border-color:#0F766E!important;}</style><main class="relative pt-16 bg-background min-h-screen w-full px-gutter-desktop py-space-lg"><div class="flex flex-col w-full space-y-space-lg pb-space-xl">
+<!-- BREADCRUMB & CONTEXT HEADER -->
+<div class="flex flex-col gap-space-sm md:flex-row md:items-end md:justify-between">
+<div class="flex flex-col space-y-1">
+<nav class="flex items-center gap-2 text-text-secondary font-mono-counter text-mono-counter">
+<span>Sistem Operasional</span>
+<span class="text-outline-variant">/</span>
+<span class="text-text-primary font-medium">Ikhtisar &amp; Manajemen Pekerjaan AI</span>
+</nav>
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight font-bold leading-relaxed">
+        Pusat Operasional &amp; Pengawasan Sistem
+      </h1>
+<p class="font-body-default text-body-default text-text-secondary max-w-4xl">
+        Pemantauan beban komputasi model, integritas transaksi, audit log keamanan, dan penanganan permintaan akses bersyarat berbasis protokol Zero-Knowledge.
+      </p>
+</div>
+<!-- QUICK ACTIONS -->
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="h-11 px-space-md rounded-lg bg-surface text-text-primary font-ui-label text-ui-label hover:bg-surface-secondary shadow-sm flex items-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">file_download</span>
+        Unduh Laporan Audit Harian
+      </button>
+<button class="h-11 px-space-md rounded-lg bg-primary text-on-primary font-ui-label text-ui-label hover:bg-primary-container shadow-sm flex items-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+        + Tambah Operator Baru
+      </button>
+</div>
+</div>
+<!-- OPERATIONAL OVERVIEW METRIC CARDS -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="bg-surface p-space-md rounded-xl shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-ui-label text-[11px] uppercase tracking-wider text-text-secondary font-semibold">Total Pengguna Aktif</span>
+<span class="font-headline-md text-headline-md text-text-primary font-bold mt-1">38.420</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-secondary flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">group</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm pt-space-xs">
+<div class="flex items-center gap-1.5 text-status-success font-medium">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+4.2%</span>
+<span class="text-text-secondary font-normal font-body-sm text-body-sm">minggu ini</span>
+</div>
+<span class="font-mono-counter text-mono-counter text-text-secondary">Akun terverifikasi</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface p-space-md rounded-xl shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-ui-label text-[11px] uppercase tracking-wider text-text-secondary font-semibold">Beban Pekerjaan AI</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-md text-headline-md text-text-primary font-bold">142</span>
+<span class="font-mono-counter text-mono-counter text-text-secondary">antrean aktif</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-secondary flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm pt-space-xs">
+<div class="flex items-center gap-1.5 text-text-primary font-mono-counter text-mono-counter">
+<span class="w-2 h-2 rounded-full bg-status-success animate-pulse"></span>
+<span>Latensi p95: 1.4s</span>
+</div>
+<span class="font-mono-counter text-mono-counter text-text-secondary">Klaster Distributed</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface p-space-md rounded-xl shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-ui-label text-[11px] uppercase tracking-wider text-text-secondary font-semibold">Volume Transaksi &amp; Kredit</span>
+<span class="font-headline-md text-headline-md text-text-primary font-bold mt-1">4.820.000</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-secondary flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm pt-space-xs">
+<div class="flex items-center gap-1 text-status-success font-medium">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="font-mono-counter text-mono-counter">99.98% Sukses</span>
+</div>
+<span class="font-mono-counter text-mono-counter text-text-secondary">Mutasi hari ini</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface p-space-md rounded-xl shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-ui-label text-[11px] uppercase tracking-wider text-text-secondary font-semibold">Permintaan Akses Sensitif</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-md text-headline-md text-status-warning font-bold">2</span>
+<span class="font-ui-label text-[11px] text-text-secondary uppercase">Perlu Review</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-secondary flex items-center justify-center text-status-warning">
+<span class="material-symbols-outlined text-[20px]">shield_person</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm text-body-sm pt-space-xs">
+<span class="font-mono-counter text-mono-counter text-text-secondary">0 Sesi Aktif</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-secondary text-primary font-ui-label text-[11px] font-semibold">Zero-Knowledge</span>
+</div>
+</div>
+</div>
+<!-- SENSITIVE RAW-TEXT ACCESS REQUESTS (SECURITY GOVERNANCE) -->
+<div class="bg-surface rounded-xl shadow-sm p-space-md space-y-space-md">
+<!-- Notice Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-secondary flex items-center justify-center text-status-warning shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">lock_clock</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Permintaan Akses Naskah Sensitif</h2>
+<span class="px-2 py-0.5 rounded bg-surface-secondary text-status-warning font-mono-counter text-[11px] font-semibold tracking-wide uppercase">Otorisasi Level 4</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">
+            Peninjauan ketat sesuai <strong>Protokol Zero-Raw-Text</strong> dan <strong>UU PDP</strong>. Teks naskah pengguna dienkripsi secara end-to-end dan dilarang diakses tanpa persetujuan eksplisit.
+          </p>
+</div>
+</div>
+<div class="bg-surface-secondary p-space-sm rounded-lg max-w-xl text-text-secondary font-body-sm text-[12px] leading-relaxed shrink-0">
+<span class="font-semibold text-text-primary">Aturan Tata Kelola:</span> Akses investigasi hanya berlaku maks. 60 menit, mewajibkan nomor tiket dukungan valid, dan setiap inspeksi menghasilkan jejak audit kriptografis permanen.
+      </div>
+</div>
+<!-- Sensitive Access Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-secondary text-text-secondary font-ui-label text-[12px] uppercase tracking-wider">
+<th class="py-3 px-space-sm font-semibold rounded-l-lg">ID Permintaan</th>
+<th class="py-3 px-space-sm font-semibold">Subjek Pengguna</th>
+<th class="py-3 px-space-sm font-semibold">Justifikasi &amp; Tiket</th>
+<th class="py-3 px-space-sm font-semibold">Pemohon</th>
+<th class="py-3 px-space-sm font-semibold">Status Persetujuan</th>
+<th class="py-3 px-space-sm font-semibold">Batas Waktu</th>
+<th class="py-3 px-space-sm font-semibold text-right rounded-r-lg">Tindakan Otoritas</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-secondary">
+<!-- Row 1: Pending -->
+<tr class="hover:bg-surface-secondary/40 transition-colors">
+<td class="py-3.5 px-space-sm font-mono-metric text-mono-metric font-semibold text-text-primary">
+              #SAR-4029
+            </td>
+<td class="py-3.5 px-space-sm">
+<div class="flex items-center gap-1.5 font-mono-metric text-mono-metric text-primary">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+                usr-8842-pro
+              </div>
+</td>
+<td class="py-3.5 px-space-sm max-w-sm">
+<div class="font-body-sm-medium text-body-sm-medium text-text-primary">
+                Tiket #LX-0834
+              </div>
+<div class="font-body-sm text-body-sm text-text-secondary truncate" title="Laporan anomali klasifikasi UNCERTAIN pada sintaks teks perundangan">
+                Laporan anomali klasifikasi UNCERTAIN pada sintaks teks perundangan
+              </div>
+</td>
+<td class="py-3.5 px-space-sm">
+<div class="font-body-sm-medium text-body-sm-medium text-text-primary">Dian Permata</div>
+<div class="font-mono-counter text-mono-counter text-text-secondary">Support Tier 2</div>
+</td>
+<td class="py-3.5 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-secondary text-status-warning font-ui-label text-[12px] font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-status-warning animate-pulse"></span>
+                Menunggu Super Admin
+              </span>
+</td>
+<td class="py-3.5 px-space-sm font-mono-counter text-mono-counter text-text-secondary">
+              60 Menit (Otomatis)
+            </td>
+<td class="py-3.5 px-space-sm text-right">
+<div class="inline-flex items-center gap-2 justify-end">
+<button class="h-9 px-3 rounded bg-primary text-on-primary font-ui-label text-ui-label hover:bg-primary-container transition-colors flex items-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">vpn_key</span>
+                  Berikan Akses 1 Jam
+                </button>
+<button class="h-9 px-3 rounded bg-surface-secondary text-status-danger font-ui-label text-ui-label hover:bg-error-container hover:text-on-error-container transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+                  Tolak
+                </button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Rejected -->
+<tr class="hover:bg-surface-secondary/40 transition-colors">
+<td class="py-3.5 px-space-sm font-mono-metric text-mono-metric font-semibold text-text-primary">
+              #SAR-4018
+            </td>
+<td class="py-3.5 px-space-sm">
+<div class="flex items-center gap-1.5 font-mono-metric text-mono-metric text-text-secondary">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+                usr-3104-std
+              </div>
+</td>
+<td class="py-3.5 px-space-sm max-w-sm">
+<div class="font-body-sm-medium text-body-sm-medium text-text-primary">
+                Investigasi Internal
+              </div>
+<div class="font-body-sm text-body-sm text-text-secondary truncate" title="Investigasi kegagalan tokenisasi PUEBI pada klausa bersarang">
+                Investigasi kegagalan tokenisasi PUEBI pada klausa bersarang
+              </div>
+</td>
+<td class="py-3.5 px-space-sm">
+<div class="font-body-sm-medium text-body-sm-medium text-text-primary">Farhan Ardiansyah</div>
+<div class="font-mono-counter text-mono-counter text-text-secondary">Lead ML Ops</div>
+</td>
+<td class="py-3.5 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-secondary text-status-danger font-ui-label text-[12px] font-medium">
+<span class="material-symbols-outlined text-[14px]">cancel</span>
+                Ditolak (Tanpa Tiket)
+              </span>
+</td>
+<td class="py-3.5 px-space-sm font-mono-counter text-mono-counter text-text-secondary">
+              N/A
+            </td>
+<td class="py-3.5 px-space-sm text-right">
+<button class="h-9 px-3 rounded bg-surface-secondary text-text-secondary hover:text-text-primary font-ui-label text-ui-label transition-colors" type="button">
+                Lihat Catatan Penolakan
+              </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- JOB MANAGEMENT SECTION (MANAGEMENT PEKERJAAN AI) -->
+<div class="bg-surface rounded-xl shadow-sm flex flex-col">
+<!-- Header with Search & Filters -->
+<div class="p-space-md flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface rounded-t-xl">
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-text-primary font-semibold">
+          Antrean &amp; Eksekusi Pekerjaan AI
+        </h2>
+<span class="font-mono-counter text-mono-counter text-text-secondary mt-0.5">
+          Pemantauan inferensi real-time model Lexora-IDN klaster produksi
+        </span>
+</div>
+<!-- Filters & Search Toolbar -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Search Input -->
+<div class="relative min-w-[280px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-[18px]">search</span>
+<input class="w-full h-11 pl-9 pr-space-sm rounded-lg bg-surface-secondary text-text-primary font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary placeholder:text-text-secondary" placeholder="Cari Job ID, Hash Pengguna, atau Runner..." type="text">
+</div>
+<!-- Filter Dropdown 1 -->
+<div class="relative">
+<select class="h-11 px-space-sm pr-8 rounded-lg bg-surface-secondary text-text-primary font-ui-label text-ui-label appearance-none focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer">
+<option>Semua Layanan</option>
+<option>AI Text Detector</option>
+<option>AI Humanizer</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-text-secondary">expand_more</span>
+</div>
+<!-- Filter Dropdown 2 -->
+<div class="relative">
+<select class="h-11 px-space-sm pr-8 rounded-lg bg-surface-secondary text-text-primary font-ui-label text-ui-label appearance-none focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer">
+<option>Semua Status</option>
+<option>Completed</option>
+<option>Processing</option>
+<option>Queued</option>
+<option>Failed</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-[18px] text-text-secondary">expand_more</span>
+</div>
+<!-- Date Range Filter -->
+<div class="relative">
+<button class="h-11 px-space-sm rounded-lg bg-surface-secondary text-text-primary font-ui-label text-ui-label flex items-center gap-2 hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">calendar_today</span>
+<span>Hari Ini (20 Nov 2024)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dense Operational Table -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-secondary text-text-secondary font-ui-label text-[12px] uppercase tracking-wider">
+<th class="py-3 px-space-md font-semibold">Job ID</th>
+<th class="py-3 px-space-sm font-semibold">Hash Pengguna</th>
+<th class="py-3 px-space-sm font-semibold">Layanan AI</th>
+<th class="py-3 px-space-sm font-semibold">Model &amp; Runner</th>
+<th class="py-3 px-space-sm font-semibold">Volume Teks</th>
+<th class="py-3 px-space-sm font-semibold">Kredit</th>
+<th class="py-3 px-space-sm font-semibold">Waktu Pemrosesan</th>
+<th class="py-3 px-space-sm font-semibold">Status Operasi</th>
+<th class="py-3 px-space-md font-semibold text-right">Tindakan</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-secondary">
+<!-- Row 1: COMPLETED -->
+<tr class="hover:bg-surface-secondary/40 transition-colors">
+<td class="py-3.5 px-space-md font-mono-metric text-mono-metric font-semibold text-text-primary">
+              #JOB-98211
+            </td>
+<td class="py-3.5 px-space-sm">
+<span class="font-mono-counter text-mono-counter text-secondary px-2 py-0.5 rounded bg-surface-secondary">
+                usr-8842-pro
+              </span>
+</td>
+<td class="py-3.5 px-space-sm">
+<div class="flex items-center gap-1.5 font-body-sm-medium text-body-sm-medium text-text-primary">
+<span class="material-symbols-outlined text-[18px] text-primary">search_check</span>
+                AI Text Detector
+              </div>
+</td>
+<td class="py-3.5 px-space-sm font-mono-metric text-mono-metric text-text-secondary">
+              Detector-IDN-v2.1
+            </td>
+<td class="py-3.5 px-space-sm font-mono-counter text-mono-counter text-text-primary">
+              1.850 Karakter
+            </td>
+<td class="py-3.5 px-space-sm font-mono-metric text-mono-metric text-text-primary">
+              100 CR
+            </td>
+<td class="py-3.5 px-space-sm font-mono-counter text-mono-counter text-text-secondary">
+              840ms
+            </td>
+<td class="py-3.5 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-secondary text-status-success font-ui-label text-[12px] font-semibold">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+                COMPLETED
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="h-9 px-2.5 rounded bg-surface-secondary hover:bg-surface-container text-text-primary font-ui-label text-[12px] transition-colors" type="button">
+                  Detail Audit
+                </button>
+<button class="h-9 px-2 rounded bg-surface-secondary hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors" title="Inspeksi Metadata" type="button">
+<span class="material-symbols-outlined text-[18px]">data_object</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: PROCESSING -->
+<tr class="hover:bg-surface-secondary/40 transition-colors">
+<td class="py-3.5 px-space-md font-mono-metric text-mono-metric font-semibold text-text-primary">
+              #JOB-98210
+            </td>
+<td class="py-3.5 px-space-sm">
+<span class="font-mono-counter text-mono-counter text-secondary px-2 py-0.5 rounded bg-surface-secondary">
+                usr-1944-pro
+              </span>
+</td>
+<td class="py-3.5 px-space-sm">
+<div class="flex items-center gap-1.5 font-body-sm-medium text-body-sm-medium text-text-primary">
+<span class="material-symbols-outlined text-[18px] text-primary">auto_fix_high</span>
+                AI Humanizer
+              </div>
+</td>
+<td class="py-3.5 px-space-sm font-mono-metric text-mono-metric text-text-secondary">
+              Humanize-Ritme-v1.4
+            </td>
+<td class="py-3.5 px-space-sm font-mono-counter text-mono-counter text-text-primary">
+              4.200 Karakter
+            </td>
+<td class="py-3.5 px-space-sm font-mono-metric text-mono-metric text-text-primary">
+              420 CR
+            </td>
+<td class="py-3.5 px-space-sm font-mono-counter text-mono-counter text-status-info flex items-center gap-1 pt-4">
+<span class="material-symbols-outlined text-[14px] animate-spin">progress_activity</span>
+              Memproses (Node 03)
+            </td>
+<td class="py-3.5 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-secondary text-status-info font-ui-label text-[12px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-info animate-ping"></span>
+                PROCESSING
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="h-9 px-2.5 rounded bg-surface-secondary hover:bg-error-container hover:text-on-error-container text-status-danger font-ui-label text-[12px] transition-colors" type="button">
+                  Batalkan
+                </button>
+<button class="h-9 px-2 rounded bg-surface-secondary hover:bg-surface-container text-text-secondary hover:text-text-primary transition-colors" title="Inspeksi Real-time" type="button">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: COMPLETED -->
+<tr class="hover:bg-surface-secondary/40 transition-colors">
+<td class="py-3.5 px-space-md font-mono-metric text-mono-metric font-semibold text-text-primary">
+              #JOB-98209
+            </td>
+<td class="py-3.5 px-space-sm">
+<span class="font-mono-counter text-mono-counter text-text-secondary px-2 py-0.5 rounded bg-surface-secondary">
+                usr-9041-free
+              </span>
+</td>
+<td class="py-3.5 px-space-sm">
+<div class="flex items-center gap-1.5 font-body-sm-medium text-body-sm-medium text-text-primary">
+<span class="material-symbols-outlined text-[18px] text-primary">search_check</span>
+                AI Text Detector
+              </div>
+</td>
+<td class="py-3.5 px-space-sm font-mono-metric text-mono-metric text-text-secondary">
+              Detector-IDN-v2.1
+            </td>
+<td class="py-3.5 px-space-sm font-mono-counter text-mono-counter text-text-primary">
+              890 Karakter
+            </td>
+<td class="py-3.5 px-space-sm font-mono-metric text-mono-metric text-text-primary">
+              100 CR
+            </td>
+<td class="py-3.5 px-space-sm font-mono-counter text-mono-counter text-text-secondary">
+              420ms
+            </td>
+<td class="py-3.5 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-secondary text-status-success font-ui-label text-[12px] font-semibold">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+                COMPLETED
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="h-9 px-2.5 rounded bg-surface-secondary hover:bg-surface-container text-text-primary font-ui-label text-[12px] transition-colors" type="button">
+                  Detail Audit
+                </button>
+</div>
+</td>
+</tr>
+<!-- Row 4: FAILED -->
+<tr class="hover:bg-surface-secondary/40 transition-colors">
+<td class="py-3.5 px-space-md font-mono-metric text-mono-metric font-semibold text-text-primary">
+              #JOB-98208
+            </td>
+<td class="py-3.5 px-space-sm">
+<span class="font-mono-counter text-mono-counter text-secondary px-2 py-0.5 rounded bg-surface-secondary">
+                usr-5512-pro
+              </span>
+</td>
+<td class="py-3.5 px-space-sm">
+<div class="flex items-center gap-1.5 font-body-sm-medium text-body-sm-medium text-text-primary">
+<span class="material-symbols-outlined text-[18px] text-primary">auto_fix_high</span>
+                AI Humanizer
+              </div>
+</td>
+<td class="py-3.5 px-space-sm font-mono-metric text-mono-metric text-text-secondary">
+              Humanize-Formal-v1.2
+            </td>
+<td class="py-3.5 px-space-sm font-mono-counter text-mono-counter text-text-primary">
+              12.400 Karakter
+            </td>
+<td class="py-3.5 px-space-sm font-mono-metric text-mono-metric text-text-primary">
+              1.240 CR
+            </td>
+<td class="py-3.5 px-space-sm font-mono-counter text-mono-counter text-status-danger">
+              Gagal (Timeout Klaster)
+            </td>
+<td class="py-3.5 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-secondary text-status-danger font-ui-label text-[12px] font-semibold">
+<span class="material-symbols-outlined text-[14px]">error</span>
+                FAILED
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="h-9 px-2.5 rounded bg-surface-secondary hover:bg-surface-container text-primary font-ui-label text-[12px] transition-colors" type="button">
+                  Re-trigger
+                </button>
+<button class="h-9 px-2.5 rounded bg-surface-secondary hover:bg-surface-container text-text-secondary hover:text-text-primary font-ui-label text-[12px] transition-colors" type="button">
+                  Refund Kredit
+                </button>
+</div>
+</td>
+</tr>
+<!-- Row 5: QUEUED -->
+<tr class="hover:bg-surface-secondary/40 transition-colors">
+<td class="py-3.5 px-space-md font-mono-metric text-mono-metric font-semibold text-text-primary">
+              #JOB-98207
+            </td>
+<td class="py-3.5 px-space-sm">
+<span class="font-mono-counter text-mono-counter text-text-secondary px-2 py-0.5 rounded bg-surface-secondary">
+                usr-7731-free
+              </span>
+</td>
+<td class="py-3.5 px-space-sm">
+<div class="flex items-center gap-1.5 font-body-sm-medium text-body-sm-medium text-text-primary">
+<span class="material-symbols-outlined text-[18px] text-primary">search_check</span>
+                AI Text Detector
+              </div>
+</td>
+<td class="py-3.5 px-space-sm font-mono-metric text-mono-metric text-text-secondary">
+              Detector-IDN-v2.1
+            </td>
+<td class="py-3.5 px-space-sm font-mono-counter text-mono-counter text-text-primary">
+              2.100 Karakter
+            </td>
+<td class="py-3.5 px-space-sm font-mono-metric text-mono-metric text-text-primary">
+              100 CR
+            </td>
+<td class="py-3.5 px-space-sm font-mono-counter text-mono-counter text-text-secondary">
+              Antrean Posisi #04
+            </td>
+<td class="py-3.5 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-secondary text-text-secondary font-ui-label text-[12px] font-semibold">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+                QUEUED
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="h-9 px-2.5 rounded bg-surface-secondary hover:bg-surface-container text-text-primary font-ui-label text-[12px] transition-colors" type="button">
+                  Naikkan Prioritas
+                </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footnote & Privacy Notice -->
+<div class="px-space-md py-3 bg-surface-secondary/60 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-2 text-text-secondary font-body-sm text-[12px]">
+<span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+<span><strong>Catatan Keamanan:</strong> Isi teks naskah pengguna dienkripsi penuh dan tidak dirender pada tabel ini sesuai Regulasi PDP dan Protokol Zero-Raw-Text Lexora.</span>
+</div>
+<span class="font-mono-counter text-[11px] text-text-secondary shrink-0">
+        Integritas Data: SHA-256 Validated
+      </span>
+</div>
+<!-- Table Pagination -->
+<div class="p-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm bg-surface rounded-b-xl">
+<div class="font-mono-counter text-mono-counter text-text-secondary">
+        Menampilkan <span class="font-semibold text-text-primary">1 - 5</span> dari <span class="font-semibold text-text-primary">142</span> pekerjaan aktif
+      </div>
+<div class="flex items-center gap-1">
+<button class="w-9 h-9 rounded bg-surface-secondary text-text-secondary hover:text-text-primary flex items-center justify-center transition-colors disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-9 h-9 rounded bg-primary text-on-primary font-mono-counter text-mono-counter font-semibold" type="button">
+          1
+        </button>
+<button class="w-9 h-9 rounded bg-surface-secondary text-text-primary hover:bg-surface-container font-mono-counter text-mono-counter transition-colors" type="button">
+          2
+        </button>
+<button class="w-9 h-9 rounded bg-surface-secondary text-text-primary hover:bg-surface-container font-mono-counter text-mono-counter transition-colors" type="button">
+          3
+        </button>
+<span class="px-2 text-text-secondary font-mono-counter text-mono-counter">...</span>
+<button class="w-9 h-9 rounded bg-surface-secondary text-text-primary hover:bg-surface-container font-mono-counter text-mono-counter transition-colors" type="button">
+          29
+        </button>
+<button class="w-9 h-9 rounded bg-surface-secondary text-text-secondary hover:text-text-primary flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- OPERATIONAL AUDIT LOG & ROLES SNAPSHOT -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Panel Kiri: Catatan Audit Privileged Action Terkini (7 Cols) -->
+<div class="lg:col-span-7 bg-surface rounded-xl shadow-sm p-space-md flex flex-col justify-between space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-secondary flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">security_update_good</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Catatan Audit Privileged Action Terkini</h3>
+<span class="font-body-sm text-[12px] text-text-secondary">Semua modifikasi operasional tersimpan immutable di log kriptografis</span>
+</div>
+</div>
+<a class="font-ui-label text-ui-label text-primary hover:text-primary-container flex items-center gap-1 transition-colors" href="#">
+          Lihat Buku Besar Audit
+          <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<div class="space-y-space-sm">
+<!-- Item 1 -->
+<div class="p-space-sm rounded-lg bg-surface-secondary flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">verified</span>
+<div class="flex flex-col">
+<span class="font-body-sm-medium text-body-sm-medium text-text-primary">
+                Super Admin (Rian) menyetujui refund 500 Kredit untuk #JOB-98188
+              </span>
+<span class="font-body-sm text-[12px] text-text-secondary mt-0.5">
+                Alasan: Penyesuaian latensi gateway dan anomali timeout model runner
+              </span>
+</div>
+</div>
+<span class="font-mono-counter text-[11px] text-text-secondary whitespace-nowrap">
+            14 menit lalu
+          </span>
+</div>
+<!-- Item 2 -->
+<div class="p-space-sm rounded-lg bg-surface-secondary flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">edit_note</span>
+<div class="flex flex-col">
+<span class="font-body-sm-medium text-body-sm-medium text-text-primary">
+                Admin (Siti) mengubah status tiket #LX-0841 menjadi IN_PROGRESS
+              </span>
+<span class="font-body-sm text-[12px] text-text-secondary mt-0.5">
+                Alasan: Mulai koordinasi investigasi hasil deteksi mixed-text pada laporan hukum
+              </span>
+</div>
+</div>
+<span class="font-mono-counter text-[11px] text-text-secondary whitespace-nowrap">
+            32 menit lalu
+          </span>
+</div>
+<!-- Item 3: Alert Rejected Action -->
+<div class="p-space-sm rounded-lg bg-surface-secondary flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-status-danger text-[18px] mt-0.5">gpp_bad</span>
+<div class="flex flex-col">
+<span class="font-body-sm-medium text-body-sm-medium text-text-primary">
+                System Security menolak upaya akses teks naskah tanpa tiket otorisasi
+              </span>
+<span class="font-body-sm text-[12px] text-text-secondary mt-0.5 font-mono-counter">
+                Identifikasi Node: IP 10.24.11.4 • Level Ancaman: Dicegah Otomatis
+              </span>
+</div>
+</div>
+<span class="font-mono-counter text-[11px] text-text-secondary whitespace-nowrap">
+            1 jam lalu
+          </span>
+</div>
+</div>
+<div class="pt-space-xs font-mono-counter text-[11px] text-text-secondary flex items-center justify-between">
+<span>Hash Block: #0x92f8...a14c</span>
+<span>Tanda Tangan Digital Kriptografi: Valid</span>
+</div>
+</div>
+<!-- Panel Kanan: Matriks Peran & Hak Akses (5 Cols) -->
+<div class="lg:col-span-5 bg-surface rounded-xl shadow-sm p-space-md flex flex-col justify-between space-y-space-md"><div class="flex items-center justify-between pb-space-xs"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-[10px] bg-surface-container-low flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[18px]">admin_panel_settings</span></div><div class="flex flex-col"><h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Matriks Hak Akses (RBAC)</h3><span class="font-body-sm text-[12px] text-text-secondary">Distribusi izin dan operator aktif</span></div></div><button class="font-ui-label text-ui-label text-primary hover:text-primary-container transition-colors" type="button">Kelola Peran</button></div><div class="space-y-space-sm"><div class="p-space-sm rounded-[10px] border border-border bg-surface-secondary flex items-center justify-between"><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-body-sm-medium text-body-sm-medium text-text-primary">Super Admin</span><span class="px-2 py-0.5 rounded bg-surface-container-low border border-border text-primary font-ui-label text-[10px] uppercase font-semibold">Tier 1</span></div><span class="font-body-sm text-[12px] text-text-secondary mt-0.5">Akses Penuh, Tata Kelola Kebijakan, Persetujuan Teks Sensitif</span></div><div class="text-right shrink-0"><span class="font-mono-metric text-mono-metric font-semibold text-text-primary">3 Aktif</span></div></div><div class="p-space-sm rounded-[10px] border border-border bg-surface-secondary flex items-center justify-between"><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-body-sm-medium text-body-sm-medium text-text-primary">Admin Operasional</span><span class="px-2 py-0.5 rounded bg-surface border border-border text-secondary font-ui-label text-[10px] uppercase font-semibold">Tier 2</span></div><span class="font-body-sm text-[12px] text-text-secondary mt-0.5">Manajemen Pengguna, Verifikasi Pembayaran, Antrean Klaster</span></div><div class="text-right shrink-0"><span class="font-mono-metric text-mono-metric font-semibold text-text-primary">8 Aktif</span></div></div><div class="p-space-sm rounded-[10px] border border-border bg-surface-secondary flex items-center justify-between"><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-body-sm-medium text-body-sm-medium text-text-primary">Moderator / Support</span><span class="px-2 py-0.5 rounded bg-surface border border-border text-text-secondary font-ui-label text-[10px] uppercase font-semibold">Tier 3</span></div><span class="font-body-sm text-[12px] text-text-secondary mt-0.5">Tiket Dukungan, Investigasi Metadata terbatas (Non-Raw Text)</span></div><div class="text-right shrink-0"><span class="font-mono-metric text-mono-metric font-semibold text-text-primary">14 Aktif</span></div></div></div><div class="p-space-sm rounded-[10px] border border-border bg-surface-secondary flex items-center justify-between text-body-sm text-[12px]"><span class="text-text-secondary">Autentikasi Multi-Faktor (MFA FIDO2 / TOTP)</span><span class="font-semibold text-status-success flex items-center gap-1 font-ui-label text-ui-label"><span class="w-1.5 h-1.5 rounded-full bg-status-success"></span>100% Terpasang</span></div></div>
+</div>
+</div></main></div>
+
+</body></html>

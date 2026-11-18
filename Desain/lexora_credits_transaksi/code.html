@@ -1,0 +1,631 @@
+<!DOCTYPE html><html class="h-full" lang="id"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"secondary":"#316763","on-error":"#ffffff","primary":"#005c55","outline-variant":"#bdc9c6","on-secondary":"#ffffff","surface-container-high":"#ddebe5","on-secondary-fixed":"#00201e","outline":"#6e7977","on-secondary-container":"#376d69","surface-bright":"#effdf6","status-info":"#2563EB","on-primary-container":"#a3faef","primary-fixed":"#9cf2e8","tertiary-container":"#596d6a","tertiary-fixed":"#d1e7e3","surface-container":"#e3f1ea","secondary-container":"#b5ede7","tertiary-fixed-dim":"#b5cbc7","on-surface":"#121e1a","error":"#ba1a1a","status-danger":"#B42318","surface-dim":"#cfddd7","secondary-fixed-dim":"#9ad1cb","error-container":"#ffdad6","surface-variant":"#d8e6df","surface-container-low":"#e9f7f0","on-primary":"#ffffff","surface":"#FFFFFF","status-mixed":"#6D5BD0","on-primary-fixed-variant":"#00504a","inverse-surface":"#27332f","surface-secondary":"#EEF2F0","status-success":"#15803D","text-secondary":"#66736E","on-secondary-fixed-variant":"#144f4b","text-primary":"#17231F","on-primary-fixed":"#00201d","tertiary":"#415552","on-background":"#121e1a","primary-container":"#0f766e","status-warning":"#B45309","surface-container-highest":"#d8e6df","surface-container-lowest":"#ffffff","on-surface-variant":"#3e4947","inverse-primary":"#80d5cb","secondary-fixed":"#b5ede7","primary-fixed-dim":"#80d5cb","inverse-on-surface":"#e6f4ed","on-tertiary-container":"#d8eeea","on-tertiary-fixed":"#0b1f1d","border":"#DCE5E1","on-tertiary":"#ffffff","on-tertiary-fixed-variant":"#374a48","background":"#F7F8F7","surface-tint":"#006a63","on-error-container":"#93000a"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-xs":"0.25rem","space-xl":"2.5rem","space-md":"1rem","margin-tablet":"2rem","margin-desktop":"3rem","margin":"1rem","space-sm":"0.5rem","gutter-desktop":"2rem","space-lg":"1.5rem","gutter":"1.5rem"},fontFamily:{"mono-counter":["JetBrains Mono"],"headline-lg-mobile":["Plus Jakarta Sans"],"ui-label":["Inter"],"display-hero":["Plus Jakarta Sans"],"body-default":["Inter"],"body-medium":["Inter"],"headline-sm":["Plus Jakarta Sans"],"body-sm-medium":["Inter"],"mono-metric":["JetBrains Mono"],"headline-lg":["Plus Jakarta Sans"],"body-sm":["Inter"],"display-hero-mobile":["Plus Jakarta Sans"],"body-lg":["Inter"],"headline-md":["Plus Jakarta Sans"]},fontSize:{"mono-counter":["12px",{"lineHeight":"16px","letterSpacing":"0","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"ui-label":["13px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"600"}],"display-hero":["48px",{"lineHeight":"56px","letterSpacing":"-0.025em","fontWeight":"700"}],"body-default":["16px",{"lineHeight":"26px","fontWeight":"400"}],"body-medium":["16px",{"lineHeight":"26px","fontWeight":"500"}],"headline-sm":["18px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-sm-medium":["14px",{"lineHeight":"20px","fontWeight":"500"}],"mono-metric":["14px",{"lineHeight":"20px","letterSpacing":"-0.01em","fontWeight":"500"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"display-hero-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}]}}}};</script></head><body class="bg-background font-body-default text-body-default text-text-primary min-h-screen selection:bg-secondary-container selection:text-on-secondary-fixed"><aside class="fixed left-0 top-0 h-screen w-[240px] bg-surface flex flex-col justify-between z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 overflow-y-auto"><div class="h-16 px-space-lg flex items-center gap-space-sm"><div class="flex items-center gap-3"><img src="https://lh3.googleusercontent.com/aida/ALJJyrBa7T6FyBY529z_2q4zDaiUgxlAQMyY3Yy0QWyAd9231ztlC9uj2QfJmodTWsj1wnB5dn-spR9-8bEBKAp-etrDVEE0_oc_azbaHwz7gJaaifesDItQufuUSVguqWvlSpWUqyKLe_p8eOUtQOat1rIaY_PCC3E1-4ul9P732CQxvgxFQovayZmJB6s5eELJ8vi1WtUlpCEN65xrBYTzR-hBsz_Q-IxAshoBZMM0qLQ3gQ" alt="Lexora Logo" class="h-8 w-auto object-contain"><div class="flex flex-col justify-center leading-none"><span class="font-headline-sm text-[16px] font-bold tracking-tight text-text-primary uppercase">LEXORA</span><span class="font-ui-label text-[11px] text-text-secondary mt-0.5">Ruang Kerja AI</span></div></div></div><div class="px-space-md py-space-sm"><div class="px-space-sm py-space-xs text-[11px] font-ui-label text-text-secondary uppercase tracking-wider">Modul Utama</div><nav class="flex flex-col gap-1 mt-1" data-active-classes="bg-primary-container text-on-primary font-medium rounded-lg"><a class="h-10 px-space-sm flex items-center gap-space-sm rounded-lg text-text-secondary hover:bg-surface-secondary hover:text-text-primary transition-colors font-body-sm-medium text-body-sm-medium" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Overview</span></a><a class="h-10 px-space-sm flex items-center gap-space-sm rounded-lg text-text-secondary hover:bg-surface-secondary hover:text-text-primary transition-colors font-body-sm-medium text-body-sm-medium" data-path="ai-text-detector" href="#"><span class="material-symbols-outlined text-[20px]">find_in_page</span><span>AI Text Detector</span></a><a class="h-10 px-space-sm flex items-center gap-space-sm rounded-lg text-text-secondary hover:bg-surface-secondary hover:text-text-primary transition-colors font-body-sm-medium text-body-sm-medium" data-path="ai-humanizer" href="#"><span class="material-symbols-outlined text-[20px]">magic_button</span><span>AI Humanizer</span></a><a class="h-10 px-space-sm flex items-center gap-space-sm rounded-lg text-text-secondary hover:bg-surface-secondary hover:text-text-primary transition-colors font-body-sm-medium text-body-sm-medium" data-path="style-profiles" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span>Style Profiles</span></a><a class="h-10 px-space-sm flex items-center gap-space-sm rounded-lg text-text-secondary hover:bg-surface-secondary hover:text-text-primary transition-colors font-body-sm-medium text-body-sm-medium" data-path="history" href="#"><span class="material-symbols-outlined text-[20px]">history</span><span>History</span></a></nav></div><div class="px-space-md py-space-sm"><div class="px-space-sm py-space-xs text-[11px] font-ui-label text-text-secondary uppercase tracking-wider">Manajemen</div><nav class="flex flex-col gap-1 mt-1" data-active-classes="bg-primary-container text-on-primary font-medium rounded-lg"><a aria-current="page" class="h-10 px-space-sm flex items-center gap-space-sm transition-colors bg-primary-container text-on-primary font-medium rounded-lg" data-path="credits-&amp;-transaksi" href="#"><span class="material-symbols-outlined text-[20px]">toll</span><span>Credits &amp; Transaksi</span></a><a class="h-10 px-space-sm flex items-center gap-space-sm rounded-lg text-text-secondary hover:bg-surface-secondary hover:text-text-primary transition-colors font-body-sm-medium text-body-sm-medium" data-path="support" href="#"><span class="material-symbols-outlined text-[20px]">help</span><span>Support</span></a><a class="h-10 px-space-sm flex items-center gap-space-sm rounded-lg text-text-secondary hover:bg-surface-secondary hover:text-text-primary transition-colors font-body-sm-medium text-body-sm-medium" data-path="privacy-center" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Privacy Center</span></a><a class="h-10 px-space-sm flex items-center gap-space-sm rounded-lg text-text-secondary hover:bg-surface-secondary hover:text-text-primary transition-colors font-body-sm-medium text-body-sm-medium" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div></div><div class="p-space-md bg-surface"><div class="flex items-center gap-2 px-space-sm py-space-xs rounded-md bg-surface-secondary text-text-secondary"><span class="w-2 h-2 rounded-full bg-status-success"></span><span class="font-mono-counter text-mono-counter text-text-secondary">Lexora v1.0 • Stabil</span></div></div></aside><div class="pl-[240px] flex flex-col min-h-screen"><header class="fixed top-0 left-[240px] right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-sm"><span class="font-body-sm text-body-sm text-text-secondary">Ruang Kerja</span><span class="font-body-sm text-body-sm text-outline-variant">/</span><span class="font-body-sm-medium text-body-sm-medium text-text-primary">Credits &amp; Transaksi</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-3 py-1.5 rounded-full bg-surface-secondary"><span class="material-symbols-outlined text-[16px] text-primary-container">token</span><span class="font-mono-metric text-mono-metric text-text-primary font-medium">12.500</span><span class="font-body-sm text-[12px] text-text-secondary">Kredit</span></div><button aria-label="Notifikasi" class="relative w-9 h-9 rounded-lg flex items-center justify-center text-text-secondary hover:bg-surface-secondary hover:text-text-primary transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden sm:flex flex-col text-left"><span class="font-body-sm-medium text-body-sm-medium text-text-primary leading-tight">Editor Lexora</span><span class="font-ui-label text-[11px] text-text-secondary leading-tight">Pro Editorial</span></div></div></div></header><main class="w-full pt-16 bg-background flex-1"><div class="max-w-7xl mx-auto px-space-lg py-space-xl"><div class="flex flex-col w-full">
+<!-- Top Utility Bar: Title & Primary Action -->
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-space-md mb-space-xl">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="font-ui-label text-[11px] tracking-wider uppercase text-text-secondary">Akuntansi &amp; Lisensi</span>
+<span class="text-text-secondary text-xs">•</span>
+<span class="font-mono-counter text-mono-counter text-primary-container">ID: USR-8842-PRO</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Credits &amp; Transaksi</h1>
+<p class="font-body-default text-body-default text-text-secondary mt-1">
+        Kelola alokasi kuota komputasi, riwayat penggunaan kredit AI, dan pembelian paket naskah.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<button class="h-11 px-5 rounded-[10px] bg-primary-container text-on-primary font-body-sm-medium text-body-sm-medium flex items-center gap-2 hover:bg-[#134e4a] transition-all shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-container cursor-pointer" onclick="document.getElementById('credit-packages-section').scrollIntoView({behavior: 'smooth'})" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Top Up Kredit</span>
+</button>
+</div>
+</div>
+<!-- SECTION 1: Balance Overview Cards (Level 1 Surface on Level 0 Canvas) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-space-md mb-space-xl">
+<!-- Card 1: Available -->
+<div class="bg-surface rounded-xl p-space-lg shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-ui-label text-[11px] uppercase tracking-wider text-text-secondary mb-1">Saldo Tersedia</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-hero text-display-hero text-text-primary tracking-tight font-headline-lg">12.500</span>
+<span class="font-ui-label text-ui-label text-text-secondary">Kredit</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-secondary flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">token</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-border flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-text-secondary flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-status-success inline-block"></span>
+          Siap digunakan untuk Detector &amp; Humanizer
+        </span>
+<span class="font-mono-counter text-mono-counter text-text-secondary">100% Siap</span>
+</div>
+</div>
+<!-- Card 2: Reserved -->
+<div class="bg-surface rounded-xl p-space-lg shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-ui-label text-[11px] uppercase tracking-wider text-text-secondary mb-1">Dicadangkan (In-Flight)</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-hero text-display-hero text-text-primary tracking-tight font-headline-lg">500</span>
+<span class="font-ui-label text-ui-label text-text-secondary">Kredit</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-secondary flex items-center justify-center text-status-warning">
+<span class="material-symbols-outlined text-[22px]">hourglass_top</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-border flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-text-secondary flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-status-warning inline-block"></span>
+          2 proses kalibrasi profil sintaksis aktif
+        </span>
+<button class="font-ui-label text-[12px] text-primary-container hover:underline" type="button">Detail</button>
+</div>
+</div>
+<!-- Card 3: Expiring Soon -->
+<div class="bg-surface rounded-xl p-space-lg shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-ui-label text-[11px] uppercase tracking-wider text-text-secondary mb-1">Mendekati Kedaluwarsa</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-hero text-display-hero text-status-warning tracking-tight font-headline-lg">1.000</span>
+<span class="font-ui-label text-ui-label text-text-secondary">Kredit</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-[#FEF3C7] flex items-center justify-center text-status-warning">
+<span class="material-symbols-outlined text-[22px]">event_busy</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-border flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-text-secondary flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-status-warning inline-block"></span>
+          Habis 31 Des 2024 (Lot Registrasi)
+        </span>
+<span class="font-mono-counter text-mono-counter text-status-warning font-medium">44 Hari</span>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Rewarded Ads Policy Notice (Informatif, Terbuka, Non-blocking) -->
+<section class="bg-surface-secondary rounded-xl p-space-md mb-space-xl flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm max-w-3xl">
+<div class="w-8 h-8 rounded-lg bg-surface flex-shrink-0 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">campaign</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-[15px] font-semibold text-text-primary">
+            Dapatkan Kredit Tambahan via Rewarded Partner (Opsional)
+          </h2>
+<span class="px-2 py-0.5 rounded text-[11px] font-ui-label bg-surface-container text-text-secondary">Akun Terdaftar</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1 leading-relaxed">
+          Kompensasi: <strong class="text-text-primary font-medium">+50 Kredit</strong> per sesi validasi mitra. Masa berlaku: 30 hari kalender, terikat non-transferable pada akun ini. 
+          <em>Ketentuan ketat:</em> Program ini sepenuhnya sukarela, tidak memotong antrean editorial, dan tidak pernah memblokir proses analisis naskah reguler.
+        </p>
+</div>
+</div>
+<div class="flex-shrink-0 flex items-center gap-space-sm">
+<button class="h-10 px-4 rounded-lg bg-surface text-text-primary font-body-sm-medium text-body-sm-medium hover:bg-surface-container transition-colors shadow-sm flex items-center gap-2 cursor-pointer" onclick="alert('Sesi mitra peninjauan editorial sedang dimuat. Menambahkan +50 kredit ke antrean setelah konfirmasi.')" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary-container">play_circle</span>
+<span>Mulai Sesi (+50)</span>
+</button>
+</div>
+</section>
+<!-- SECTION 3: Credit Packages (Beli Kredit) -->
+<section class="flex flex-col mb-space-xl" id="credit-packages-section">
+<div class="flex flex-col mb-space-md">
+<span class="font-ui-label text-[11px] uppercase tracking-wider text-text-secondary mb-1">Pengisian Kuota</span>
+<h2 class="font-headline-md text-headline-md text-text-primary tracking-tight">Pilihan Paket Kredit Naskah</h2>
+<p class="font-body-default text-body-default text-text-secondary mt-1">
+        Kredit ditambahkan secara instan setelah pembayaran terkonfirmasi secara kriptografis oleh server.
+      </p>
+</div>
+<!-- 3 Configurable Package Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg items-stretch">
+<!-- Package A: Starter / Esensial -->
+<div class="bg-surface rounded-xl p-space-lg shadow-sm flex flex-col justify-between transition-all hover:shadow-md">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-ui-label text-[11px] uppercase tracking-wider text-text-secondary px-2.5 py-1 bg-surface-secondary rounded-md">Starter</span>
+<span class="font-mono-counter text-mono-counter text-text-secondary">Tier I</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-1">Paket Esensial</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-md">Ideal untuk verifikasi berkala naskah tugas akhir dan jurnal tunggal.</p>
+<div class="p-space-sm rounded-lg bg-surface-secondary mb-space-md flex flex-col gap-1">
+<span class="font-ui-label text-[11px] text-text-secondary">Alokasi Komputasi:</span>
+<span class="font-mono-metric text-[16px] text-primary-container font-semibold">[Konfigurasi Server: 5.000 Kredit]</span>
+<span class="font-body-sm text-[12px] text-text-secondary">Estimasi kuota: ~50 analisis naskah komprehensif</span>
+</div>
+<div class="space-y-2 mb-space-lg">
+<div class="flex items-center gap-2 text-text-primary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-status-success">check</span>
+<span>Validitas penggunaan 12 bulan</span>
+</div>
+<div class="flex items-center gap-2 text-text-primary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-status-success">check</span>
+<span>Dukungan penuh parser DOCX, PDF, &amp; TXT</span>
+</div>
+<div class="flex items-center gap-2 text-text-primary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-status-success">check</span>
+<span>Audit kalimat &amp; detektor multivariat</span>
+</div>
+</div>
+</div>
+<button class="w-full h-11 rounded-lg bg-surface-secondary text-text-primary hover:bg-surface-container font-body-sm-medium text-body-sm-medium transition-colors flex items-center justify-center gap-2 cursor-pointer" onclick="selectPackage('Paket Esensial', '5.000 Kredit', 'Paket starter ideal untuk verifikasi mandiri.')" type="button">
+<span>Pilih Paket</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Package B: Editorial Pro (Highlighted) -->
+<div class="bg-surface rounded-xl p-space-lg shadow-md flex flex-col justify-between relative ring-2 ring-primary-container">
+<!-- Floating Tag -->
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary-container text-on-primary px-3 py-0.5 rounded-full font-ui-label text-[11px] tracking-wide uppercase shadow-sm">
+          Paling Populer
+        </div>
+<div>
+<div class="flex items-center justify-between mb-space-sm mt-1">
+<span class="font-ui-label text-[11px] uppercase tracking-wider text-primary-container px-2.5 py-1 bg-surface-container rounded-md font-semibold">Pro Editorial</span>
+<span class="font-mono-counter text-mono-counter text-primary-container font-semibold">Tier II</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-1">Paket Editorial Pro</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-md">Dirancang untuk editor, penerbit, dan periset dengan volume rutin.</p>
+<div class="p-space-sm rounded-lg bg-surface-bright mb-space-md flex flex-col gap-1">
+<span class="font-ui-label text-[11px] text-primary-container font-medium">Alokasi Komputasi + Bonus:</span>
+<span class="font-mono-metric text-[16px] text-primary-container font-bold">[Konfigurasi Server: 15.000 + 2.500 Bonus]</span>
+<span class="font-body-sm text-[12px] text-secondary">Estimasi kuota: ~175 naskah &amp; humanisasi intensif</span>
+</div>
+<div class="space-y-2 mb-space-lg">
+<div class="flex items-center gap-2 text-text-primary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-status-success">check</span>
+<strong class="font-medium">Validitas selamanya (tanpa kedaluwarsa)</strong>
+</div>
+<div class="flex items-center gap-2 text-text-primary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-status-success">check</span>
+<span>Prioritas antrean peladen sintaksis AI</span>
+</div>
+<div class="flex items-center gap-2 text-text-primary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-status-success">check</span>
+<span>Akses 6 Style Profiles khusus redaksi</span>
+</div>
+<div class="flex items-center gap-2 text-text-primary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-status-success">check</span>
+<span>Dukungan ekspor catatan koreksi per kata</span>
+</div>
+</div>
+</div>
+<button class="w-full h-11 rounded-lg bg-primary-container text-on-primary hover:bg-[#134e4a] font-body-sm-medium text-body-sm-medium transition-colors shadow-sm flex items-center justify-center gap-2 cursor-pointer" onclick="selectPackage('Paket Editorial Pro', '17.500 Kredit (Inc. 2.500 Bonus)', 'Paket paling populer dengan validitas tanpa batas waktu.')" type="button">
+<span>Pilih Paket Pro</span>
+<span class="material-symbols-outlined text-[16px]">shopping_cart_checkout</span>
+</button>
+</div>
+<!-- Package C: Institution & Team -->
+<div class="bg-surface rounded-xl p-space-lg shadow-sm flex flex-col justify-between transition-all hover:shadow-md">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-ui-label text-[11px] uppercase tracking-wider text-text-secondary px-2.5 py-1 bg-surface-secondary rounded-md">Institusi</span>
+<span class="font-mono-counter text-mono-counter text-text-secondary">Tier III</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-1">Paket Institusi &amp; Tim</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-md">Solusi agregat untuk laboratorium kampus, dewan redaksi, dan agensi konten.</p>
+<div class="p-space-sm rounded-lg bg-surface-secondary mb-space-md flex flex-col gap-1">
+<span class="font-ui-label text-[11px] text-text-secondary">Alokasi Komputasi Skala Besar:</span>
+<span class="font-mono-metric text-[16px] text-primary-container font-semibold">[Konfigurasi Server: 50.000 Kredit]</span>
+<span class="font-body-sm text-[12px] text-text-secondary">Kapasitas analisis volume tinggi tanpa limit harian</span>
+</div>
+<div class="space-y-2 mb-space-lg">
+<div class="flex items-center gap-2 text-text-primary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-status-success">check</span>
+<span>Dukungan multi-kursi editor &amp; manajemen kuota</span>
+</div>
+<div class="flex items-center gap-2 text-text-primary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-status-success">check</span>
+<span>Faktur pajak resmi (e-Faktur PPN 11%)</span>
+</div>
+<div class="flex items-center gap-2 text-text-primary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-status-success">check</span>
+<span>Penyimpanan arsip naskah terenkripsi ISO 27001</span>
+</div>
+<div class="flex items-center gap-2 text-text-primary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-status-success">check</span>
+<span>Dedicated customer support via WhatsApp/Email</span>
+</div>
+</div>
+</div>
+<button class="w-full h-11 rounded-lg bg-surface-secondary text-text-primary hover:bg-surface-container font-body-sm-medium text-body-sm-medium transition-colors flex items-center justify-center gap-2 cursor-pointer" onclick="selectPackage('Paket Institusi &amp; Tim', '50.000 Kredit', 'Paket enterprise dengan e-faktur dan multi-akses.')" type="button">
+<span>Pilih Paket</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Technical Real-Time Pricing Note -->
+<div class="mt-space-md p-space-sm rounded-lg bg-surface flex items-center justify-between text-text-secondary text-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">tune</span>
+<span class="font-body-sm text-[12px]">Harga aktual IDR dan kuota kredit final disinkronisasikan langsung dari peladen konfigurasi real-time saat pembuatan sesi checkout.</span>
+</div>
+<span class="font-mono-counter text-mono-counter hidden sm:inline">Engine v1.0 • IDR Gateway</span>
+</div>
+</section>
+<!-- SECTION 4: Transparent Checkout Flow Drawer / State Preview (Mandatory Architecture) -->
+<section class="bg-surface rounded-xl p-space-lg shadow-sm mb-space-xl" id="checkout-panel">
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-space-md mb-space-md border-b border-border gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Panel Checkout &amp; Verifikasi Gateway</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">Transparansi status transaksi real-time dengan verifikasi kriptografis backend.</p>
+</div>
+</div>
+<!-- Cryptographic verification badge -->
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#FEF3C7] text-status-warning font-ui-label text-[12px]">
+<span class="material-symbols-outlined text-[16px] animate-spin">sync</span>
+<span id="checkout-status-label">Menunggu Konfirmasi Backend</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Order Summary -->
+<div class="lg:col-span-5 flex flex-col justify-between bg-surface-secondary p-space-md rounded-xl">
+<div class="space-y-space-sm">
+<span class="font-ui-label text-[11px] uppercase tracking-wider text-text-secondary">Ringkasan Pesanan Aktif</span>
+<div class="flex items-center justify-between pt-1">
+<span class="font-headline-sm text-[16px] font-semibold text-text-primary" id="active-pkg-title">Paket Editorial Pro</span>
+<span class="font-mono-metric text-mono-metric font-medium text-primary-container" id="active-pkg-credits">17.500 Kredit</span>
+</div>
+<p class="font-body-sm text-[13px] text-text-secondary leading-snug" id="active-pkg-desc">
+            Termasuk 15.000 kredit pokok + 2.500 bonus loyalty. Tanpa batas kedaluwarsa.
+          </p>
+<div class="pt-space-sm border-t border-border space-y-1.5">
+<div class="flex justify-between font-body-sm text-[13px] text-text-secondary">
+<span>Nilai Nominal Subtotal:</span>
+<span class="font-mono-counter">IDR [Konfigurasi Server]</span>
+</div>
+<div class="flex justify-between font-body-sm text-[13px] text-text-secondary">
+<span>PPN Terhitung (11%):</span>
+<span class="font-mono-counter">IDR [Sesuai Regulasi]</span>
+</div>
+<div class="flex justify-between font-body-sm-medium text-body-sm-medium text-text-primary pt-1 border-t border-border">
+<span>Total Tagihan:</span>
+<span class="font-mono-metric text-[15px] font-bold text-text-primary">IDR [Konfigurasi Server Real-Time]</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md p-space-xs rounded bg-surface text-text-secondary font-mono-counter text-[11px] flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-primary-container">lock</span>
+<span>Sesi: LX-SES-9482710398 • Enkripsi AES-256</span>
+</div>
+</div>
+<!-- Payment Methods & Protocol Notice -->
+<div class="lg:col-span-7 flex flex-col justify-between">
+<div>
+<span class="font-ui-label text-[11px] uppercase tracking-wider text-text-secondary mb-space-xs block">Metode Pembayaran Terintegrasi</span>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm mb-space-md">
+<!-- QRIS -->
+<label class="p-3 rounded-lg bg-surface border-2 border-primary-container flex flex-col justify-between cursor-pointer">
+<div class="flex items-center justify-between mb-2">
+<span class="font-body-sm-medium text-body-sm-medium text-text-primary">QRIS</span>
+<span class="material-symbols-outlined text-primary-container text-[18px]">radio_button_checked</span>
+</div>
+<span class="font-body-sm text-[11px] text-text-secondary">Gopay, OVO, Dana, BCA QR</span>
+</label>
+<!-- Virtual Account -->
+<label class="p-3 rounded-lg bg-surface border border-border hover:border-primary-container flex flex-col justify-between cursor-pointer transition-colors">
+<div class="flex items-center justify-between mb-2">
+<span class="font-body-sm-medium text-body-sm-medium text-text-primary">Virtual Account</span>
+<span class="material-symbols-outlined text-outline-variant text-[18px]">radio_button_unchecked</span>
+</div>
+<span class="font-body-sm text-[11px] text-text-secondary">BCA, Mandiri, BNI, BRI</span>
+</label>
+<!-- Kartu Kredit -->
+<label class="p-3 rounded-lg bg-surface border border-border hover:border-primary-container flex flex-col justify-between cursor-pointer transition-colors">
+<div class="flex items-center justify-between mb-2">
+<span class="font-body-sm-medium text-body-sm-medium text-text-primary">Kartu Kredit</span>
+<span class="material-symbols-outlined text-outline-variant text-[18px]">radio_button_unchecked</span>
+</div>
+<span class="font-body-sm text-[11px] text-text-secondary">Visa, Mastercard (3D Secure)</span>
+</label>
+</div>
+<!-- Protocol Enforcement Box -->
+<div class="p-space-sm rounded-lg bg-surface-secondary border-l-4 border-status-warning mb-space-md">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-status-warning flex-shrink-0 mt-0.5">verified_user</span>
+<p class="font-body-sm text-[12px] text-text-primary leading-relaxed">
+<strong>Ketentuan Integritas Transaksi:</strong> Konfirmasi keberhasilan pembayaran wajib diverifikasi secara kriptografis melalui webhook backend peladen Lexora, bukan semata-mata bergantung pada pengalihan tautan peramban (browser redirect). Kredit baru akan ditambahkan ke saldo hanya setelah status transaksi berlabel <em>Paid / Verifikasi Sah</em>.
+              </p>
+</div>
+</div>
+</div>
+<!-- Verification State Preview Indicators -->
+<div class="flex flex-wrap items-center justify-between pt-space-sm border-t border-border gap-2">
+<div class="flex items-center gap-2">
+<span class="font-ui-label text-[11px] text-text-secondary">Kamus Status Ledger:</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-ui-label bg-[#FEF3C7] text-status-warning border border-[#FDE68A]">Pending</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-ui-label bg-[#DEF7EC] text-status-success border border-[#BCF0DA]">Lunas Terverifikasi</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-ui-label bg-[#FDE8E8] text-status-danger border border-[#FBD5D5]">Gagal/Batal</span>
+</div>
+<button class="h-10 px-4 rounded-lg bg-primary-container text-on-primary hover:bg-[#134e4a] font-body-sm-medium text-body-sm-medium transition-colors shadow-sm flex items-center gap-1.5 cursor-pointer" onclick="simulateVerification()" type="button">
+<span class="material-symbols-outlined text-[16px]">send</span>
+<span>Kirim Permintaan Pembayaran</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: Comprehensive Transaction Ledger (Buku Besar Riwayat Transaksi) -->
+<section class="bg-surface rounded-xl shadow-sm overflow-hidden flex flex-col mb-space-xl">
+<!-- Ledger Header, Search & Filter Toolbar -->
+<div class="p-space-lg pb-space-md border-b border-border flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary">Buku Besar Transaksi (Ledger)</h2>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">Catatan audit permanen atas seluruh mutasi kredit, penggunaan model AI, dan faktur.</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Search bar -->
+<div class="relative min-w-[220px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[18px] text-text-secondary">search</span>
+<input class="h-10 pl-9 pr-3 w-full bg-surface-secondary rounded-lg font-body-sm text-body-sm text-text-primary placeholder:text-text-secondary border-none focus:outline-none focus:ring-2 focus:ring-primary-container" placeholder="Cari ID transaksi, berkas..." type="text">
+</div>
+<!-- Filter Source Dropdown -->
+<div class="flex items-center gap-1.5 bg-surface-secondary px-3 py-2 rounded-lg font-body-sm-medium text-body-sm-medium text-text-primary">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">filter_list</span>
+<select class="bg-transparent border-none font-body-sm text-body-sm text-text-primary focus:outline-none cursor-pointer">
+<option>Semua Sumber</option>
+<option>Pembelian Kuota</option>
+<option>AI Text Detector</option>
+<option>AI Humanizer</option>
+<option>Promo / Bonus Registrasi</option>
+</select>
+</div>
+<!-- Date Range Filter -->
+<div class="flex items-center gap-1.5 bg-surface-secondary px-3 py-2 rounded-lg font-body-sm-medium text-body-sm-medium text-text-primary">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">calendar_today</span>
+<span class="font-body-sm text-body-sm">30 Hari Terakhir</span>
+<span class="material-symbols-outlined text-[16px] text-text-secondary">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Ledger Table (Responsive Wrapper) -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-secondary text-text-secondary font-ui-label text-[11px] uppercase tracking-wider border-b border-border">
+<th class="py-3 px-space-lg">ID Transaksi</th>
+<th class="py-3 px-space-md">Sumber / Layanan</th>
+<th class="py-3 px-space-md text-right">Mutasi Kredit</th>
+<th class="py-3 px-space-md text-center">Status Verifikasi</th>
+<th class="py-3 px-space-md">Waktu Pembuatan</th>
+<th class="py-3 px-space-md">Masa Berlaku</th>
+<th class="py-3 px-space-lg text-right">Dokumen</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border text-text-primary font-body-sm text-body-sm">
+<!-- Row 1: Purchase -->
+<tr class="hover:bg-surface-secondary/50 transition-colors">
+<td class="py-3.5 px-space-lg">
+<span class="font-mono-counter text-mono-counter text-text-primary font-medium">#LX-TX-9021</span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-sm-medium text-body-sm-medium text-text-primary">Pembelian Kuota Naskah</span>
+<span class="text-[12px] text-text-secondary">Paket Esensial (Starter Tier)</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right font-mono-metric font-medium text-status-success">
+              +5.000 Kredit
+            </td>
+<td class="py-3.5 px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-ui-label bg-[#DEF7EC] text-status-success border border-[#BCF0DA]">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+<span>Paid / Lunas</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md font-mono-counter text-text-secondary">
+              17 Nov 2024, 14:20 WIB
+            </td>
+<td class="py-3.5 px-space-md font-mono-counter text-text-secondary">
+              17 Nov 2025
+            </td>
+<td class="py-3.5 px-space-lg text-right">
+<button class="inline-flex items-center gap-1 text-[12px] font-body-sm-medium text-primary-container hover:underline" type="button">
+<span class="material-symbols-outlined text-[14px]">download</span>
+<span>Unduh Resi</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Humanizer Usage -->
+<tr class="hover:bg-surface-secondary/50 transition-colors">
+<td class="py-3.5 px-space-lg">
+<span class="font-mono-counter text-mono-counter text-text-primary font-medium">#LX-TX-9020</span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-sm-medium text-body-sm-medium text-text-primary">AI Humanizer</span>
+<span class="text-[12px] text-text-secondary">Job: Essay_Draft_Maros_v2.docx</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right font-mono-metric font-medium text-text-primary">
+              -250 Kredit
+            </td>
+<td class="py-3.5 px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-ui-label bg-surface-secondary text-text-secondary">
+<span class="material-symbols-outlined text-[12px]">task_alt</span>
+<span>Completed</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md font-mono-counter text-text-secondary">
+              17 Nov 2024, 11:35 WIB
+            </td>
+<td class="py-3.5 px-space-md font-mono-counter text-text-secondary">
+              -
+            </td>
+<td class="py-3.5 px-space-lg text-right">
+<button class="inline-flex items-center gap-1 text-[12px] font-body-sm-medium text-text-secondary hover:text-text-primary" type="button">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span>Rincian Job</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Detector Usage -->
+<tr class="hover:bg-surface-secondary/50 transition-colors">
+<td class="py-3.5 px-space-lg">
+<span class="font-mono-counter text-mono-counter text-text-primary font-medium">#LX-TX-9019</span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-sm-medium text-body-sm-medium text-text-primary">AI Text Detector</span>
+<span class="text-[12px] text-text-secondary">Job: Draft_Maros_Karst.docx</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right font-mono-metric font-medium text-text-primary">
+              -100 Kredit
+            </td>
+<td class="py-3.5 px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-ui-label bg-surface-secondary text-text-secondary">
+<span class="material-symbols-outlined text-[12px]">task_alt</span>
+<span>Completed</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md font-mono-counter text-text-secondary">
+              17 Nov 2024, 10:20 WIB
+            </td>
+<td class="py-3.5 px-space-md font-mono-counter text-text-secondary">
+              -
+            </td>
+<td class="py-3.5 px-space-lg text-right">
+<button class="inline-flex items-center gap-1 text-[12px] font-body-sm-medium text-text-secondary hover:text-text-primary" type="button">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span>Rincian Job</span>
+</button>
+</td>
+</tr>
+<!-- Row 4: Promotional Bonus -->
+<tr class="hover:bg-surface-secondary/50 transition-colors">
+<td class="py-3.5 px-space-lg">
+<span class="font-mono-counter text-mono-counter text-text-primary font-medium">#LX-TX-9018</span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-sm-medium text-body-sm-medium text-text-primary">Bonus Registrasi Awal</span>
+<span class="text-[12px] text-text-secondary">Insentif Verifikasi Akun Baru Lexora</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right font-mono-metric font-medium text-status-success">
+              +1.000 Kredit
+            </td>
+<td class="py-3.5 px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-ui-label bg-[#DEF7EC] text-status-success border border-[#BCF0DA]">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+<span>Paid / Aktif</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md font-mono-counter text-text-secondary">
+              01 Nov 2024, 08:00 WIB
+            </td>
+<td class="py-3.5 px-space-md font-mono-counter text-status-warning font-medium">
+              31 Des 2024 (Expiring)
+            </td>
+<td class="py-3.5 px-space-lg text-right">
+<button class="inline-flex items-center gap-1 text-[12px] font-body-sm-medium text-text-secondary hover:text-text-primary" type="button">
+<span class="material-symbols-outlined text-[14px]">info</span>
+<span>Info Lot</span>
+</button>
+</td>
+</tr>
+<!-- Row 5: Reserved -->
+<tr class="hover:bg-surface-secondary/50 transition-colors bg-[#FEF3C7]/20">
+<td class="py-3.5 px-space-lg">
+<span class="font-mono-counter text-mono-counter text-text-primary font-medium">#LX-TX-9017</span>
+</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-body-sm-medium text-body-sm-medium text-text-primary">Reserved Kalibrasi Profil</span>
+<span class="text-[12px] text-text-secondary">Style Profile #4: Akademik Hukum</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right font-mono-metric font-medium text-status-warning">
+              -500 Kredit
+            </td>
+<td class="py-3.5 px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-ui-label bg-[#FEF3C7] text-status-warning border border-[#FDE68A]">
+<span class="material-symbols-outlined text-[12px]">lock_clock</span>
+<span>Reserved</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md font-mono-counter text-text-secondary">
+              16 Nov 2024, 16:45 WIB
+            </td>
+<td class="py-3.5 px-space-md font-mono-counter text-status-warning">
+              Menunggu Evaluasi
+            </td>
+<td class="py-3.5 px-space-lg text-right">
+<button class="inline-flex items-center gap-1 text-[12px] font-body-sm-medium text-primary-container hover:underline" type="button">
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+<span>Periksa</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Ledger Footer: Pagination -->
+<div class="p-space-md border-t border-border flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm bg-surface">
+<span class="font-body-sm text-body-sm text-text-secondary">
+        Menampilkan <strong class="text-text-primary font-medium">5</strong> dari <strong class="text-text-primary font-medium">38</strong> transaksi mutasi
+      </span>
+<div class="flex items-center gap-1">
+<button class="h-9 w-9 rounded-lg flex items-center justify-center text-outline-variant cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="h-9 w-9 rounded-lg bg-primary-container text-on-primary font-body-sm-medium text-body-sm-medium flex items-center justify-center" type="button">
+          1
+        </button>
+<button class="h-9 w-9 rounded-lg text-text-secondary hover:bg-surface-secondary font-body-sm-medium text-body-sm-medium flex items-center justify-center transition-colors" type="button">
+          2
+        </button>
+<button class="h-9 w-9 rounded-lg text-text-secondary hover:bg-surface-secondary font-body-sm-medium text-body-sm-medium flex items-center justify-center transition-colors" type="button">
+          3
+        </button>
+<span class="px-1 text-text-secondary">...</span>
+<button class="h-9 w-9 rounded-lg text-text-secondary hover:bg-surface-secondary font-body-sm-medium text-body-sm-medium flex items-center justify-center transition-colors" type="button">
+          8
+        </button>
+<button class="h-9 w-9 rounded-lg text-text-secondary hover:bg-surface-secondary flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Interactive script for package selection and verification simulation -->
+<script>
+    function selectPackage(title, credits, desc) {
+      document.getElementById('active-pkg-title').innerText = title;
+      document.getElementById('active-pkg-credits').innerText = credits;
+      document.getElementById('active-pkg-desc').innerText = desc;
+      
+      const panel = document.getElementById('checkout-panel');
+      panel.scrollIntoView({ behavior: 'smooth' });
+      
+      const statusBadge = document.getElementById('checkout-status-label');
+      statusBadge.innerText = 'Menunggu Konfirmasi Backend';
+      statusBadge.parentElement.className = 'flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#FEF3C7] text-status-warning font-ui-label text-[12px]';
+    }
+
+    function simulateVerification() {
+      const statusBadge = document.getElementById('checkout-status-label');
+      statusBadge.innerText = 'Memverifikasi Webhook Server...';
+      
+      setTimeout(function() {
+        statusBadge.innerText = 'Lunas Terverifikasi Secara Kriptografis';
+        statusBadge.parentElement.className = 'flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#DEF7EC] text-status-success font-ui-label text-[12px]';
+        alert('Sinyal Webhook Terverifikasi! Server telah menambahkan kredit baru secara instan.');
+      }, 1200);
+    }
+  </script>
+</div></div></main></div>
+
+</body></html>

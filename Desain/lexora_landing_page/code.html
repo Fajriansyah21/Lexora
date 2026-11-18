@@ -1,0 +1,553 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary-fixed-dim":"#80d5cb","outline-variant":"#bdc9c6","status-success":"#15803D","inverse-primary":"#80d5cb","on-background":"#121e1a","tertiary":"#415552","on-secondary-fixed":"#00201e","surface-container-high":"#ddebe5","surface-container-highest":"#d8e6df","tertiary-fixed":"#d1e7e3","on-secondary":"#ffffff","outline":"#6e7977","on-error-container":"#93000a","error":"#ba1a1a","on-tertiary-fixed":"#0b1f1d","text-primary":"#17231F","on-surface-variant":"#3e4947","primary-fixed":"#9cf2e8","error-container":"#ffdad6","status-mixed":"#6D5BD0","on-primary-fixed-variant":"#00504a","surface-dim":"#cfddd7","on-tertiary-container":"#d8eeea","surface":"#FFFFFF","border":"#DCE5E1","status-danger":"#B42318","surface-container":"#e3f1ea","status-warning":"#B45309","on-surface":"#121e1a","inverse-on-surface":"#e6f4ed","on-primary":"#ffffff","on-error":"#ffffff","on-primary-fixed":"#00201d","surface-tint":"#006a63","on-secondary-container":"#376d69","status-info":"#2563EB","on-tertiary-fixed-variant":"#374a48","primary-container":"#0f766e","text-secondary":"#66736E","surface-container-low":"#e9f7f0","tertiary-fixed-dim":"#b5cbc7","secondary-fixed-dim":"#9ad1cb","secondary-fixed":"#b5ede7","on-primary-container":"#a3faef","surface-secondary":"#EEF2F0","tertiary-container":"#596d6a","inverse-surface":"#27332f","secondary-container":"#b5ede7","on-tertiary":"#ffffff","surface-container-lowest":"#ffffff","background":"#F7F8F7","surface-bright":"#effdf6","primary":"#005c55","secondary":"#316763","surface-variant":"#d8e6df","on-secondary-fixed-variant":"#144f4b"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-lg":"1.5rem","space-xs":"0.25rem","gutter":"1.5rem","space-md":"1rem","gutter-desktop":"2rem","margin-desktop":"3rem","margin-tablet":"2rem","space-sm":"0.5rem","margin":"1rem","space-xl":"2.5rem"},"fontFamily":{"body-lg":["Inter"],"mono-counter":["JetBrains Mono"],"body-sm-medium":["Inter"],"headline-md":["Plus Jakarta Sans"],"body-sm":["Inter"],"headline-lg":["Plus Jakarta Sans"],"mono-metric":["JetBrains Mono"],"body-medium":["Inter"],"display-hero-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"body-default":["Inter"],"display-hero":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"ui-label":["Inter"]},"fontSize":{"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"mono-counter":["12px",{"lineHeight":"16px","letterSpacing":"0","fontWeight":"400"}],"body-sm-medium":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"mono-metric":["14px",{"lineHeight":"20px","letterSpacing":"-0.01em","fontWeight":"500"}],"body-medium":["16px",{"lineHeight":"26px","fontWeight":"500"}],"display-hero-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-default":["16px",{"lineHeight":"26px","fontWeight":"400"}],"display-hero":["48px",{"lineHeight":"56px","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-sm":["18px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"600"}],"ui-label":["13px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-default text-body-default text-text-primary min-h-screen"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-[1280px] mx-auto px-gutter flex items-center justify-between"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm" data-path="beranda" href="#"><img src="https://lh3.googleusercontent.com/aida/ALJJyrA3NdM4ngC1guHvYyG5LTZWAvwjpG8vCbQpqSTJAoqosQjy7AplcpNQOioFDAX32Y_31cD4ZUYAwpZJbYH_XvfsTnVW6efLZOhukkHToKFzkbHEFEENDLkyt8hN_Inusk6NuajJBvKEaaylLG_Bcug_oi9nqwzdgwwZbSt3jNBi0v3xprCad1Q2F_otN6gVpV2aGJcVoTV_L7fGD8-T5YmGrY-XHWtwWSpbuiWejlUm7g" alt="Lexora" class="h-9 w-auto object-contain block"></a><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="text-primary-container font-body-sm-medium text-body-sm-medium"><a class="text-on-surface-variant font-body-sm text-body-sm hover:text-on-surface transition-colors" data-path="produk" href="#">Produk</a><a class="text-on-surface-variant font-body-sm text-body-sm hover:text-on-surface transition-colors" data-path="cara-kerja" href="#">Cara Kerja</a><a class="text-on-surface-variant font-body-sm text-body-sm hover:text-on-surface transition-colors" data-path="harga" href="#">Harga</a><a class="text-on-surface-variant font-body-sm text-body-sm hover:text-on-surface transition-colors" data-path="bantuan" href="#">Bantuan</a></nav></div><div class="flex items-center gap-space-md"><a class="text-on-surface-variant font-body-sm-medium text-body-sm-medium hover:text-on-surface px-space-sm py-space-xs transition-colors" data-path="masuk" href="#">Masuk</a><a class="inline-flex items-center justify-center min-h-[44px] px-5 rounded-[10px] bg-primary-container text-on-primary font-body-sm-medium text-body-sm-medium hover:bg-primary transition-colors focus:ring-2 focus:ring-primary-container focus:outline-none" data-path="mulai-sekarang" href="#">Mulai Sekarang</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-background"><div class="max-w-[1280px] mx-auto px-gutter"><div class="flex flex-col w-full">
+<!-- SECTION 1: HERO -->
+<section class="py-space-xl lg:py-24">
+<div class="flex flex-col items-center text-center max-w-3xl mx-auto">
+<!-- Pill Badge -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low text-primary text-body-sm-medium font-body-sm-medium mb-space-md">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+        Workspace Penulisan &amp; Analisis AI Terpercaya
+      </div>
+<!-- Main Headline -->
+<h1 class="font-display-hero text-display-hero text-text-primary tracking-tight mb-space-md">
+        Pahami tulisanmu. Perbaiki dengan kendali.
+      </h1>
+<!-- Supporting Subhead -->
+<p class="font-body-lg text-body-lg text-text-secondary mb-space-lg max-w-2xl leading-relaxed">
+        Analisis pola tulisan dengan hati-hati, lalu rapikan teks tanpa kehilangan kendali atas maknanya. Dirancang khusus untuk ketelitian editorial Bahasa Indonesia.
+      </p>
+<!-- CTAs -->
+<div class="flex flex-col sm:flex-row items-center gap-space-sm w-full sm:w-auto mb-space-xl">
+<a class="w-full sm:w-auto inline-flex items-center justify-center min-h-[44px] px-6 rounded-[10px] bg-primary-container text-on-primary font-body-medium text-body-medium hover:bg-primary transition-colors shadow-sm focus:outline-none" href="#detector">
+          Coba AI Detector
+          <span class="material-symbols-outlined ml-2 text-[20px]">search_check</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center min-h-[44px] px-6 rounded-[10px] bg-surface text-text-primary font-body-medium text-body-medium hover:bg-surface-secondary shadow-sm transition-colors focus:outline-none" href="#humanizer">
+          Gunakan Humanizer
+          <span class="material-symbols-outlined ml-2 text-[20px]">tune</span>
+</a>
+</div>
+</div>
+<!-- Editorial Interactive Preview Card -->
+<div class="w-full max-w-5xl mx-auto bg-surface shadow-md overflow-hidden mt-space-md rounded-[14px]" style="border: 1px solid #DCE5E1;">
+<!-- Top Chrome Bar -->
+<div class="h-12 bg-surface-secondary px-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span>
+<span class="ml-2 font-mono-counter text-mono-counter text-text-secondary">workspace_preview.lex</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-[11px] font-mono-counter bg-surface text-text-secondary uppercase">Mode Inspeksi Kalimat</span>
+</div>
+</div>
+<!-- Split Dual-Pane View -->
+<div class="grid grid-cols-1 lg:grid-cols-12 min-h-[380px]">
+<!-- Left Pane: Highlighted Manuscript -->
+<div class="lg:col-span-7 p-space-lg flex flex-col justify-between bg-surface">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-ui-label text-ui-label text-text-secondary uppercase tracking-wider">Naskah Pengujian (Bahasa Indonesia)</span>
+<span class="font-mono-counter text-mono-counter text-text-secondary">3 Paragraf • 148 Kata</span>
+</div>
+<div class="space-y-4 font-body-default text-body-default text-text-primary leading-relaxed">
+<p>
+<span class="bg-[#DEF7EC] text-status-success px-1.5 py-0.5 rounded transition-colors cursor-pointer hover:opacity-90 inline" title="Pola Alami Terverifikasi">
+                  Penelitian lapangan di kawasan karst Maros membuktikan pentingnya pelestarian ekosistem terpadu.
+                </span>
+                Masyarakat adat setempat telah menerapkan sistem konservasi berbasis kearifan lokal sejak berabad-abad lampau tanpa intervensi teknologi modern.
+              </p>
+<p>
+<span class="bg-[#FEF3C7] text-status-warning px-1.5 py-0.5 rounded transition-colors cursor-pointer hover:opacity-90 inline" title="Struktur Kalimat Berulang">
+                  Dalam era kontemporer ini, pemanfaatan kecerdasan buatan menjadi faktor yang sangat esensial dan tak terelakkan bagi percepatan inovasi industri.
+                </span>
+<span class="bg-[#FDE8E8] text-status-danger px-1.5 py-0.5 rounded transition-colors cursor-pointer hover:opacity-90 inline" title="Pola Terindikasi Sintetis Sintaksis Rata">
+                  Hal tersebut disebabkan oleh kapabilitas komputasi yang secara signifikan mempermudah seluruh alur kerja korporasi dengan efisiensi maksimal.
+                </span>
+</p>
+</div>
+</div>
+<div class="pt-6 mt-6 flex flex-wrap items-center gap-3">
+<span class="font-ui-label text-ui-label text-text-secondary">Keterangan Visual:</span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-body-sm-medium bg-[#DEF7EC] text-status-success">
+<span class="w-1.5 h-1.5 rounded-full bg-status-success"></span> Variasi Alami
+            </span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-body-sm-medium bg-[#FEF3C7] text-status-warning">
+<span class="w-1.5 h-1.5 rounded-full bg-status-warning"></span> Ambiguitas Struktur
+            </span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-body-sm-medium bg-[#FDE8E8] text-status-danger">
+<span class="w-1.5 h-1.5 rounded-full bg-status-danger"></span> Pola Sintetis Khas
+            </span>
+</div>
+</div>
+<!-- Right Pane: Sentence Diagnostics Panel -->
+<div class="lg:col-span-5 bg-surface-secondary p-space-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[20px]">analytics</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Indikator Diagnostik</span>
+</div>
+<span class="px-2.5 py-1 rounded-full text-xs font-body-sm-medium bg-[#EDE9FE] text-status-mixed">
+                Pola Campuran (MIXED)
+              </span>
+</div>
+<div class="space-y-4">
+<!-- Diagnostic Card 1 -->
+<div class="p-3.5 bg-surface rounded-lg shadow-sm">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-body-sm-medium text-body-sm-medium text-text-primary">Ritme Kalimat (Perplexity)</span>
+<span class="font-mono-metric text-mono-metric text-primary-container">Beragam • Stabil</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 72%"></div>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1.5 text-xs">Variasi panjang klausa mengindikasikan intonasi penulisan manusia yang wajar.</p>
+</div>
+<!-- Diagnostic Card 2 -->
+<div class="p-3.5 bg-surface rounded-lg shadow-sm">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-body-sm-medium text-body-sm-medium text-text-primary">Keseragaman Diksi (Burstiness)</span>
+<span class="font-mono-metric text-mono-metric text-status-warning">Moderat</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-status-warning h-full rounded-full" style="width: 44%"></div>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1.5 text-xs">Paragraf kedua memperlihatkan repetisi struktur pasif yang umum ditemukan pada teks terjemahan mesin.</p>
+</div>
+</div>
+</div>
+<!-- Epistemic Honesty Card -->
+<div class="mt-6 p-3 bg-surface-container-low rounded-lg flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary-container text-[18px] shrink-0 mt-0.5">info</span>
+<p class="font-body-sm text-body-sm text-text-secondary text-xs leading-normal">
+<strong class="font-body-sm-medium text-text-primary">Catatan Metodologi:</strong> Hasil ini menunjukkan pola teks, bukan bukti pasti siapa penulisnya. Penilaian akhir tetap membutuhkan telaah kontekstual manusia.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: PRODUCT SHOWCASE -->
+<section class="py-space-xl" id="produk">
+<div class="max-w-2xl mb-space-xl">
+<span class="font-ui-label text-ui-label text-primary-container tracking-wider uppercase font-semibold">KENALI PRODUK LEXORA</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary tracking-tight mt-space-xs">
+        Dua instrumen presisi untuk kejujuran tulisan Anda.
+      </h2>
+<p class="font-body-default text-body-default text-text-secondary mt-space-sm">
+        Dirancang berdampingan untuk mendukung alur kerja akademisi, jurnalis, peneliti, dan profesional komunikasi.
+      </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<!-- Product A: AI Text Detector -->
+<div class="flex flex-col justify-between bg-surface p-space-lg shadow-sm rounded-[14px]" id="detector" style="border: 1px solid #DCE5E1;">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center text-primary-container mb-space-md">
+<span class="material-symbols-outlined text-[28px]">biotech</span>
+</div>
+<div class="inline-flex items-center px-2 py-0.5 rounded text-xs font-mono-counter bg-surface-secondary text-text-secondary mb-2">MODUL DIAGNOSTIK</div>
+<h3 class="font-headline-md text-headline-md text-text-primary">AI Text Detector</h3>
+<p class="font-body-medium text-body-medium text-primary-container mt-1">Analisis pola tulisan dan penjelasan per kalimat</p>
+<p class="font-body-default text-body-default text-text-secondary mt-space-sm">
+            Mendeteksi struktur sintaksis yang seragam, prediktabilitas kata, dan ritme repetitif dengan analisis berbobot tanpa angka persentase palsu yang menyesatkan.
+          </p>
+<!-- 4 Outcome Badges Interactive Preview -->
+<div class="mt-space-lg p-space-md bg-surface-secondary rounded-lg">
+<span class="font-ui-label text-ui-label text-text-primary block mb-3">4 Status Klasifikasi Standar:</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+<div class="flex items-center gap-2 p-2 bg-surface rounded shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-status-success shrink-0"></span>
+<div>
+<div class="font-body-sm-medium text-body-sm-medium text-status-success">HUMAN</div>
+<div class="font-body-sm text-body-sm text-text-secondary text-xs">Pola variatif &amp; personal</div>
+</div>
+</div>
+<div class="flex items-center gap-2 p-2 bg-surface rounded shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-status-danger shrink-0"></span>
+<div>
+<div class="font-body-sm-medium text-body-sm-medium text-status-danger">AI</div>
+<div class="font-body-sm text-body-sm text-text-secondary text-xs">Sintaksis seragam khas model</div>
+</div>
+</div>
+<div class="flex items-center gap-2 p-2 bg-surface rounded shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-status-mixed shrink-0"></span>
+<div>
+<div class="font-body-sm-medium text-body-sm-medium text-status-mixed">MIXED</div>
+<div class="font-body-sm text-body-sm text-text-secondary text-xs">Kombinasi suntingan berimbang</div>
+</div>
+</div>
+<div class="flex items-center gap-2 p-2 bg-surface rounded shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-status-warning shrink-0"></span>
+<div>
+<div class="font-body-sm-medium text-body-sm-medium text-status-warning">UNCERTAIN</div>
+<div class="font-body-sm text-body-sm text-text-secondary text-xs">Karakter sampel belum memadai</div>
+</div>
+</div>
+</div>
+<!-- Mandatory Disclaimer Card -->
+<div class="mt-3.5 p-2.5 bg-surface-container-low rounded flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="font-body-sm-medium text-body-sm-medium text-xs">Hasil ini menunjukkan pola teks, bukan bukti pasti siapa penulisnya.</span>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md">
+<a class="inline-flex items-center justify-center min-h-[44px] w-full px-5 rounded-[10px] bg-primary-container text-on-primary font-body-sm-medium text-body-sm-medium hover:bg-primary transition-colors" href="#">
+            Coba AI Detector
+            <span class="material-symbols-outlined ml-2 text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Product B: AI Humanizer -->
+<div class="flex flex-col justify-between bg-surface p-space-lg shadow-sm rounded-[14px]" id="humanizer" style="border: 1px solid #DCE5E1;">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center text-primary-container mb-space-md">
+<span class="material-symbols-outlined text-[28px]">edit_note</span>
+</div>
+<div class="inline-flex items-center px-2 py-0.5 rounded text-xs font-mono-counter bg-surface-secondary text-text-secondary mb-2">MODUL EDITORIAL</div>
+<h3 class="font-headline-md text-headline-md text-text-primary">AI Humanizer</h3>
+<p class="font-body-medium text-body-medium text-primary-container mt-1">Revisi tulisan dengan kontrol gaya</p>
+<p class="font-body-default text-body-default text-text-secondary mt-space-sm">
+            Menghilangkan kekakuan kalimat hasil sintesis, memperkaya variasi panjang klausa, dan mengembalikan intonasi alami Bahasa Indonesia tanpa mengubah substansi fakta.
+          </p>
+<!-- Style Presets Showcase -->
+<div class="mt-space-lg p-space-md bg-surface-secondary rounded-lg">
+<span class="font-ui-label text-ui-label text-text-primary block mb-2.5">Preset Gaya Bahasa Terkalibrasi:</span>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1.5 rounded-lg bg-surface text-text-primary font-body-sm-medium text-body-sm-medium shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary-container">school</span> Formal Akademik
+              </span>
+<span class="px-3 py-1.5 rounded-lg bg-surface text-text-primary font-body-sm-medium text-body-sm-medium shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary-container">article</span> Santai Editorial
+              </span>
+<span class="px-3 py-1.5 rounded-lg bg-surface text-text-primary font-body-sm-medium text-body-sm-medium shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary-container">corporate_fare</span> Profesional
+              </span>
+<span class="px-3 py-1.5 rounded-lg bg-surface text-text-primary font-body-sm-medium text-body-sm-medium shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary-container">short_text</span> Ringkas Padat
+              </span>
+</div>
+<!-- Important Integrity Notice -->
+<div class="p-3 bg-surface rounded-lg shadow-sm flex items-start gap-2.5">
+<span class="material-symbols-outlined text-status-warning text-[20px] shrink-0 mt-0.5">notification_important</span>
+<p class="font-body-sm text-body-sm text-text-secondary text-xs leading-normal">
+<strong class="font-body-sm-medium text-text-primary">Komitmen Integritas:</strong> Periksa kembali fakta, angka, kutipan, dan makna sebelum menggunakan hasil. Lexora menolak klaim palsu '100% bypass'.
+              </p>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md">
+<a class="inline-flex items-center justify-center min-h-[44px] w-full px-5 rounded-[10px] bg-primary-container text-on-primary font-body-sm-medium text-body-sm-medium hover:bg-primary transition-colors" href="#">
+            Coba AI Humanizer
+            <span class="material-symbols-outlined ml-2 text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: CARA KERJA LEXORA -->
+<section class="py-space-xl" id="cara-kerja">
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<span class="font-ui-label text-ui-label text-primary-container tracking-wider uppercase font-semibold">CARA KERJA LEXORA</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary tracking-tight mt-space-xs">
+        Empat langkah sederhana untuk kejelasan teks.
+      </h2>
+<p class="font-body-default text-body-default text-text-secondary mt-space-sm">
+        Proses sekuensial yang dirancang untuk menjaga kedaulatan penulis atas setiap kalimat.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Step 01 -->
+<div class="bg-surface p-space-md shadow-sm flex flex-col justify-between rounded-[14px]" style="border: 1px solid #DCE5E1;">
+<div>
+<span class="font-mono-metric text-mono-metric text-primary-container font-semibold block mb-space-sm">01</span>
+<h4 class="font-headline-sm text-headline-sm text-text-primary mb-space-xs">Masukkan</h4>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">
+            Unggah atau tempel naskah tulisan Anda. Mendukung teks langsung hingga 50.000 karakter per sesi kerja.
+          </p>
+</div>
+<div class="mt-6 pt-4 flex items-center gap-2 text-text-secondary font-mono-counter text-mono-counter">
+<span class="material-symbols-outlined text-[16px]">upload_file</span> .docx, .txt, tempel
+        </div>
+</div>
+<!-- Step 02 -->
+<div class="bg-surface p-space-md shadow-sm flex flex-col justify-between rounded-[14px]" style="border: 1px solid #DCE5E1;">
+<div>
+<span class="font-mono-metric text-mono-metric text-primary-container font-semibold block mb-space-sm">02</span>
+<h4 class="font-headline-sm text-headline-sm text-text-primary mb-space-xs">Analisis / Revisi</h4>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">
+            Pilih deteksi pola kalimat untuk evaluasi, atau terapkan penyesuaian gaya penulisan yang Anda butuhkan.
+          </p>
+</div>
+<div class="mt-6 pt-4 flex items-center gap-2 text-text-secondary font-mono-counter text-mono-counter">
+<span class="material-symbols-outlined text-[16px]">psychology</span> Model linguistik lokal
+        </div>
+</div>
+<!-- Step 03 -->
+<div class="bg-surface p-space-md shadow-sm flex flex-col justify-between rounded-[14px]" style="border: 1px solid #DCE5E1;">
+<div>
+<span class="font-mono-metric text-mono-metric text-primary-container font-semibold block mb-space-sm">03</span>
+<h4 class="font-headline-sm text-headline-sm text-text-primary mb-space-xs">Periksa</h4>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">
+            Evaluasi sorotan per kalimat secara interaktif atau bandingkan perubahan teks berdampingan (diff-view).
+          </p>
+</div>
+<div class="mt-6 pt-4 flex items-center gap-2 text-text-secondary font-mono-counter text-mono-counter">
+<span class="material-symbols-outlined text-[16px]">compare</span> Tinjauan side-by-side
+        </div>
+</div>
+<!-- Step 04 -->
+<div class="bg-surface p-space-md shadow-sm flex flex-col justify-between rounded-[14px]" style="border: 1px solid #DCE5E1;">
+<div>
+<span class="font-mono-metric text-mono-metric text-primary-container font-semibold block mb-space-sm">04</span>
+<h4 class="font-headline-sm text-headline-sm text-text-primary mb-space-xs">Salin atau Unduh</h4>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">
+            Simpan hasil akhir tulisan dengan integritas narasi dan makna yang sepenuhnya terjaga di tangan Anda.
+          </p>
+</div>
+<div class="mt-6 pt-4 flex items-center gap-2 text-text-secondary font-mono-counter text-mono-counter">
+<span class="material-symbols-outlined text-[16px]">download</span> Salin cepat / Ekspor
+        </div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: PRIVASI & KEPERCAYAAN -->
+<section class="py-space-xl">
+<div class="max-w-2xl mb-space-xl">
+<span class="font-ui-label text-ui-label text-primary-container tracking-wider uppercase font-semibold">PRIVASI &amp; KEPERCAYAAN</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary tracking-tight mt-space-xs">
+        Etika komputasi teks yang menghargai kekayaan intelektual.
+      </h2>
+<p class="font-body-default text-body-default text-text-secondary mt-space-sm">
+        Kami membangun Lexora dengan kepatuhan privasi yang ketat agar naskah riset dan karya orisinal Anda tetap aman.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Pillar 1 -->
+<div class="bg-surface p-space-lg shadow-sm rounded-[14px]" style="border: 1px solid #DCE5E1;">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary-container mb-space-md">
+<span class="material-symbols-outlined text-[24px]">lock</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-xs">Kontrol Pengguna Penuh</h3>
+<p class="font-body-default text-body-default text-text-secondary leading-relaxed">
+          Teks Anda adalah hak milik Anda seutuhnya. Anda memegang kendali penuh atas riwayat revisi, penghapusan data, dan retensi penyimpanan naskah kapan saja.
+        </p>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-surface p-space-lg shadow-sm rounded-[14px]" style="border: 1px solid #DCE5E1;">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary-container mb-space-md">
+<span class="material-symbols-outlined text-[24px]">shield</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-xs">Perlindungan Teks &amp; Naskah</h3>
+<p class="font-body-default text-body-default text-text-secondary leading-relaxed">
+          Naskah yang dimasukkan ke dalam sistem tidak digunakan untuk melatih model AI publik secara default. Kerahasiaan draf jurnal dan dokumen bisnis terlindungi.
+        </p>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-surface p-space-lg shadow-sm rounded-[14px]" style="border: 1px solid #DCE5E1;">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary-container mb-space-md">
+<span class="material-symbols-outlined text-[24px]">balance</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-space-xs">Batasan Analisis yang Jujur</h3>
+<p class="font-body-default text-body-default text-text-secondary leading-relaxed">
+          Hasil deteksi merupakan indikasi pola sintaksis, bukan klaim mutlak pembuktian kepemilikan. Kami menolak klaim 'penilaian infallibel' yang merugikan penulis.
+        </p>
+</div>
+</div>
+</section>
+<!-- SECTION 5: HARGA / KREDIT -->
+<section class="py-space-xl" id="harga">
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<span class="font-ui-label text-ui-label text-primary-container tracking-wider uppercase font-semibold">HARGA / KREDIT</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary tracking-tight mt-space-xs">
+        Transparansi kuota tanpa biaya terselubung.
+      </h2>
+<p class="font-body-default text-body-default text-text-secondary mt-space-sm">
+        Sistem kredit terukur yang fleksibel sesuai intensitas penulisan dan riset editorial Anda.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg max-w-5xl mx-auto items-stretch">
+<!-- Tier 1: Gratis / Pemula -->
+<div class="bg-surface p-space-lg shadow-sm flex flex-col justify-between rounded-[14px]" style="border: 1px solid #DCE5E1;">
+<div>
+<div class="inline-flex px-2 py-0.5 rounded text-xs font-mono-counter bg-surface-secondary text-text-secondary mb-space-sm">STARTER</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Gratis / Pemula</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">Eksplorasi modul analisis dan pengujian awal naskah.</p>
+<div class="my-space-md">
+<span class="font-headline-lg text-headline-lg text-text-primary">Rp 0</span>
+<span class="font-body-sm text-body-sm text-text-secondary"> / selamanya</span>
+</div>
+<div class="space-y-3 font-body-sm text-body-sm text-text-secondary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary-container">check</span>
+<span>1.500 kata per analisis</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary-container">check</span>
+<span>Detektor 4-kategori standar</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary-container">check</span>
+<span>Preset gaya bahasa Formal</span>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md">
+<a class="inline-flex items-center justify-center min-h-[44px] w-full px-5 rounded-[10px] bg-surface-secondary text-text-primary font-body-sm-medium text-body-sm-medium hover:bg-surface-container-high transition-colors" href="#">
+            Mulai Tanpa Biaya
+          </a>
+</div>
+</div>
+<!-- Tier 2: Penulis Mandiri (Featured) -->
+<div class="bg-surface p-space-lg shadow-md flex flex-col justify-between relative rounded-[14px]" style="border: 2px solid #0F766E;">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary-container text-on-primary px-3 py-0.5 rounded-full text-xs font-body-sm-medium">
+          Rekomendasi Penulis
+        </div>
+<div>
+<div class="inline-flex px-2 py-0.5 rounded text-xs font-mono-counter bg-surface-container-low text-primary-container mb-space-sm">INDIVIDUAL</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Penulis Mandiri</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">Untuk artikel jurnal, esai berkala, dan penulisan buku.</p>
+<div class="my-space-md">
+<span class="font-headline-lg text-headline-lg text-text-primary">Paket Kredit</span>
+<span class="font-body-sm text-body-sm text-text-secondary block mt-0.5">Sesuai volume naskah</span>
+</div>
+<div class="space-y-3 font-body-sm text-body-sm text-text-secondary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary-container">check</span>
+<span>Hingga 50.000 karakter per sesi</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary-container">check</span>
+<span>Seluruh 4 preset gaya editorial</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary-container">check</span>
+<span>Diagnostik kalimat &amp; diff-viewer</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary-container">check</span>
+<span>Riwayat tersimpan aman 30 hari</span>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md">
+<a class="inline-flex items-center justify-center min-h-[44px] w-full px-5 rounded-[10px] bg-primary-container text-on-primary font-body-sm-medium text-body-sm-medium hover:bg-primary transition-colors" href="#">
+            Lihat Paket Kredit
+          </a>
+</div>
+</div>
+<!-- Tier 3: Tim & Institusi -->
+<div class="bg-surface p-space-lg shadow-sm flex flex-col justify-between rounded-[14px]" style="border: 1px solid #DCE5E1;">
+<div>
+<div class="inline-flex px-2 py-0.5 rounded text-xs font-mono-counter bg-surface-secondary text-text-secondary mb-space-sm">ENTERPRISE</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">Tim &amp; Institusi</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">Untuk redaksi media, laboratorium kampus, dan divisi humas.</p>
+<div class="my-space-md">
+<span class="font-headline-lg text-headline-lg text-text-primary">Kustom</span>
+<span class="font-body-sm text-body-sm text-text-secondary block mt-0.5">Akses multi-pengguna</span>
+</div>
+<div class="space-y-3 font-body-sm text-body-sm text-text-secondary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary-container">check</span>
+<span>Workspace terpusat untuk tim</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary-container">check</span>
+<span>API integrasi CMS &amp; repository</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary-container">check</span>
+<span>Klausul SLA &amp; privasi khusus</span>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-md">
+<a class="inline-flex items-center justify-center min-h-[44px] w-full px-5 rounded-[10px] bg-surface-secondary text-text-primary font-body-sm-medium text-body-sm-medium hover:bg-surface-container-high transition-colors" href="#">
+            Hubungi Konsultasi
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: FAQ ACCORDION -->
+<section class="py-space-xl max-w-3xl mx-auto w-full" id="bantuan">
+<div class="text-center mb-space-xl">
+<span class="font-ui-label text-ui-label text-primary-container tracking-wider uppercase font-semibold">TANYA JAWAB</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary tracking-tight mt-space-xs">
+        Pertanyaan seputar Lexora.
+      </h2>
+<p class="font-body-default text-body-default text-text-secondary mt-space-sm">
+        Penjelasan gamblang mengenai batasan sistem, keamanan data, dan mekanisme evaluasi teks.
+      </p>
+</div>
+<!-- Editorial Accordion -->
+<div class="space-y-3">
+<!-- Item 1 -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm">
+<button class="faq-toggle w-full p-space-md text-left flex items-center justify-between gap-4 focus:outline-none cursor-pointer" type="button">
+<span class="font-headline-sm text-headline-sm text-text-primary">Berapa batas karakter tulisan yang dapat diproses per sesi?</span>
+<span class="material-symbols-outlined text-text-secondary transition-transform duration-200 faq-icon">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-space-md text-text-secondary font-body-default text-body-default leading-relaxed">
+          Pada akun penulisan standar, pengguna dapat memasukkan hingga 50.000 karakter per sesi penelaahan (setara dengan sekitar 7.000-8.000 kata Bahasa Indonesia). Untuk dokumen riset yang lebih panjang seperti monograf atau skripsi penuh, naskah dapat dianalisis per bab untuk akurasi diagnostik yang optimal.
+        </div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm">
+<button class="faq-toggle w-full p-space-md text-left flex items-center justify-between gap-4 focus:outline-none cursor-pointer" type="button">
+<span class="font-headline-sm text-headline-sm text-text-primary">Mengapa Lexora tidak menampilkan persentase kemungkinan AI (misal 99%)?</span>
+<span class="material-symbols-outlined text-text-secondary transition-transform duration-200 faq-icon">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-space-md text-text-secondary font-body-default text-body-default leading-relaxed">
+          Persentase probabilitas tunggal sering kali memberikan ilusi kepastian yang keliru dalam bidang linguistik komputasi. Bahasa Indonesia memiliki variasi gaya formal yang luas. Lexora memilih menggunakan 4 status klasifikasi (HUMAN, AI, MIXED, UNCERTAIN) disertai peta sorotan per kalimat agar keputusan akhir tetap berada di tangan penelaah secara objektif.
+        </div>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm">
+<button class="faq-toggle w-full p-space-md text-left flex items-center justify-between gap-4 focus:outline-none cursor-pointer" type="button">
+<span class="font-headline-sm text-headline-sm text-text-primary">Format dokumen apa saja yang didukung oleh modul pengunggah?</span>
+<span class="material-symbols-outlined text-text-secondary transition-transform duration-200 faq-icon">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-space-md text-text-secondary font-body-default text-body-default leading-relaxed">
+          Anda dapat menempelkan teks langsung melalui papan klip, atau mengunggah berkas dokumen berupa Microsoft Word (.docx), dokumen teks murni (.txt), dan format portabel teks (.pdf). Struktur paragraf naskah asli akan dipertahankan selama proses perbandingan.
+        </div>
+</div>
+<!-- Item 4 -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm">
+<button class="faq-toggle w-full p-space-md text-left flex items-center justify-between gap-4 focus:outline-none cursor-pointer" type="button">
+<span class="font-headline-sm text-headline-sm text-text-primary">Apakah naskah saya aman dan terhindar dari plagiarisme publik?</span>
+<span class="material-symbols-outlined text-text-secondary transition-transform duration-200 faq-icon">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-space-md text-text-secondary font-body-default text-body-default leading-relaxed">
+          Sangat aman. Naskah Anda tidak pernah dipublikasikan, tidak dimasukkan ke dalam basis data publik yang dapat ditelusuri mesin pencari, dan tidak digunakan sebagai set data latih model pihak ketiga tanpa persetujuan eksplisit Anda.
+        </div>
+</div>
+</div>
+</section>
+<!-- SCRIPT FOR FAQ ACCORDION -->
+<script>
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('.faq-icon');
+        const isOpen = !content.classList.contains('hidden');
+
+        // Close all
+        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = 'rotate(0deg)');
+
+        // Toggle selected
+        if (!isOpen) {
+          content.classList.remove('hidden');
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  </script>
+</div></div></main><footer class="w-full bg-surface shadow-[0_1px_8px_rgba(0,0,0,0.04)] mt-space-xl py-space-xl"><div class="max-w-[1280px] mx-auto px-gutter"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-xl pb-space-xl"><div class="md:col-span-5 flex flex-col items-start gap-space-md"><div class="flex items-center gap-space-sm"><img src="https://lh3.googleusercontent.com/aida/ALJJyrA3NdM4ngC1guHvYyG5LTZWAvwjpG8vCbQpqSTJAoqosQjy7AplcpNQOioFDAX32Y_31cD4ZUYAwpZJbYH_XvfsTnVW6efLZOhukkHToKFzkbHEFEENDLkyt8hN_Inusk6NuajJBvKEaaylLG_Bcug_oi9nqwzdgwwZbSt3jNBi0v3xprCad1Q2F_otN6gVpV2aGJcVoTV_L7fGD8-T5YmGrY-XHWtwWSpbuiWejlUm7g" alt="Lexora" class="h-9 w-auto object-contain block"></div><p class="font-body-sm text-body-sm text-text-secondary max-w-sm">Kecerdasan editorial untuk ruang tulis modern Indonesia. Presisi struktural, kejujuran epistemik, dan analisis pola teks mendalam.</p></div><div class="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-space-lg"><div class="flex flex-col gap-space-sm"><span class="font-ui-label text-ui-label text-text-primary uppercase tracking-wider">Produk</span><a class="font-body-sm text-body-sm text-text-secondary hover:text-on-surface transition-colors" data-path="ai-detector" href="#">AI Detector</a><a class="font-body-sm text-body-sm text-text-secondary hover:text-on-surface transition-colors" data-path="ai-humanizer" href="#">AI Humanizer</a></div><div class="flex flex-col gap-space-sm"><span class="font-ui-label text-ui-label text-text-primary uppercase tracking-wider">Sumber Daya</span><a class="font-body-sm text-body-sm text-text-secondary hover:text-on-surface transition-colors" data-path="cara-kerja" href="#">Cara Kerja</a><a class="font-body-sm text-body-sm text-text-secondary hover:text-on-surface transition-colors" data-path="bantuan" href="#">Bantuan</a><a class="font-body-sm text-body-sm text-text-secondary hover:text-on-surface transition-colors" data-path="dokumentasi" href="#">Dokumentasi</a></div><div class="flex flex-col gap-space-sm"><span class="font-ui-label text-ui-label text-text-primary uppercase tracking-wider">Legal</span><a class="font-body-sm text-body-sm text-text-secondary hover:text-on-surface transition-colors" data-path="privasi-dan-kepercayaan" href="#">Privasi &amp; Kepercayaan</a><a class="font-body-sm text-body-sm text-text-secondary hover:text-on-surface transition-colors" data-path="syarat-dan-ketentuan" href="#">Syarat &amp; Ketentuan</a></div></div></div><div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-sm text-text-secondary font-body-sm text-body-sm"><p class="text-body-sm text-text-secondary">© 2025 Lexora Ruang Kerja AI. Seluruh hak cipta dilindungi.</p><div class="flex items-center gap-space-md text-text-secondary text-body-sm"><span class="inline-flex items-center gap-1.5 text-xs text-text-secondary"><span class="w-1.5 h-1.5 rounded-full bg-status-success"></span> Sistem Aktif &amp; Terkalibrasi</span></div></div></div></footer>
+
+
+
+</body></html>
