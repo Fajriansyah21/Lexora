@@ -96,7 +96,7 @@ Perhitungan ini tidak menggantikan audit kontras seluruh komponen, hover, disabl
 | Humanizer | FR-HUM-01 s.d. FR-HUM-124; FR-HUM-68/69; DEC-146 s.d. DEC-149; AC-036 s.d. AC-158 (khusus batas input: AC-102/103) | Batas 50.000 dan minimum 100; gaya bawaan; kontrol makna; peringatan pemeriksaan fakta |
 | Style Profiles | FR-HUM (kebutuhan profil/sampel); DEC-149; AC-036 s.d. AC-158 | Maksimum 6 profil per akun; 20 sampel per profil; minimal 3 sampel eligible, masing-masing minimal 500 cluster |
 | Credits & Ads | FR-CRED; DEC-156 s.d. DEC-159; DEC-167; DEC-175/176; AC-180 s.d. AC-204 | Kredit pembelian tidak kedaluwarsa; bonus harian/reward login 7 hari; Guest tidak menerima rewarded ads; reward menunggu verifikasi |
-| Payments | FR-PAY; DEC-160; AC-PAY | Tidak ada simulasi pembayaran sukses di frontend; verifikasi dan pemberian kredit tetap server-side |
+| Payments | FR-PAY-01 s.d. FR-PAY-09; DEC-160; AC-205 s.d. AC-213 | Tidak ada simulasi pembayaran sukses di frontend; verifikasi dan pemberian kredit tetap server-side |
 | Support | FR-SUP-01 s.d. FR-SUP-08; DEC-161; AC-214 s.d. AC-221 | Status tiket dan jendela reopen 7 hari konsisten; target respons awal 2 hari kerja |
 | Privacy | FR-ACC-20/21; NFR-PRIV-01 s.d. NFR-PRIV-09; DEC-168 s.d. DEC-174; AC-178/179 dan AC-260 s.d. AC-275 | Tidak ada klaim penghapusan total/retensi RAM-only; opt-in training terpisah; hak data dan keberatan ditampilkan |
 | Admin | FR-ADM-01 s.d. FR-ADM-13; DEC-163; AC-242 s.d. AC-254 | Tiga role RBAC; akses teks bukan default; tiket, consent, permission, batas 60 menit, dan audit |
