@@ -50,7 +50,7 @@ colors:
   surface-variant: '#d8e6df'
   surface-secondary: '#EEF2F0'
   text-primary: '#17231F'
-  text-secondary: '#66736E'
+  text-secondary: '#5D6964'
   border: '#DCE5E1'
   status-success: '#15803D'
   status-warning: '#B45309'
@@ -178,7 +178,7 @@ A synthesis of **Modern Editorial Minimalism** and **Systematic Workspace Utilit
 The palette balances a deep botanical teal identity with neutral mineral tones, avoiding vibrant synthetic spectrums to foster extended cognitive focus during long writing sessions.
 
 ### Core Roles
-- **Primary (`#0F766E`)**: Anchors critical interactive elements, focused input highlights, primary workspace triggers, and verified badges.
+- **Primary action/accent (`#0F766E`, `primary-container`)**: Anchors critical interactive elements, focused input highlights, primary workspace triggers, and verified badges. **Deep primary (`#005C55`, `primary`)**: Supports selected navigation states, deeper emphasis, and high-contrast primary surfaces.
 - **Primary Dark (`#134E4A`)**: Used for high-emphasis interactive states (hover/active on primary CTAs), dense headers, and selected navigation states.
 - **Primary Light (`#DDF3EF`)**: Soft tint for active item highlights, selected panel borders, subtle badge backdrops, and sentence-level emphasis in editorial modes.
 - **Neutral / Text Primary (`#17231F`)**: Deepest forest-ink tone ensuring pristine typographic contrast (exceeding WCAG 2.2 AAA on white surfaces) without the harshness of pure `#000000`.
