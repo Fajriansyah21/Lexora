@@ -33,9 +33,22 @@ SRS siap menjadi dasar System Design. Detail provider, harga, retensi legal, tok
 | 4 | Acceptance criteria | Complete baseline | 275 AC aktif + 55 skenario Gherkin |
 | 5 | Review dan pengesahan SRS | Approved for System Design | SRS Review Record |
 | 6 | User flow, System Design, teknologi, keamanan, UI/UX | Conditional Design Freeze v1.0; browser visual QA/WCAG review pending | [Design Freeze Review](../docs/DESIGN-FREEZE-REVIEW-2026-11-18.md) |
-| 7 | Pembangunan website | **Out of scope** | Memerlukan mandat baru |
+| 7 | Pembangunan website (Stage 7) | **Authorized / In Progress** | [Stage 7 Mandate](../docs/STAGE-7-IMPLEMENTATION-MANDATE-2026-11-18.md) |
 
-Tahap 1–5 selesai. Tahap 6 memiliki baseline dokumentasi dan delapan ekspor visual yang telah direview. Desain dibekukan secara kondisional sebagai acuan frontend; browser visual QA, screenshot refresh, dan verifikasi WCAG 2.2 AA masih menjadi gerbang eksternal. Instalasi skill lokal Antigravity belum dijalankan. Tidak ada frontend/backend website yang dibangun.
+### Milestone Stage 7 (Website Implementation)
+
+| Milestone | Pekerjaan | Status |
+|---|---|---|
+| M0 | Formalisasi Mandat dan Implementation Readiness | **Completed** (2026-11-18) |
+| M1 | Project Bootstrap dan Fondasi Proyek | **In Progress (Current)** |
+| M2 | Database dan Backend Foundation | Not Started |
+| M3 | AI Text Detector | Not Started |
+| M4 | AI Humanizer | Not Started |
+| M5 | Sistem Pendukung (Credits, Payment, Support, Privacy, Admin) | Not Started |
+| M6 | Integrasi Frontend dan Backend | Not Started |
+| M7 | Quality Assurance dan Deployment Readiness | Not Started |
+
+Tahap 1–5 selesai. Tahap 6 memiliki baseline dokumentasi dan delapan ekspor visual yang telah direview. Desain dibekukan secara kondisional sebagai acuan frontend; browser visual QA, screenshot refresh, dan verifikasi WCAG 2.2 AA masih menjadi gerbang eksternal. Instalasi skill lokal Antigravity belum dijalankan. Tahap 7 (pembangunan website) diotorisasi dan dijalankan secara bertahap melalui milestone M0 sampai M7 dengan mandatory review gate per perpindahan milestone.
 
 ## Fokus riset aktif: uji prosedur sintetis dataset
 
