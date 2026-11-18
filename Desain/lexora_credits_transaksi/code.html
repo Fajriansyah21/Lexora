@@ -247,7 +247,7 @@
 <span class="material-symbols-outlined text-[16px] text-outline">tune</span>
 <span class="font-body-sm text-[12px]">Nama paket, kuota, dan harga pada layar ini adalah contoh. Nilai final mengikuti konfigurasi server setelah unit economics dan provider diverifikasi.</span>
 </div>
-<span class="font-mono-counter text-mono-counter hidden sm:inline">Engine v1.0 • IDR Gateway</span>
+<span class="font-mono-counter text-mono-counter hidden sm:inline">Konfigurasi pembayaran • Belum final</span>
 </div>
 </section>
 <!-- SECTION 4: Transparent Checkout Flow Drawer / State Preview (Mandatory Architecture) -->
@@ -620,7 +620,7 @@
       statusBadge.innerText = 'Memverifikasi Webhook Server...';
       
       setTimeout(function() {
-        statusBadge.innerText = 'Lunas Terverifikasi Secara Kriptografis';
+        statusBadge.innerText = 'Pembayaran terverifikasi di backend';
         statusBadge.parentElement.className = 'flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#DEF7EC] text-status-success font-ui-label text-[12px]';
         alert('Sinyal Webhook Terverifikasi! Server telah menambahkan kredit baru secara instan.');
       }, 1200);
