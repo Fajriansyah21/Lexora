@@ -615,17 +615,8 @@
       statusBadge.parentElement.className = 'flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#FEF3C7] text-status-warning font-ui-label text-[12px]';
     }
 
-    function simulateVerification() {
-      const statusBadge = document.getElementById('checkout-status-label');
-      statusBadge.innerText = 'Memverifikasi Webhook Server...';
-      
-      setTimeout(function() {
-        statusBadge.innerText = 'Pembayaran terverifikasi di backend';
-        statusBadge.parentElement.className = 'flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#DEF7EC] text-status-success font-ui-label text-[12px]';
-        alert('Sinyal Webhook Terverifikasi! Server telah menambahkan kredit baru secara instan.');
-      }, 1200);
-    }
-  </script>
+    // Payment verification is backend-only; this visual prototype never simulates a successful payment.
+</script>
 </div></div></main></div>
 
 <nav aria-label="Navigasi utama seluler" class="fixed bottom-0 left-0 right-0 z-[60] grid grid-cols-4 border-t border-border bg-surface/95 backdrop-blur lg:hidden"><a data-path="overview" href="#" class="flex min-h-[60px] flex-col items-center justify-center gap-1 text-text-secondary"><span class="material-symbols-outlined text-[20px]">home</span><span class="text-[11px]">Beranda</span></a><a data-path="ai-text-detector" href="#" class="flex min-h-[60px] flex-col items-center justify-center gap-1 text-text-secondary"><span class="material-symbols-outlined text-[20px]">find_in_page</span><span class="text-[11px]">Detector</span></a><a data-path="ai-humanizer" href="#" class="flex min-h-[60px] flex-col items-center justify-center gap-1 text-text-secondary"><span class="material-symbols-outlined text-[20px]">magic_button</span><span class="text-[11px]">Humanizer</span></a><a data-path="account" href="#" class="flex min-h-[60px] flex-col items-center justify-center gap-1 text-text-secondary"><span class="material-symbols-outlined text-[20px]">person</span><span class="text-[11px]">Akun</span></a></nav></body></html>
