@@ -1,6 +1,6 @@
 # Lexora Active Roadmap
 
-Terakhir diperbarui: 2026-11-17
+Terakhir diperbarui: 2026-11-18
 
 ## Cakupan produk MVP
 
@@ -32,10 +32,10 @@ SRS siap menjadi dasar System Design. Detail provider, harga, retensi legal, tok
 | 3 | Audit modul pendukung dan NFR | Complete | Supporting Modules Requirements Audit |
 | 4 | Acceptance criteria | Complete baseline | 275 AC aktif + 55 skenario Gherkin |
 | 5 | Review dan pengesahan SRS | Approved for System Design | SRS Review Record |
-| 6 | User flow, System Design, teknologi, keamanan, UI/UX | Design baseline complete; local visual handoff remains | System Design and UI/UX Handoff task |
+| 6 | User flow, System Design, teknologi, keamanan, UI/UX | Conditional Design Freeze v1.0; browser visual QA/WCAG review pending | [Design Freeze Review](../docs/DESIGN-FREEZE-REVIEW-2026-11-18.md) |
 | 7 | Pembangunan website | **Out of scope** | Memerlukan mandat baru |
 
-Tahap 1–5 selesai. Tahap 6 memiliki baseline dokumentasi lengkap. Visual exploration di Google Stitch dan instalasi skill lokal Antigravity memerlukan lingkungan lokal; prompt dan perintah sudah disiapkan. Tidak ada frontend/backend website yang dibangun.
+Tahap 1–5 selesai. Tahap 6 memiliki baseline dokumentasi dan delapan ekspor visual yang telah direview. Desain dibekukan secara kondisional sebagai acuan frontend; browser visual QA, screenshot refresh, dan verifikasi WCAG 2.2 AA masih menjadi gerbang eksternal. Instalasi skill lokal Antigravity belum dijalankan. Tidak ada frontend/backend website yang dibangun.
 
 ## Fokus riset aktif: uji prosedur sintetis dataset
 
