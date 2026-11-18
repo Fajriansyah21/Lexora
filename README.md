@@ -10,7 +10,7 @@ Platform untuk membantu pengguna menganalisis dan mengolah tulisan melalui **AI 
 - [Data flow and lifecycle](plan/DATA-FLOW-AND-DATA-LIFECYCLE.md)
 - [API contracts](plan/API-CONTRACTS.md)
 - [Technology evaluation](plan/TECHNOLOGY-EVALUATION.md)
-- [UI/UX specification](plan/UI-UX-SPECIFICATION.md)
+- [UI/UX specification](plan/UI-UX-SPECIFICATION.md)\n- [Design Freeze Review](docs/DESIGN-FREEZE-REVIEW-2026-11-18.md)\n- [Visual design exports](Desain/)
 - [Google Stitch design prompts](plan/STITCH-DESIGN-PROMPTS.md)
 - [Antigravity skill setup](docs/ANTIGRAVITY-SKILL-SETUP.md)
 
