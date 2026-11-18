@@ -36,15 +36,15 @@ Suggested tagline: **“Analisis tulisan. Revisi dengan kendali.”**
 
 | Token | Value | Usage |
 |---|---|---|
-| Brand 900 | `#134E4A` | Strong brand text/hover |
-| Brand 700 | `#0F766E` | Primary action |
-| Brand 600 | `#0D9488` | Active states |
+| Primary 900 | `#005C55` | Deep primary, selected states |
+| Brand action | `#0F766E` | Primary action and accent |
+| Brand hover | `#134E4A` | Hover and high-emphasis state |
 | Brand 100 | `#DDF3EF` | Soft brand surface |
 | Canvas | `#F7F8F7` | App background |
 | Surface | `#FFFFFF` | Cards, editor panels |
 | Surface muted | `#EEF2F0` | Secondary panels |
 | Text primary | `#17231F` | Main text |
-| Text secondary | `#66736E` | Supporting text |
+| Text secondary | `#5D6964` | Supporting text, contrast-adjusted for muted surfaces |
 | Border | `#DCE5E1` | Dividers and outlines |
 | Info | `#2563EB` | Informational status |
 | Success | `#15803D` | Successful operation |
@@ -390,3 +390,11 @@ The local Antigravity installation was not modified from this remote repository 
 - [ ] Validate privacy and sensitive Admin access states.
 - [ ] Review with accessibility tooling and manual keyboard/screen-reader tests.
 - [ ] Freeze design tokens and component variants before frontend implementation.
+
+
+## 11. Design review addendum (2026-11-18)
+
+- Exported Stitch screens under `Desain/` are the visual source artifacts for the MVP baseline; the HTML exports are design prototypes, not production application code.
+- Text secondary was adjusted from `#66736E` to `#5D6964` because the former produced approximately 4.38:1 contrast on `#EEF2F0`, below WCAG 2.2 AA for normal text. The adjusted token produces approximately 5.07:1 on that surface.
+- Primary action, deep primary, and hover tokens are explicitly distinguished to match the exported theme values: `#0F766E`, `#005C55`, and `#134E4A`.
+- Visual viewport testing, keyboard/screen-reader review, and full WCAG 2.2 AA verification remain required before production sign-off.
