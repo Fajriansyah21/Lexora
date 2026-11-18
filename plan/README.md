@@ -30,7 +30,8 @@ Folder ini menyimpan rencana produk, kebutuhan sistem, keputusan, status elisita
 | [API Contracts](API-CONTRACTS.md) | Endpoint, event, error, dan idempotency contracts | Konseptual |
 | [Technology Evaluation](TECHNOLOGY-EVALUATION.md) | Rekomendasi stack, trade-offs, provider gates | Evaluasi tahap 6 |
 | [Stitch Design Prompts](STITCH-DESIGN-PROMPTS.md) | Prompt pack untuk landing page, app, Detector, Humanizer, Credits, dan Admin | Visual design handoff |
-| [UI/UX Specification](UI-UX-SPECIFICATION.md) | Design tokens, screen inventory, wireframes, accessibility | Conditional Design Freeze v1.0 |\n| [Design Freeze Review](../docs/DESIGN-FREEZE-REVIEW-2026-11-18.md) | Review delapan ekspor visual, koreksi requirement, responsivitas sumber, dan gerbang QA | Conditional freeze; browser/WCAG QA pending |
+| [UI/UX Specification](UI-UX-SPECIFICATION.md) | Design tokens, screen inventory, wireframes, accessibility | Conditional Design Freeze v1.0 |
+| [Design Freeze Review](../docs/DESIGN-FREEZE-REVIEW-2026-11-18.md) | Review delapan ekspor visual, koreksi requirement, responsivitas sumber, dan gerbang QA | Conditional freeze; browser/WCAG QA pending |
 | [Acceptance Criteria](ACCEPTANCE-CRITERIA.md) | 275 active requirements mapped to acceptance statements and edge tests | Baseline drafted |
 | [Acceptance Test Scenarios](ACCEPTANCE-TEST-SCENARIOS.md) | 55 detailed Gherkin scenarios for high-risk workflows | Designed, not executed |
 | [Humanizer Requirements Audit](../docs/HUMANIZER-REQUIREMENTS-AUDIT-2026-11-17.md) | Hasil audit 124 requirement Humanizer, koreksi konflik, dan gap desain | Audit tahap 1 selesai |
