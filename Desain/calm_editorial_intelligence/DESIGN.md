@@ -257,12 +257,12 @@ The design system employs a calibrated dual-radius hierarchy that balances moder
 All buttons maintain a strict minimum height of `44px` with horizontal padding of `20px` (`space-md` + `space-xs`), using `10px` border radius and `Inter 14px/500` or `16px/500`.
 - **Primary**: Solid background `#0F766E`, text `#FFFFFF`. Hover state: `#134E4A`. Active: `#0D625C`. Focus: 2px offset with ring `#0F766E`.
 - **Secondary / Outline**: Background `#FFFFFF`, border 1px `#DCE5E1`, text `#17231F`. Hover state: background `#EEF2F0`, border `#0F766E`.
-- **Subtle / Ghost**: Background transparent, text `#66736E`. Hover state: background `#EEF2F0`, text `#17231F`.
+- **Subtle / Ghost**: Background transparent, text `#5D6964`. Hover state: background `#EEF2F0`, text `#17231F`.
 - **Destructive**: Background `#FFFFFF`, border 1px `#B42318`, text `#B42318`. Hover state: background `#FEE4E2`.
 
 ### Inputs & Text Areas
 - Built for long-form composition. Standard text inputs are `44px` tall; multi-line editor canvases scale fluidly with a minimum height of `320px`.
-- Border: 1px `#DCE5E1`, background: `#FFFFFF`, text: `#17231F`. Placeholder text: `#66736E`.
+- Border: 1px `#DCE5E1`, background: `#FFFFFF`, text: `#17231F`. Placeholder text: `#5D6964`.
 - Focus state: border `#0F766E`, box-shadow `0 0 0 3px #DDF3EF`.
 - Bottom ribbon: Houses monospace character counters (`JetBrains Mono 12px`) and real-time credit estimators formatted as subtle metadata text.
 
@@ -285,5 +285,5 @@ The AI Text Detector displays results through one of four categorical states—n
 - Focus ring: `3px` solid `#DDF3EF`.
 
 ### Navigation Elements
-- **Desktop Sidebar Navigation Item**: 40px height, 8px radius, text `#66736E`, hover background `#EEF2F0`, active state background `#DDF3EF` with text `#0F766E` and semi-bold weight.
+- **Desktop Sidebar Navigation Item**: 40px height, 8px radius, text `#5D6964`, hover background `#EEF2F0`, active state background `#DDF3EF` with text `#0F766E` and semi-bold weight.
 - **Mobile Bottom Navigation Bar**: Fixed bottom pinned bar, height `64px`, background `#FFFFFF`, border-top 1px `#DCE5E1`. Four equally divided touch areas with 20px icons and 11px micro-labels.
