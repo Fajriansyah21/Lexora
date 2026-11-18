@@ -1,7 +1,7 @@
 # Task Plan: System Design and UI/UX Handoff
 
 - **Tanggal:** 2026-11-17
-- **Status:** Design baseline complete; visual generation and local tool installation remain external handoff actions.
+- **Status:** Conditional Design Freeze v1.0; browser visual QA and full WCAG 2.2 AA review remain open.
 - **Delegation:** Tahap 1–6 didelegasikan penuh; tahap 7 (website implementation) secara eksplisit tidak termasuk.
 - **SRS:** Approved for System Design, review record dated 2026-11-17.
 
@@ -18,7 +18,7 @@
 | Security threat model | `plan/SECURITY-ARCHITECTURE-AND-THREAT-MODEL.md` | Baseline complete |
 | Privacy/legal readiness | `docs/PRIVACY-AND-LEGAL-READINESS.md` | Checklist complete; legal review pending |
 | UI/UX specification | `plan/UI-UX-SPECIFICATION.md` | Complete |
-| Google Stitch prompt pack | `plan/STITCH-DESIGN-PROMPTS.md` | Complete |
+| Google Stitch prompt pack | `plan/STITCH-DESIGN-PROMPTS.md` | Complete |\n| Visual screen exports | `Desain/` (8 HTML screens + design system) | Complete; source-reviewed and corrected |
 | Antigravity skill setup | `docs/ANTIGRAVITY-SKILL-SETUP.md` | Commands prepared; local install not executed |
 
 ## 2. Recommended architecture
@@ -55,7 +55,7 @@
 - [x] Technology alternatives and recommended stack are documented with external references.
 - [x] Security threat model and release gates are documented.
 - [x] UI/UX design system, screen inventory, responsive rules, accessibility, and microcopy are documented.
-- [x] Google Stitch prompts are prepared for the primary MVP screens.
+- [x] Google Stitch prompts are prepared for the primary MVP screens.\n- [x] Eight visual screen exports and the design system are committed under `Desain/`; conditional freeze review is recorded.
 - [x] Skill setup instructions are prepared for local Antigravity.
 - [x] Stage 7 implementation is explicitly excluded.
 
@@ -68,4 +68,4 @@
 5. Complete privacy/legal review of provider contracts, cross-border transfer, child-safety classification, and DPIA applicability.
 6. Set numerical performance/availability targets after provider and hosting selection.
 
-These are clearly separated from completed design documentation. No production integration or website implementation has been performed.
+These are external validation gates, not missing design artifacts. No production integration or website implementation has been performed. See [Design Freeze Review](../../docs/DESIGN-FREEZE-REVIEW-2026-11-18.md).
