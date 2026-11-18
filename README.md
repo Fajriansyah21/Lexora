@@ -2,6 +2,49 @@
 
 Platform untuk membantu pengguna menganalisis dan mengolah tulisan melalui **AI Text Detector** dan **AI Humanizer**.
 
+## Setup development (Windows 10/11)
+
+### Prasyarat
+
+- Git for Windows.
+- Node.js 26 LTS atau lebih baru.
+- Corepack aktif, atau pnpm 9.15.0 dipasang sesuai dokumentasi resmi pnpm.
+- Python 3.12 atau 3.13 dan `pip` untuk pengujian Python.
+
+### Instalasi
+
+Buka PowerShell atau Windows Terminal pada root repo:
+
+```powershell
+corepack enable
+corepack prepare pnpm@9.15.0 --activate
+pnpm install
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install -r requirements-test.txt pytest
+```
+
+### Pemeriksaan lokal
+
+```powershell
+pnpm lint
+pnpm format:check
+pnpm test
+python -m pytest
+```
+
+`pnpm format` menulis formatting; `pnpm format:check` hanya memeriksa.
+
+## Workspace layout
+
+- `apps/web`: workspace placeholder untuk aplikasi web; belum ada business logic.
+- `packages/config`: workspace kecil untuk memverifikasi pnpm/Turborepo dan test TypeScript.
+- `tests`: Python test foundation; test dataset yang sudah ada tetap berada di tempatnya.
+
+## Batas Stage 7
+
+Tahap M1 menyediakan tooling, struktur workspace, test harness, CI dasar, dan panduan setup. Belum ada database schema, authentication, API bisnis, domain logic, pilihan model AI, atau aktivasi payment provider. Jangan memulai M2 sebelum M1 direview dan disetujui project owner.
+
 ## Dokumentasi
 
 - [User flows](plan/USER-FLOWS.md)
