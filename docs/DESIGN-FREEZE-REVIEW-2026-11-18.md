@@ -93,12 +93,12 @@ Perhitungan ini tidak menggantikan audit kontras seluruh komponen, hover, disabl
 | Area | Rujukan utama | Hasil review desain |
 |---|---|---|
 | Detector | FR-DET-01 s.d. FR-DET-17; DEC-150 s.d. DEC-155; AC-019 s.d. AC-035 | Empat label dipertahankan; MIXED/UNCERTAIN berbeda; tanpa persentase; batas 20.000; disclaimer bukan bukti kepengarangan |
-| Humanizer | FR-HUM; DEC-146 s.d. DEC-149; AC-068 s.d. AC-149 | Batas 50.000 dan minimum 100; gaya bawaan; kontrol makna; peringatan pemeriksaan fakta |
-| Style Profiles | FR-HUM-Profile; DEC-149; AC-HUM-01/02 | Maksimum 6 profil per akun; 20 sampel per profil; minimal 3 sampel eligible, masing-masing minimal 500 cluster |
+| Humanizer | FR-HUM-01 s.d. FR-HUM-124; FR-HUM-68/69; DEC-146 s.d. DEC-149; AC-036 s.d. AC-158 (khusus batas input: AC-102/103) | Batas 50.000 dan minimum 100; gaya bawaan; kontrol makna; peringatan pemeriksaan fakta |
+| Style Profiles | FR-HUM (kebutuhan profil/sampel); DEC-149; AC-036 s.d. AC-158 | Maksimum 6 profil per akun; 20 sampel per profil; minimal 3 sampel eligible, masing-masing minimal 500 cluster |
 | Credits & Ads | FR-CRED; DEC-156 s.d. DEC-159; DEC-167; DEC-175/176; AC-180 s.d. AC-204 | Kredit pembelian tidak kedaluwarsa; bonus harian/reward login 7 hari; Guest tidak menerima rewarded ads; reward menunggu verifikasi |
 | Payments | FR-PAY; DEC-160; AC-PAY | Tidak ada simulasi pembayaran sukses di frontend; verifikasi dan pemberian kredit tetap server-side |
-| Support | FR-SUP-05 s.d. FR-SUP-08; DEC-161; AC-218 s.d. AC-221 | Status tiket dan jendela reopen 7 hari konsisten; target respons awal 2 hari kerja |
-| Privacy | NFR-PRIV-01 s.d. NFR-PRIV-09; DEC-168 s.d. DEC-174 | Tidak ada klaim penghapusan total/retensi RAM-only; opt-in training terpisah; hak data dan keberatan ditampilkan |
+| Support | FR-SUP-01 s.d. FR-SUP-08; DEC-161; AC-214 s.d. AC-221 | Status tiket dan jendela reopen 7 hari konsisten; target respons awal 2 hari kerja |
+| Privacy | FR-ACC-20/21; NFR-PRIV-01 s.d. NFR-PRIV-09; DEC-168 s.d. DEC-174; AC-178/179 dan AC-260 s.d. AC-275 | Tidak ada klaim penghapusan total/retensi RAM-only; opt-in training terpisah; hak data dan keberatan ditampilkan |
 | Admin | FR-ADM-01 s.d. FR-ADM-13; DEC-163; AC-242 s.d. AC-254 | Tiga role RBAC; akses teks bukan default; tiket, consent, permission, batas 60 menit, dan audit |
 | Accessibility | NFR-ACC-01; AC-265 | Target WCAG 2.2 AA tetap menjadi gerbang; belum dinyatakan lulus |
 
