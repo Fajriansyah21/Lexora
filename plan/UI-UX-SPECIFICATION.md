@@ -1,7 +1,7 @@
 # Lexora UI/UX Specification
 
-- **Tanggal:** 2026-11-17
-- **Status:** MVP design direction and screen specification.
+- **Tanggal:** 2026-11-18
+- **Status:** Conditional Design Freeze v1.0; browser visual QA and full WCAG 2.2 AA review pending.
 - **Product:** AI Text Detector + AI Humanizer.
 - **Source of truth:** SRS, Decision Log, User Flows, and System Design.
 - **Implementation:** not started; this document is a design handoff.
