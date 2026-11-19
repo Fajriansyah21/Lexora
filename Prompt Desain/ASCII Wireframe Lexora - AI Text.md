@@ -2,7 +2,7 @@ ASCII Wireframe Lexora - AI Text Editor
 
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│ LEXORA                                      Credits  •  Notifications • User  │
+│ LEXORA                                     Credits  •  Notifications • User  │
 ├───────────────────┬──────────────────────────────────────────────────────────┤
 │ OVERVIEW          │ AI TEXT DETECTOR                                         │
 │                   │ Analisis pola tulisan untuk memahami karakteristik teks. │

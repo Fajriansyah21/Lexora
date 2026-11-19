@@ -4,7 +4,7 @@ Landing Page
 
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│ LEXORA       Produk   Cara Kerja   Harga   Bantuan      Login [Mulai Sekarang]│
+│ LEXORA       Produk   Cara Kerja   Harga   Bantuan     Login [Mulai Sekarang]│
 ├──────────────────────────────────────────────────────────────────────────────┤
 │                                                                              │
 │                                                                              │
@@ -33,7 +33,7 @@ Landing Page
 ├──────────────────────────────────────────────────────────────────────────────┤
 │                         CARA KERJA LEXORA                                    │
 │                                                                              │
-│       01 Masukkan   →   02 Analisis/Revisi   →   03 Periksa   →   04 Unduh    │
+│      01 Masukkan   →   02 Analisis/Revisi   →   03 Periksa   →   04 Unduh    │
 │                                                                              │
 ├──────────────────────────────────────────────────────────────────────────────┤
 │                         PRIVASI & KEPERCAYAAN                                │
