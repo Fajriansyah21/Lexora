@@ -2,7 +2,7 @@ ASCII Wireframe Lexora - AI Humanizer
 
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│ LEXORA                                     Credits  •  Notifications • User  │
+│ LEXORA                                      Credits  •  Notifications • User  │
 ├───────────────────┬──────────────────────────────────────────────────────────┤
 │ OVERVIEW          │ AI HUMANIZER                                             │
 │                   │                                                          │
@@ -26,7 +26,7 @@ ASCII Wireframe Lexora - AI Humanizer
 │                   │ Karakter: 2.500            │ Karakter: 2.480             │
 │                   ├────────────────────────────┴─────────────────────────────┤
 │                   │                                                          │
-│                   │ [ Compare Changes ] [ Copy ] [ Download ] [ Save ]       │
+│                   │ [ Compare Changes ] [ Copy ] [ Download ] [ Save ]      │
 │                   │                                                          │
 │                   │ Periksa kembali fakta, angka, kutipan, dan makna.        │
 │                   │                                                          │

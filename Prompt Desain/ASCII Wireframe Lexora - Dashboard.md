@@ -2,19 +2,19 @@ ASCII Wireframe Lexora - Dashboard
 
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│ LEXORA                                      Credits: 12.500  🔔  [ Avatar ]  │
+│ LEXORA                                      Credits: 12.500  🔔  [ Avatar ]   │
 ├───────────────────┬──────────────────────────────────────────────────────────┤
 │                   │                                                          │
 │ OVERVIEW          │ Selamat datang kembali.                                  │
 │                   │                                                          │
 │ AI DETECTOR       │ ┌──────────────────────────────────────────────────────┐ │
-│                   │ │ SALDO KREDIT                                         │ │
+│                   │ │ SALDO KREDIT                                          │ │
 │ AI HUMANIZER      │ │                                                      │ │
 │                   │ │ 12.500 Kredit                 [ Top Up ]             │ │
 │ STYLE PROFILES    │ │ Tersedia: 12.500 | Reserved: 0                       │ │
 │                   │ └──────────────────────────────────────────────────────┘ │
 │ HISTORY           │                                                          │
-│                   │ MULAI BEKERJA                                            │
+│                   │ MULAI BEKERJA                                           │
 │ CREDITS           │                                                          │
 │                   │ ┌──────────────────────┐ ┌──────────────────────┐        │
 │ SUPPORT           │ │ AI TEXT DETECTOR     │ │ AI HUMANIZER         │        │
@@ -31,9 +31,9 @@ ASCII Wireframe Lexora - Dashboard
 │                   │ │ Essay Draft      Humanizer    Processing   10:35     │ │
 │                   │ └──────────────────────────────────────────────────────┘ │
 │                   │                                                          │
-│                   │ STYLE PROFILE                                            │
+│                   │ STYLE PROFILE                                           │
 │                   │ ┌──────────────────────────────────────────────────────┐ │
-│                   │ │ Academic Profile       Active       [ Manage ]       │ │
+│                   │ │ Academic Profile       Active       [ Manage ]      │ │
 │                   │ └──────────────────────────────────────────────────────┘ │
 │                   │                                                          │
 └───────────────────┴──────────────────────────────────────────────────────────┘

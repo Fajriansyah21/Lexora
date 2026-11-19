@@ -23,13 +23,13 @@ ASCII Wireframe - Style Profiles
 │  ┌────────────────────────────────────────────────────────────────────────┐  │
 │  │ SAMPLE MANAGEMENT                                                      │  │
 │  │                                                                        │  │
-│  │ Sample 01      Eligible       1.200 karakter       [ Manage ]          │  │
-│  │ Sample 02      Eligible       1.500 karakter       [ Manage ]          │  │
-│  │ Sample 03      Eligible       1.100 karakter       [ Manage ]          │  │
+│  │ Sample 01      Eligible       1.200 karakter       [ Manage ]           │  │
+│  │ Sample 02      Eligible       1.500 karakter       [ Manage ]           │  │
+│  │ Sample 03      Eligible       1.100 karakter       [ Manage ]           │  │
 │  │                                                                        │  │
 │  │ [ Add Sample ]                                                         │  │
 │  └────────────────────────────────────────────────────────────────────────┘  │
 │                                                                              │
-│  RECENTLY DELETED                                                            │
-│  [ View Deleted Samples ]                                                    │
+│  RECENTLY DELETED                                                           │
+│  [ View Deleted Samples ]                                                   │
 └──────────────────────────────────────────────────────────────────────────────┘

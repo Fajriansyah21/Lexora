@@ -2,6 +2,7 @@ node_modules
 .venv
 .next
 dist
+apps/web/AGENTS.md
 .turbo
 coverage
 __pycache__
