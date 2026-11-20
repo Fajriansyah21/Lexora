@@ -1,6 +1,6 @@
 # Lexora Active Roadmap
 
-Terakhir diperbarui: 2026-11-18
+Terakhir diperbarui: 2026-11-19
 
 ## Cakupan produk MVP
 
@@ -40,15 +40,15 @@ SRS siap menjadi dasar System Design. Detail provider, harga, retensi legal, tok
 | Milestone | Pekerjaan | Status |
 |---|---|---|
 | M0 | Formalisasi Mandat dan Implementation Readiness | **Completed** (2026-11-18) |
-| M1 | Project Bootstrap dan Fondasi Proyek | **In Progress (Current)** |
-| M2 | Database dan Backend Foundation | Not Started |
+| M1 | Project Bootstrap dan Fondasi Proyek | **Completed** |
+| M2 | Database dan Backend Foundation | **In Progress** |
 | M3 | AI Text Detector | Not Started |
 | M4 | AI Humanizer | Not Started |
 | M5 | Sistem Pendukung (Credits, Payment, Support, Privacy, Admin) | Not Started |
 | M6 | Integrasi Frontend dan Backend | Not Started |
 | M7 | Quality Assurance dan Deployment Readiness | Not Started |
 
-Tahap 1–5 selesai. Tahap 6 memiliki baseline dokumentasi dan delapan ekspor visual yang telah direview. Desain dibekukan secara kondisional sebagai acuan frontend; browser visual QA, screenshot refresh, dan verifikasi WCAG 2.2 AA masih menjadi gerbang eksternal. Instalasi skill lokal Antigravity belum dijalankan. Tahap 7 (pembangunan website) diotorisasi dan dijalankan secara bertahap melalui milestone M0 sampai M7 dengan mandatory review gate per perpindahan milestone.
+Tahap 1–5 selesai. Tahap 6 memiliki baseline dokumentasi dan delapan ekspor visual yang telah direview. Desain dibekukan secara kondisional sebagai acuan frontend; browser visual QA, screenshot refresh, dan verifikasi WCAG 2.2 AA masih menjadi gerbang eksternal. Instalasi skill lokal Antigravity belum dijalankan. Tahap 7 (pembangunan website) diotorisasi dan dijalankan secara bertahap melalui milestone M0 sampai M7 dengan mandatory review gate per perpindahan milestone. M0 selesai pada 2026-11-18, M1 telah selesai, dan M2 sedang berjalan dengan fokus database dan backend foundation.
 
 ## Fokus riset aktif: uji prosedur sintetis dataset
 
@@ -103,6 +103,6 @@ Tahap 1–5 telah selesai dan SRS disahkan untuk System Design. Baseline tahap 6
 
 Acceptance Criteria baseline memetakan 275 requirement aktif dan 55 skenario Gherkin. Test execution produk belum dimulai. Synthetic Dataset Test tetap Verified 29/29 dan tidak mengesahkan pilot/training.
 
-Task tahap 6: [System Design and UI/UX Handoff](tasks/2026-11-17-system-design-and-ui-ux.md). Task audit requirement: [SRS Readiness Audit](tasks/2026-11-17-srs-readiness-audit.md) — Complete.
+Task tahap 6: [System Design and UI/UX Handoff](tasks/2026-11-17-system-design-and-ui-ux.md). Task audit requirement: [SRS Readiness Audit](tasks/2026-11-17-srs-readiness-audit.md) — Complete. Task M2: [Database and Backend Foundation](tasks/2026-11-19-database-backend-foundation.md).
 
-Sisa handoff eksternal: jalankan UI UX Pro Max/Google Stitch di Antigravity lokal, konfirmasi merchant/provider/policy, legal/privacy review, dan tetapkan target operasional setelah benchmark. Pekerjaan tersebut tidak mengubah batas mandat: **tahap 7, pembangunan website, belum dimulai dan tidak dikerjakan dalam sesi ini.**
+Sisa handoff eksternal: jalankan UI UX Pro Max/Google Stitch di Antigravity lokal, konfirmasi merchant/provider/policy, legal/privacy review, dan tetapkan target operasional setelah benchmark. Pekerjaan tersebut tetap menjadi pekerjaan pendukung yang dapat dilaksanakan secara paralel dengan implementasi Stage 7 sesuai mandat. M2 sedang dikerjakan berdasarkan [task plan Database and Backend Foundation](tasks/2026-11-19-database-backend-foundation.md).
