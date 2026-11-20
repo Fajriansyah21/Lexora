@@ -1,9 +1,9 @@
-# Task Plan: Authentication Foundation (M2.4)
+# Task Plan: Authentication Foundation (M2.5)
 
 - **Tanggal:** 2026-11-19
 - **Status:** Planning Draft
-- **Milestone:** Stage 7, M2.4
-- **Parent task:** [Database and Backend Foundation](2026-11-19-database-foundation.md)
+- **Milestone:** Stage 7, M2.5
+- **Parent task:** [Database and Backend Foundation](2026-11-19-database-backend-foundation.md)
 - **Architecture:** Modular Monolith, Option A
 
 ## 1. Objective
@@ -113,7 +113,7 @@ Sebelum execution, review generated schema, SQL, snapshot/journal, tabel, tipe, 
 - Route: `apps/web/app/api/auth/[...all]/route.ts`.
 - Handler resmi: `toNextJsHandler(auth)` dengan `GET` dan `POST`.
 - Client memakai `createAuthClient` untuk `signUp.email`, `signIn.email`, `signOut`, dan `getSession`/`useSession`.
-- UI final login/registrasi bukan scope M2.4.
+- UI final login/registrasi bukan scope M2.5.
 
 ## 10. Session management dan protected API
 
@@ -129,9 +129,9 @@ return Response.json({ ok: true, userId: session.user.id });
 
 Tanpa middleware/proxy global hanya untuk acceptance criteria ini. Request tanpa session wajib HTTP 401; session valid wajib response sukses. Client-only check bukan authorization.
 
-## 11. Authorization Baseline M2.4
+## 11. Authorization Baseline M2.5
 
-M2.4 membedakan autentikasi dari otorisasi:
+M2.5 membedakan autentikasi dari otorisasi:
 
 - Autentikasi menjawab apakah request memiliki session valid dan menghasilkan `currentUserId`.
 - Otorisasi kepemilikan menjawab apakah `currentUserId` boleh mengakses resource tertentu.
@@ -153,9 +153,9 @@ Jangan membuat tabel, fixture database, atau resource domain baru hanya untuk he
 
 Pembagian milestone:
 
-- M2.4: fondasi autentikasi, validasi session, dan helper ownership authorization.
+- M2.5: fondasi autentikasi, validasi session, dan helper ownership authorization.
 - Milestone domain pertama: penerapan helper pada resource nyata dan test user A terhadap resource user B.
-- RBAC dan permission kompleks: di luar scope M2.4.
+- RBAC dan permission kompleks: di luar scope M2.5.
 
 ## 12. Rate limiting dan IP address
 
@@ -181,7 +181,7 @@ Gunakan `ipAddressHeaders: []`. Ini adalah opsi resmi Better Auth 1.7.26 untuk d
 Konsekuensi yang harus diterima secara eksplisit:
 
 - Semua client lokal berbagi satu counter per path. Untuk pengembangan single-developer ini diterima, dan memang lebih baik daripada mempercayai header yang bisa dipalsukan client.
-- Bila pemisahan per-client dibutuhkan di development, alternatif resmi adalah menulis connection address ke header sendiri di server code dan mendaftarkan header tersebut di `ipAddressHeaders`. Header itu wajib selalu ditimpa server dan tidak boleh berasal dari client. M2.4 memakai `ipAddressHeaders: []`; opsi header server-side dicatat sebagai material untuk tahap berikutnya.
+- Bila pemisahan per-client dibutuhkan di development, alternatif resmi adalah menulis connection address ke header sendiri di server code dan mendaftarkan header tersebut di `ipAddressHeaders`. Header itu wajib selalu ditimpa server dan tidak boleh berasal dari client. M2.5 memakai `ipAddressHeaders: []`; opsi header server-side dicatat sebagai material untuk tahap berikutnya.
 
 Production tidak boleh memakai `ipAddressHeaders: []` jika traffic datang dari banyak client karena akan menggabungkan seluruh traffic ke satu counter.
 
@@ -253,7 +253,7 @@ Konfigurasi dipilih per environment dan tidak boleh hardcode nilai production di
 - [ ] CSRF dan origin validation tetap aktif.
 - [ ] Rate limiting aktif di development dan custom sign-in/sign-up rules dapat diuji.
 - [ ] Error response tidak membocorkan secret atau credential.
-- [ ] Helper ownership authorization (M2.4 baseline) tersedia dengan unit test ketiga skenario.
+- [ ] Helper ownership authorization (M2.5 baseline) tersedia dengan unit test ketiga skenario.
 - [ ] Validator format `trustedOrigins` dan `trustedProxies` tersedia dengan unit test.
 - [ ] Lint, test, format, dan build tetap lulus.
 
@@ -344,7 +344,7 @@ Tidak boleh mengklaim acceptance criterion lulus tanpa output test atau bukti fi
 - Password reset email atau email verification provider.
 - AI, payment, credits, Redis, BullMQ.
 - UI final login dan registrasi.
-- Global middleware/proxy auth guard hanya untuk acceptance criteria M2.4.
+- Global middleware/proxy auth guard hanya untuk acceptance criteria M2.5.
 - Production multi-instance rate-limit storage.
 - Resource domain dan tabel nyata untuk pengujian helper ownership.
 
