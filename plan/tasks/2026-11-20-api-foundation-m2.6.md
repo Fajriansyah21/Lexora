@@ -42,8 +42,8 @@ Membangun fondasi API generik `/api/v1` untuk Lexora yang mendukung kontrak stan
 - **200/201**: Success / Created.
 - **400**: Malformed JSON atau request syntax error.
 - **401**: Unauthenticated (Missing/invalid session).
-- **403**: Forbidden (Authenticated but lacking permission/ownership).
-- **404**: Not Found (termasuk untuk menyamarkan keberadaan resource milik pengguna lain).
+- **403**: Forbidden (Authenticated but lacking permission; resource exists).
+- **404**: Not Found (Resource tidak ditemukan, atau digunakan untuk menyamarkan keberadaan resource milik pihak lain agar informasi kepemilikan tidak bocor).
 - **422**: Validation failure (Zod schema atau unknown fields).
 - **500**: Internal server error (Tanpa stack trace atau detail internal).
 
@@ -57,7 +57,7 @@ Membangun fondasi API generik `/api/v1` untuk Lexora yang mendukung kontrak stan
 ## 6. Authentication dan Authorization Boundary
 - **Guest Access:** Ditentukan secara eksplisit pada setiap endpoint.
 - **Authentication:** Menggunakan `getServerSession()` (Better Auth).
-- **Ownership Baseline:** Menggunakan helper pembanding ID yang sudah ada untuk menentukan respons 403 atau 404; bukan implementasi otorisasi database lengkap.
+- **Ownership Baseline:** Menggunakan helper pembanding ID untuk mengevaluasi kepemilikan resource dan mengembalikan hasil perbandingan. Helper ini tidak menentukan atau mengembalikan HTTP status; endpoint/API layer bertanggung jawab memutuskan apakah hasil tersebut menghasilkan HTTP 403 atau 404 sesuai kebijakan penyembunyian resource. Helper ini bukan implementasi otorisasi database lengkap.
 - **Legacy Route:** `/api/protected/example` dipertahankan sementara sebagai test route dan bukan merupakan acuan kontrak API v1.
 
 ## 7. Implementation Sequence
@@ -76,8 +76,8 @@ Membangun fondasi API generik `/api/v1` untuk Lexora yang mendukung kontrak stan
 - [ ] Request ID divalidasi format dan versinya (UUID v4) jika berasal dari client; dibuat baru jika invalid atau absen.
 - [ ] Guest endpoint dapat diakses tanpa session.
 - [ ] Authenticated endpoint menghasilkan 401 ketika session tidak tersedia.
-- [ ] HTTP 403 dikembalikan ketika terautentikasi tetapi tidak memiliki izin/kepemilikan (sesuai baseline helper).
-- [ ] HTTP 404 dapat digunakan untuk menyamarkan keberadaan resource milik pengguna lain.
+- [ ] HTTP 403 dikembalikan ketika pengguna terautentikasi tetapi tidak memiliki izin mengakses resource (resource terdeteksi ada).
+- [ ] HTTP 404 dikembalikan ketika resource tidak ditemukan, atau untuk menyamarkan keberadaan resource milik pihak lain.
 - [ ] HTTP 500 tidak mengekspos stack trace atau detail internal dan menggunakan Error Envelope standar.
 - [ ] Unit dan integration tests (colocated) mencakup skenario request ID (valid, invalid, absent) serta seluruh pemetaan status HTTP.
 
