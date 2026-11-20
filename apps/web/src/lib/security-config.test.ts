@@ -40,6 +40,8 @@ describe('parseTrustedProxies', () => {
 
   it('rejects invalid IP and CIDR entries', () => {
     expect(() => parseTrustedProxies('999.1.1.1')).toThrow();
+    expect(() => parseTrustedProxies('10.0.0.0/0')).toThrow();
+    expect(() => parseTrustedProxies('2001:db8::/0')).toThrow();
     expect(() => parseTrustedProxies('10.0.0.0/33')).toThrow();
     expect(() => parseTrustedProxies('2001:db8::/129')).toThrow();
     expect(() => parseTrustedProxies('10.0.0.1/')).toThrow();

@@ -54,6 +54,7 @@ export const auth = betterAuth({
   advanced: {
     useSecureCookies: isProduction,
     ipAddress: {
+      ipv6Subnet: 64,
       ipAddressHeaders: isProduction ? ['x-forwarded-for'] : [],
       ...(isProduction ? { trustedProxies } : {}),
     },

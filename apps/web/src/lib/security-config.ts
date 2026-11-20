@@ -40,7 +40,7 @@ function isValidProxyAddress(address: string): boolean {
   if (version === 0 || !/^\d+$/.test(prefix)) return false;
 
   const bits = Number(prefix);
-  return bits >= 0 && bits <= (version === 4 ? 32 : 128);
+  return bits > 0 && bits <= (version === 4 ? 32 : 128);
 }
 
 export function parseTrustedOrigins(value: string | undefined): string[] {
