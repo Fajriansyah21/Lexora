@@ -1,7 +1,7 @@
 # Task Plan: M2.6 API Foundation
 
 - **Tanggal:** 2026-11-20
-- **Status:** Proposed
+- **Status:** Planning Approved
 - **Milestone:** Stage 7, M2 (Backend Foundation)
 - **Architecture:** Modular Monolith
 
@@ -82,9 +82,9 @@ Membangun fondasi API generik `/api/v1` untuk Lexora yang mendukung kontrak stan
 - [ ] Unit dan integration tests (colocated) mencakup skenario request ID (valid, invalid, absent) serta seluruh pemetaan status HTTP.
 
 ## 9. Review Gate
-- Status dokumen: **Proposed**.
-- Implementasi hanya boleh dimulai setelah status berubah menjadi **Planning Approved**.
-- Persetujuan task plan tidak otomatis memberikan izin implementasi.
+- Status dokumen: **Planning Approved**.
+- Implementasi dapat dimulai setelah mendapatkan izin eksekusi dari pengguna.
+- Perubahan substantif pada task plan setelah status ini wajib melalui review ulang.
 
 ## 10. Referensi
 - `AGENTS.md`
